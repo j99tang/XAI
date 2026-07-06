@@ -1,0 +1,13 @@
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ccir"
+version = "0.0.1"
+description = "Context-aware Cyber-physical Intrusion Response: multi-persona XAI contextualizer for IEC-104 smart grids."
+requires-python = ">=3.11"
+
+# Package lives under src/  ->  `pip install -e .` then `import ccir`
+[tool.setuptools.packages.find]
+where = ["src"]

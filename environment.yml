@@ -1,0 +1,21 @@
+# Reproducible conda environment for the ccir project.
+# Create with:   conda env create -f environment.yml
+# Activate with: conda activate xai
+# Re-freeze after adding packages:  conda env export --no-builds > environment.yml
+name: xai
+channels:
+  - conda-forge
+dependencies:
+  - python=3.11
+  - pip
+  - pandas
+  - numpy
+  - scikit-learn
+  - matplotlib
+  - jupyter
+  - pyarrow            # fast parquet for data/processed
+  - pip:
+      - shap           # Layer 2 attribution
+      - imbalanced-learn
+      - lightrag-hku   # Layer 3 knowledge-graph RAG
+      # - pandapower   # stretch: power-flow ground truth for the C score
