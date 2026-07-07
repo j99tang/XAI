@@ -33,6 +33,8 @@ async def main() -> None:
         print(f"ingested {path.relative_to(KB_DIR)} ({len(text)} chars)")
 
     print(f"\ndone: {len(docs)} documents -> {rag.working_dir}")
+    print("NEXT: run `python scripts/seed_graph.py` to inject canonical entities "
+          "(devices/IPs/buses/breakers) — the 8B model under-extracts them.")
     print("visualize: run `lightrag-server` or open the .graphml in Gephi (§3.1b)")
 
 

@@ -101,3 +101,29 @@ failures trace to the sparse graph, not the prompts. This is the decision point:
 - **Option 2: §7.5 model escalation** (API/larger model) — helps reasoning but does
   NOT fix missing facts; the graph would still lack the entities. Do after Option 1.
 Recommend Option 1 next; keep 8B for now.
+
+## After Option 1 (graph pre-seeding + deterministic device join) — RESOLVED
+Two changes:
+1. **`scripts/seed_graph.py`** — injects the canonical entities.yaml facts
+   (devices, IPs, buses, breakers, zones: 46 entities / 47 relations) into the
+   graph via `ainsert_custom_kg`. Run AFTER `ingest.py`. **New pipeline order:
+   ingest → seed_graph.**
+2. **Deterministic device join in `retrieve.py`** (`resolve_device`): the dst_ip
+   is the network↔physical *join key* (plan §1) — a table lookup, not a semantic
+   search. We resolve it directly from entities.yaml and prepend an authoritative
+   DEVICE block, so the IP→device→bus→breaker chain is never left to LLM
+   invention. (Also fixed: `max_total_tokens` re-budgeting was dropping seeded
+   facts — replaced with a plain char cap.)
+
+**Result (synthesize_demo.log):** all three personas now correctly name RTU-3,
+10.0.0.5, Bus 6, and the real breakers BR-5-6/6-11/6-12/6-13. The "RTU-123"
+hallucination is gone; the device grounding is 100% correct and deterministic.
+
+**Residual (8B reasoning quality, NOT architecture — the §7.5 territory):**
+- regulator still says "within 24 hours" (should be 1 hour reportable / next-day
+  attempt) — facts are in the KB, the 8B model doesn't retrieve/use the precise
+  timeline.
+- data scientist loosely names features / attack type.
+These are model-quality gaps; the device/topology grounding (Option 1's target)
+is solved. Decide model escalation vs. accept-for-baseline separately, informed by
+CPAS scores in Phase 4.
