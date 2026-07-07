@@ -1,0 +1,54 @@
+{
+  "scenario_id": "scenario_15",
+  "kind": "fp_noise",
+  "anomaly_event": {
+    "flow_id": "fp_noise-5",
+    "src_ip": "10.0.0.2",
+    "dst_ip": "10.0.0.4",
+    "dst_port": 123,
+    "prediction": "normal",
+    "confidence": 0.14328982725615727,
+    "top_features": [
+      {
+        "name": "Total Fwd Packet",
+        "value": 26.0,
+        "shap": -0.1009241050259012
+      },
+      {
+        "name": "Active Std",
+        "value": 14619050.449553449,
+        "shap": -0.07714338102259899
+      },
+      {
+        "name": "Fwd Packet Length Max",
+        "value": 120.0,
+        "shap": -0.06504637743403291
+      },
+      {
+        "name": "Active Mean",
+        "value": 9074363.375,
+        "shap": -0.06362780169787757
+      },
+      {
+        "name": "Active Min",
+        "value": 1585.0,
+        "shap": -0.051716217148179436
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.4 = ENG-WS-1, engineering workstation, zone ZONE-CC.",
+    "attack_class": "attackfree",
+    "top_features": [
+      "Total Fwd Packet",
+      "Active Std",
+      "Fwd Packet Length Max",
+      "Active Mean",
+      "Active Min"
+    ],
+    "physical_consequence": "not simulated",
+    "is_physical": false,
+    "reportable": "likely NOT reportable \u2014 benign/borderline traffic; verify before escalating"
+  },
+  "scenario_kind": "fp_noise"
+}

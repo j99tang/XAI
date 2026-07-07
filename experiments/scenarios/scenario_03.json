@@ -1,0 +1,54 @@
+{
+  "scenario_id": "scenario_03",
+  "kind": "tp_physical",
+  "anomaly_event": {
+    "flow_id": "tp_physical-dosattack-RTU-1",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.1",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
+    "top_features": [
+      {
+        "name": "Bwd IAT Min",
+        "value": 0.0,
+        "shap": 0.07450341538755688
+      },
+      {
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.046050958294585824
+      },
+      {
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.039749112529727244
+      },
+      {
+        "name": "Packet Length Max",
+        "value": 0.0,
+        "shap": 0.03564469824503037
+      },
+      {
+        "name": "Fwd PSH Flags",
+        "value": 0.0,
+        "shap": 0.0308964189600579
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.1 = RTU-1, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-N, at Bus 2, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.",
+    "attack_class": "dosattack",
+    "top_features": [
+      "Bwd IAT Min",
+      "Packet Length Min",
+      "Bwd Packet Length Min",
+      "Packet Length Max",
+      "Fwd PSH Flags"
+    ],
+    "physical_consequence": "physical: voltage: bus 5 @ 0.926pu",
+    "is_physical": true,
+    "reportable": "Reportable Cyber Security Incident (BES Cyber Asset) \u2014 CIP-008-6: notify E-ISAC/NCCIC within 1 hour"
+  },
+  "scenario_kind": "tp_physical"
+}

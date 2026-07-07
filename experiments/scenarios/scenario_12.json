@@ -1,0 +1,54 @@
+{
+  "scenario_id": "scenario_12",
+  "kind": "fp_noise",
+  "anomaly_event": {
+    "flow_id": "fp_noise-2",
+    "src_ip": "10.0.0.2",
+    "dst_ip": "10.0.0.6",
+    "dst_port": 2404,
+    "prediction": "normal",
+    "confidence": 0.19278442685367764,
+    "top_features": [
+      {
+        "name": "Total Fwd Packet",
+        "value": 1.0,
+        "shap": 0.11471492854142606
+      },
+      {
+        "name": "Flow Bytes/s",
+        "value": 14733.571832046697,
+        "shap": -0.08133826032677641
+      },
+      {
+        "name": "FIN Flag Count",
+        "value": 1.0,
+        "shap": -0.07849071768481314
+      },
+      {
+        "name": "Flow IAT Max",
+        "value": 17505.0,
+        "shap": -0.07315779313475014
+      },
+      {
+        "name": "Down/Up Ratio",
+        "value": 2.0,
+        "shap": -0.06785495697488265
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.6 = RTU-4, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-S, at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.",
+    "attack_class": "attackfree",
+    "top_features": [
+      "Total Fwd Packet",
+      "Flow Bytes/s",
+      "FIN Flag Count",
+      "Flow IAT Max",
+      "Down/Up Ratio"
+    ],
+    "physical_consequence": "not simulated",
+    "is_physical": false,
+    "reportable": "likely NOT reportable \u2014 benign/borderline traffic; verify before escalating"
+  },
+  "scenario_kind": "fp_noise"
+}

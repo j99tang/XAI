@@ -1,0 +1,54 @@
+{
+  "scenario_id": "scenario_04",
+  "kind": "tp_physical",
+  "anomaly_event": {
+    "flow_id": "tp_physical-fuzzyattack-RTU-1",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.1",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
+    "top_features": [
+      {
+        "name": "Flow IAT Min",
+        "value": 53.0,
+        "shap": 0.0752387610316144
+      },
+      {
+        "name": "Bwd IAT Min",
+        "value": 408.0,
+        "shap": 0.07145531903692982
+      },
+      {
+        "name": "Packet Length Max",
+        "value": 24.0,
+        "shap": 0.06410161310560568
+      },
+      {
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.057830167573610584
+      },
+      {
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.05296809619842911
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.1 = RTU-1, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-N, at Bus 2, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.",
+    "attack_class": "fuzzyattack",
+    "top_features": [
+      "Flow IAT Min",
+      "Bwd IAT Min",
+      "Packet Length Max",
+      "Packet Length Min",
+      "Bwd Packet Length Min"
+    ],
+    "physical_consequence": "physical: voltage: bus 5 @ 0.926pu",
+    "is_physical": true,
+    "reportable": "Reportable Cyber Security Incident (BES Cyber Asset) \u2014 CIP-008-6: notify E-ISAC/NCCIC within 1 hour"
+  },
+  "scenario_kind": "tp_physical"
+}
