@@ -19,4 +19,5 @@ dependencies:
       - shap           # Layer 2 attribution
       - imbalanced-learn
       - lightrag-hku   # Layer 3 knowledge-graph RAG
+      - anthropic      # Phase 4 CPAS judge (Claude Opus 4.8, judge != synthesizer)
       - pandapower     # power-flow ground truth (core scope, no-expert constraint)
