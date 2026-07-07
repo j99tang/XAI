@@ -50,3 +50,29 @@ from the sparse graph.
 
 Recommendation: try (3) first (free), escalate to (1) if the missing IP/bus hurts
 CPAS D/H. Re-run `ingest.py` + re-check this file after any change.
+
+## CRITICAL finding — first end-to-end synthesis run (synthesize_demo.log)
+Ran the 3-persona demo on a flood/starvation-pattern flow to 10.0.0.5. The
+pipeline executes cleanly but **output quality is poor** — two failures:
+
+1. **Persona collapse:** all three narratives were byte-for-byte identical. The
+   distinct system prompts had *no* effect — llama3.1:8b, given a ~44k-char
+   context block, ignored the persona role and just summarized the context.
+2. **Wrong + meta-polluted content:** instead of the starvation-on-RTU-3
+   incident, it produced a generic "NERC CIP-008-6 and topology" summary and
+   leaked KB scaffolding ("Phase 2", "CPAS dimensions", "LightRAG ingests").
+   Root cause: `README.md` files were ingested as domain knowledge.
+
+**Fixes / next steps (in priority order):**
+- [x] Exclude README.md from ingestion (`ingest.py`) — removes meta-noise. **Requires re-ingest.**
+- [ ] Shrink the context handed to the synthesizer (lower `top_k`/`chunk_top_k`,
+      or cap chars) — a 44k block drowns an 8B model's instruction-following.
+- [ ] Strengthen persona conditioning: repeat the role instruction in the *user*
+      message (not just system), since 8B under-weights the system role.
+- [ ] If persona collapse persists after the above → this is the plan §7.5
+      trigger: escalate the synthesizer to a stronger model (API or larger local).
+      The demo just gave the "human spot-check shows weakness" signal §7.5 asks for.
+
+This is a genuine, expected checkpoint: the local-8B synthesizer is the weakest
+link, and the plan pre-registered exactly this decision. Do NOT wire up Phase 4
+scoring until the synthesizer produces distinct, incident-specific narratives.
