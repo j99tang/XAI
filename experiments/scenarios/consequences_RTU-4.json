@@ -1,0 +1,23 @@
+{
+  "breakers": [
+    "BR-4-9",
+    "BR-7-9",
+    "BR-9-10",
+    "BR-9-14"
+  ],
+  "opened_branches": [
+    "trafo 1",
+    "trafo 4",
+    "line 10",
+    "line 11"
+  ],
+  "converged": true,
+  "violations": {
+    "voltage": [],
+    "overload": []
+  },
+  "consequence": "no physical violation \u2014 consequence is loss of visibility/control only (grid absorbs the outage via redistribution; base-case headroom is large)",
+  "device": "RTU-4",
+  "ip": "10.0.0.6",
+  "bus": 9
+}

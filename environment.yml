@@ -14,6 +14,7 @@ dependencies:
   - matplotlib
   - jupyter
   - pyarrow            # fast parquet for data/processed
+  - pyyaml             # entities.yaml registry (scripts/check_kb.py)
   - pip:
       - shap           # Layer 2 attribution
       - imbalanced-learn
