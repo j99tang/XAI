@@ -143,3 +143,6 @@ data/processed/
 rag_storage/
 experiments/results/*
 !experiments/results/README.md
+
+# Downloaded reference PDFs (paraphrase-from sources; keep local, not committed)
+references/source_library/
