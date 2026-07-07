@@ -17,7 +17,9 @@ from ccir.contextualizer.rag import KB_DIR, build_rag
 
 
 async def main() -> None:
-    docs = sorted(KB_DIR.rglob("*.md"))
+    # Exclude README/index files: they describe the KB's *structure* (Phase names,
+    # CPAS legend), which is meta-noise that pollutes retrieval and the graph.
+    docs = sorted(p for p in KB_DIR.rglob("*.md") if p.name.lower() != "readme.md")
     if not docs:
         raise FileNotFoundError(f"no .md files under {KB_DIR} — author the KB first")
 
