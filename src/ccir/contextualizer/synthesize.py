@@ -22,6 +22,16 @@ PERSONA_DIR = ROOT / "configs" / "personas"
 PERSONAS = ["operator", "data_scientist", "regulator"]
 
 
+ROLE_LINE = {  # repeated in the USER turn: 8B under-weights the system role alone
+    "operator": "You are the OT CONTROL-ROOM OPERATOR. Write ONLY the operator's "
+                "action briefing — affected device, physical risk, next switching steps.",
+    "data_scientist": "You are the DATA SCIENTIST. Write ONLY the model analysis — "
+                      "which flow features drove the prediction and what they prove/can't prove.",
+    "regulator": "You are the COMPLIANCE OFFICER. Write ONLY the regulatory assessment — "
+                 "is it reportable, which timeline, to whom.",
+}
+
+
 def synthesize_one(context: str, persona: str) -> str:
     system = (PERSONA_DIR / f"{persona}.md").read_text()
     client = ollama.Client(host=OLLAMA_HOST)
@@ -29,7 +39,10 @@ def synthesize_one(context: str, persona: str) -> str:
         model=LLM_MODEL,
         messages=[
             {"role": "system", "content": system},
-            {"role": "user", "content": f"CONTEXT:\n{context}\n\nWrite your briefing."},
+            {"role": "user", "content":
+                f"{ROLE_LINE[persona]}\n\nCONTEXT (use only these facts):\n{context}\n\n"
+                f"Now write your role-specific briefing (<=200 words). "
+                f"Do not summarize the knowledge base; analyze THIS incident."},
         ],
         options={"temperature": 0},
     )

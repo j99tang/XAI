@@ -76,3 +76,28 @@ pipeline executes cleanly but **output quality is poor** — two failures:
 This is a genuine, expected checkpoint: the local-8B synthesizer is the weakest
 link, and the plan pre-registered exactly this decision. Do NOT wire up Phase 4
 scoring until the synthesizer produces distinct, incident-specific narratives.
+
+## After the free fixes (re-ingest w/o README + top_k=12/8k cap + role in user turn)
+**Persona collapse RESOLVED.** The three narratives are now distinct and
+role-appropriate (synthesize_demo.log): operator gives switching actions, data
+scientist analyzes features *and correctly states the evidence boundary*,
+regulator assesses reportability. The free fixes worked for their target problem.
+
+**New visible issue — entity hallucination (expected, diagnosed):** with the
+context now small, the 8B model fills gaps by inventing plausible names:
+- operator: "RTU-123 at Substation Alpha", breaker "B3-12" — NOT in entities.yaml
+  (should be RTU-3 / BR-x-y). Direct cost of the §3.1b under-extraction: the graph
+  has no IP→device→breaker nodes, so retrieval can't supply the real names.
+- regulator: "within 24 hours" is WRONG (CIP-008 is 1 hour reportable / next-day
+  attempt) and it leaked node-type meta ("...which is an organization/person").
+- data scientist: evidence-boundary guardrail HELD (good), but MITRE ID mismatched.
+
+**Conclusion:** free fixes did their job (distinct personas). Remaining accuracy
+failures trace to the sparse graph, not the prompts. This is the decision point:
+- **Option 1 (recommended): pre-seed the graph from `entities.yaml`** via LightRAG
+  custom-KG insertion — deterministically inject RTU-1..4, buses, breakers, IPs so
+  retrieval returns real names and the model stops inventing them. Not free (a
+  build), but the principled §2.9-aligned fix and cheaper than model escalation.
+- **Option 2: §7.5 model escalation** (API/larger model) — helps reasoning but does
+  NOT fix missing facts; the graph would still lack the entities. Do after Option 1.
+Recommend Option 1 next; keep 8B for now.
