@@ -18,4 +18,4 @@ dependencies:
       - shap           # Layer 2 attribution
       - imbalanced-learn
       - lightrag-hku   # Layer 3 knowledge-graph RAG
-      # - pandapower   # stretch: power-flow ground truth for the C score
+      - pandapower     # power-flow ground truth (core scope, no-expert constraint)
