@@ -1,0 +1,78 @@
+# Canonical entity registry (plan §2.9) — the single source of every fictional
+# proper noun in the knowledge base. Authored BEFORE any prose; every KB document
+# must use these exact names; scripts/check_kb.py enforces it.
+#
+# Grid facts (buses, lines, breakers) are NOT defined here — they are generated
+# into topology/ieee14_grid.md from pandapower case14. This file defines only the
+# fictional overlay: devices, IP assignments, zones, vendor.
+#
+# Device roles were derived from the captures, not invented:
+#   10.0.0.2 is the only IEC-104 client (port 2404) -> SCADA master.
+#   10.0.0.1/.3/.5/.6 serve port 2404 -> RTUs.
+#   10.0.0.4 never uses 2404 -> engineering workstation.
+
+vendor:
+  name: GridCom
+  rtu_model: GC-4000
+
+zones:
+  - id: ZONE-CC
+    name: Control Center
+    buses: []            # no primary equipment; SCADA + engineering LAN
+  - id: ZONE-N
+    name: North Substation Zone
+    buses: [1, 2, 3]     # generation-heavy 135 kV side
+  - id: ZONE-C
+    name: Central Substation Zone
+    buses: [4, 5, 7, 8]  # transformer interties
+  - id: ZONE-S
+    name: South Substation Zone
+    buses: [6, 9, 10, 11, 12, 13, 14]  # load side
+
+devices:
+  - id: SCADA-1
+    ip: 10.0.0.2
+    role: SCADA master (IEC-104 controlling station)
+    zone: ZONE-CC
+    bus: null
+    controls_breakers: []          # supervises all RTUs; no direct breaker I/O
+  - id: ENG-WS-1
+    ip: 10.0.0.4
+    role: engineering workstation
+    zone: ZONE-CC
+    bus: null
+    controls_breakers: []
+  - id: RTU-1
+    ip: 10.0.0.1
+    role: RTU (IEC-104 controlled station, GridCom GC-4000)
+    zone: ZONE-N
+    bus: 2
+    controls_breakers: [BR-1-2, BR-2-3, BR-2-4, BR-2-5]
+  - id: RTU-2
+    ip: 10.0.0.3
+    role: RTU (IEC-104 controlled station, GridCom GC-4000)
+    zone: ZONE-C
+    bus: 4
+    controls_breakers: [BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9]
+  - id: RTU-3
+    ip: 10.0.0.5
+    role: RTU (IEC-104 controlled station, GridCom GC-4000)
+    zone: ZONE-S
+    bus: 6
+    controls_breakers: [BR-5-6, BR-6-11, BR-6-12, BR-6-13]
+  - id: RTU-4
+    ip: 10.0.0.6
+    role: RTU (IEC-104 controlled station, GridCom GC-4000)
+    zone: ZONE-S
+    bus: 9
+    controls_breakers: [BR-4-9, BR-7-9, BR-9-10, BR-9-14]
+
+# Every capture IP must resolve to a device above OR fall in a range below
+# (check_kb.py rule 1). These are NOT grid assets.
+external_ranges:
+  - cidr: 121.142.26.0/24
+    label: attack-simulation source network (SANDI testbed)
+  - cidr: 134.221.96.0/24
+    label: attack-simulation auxiliary network
+  - label: capture noise / spoofed or malformed addresses
+    ips: [0.0.0.24, 0.0.0.32, 221.32.0.8, 225.138.0.8, 55.53.0.8, 8.0.6.4, 8.6.0.1]

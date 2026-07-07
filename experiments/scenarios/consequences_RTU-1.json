@@ -1,0 +1,28 @@
+{
+  "breakers": [
+    "BR-1-2",
+    "BR-2-3",
+    "BR-2-4",
+    "BR-2-5"
+  ],
+  "opened_branches": [
+    "line 0",
+    "line 2",
+    "line 3",
+    "line 4"
+  ],
+  "converged": true,
+  "violations": {
+    "voltage": [
+      {
+        "bus": 5,
+        "vm_pu": 0.926
+      }
+    ],
+    "overload": []
+  },
+  "consequence": "physical: voltage: bus 5 @ 0.926pu",
+  "device": "RTU-1",
+  "ip": "10.0.0.1",
+  "bus": 2
+}
