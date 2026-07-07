@@ -217,6 +217,40 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
 
 ---
 
+## Phase 4 — CPAS evaluation harness
+
+### D24. Scenarios pair real attack flows with authored target RTUs
+- **Problem:** NO attack flow in the captures targets a real RTU — all attack
+  traffic is on the 121.x testbed subnet; only normal traffic reaches 10.0.0.x
+  (the real/sim domain shift, D2, at its starkest). So an attack flow's dst IP
+  cannot supply a physical target.
+- **Decision:** a scenario uses the real attack flow's *statistics + SHAP* (learned
+  network evidence) and *assigns* a target RTU (authored physical overlay, joined at
+  the contextualizer per D1). Physical-consequence RTUs (1,3) → tp_physical;
+  absorbed RTUs (2,4) → tp_cyber. Fact-sheet consequences come from the simulator.
+- **Why:** the only honest construction given the data; consistent with the core
+  architecture (network learned, physical authored). Stated explicitly in
+  `cpas_protocol.md` and every scenario file.
+
+### D25. False-positive pool needs a heavily weakened model
+- **Problem:** even dropping the top 25 features, the model stays perfect (D10's
+  redundancy) — no false positives to explain.
+- **Decision:** drop top 50 features + shallow trees (max_depth 4); FP scenarios =
+  the 5 real normal flows this weakened model scores most attack-like (top one hits
+  0.59 attack-prob). Saved as `ids_rf_constrained.joblib`.
+- **Why:** reaches the uncertain regime honestly; the separation is so redundant a
+  mild constraint isn't enough.
+
+### D26. Judge model is a pending user decision (blocks scoring only)
+- **Problem:** the plan requires judge ≠ synthesizer, stronger; no API keys are set
+  and only llama3.1:8b is local.
+- **Decision:** built the harness judge-agnostic (`CCIR_JUDGE`); the actual model
+  choice (Claude/Gemini API vs a distinct local model) is surfaced to the user. All
+  judge-independent work (scenarios, fact sheets, tiers, pre-registered rubric) done
+  first so only final scoring waits.
+- **Why:** a genuine decision needing the user's key/preference; everything else
+  proceeds without it.
+
 ## Cross-cutting conventions established
 - Raw data immutable; inputs (`data/`, `knowledge_base/`) vs regenerable outputs
   (`models/`, `rag_storage/`, `experiments/results/`) never mixed.

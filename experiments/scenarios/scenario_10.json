@@ -1,0 +1,54 @@
+{
+  "scenario_id": "scenario_10",
+  "kind": "tp_cyber",
+  "anomaly_event": {
+    "flow_id": "tp_cyber-portscanattack-RTU-4",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.6",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
+    "top_features": [
+      {
+        "name": "Bwd IAT Min",
+        "value": 0.0,
+        "shap": 0.05433351887466074
+      },
+      {
+        "name": "Flow IAT Min",
+        "value": 553.0,
+        "shap": 0.04434893491939106
+      },
+      {
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.03770999501662813
+      },
+      {
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.034011583288633025
+      },
+      {
+        "name": "Packet Length Max",
+        "value": 0.0,
+        "shap": 0.033626270419152046
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.6 = RTU-4, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-S, at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.",
+    "attack_class": "portscanattack",
+    "top_features": [
+      "Bwd IAT Min",
+      "Flow IAT Min",
+      "Packet Length Min",
+      "Bwd Packet Length Min",
+      "Packet Length Max"
+    ],
+    "physical_consequence": "no physical violation \u2014 consequence is loss of visibility/control only (grid absorbs the outage via redistribution; base-case headroom is large)",
+    "is_physical": false,
+    "reportable": "Reportable Cyber Security Incident (BES Cyber Asset) \u2014 CIP-008-6: notify E-ISAC/NCCIC within 1 hour"
+  },
+  "scenario_kind": "tp_cyber"
+}
