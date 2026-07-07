@@ -25,8 +25,15 @@ def event_to_query(ev: AnomalyEvent) -> str:
     )
 
 
-async def retrieve_context(rag, ev: AnomalyEvent, mode: str = "hybrid") -> str:
+async def retrieve_context(rag, ev: AnomalyEvent, mode: str = "hybrid",
+                           top_k: int = 12, max_chars: int = 8000) -> str:
     """The shared context block. mode='hybrid' uses both local (entity) and global
-    (theme) graph retrieval — the reason a graph beats flat vector RAG here."""
-    param = QueryParam(mode=mode, only_need_context=True)
-    return await rag.aquery(event_to_query(ev), param=param)
+    (theme) graph retrieval — the reason a graph beats flat vector RAG here.
+
+    top_k/max_chars are kept small on purpose: a huge block drowns an 8B model's
+    instruction-following (the persona-collapse finding). Trim to the most relevant
+    facts so the persona prompt can dominate."""
+    param = QueryParam(mode=mode, only_need_context=True, top_k=top_k,
+                       chunk_top_k=top_k, max_total_tokens=max_chars // 4)
+    block = await rag.aquery(event_to_query(ev), param=param)
+    return block[:max_chars] if block else block
