@@ -20,4 +20,5 @@ dependencies:
       - imbalanced-learn
       - lightrag-hku   # Layer 3 knowledge-graph RAG
       - anthropic      # Phase 4 CPAS judge (Claude Opus 4.8, judge != synthesizer)
+      - python-dotenv  # load ANTHROPIC_API_KEY from a gitignored .env
       - pandapower     # power-flow ground truth (core scope, no-expert constraint)

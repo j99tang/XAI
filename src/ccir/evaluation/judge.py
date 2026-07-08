@@ -23,9 +23,14 @@ import statistics
 from pathlib import Path
 
 import anthropic
+from dotenv import load_dotenv
 
 ROOT = Path(__file__).resolve().parents[3]
 SCEN_DIR = ROOT / "experiments" / "scenarios"
+
+# Load ANTHROPIC_API_KEY from a gitignored .env at the repo root, if present.
+# (The SDK reads the env var, not .env directly, so we bridge it here.)
+load_dotenv(ROOT / ".env")
 
 JUDGE_MODEL = os.environ.get("CCIR_JUDGE", "claude-opus-4-8")
 REPEATS = 3
@@ -47,9 +52,16 @@ R (Role/regulatory fit): 5 = correct persona voice + correct reporting duty wher
 relevant; 3 = partial; 1 = wrong framing.
 
 H (hallucination, 0 or 1): list every factual claim in the narrative; mark each
-supported / contradicted / absent vs the gold facts. H = 0 if ANY claim is
-contradicted (e.g. invents a device like "RTU-123", or states a wrong CIP
-timeline); else H = 1."""
+supported / contradicted / absent vs the gold facts. H penalizes only contradicted
+**grounded facts** — device identity, bus, breaker, physical consequence, or
+reporting obligation. Set H = 0 only if a GROUNDED fact is contradicted (e.g.
+invents a device like "RTU-123", names a wrong breaker, states a wrong CIP
+timeline, or asserts a consequence that contradicts the simulated one). The
+attack-type / attack-class characterization is an **inference from the flow
+fingerprint, NOT a grounded fact**: the detector is binary and never told the
+narrative the specific class. If the stated attack type disagrees with the gold
+attack_class, reflect that in D (diagnostic accuracy) — do NOT set H = 0 for it.
+Otherwise H = 1."""
 
 SCHEMA = {
     "type": "object",

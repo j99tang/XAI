@@ -560,10 +560,34 @@ Two tiers, very different costs:
 
 ### 11.9 Multiclass attack typing and richer personas
 
-Move Layer 1 from binary to multiclass (which attack), enabling attack-specific consequence
-reasoning; and add stakeholders beyond the three (incident responder, executive) or make personas
-user-configurable. Also consider **uncertainty communication** — propagating model confidence and
-retrieval confidence into each narrative so a low-confidence detection reads differently per role.
+**Decision (2026-07): binary stays the primary result; multiclass is a stretch goal.** Binary is
+finished, defensible, and the perfect-separation caveat is already documented (D10). Multiclass is
+deferred, not abandoned.
+
+**Why it is a swap, not a rework — most of the effort is already multiclass-ready:**
+- The `AnomalyEvent.prediction` field is a free-form `str` (not a boolean), so no schema change —
+  this is the payoff of freezing a string-typed contract (D1/D11).
+- The knowledge base was authored at attack-class granularity from day one: `attack_taxonomy/attacks.md`
+  has one section per attack with per-attack MITRE IDs, and the feature dictionary maps features to
+  *specific* attacks. Nothing in Layer 2/3 or the KB needs to change.
+- The CPAS scenarios and gold fact sheets already carry the true attack class (D24); the D-dimension
+  already scores "names the correct attack class" — a binary model just can't earn full marks on it.
+
+**The only real work (≈ half a day), all inside Layer 1:**
+1. `train.py`: `y = df["Label"]` (7 classes + normal) instead of the binary collapse; same RF + `class_weight="balanced"`.
+2. `explain.py`: SHAP returns `(rows, features, n_classes)` — slice the *predicted* class column instead of the fixed attack column (~3 lines; the 3-D handling already exists).
+3. `AnomalyEvent.prediction` carries the class string; retrieval queries get sharper ("starvation attack" retrieves the right taxonomy section directly instead of a generic "attack").
+
+**Bonus:** multiclass is a genuinely harder problem (flood vs DoS vs starvation are similar
+flooding-family attacks), so unlike the trivially-separable binary case it yields a real confusion
+matrix and more meaningful SHAP explanations — and misclassifications ("flagged flood, was actually
+DoS") become a richer narrative for the Data Scientist persona. Demonstrating the swap is also the
+strongest possible evidence that the Layer-1↔Layer-2/3 contract is truly model-agnostic.
+
+Also (independent of multiclass): add stakeholders beyond the three (incident responder, executive)
+or make personas user-configurable; and consider **uncertainty communication** — propagating model
+confidence and retrieval confidence into each narrative so a low-confidence detection reads
+differently per role.
 
 ---
 

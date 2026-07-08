@@ -249,7 +249,31 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
   judge-independent work (scenarios, fact sheets, tiers, pre-registered rubric) done
   first so only final scoring waits.
 - **Why:** a genuine decision needing the user's key/preference; everything else
-  proceeds without it.
+  proceeds without it. *(Resolved: user chose Claude Opus 4.8 via the Anthropic API;
+  `judge.py` uses the SDK, key loaded from a gitignored `.env` via python-dotenv.)*
+
+### D27. Judge pilot: narrow H to grounded-fact contradictions
+- **Problem:** the first judge smoke-test (scenario_02 tier-C operator) scored CPAS
+  0.0 — H=0 fired because the narrative inferred a "flood/scan" attack when the gold
+  class is `starvation`. But the binary detector never conveys the class, and
+  flooding-family attacks (DoS/flood/starvation) are near-indistinguishable from flow
+  statistics, so the narrative *cannot* name the exact class — it grounded the
+  device/bus/breakers perfectly. Left as-is, H would systematically zero tier-C and
+  make the whole report uninformative (a false negative about the system's grounding).
+- **Decision:** narrow the **H** penalty to contradicted *grounded facts* (device,
+  bus, breaker, consequence, reporting duty); a wrong attack-*type* inference now
+  lowers **D** (diagnostic accuracy), not H. Also added a persona-prompt line telling
+  the synthesizer to describe attack *behavior* (flooding-family) rather than assert
+  a class it can't determine; tier-C regenerated to match. Amended in both
+  `judge.py` and the pre-registered `cpas_protocol.md` with a dated note.
+- **Why:** grounded-fact contradictions (hallucinations) and evidence-based
+  inferences are different failures — the §2.8 evidence-trap distinction. H guards
+  the former, D grades the latter. **Legitimate because it was a pilot finding made
+  *before* the full run** (exactly the §7.6 #2 workflow: pilot the judge, fix rubric
+  misfires, then run) — not tuning to results. Verified: the same narrative rescored
+  0.0 → 3.0, with D=3 (class not named — the honest binary ceiling multiclass would
+  lift, [[D24]]/§11.9) and C=2 (didn't use the specific simulated consequence — a real
+  8B quality signal, correctly under C).
 
 ## Cross-cutting conventions established
 - Raw data immutable; inputs (`data/`, `knowledge_base/`) vs regenerable outputs

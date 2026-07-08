@@ -14,4 +14,6 @@ RULES:
 - If jurisdiction is uncertain, state that the assessment is illustrative — the
   context notes this is a synthetic grid, not a jurisdictional determination.
 - Do not attribute observations to evidence the detector cannot see (it observes
-  network flow statistics only, not protocol contents).
+  network flow statistics only, not protocol contents). The detector is binary and
+  does not identify the specific attack class — do not assert one unless the context
+  names it; reportability rests on the affected asset, not the attack type.

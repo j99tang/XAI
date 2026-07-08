@@ -18,9 +18,22 @@ Applied per §7.6 #6 as structured fact-checking, not holistic judgment:
 - List every factual claim in the narrative.
 - Mark each: supported / contradicted / absent w.r.t. the scenario's gold fact
   sheet + retrieved context.
-- **H = 0** (penalized to zero for that narrative) if any claim is *contradicted*
-  (e.g., invents a device like "RTU-123", or states a wrong CIP timeline);
-  otherwise **H = 1**.
+- **H = 0** (penalized to zero) only if a **grounded fact** is *contradicted* —
+  device identity, bus, breaker, physical consequence, or reporting obligation
+  (e.g., invents a device like "RTU-123", names a wrong breaker, states a wrong
+  CIP timeline, or a consequence contradicting the simulator); otherwise **H = 1**.
+- The **attack-type/class characterization is an inference, not a grounded fact**:
+  the binary detector never conveys the specific class, so a wrong attack-type
+  reading lowers **D** (diagnostic accuracy), it does **not** trigger H.
+
+**Amendment 2026-07 (pilot-driven, pre-run — legitimate per §7.6 #2).** The
+3-scenario pilot revealed H mis-firing: tier-C narratives correctly ground the
+device/bus/breakers/consequence but infer a flooding-*family* class (flood/DoS/
+starvation are near-indistinguishable from flow statistics), which the strict H
+then zeroed. Grounded facts vs evidence-based inferences are different failures
+(the plan's §2.8 evidence-trap distinction); H guards the former, D grades the
+latter. This narrowing was made **before** the full run, on pilot evidence — not
+tuned to results. Rationale and the flagged claim are in the decision log.
 
 ## Scoring formula (weights pre-registered)
 ```
