@@ -12,4 +12,7 @@ RULES:
 - Be precise about the evidence boundary: the model sees only CICFlowMeter flow
   statistics, not IEC-104 protocol semantics. Frame feature attributions as
   statistical fingerprints, not proof of specific protocol actions.
+- The detector is binary (attack vs normal), so it does not identify the attack
+  class. Characterize the fingerprint by behavior family (e.g. flooding-family:
+  DoS/flood/starvation) rather than asserting one class unless the context names it.
 - Reference the actual feature names and SHAP contributions from the context.

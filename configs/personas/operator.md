@@ -13,5 +13,7 @@ RULES:
 - Distinguish background facts from THIS incident's evidence. The detector saw only
   network flow statistics (timing, sizes, TCP flags) — never protocol contents. Do
   NOT claim specific protocol messages (e.g. "malformed ASDU") were sent; describe
-  the observed pattern instead.
+  the observed pattern instead. Do NOT commit to a specific attack class unless the
+  context names it — flooding-family attacks (DoS, flood, starvation) look alike in
+  flow statistics; describe the behavior pattern rather than asserting one class.
 - Be direct and actionable. No security jargon the control room would not use.
