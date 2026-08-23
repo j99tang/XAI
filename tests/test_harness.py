@@ -4,12 +4,12 @@ two worst bugs here are silent: judging a stale narrative against the wrong inci
 and dropping missing narratives while still printing a full-looking table."""
 import asyncio, contextlib, io, json, pathlib, shutil, sys
 
-import ccir.evaluation.tiers as T
-from ccir.evaluation.judge import assert_independent_of
-from ccir.evaluation.report import build_requests, paired_test
+import caie.evaluation.tiers as T
+from caie.evaluation.judge import assert_independent_of
+from caie.evaluation.report import build_requests, paired_test
 
 SC = pathlib.Path("experiments/scenarios")
-TMP = pathlib.Path("/tmp/ccir_test_harness")
+TMP = pathlib.Path("/tmp/caie_test_harness")
 RECS = [json.loads(p.read_text()) for p in sorted(SC.glob("scenario_*.json"))]
 assert RECS, "no scenarios -- run scripts/make_fact_sheets.py"
 GOOD = {r["scenario_id"]: T.fingerprint(r) for r in RECS}
@@ -100,8 +100,8 @@ def test_tier_monotonicity():
     passed to the synthesizer, so tier C had LESS evidence than tier B. The data-scientist
     persona was asked which features drove the prediction, was never told, and invented
     them -- which would have scored as 'context makes the data scientist worse'."""
-    from ccir.contextualizer.retrieve import evidence_block
-    from ccir.schemas.anomaly_event import AnomalyEvent
+    from caie.contextualizer.retrieve import evidence_block
+    from caie.schemas.anomaly_event import AnomalyEvent
     for rec in RECS[:5]:
         ev = AnomalyEvent.from_dict(rec["anomaly_event"])
         a, b = T.tier_a(ev), T.tier_b(ev)
@@ -115,8 +115,8 @@ def test_persona_queries():
     """§11.1: every persona must have a retrieval intent, and the intents must differ.
     A missing key is a KeyError at run time, mid-batch; an accidental copy-paste would
     silently restore the shared-query behaviour D42 removed."""
-    from ccir.contextualizer.retrieve import PERSONA_INTENT, event_to_query
-    from ccir.schemas.anomaly_event import AnomalyEvent
+    from caie.contextualizer.retrieve import PERSONA_INTENT, event_to_query
+    from caie.schemas.anomaly_event import AnomalyEvent
     assert set(PERSONA_INTENT) == set(T.PERSONAS), PERSONA_INTENT.keys()
     assert len(set(PERSONA_INTENT.values())) == len(T.PERSONAS), "intents must be distinct"
     ev = AnomalyEvent.from_dict(RECS[0]["anomaly_event"])
@@ -137,7 +137,7 @@ def test_truncation_guard_exists():
     share the output budget with the answer. (The live end-to-end check is in
     scripts/, since this test must not require an API key or a running Ollama.)"""
     import inspect
-    from ccir.contextualizer import synthesize as S
+    from caie.contextualizer import synthesize as S
     assert issubclass(S.TruncatedNarrative, Exception)
     src = inspect.getsource(S._complete)
     assert "max_tokens=MAX_OUTPUT_TOKENS" in src, "openai path must pin max_tokens"

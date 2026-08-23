@@ -2,7 +2,7 @@
 
 class_weight="balanced" instead of SMOTE: reweights real rows rather than
 fabricating synthetic ones, so downstream SHAP explains only real data.
-Run: conda run -n xai python -m ccir.ids.train
+Run: conda run -n xai python -m caie.ids.train
 """
 from __future__ import annotations
 
@@ -13,7 +13,7 @@ import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
-from ccir.ids.dataset import RANDOM_STATE, load_raw, split
+from caie.ids.dataset import RANDOM_STATE, load_raw, split
 
 MODELS_DIR = Path(__file__).resolve().parents[3] / "models"
 MODEL_PATH = MODELS_DIR / "ids_rf.joblib"

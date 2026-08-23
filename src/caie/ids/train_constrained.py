@@ -6,7 +6,7 @@ makes mistakes — the uncertain regime where explanation actually matters. Save
 models/ids_rf_constrained.joblib. Honest by construction: FP scenarios are labeled
 as coming from this variant.
 
-Run: conda run -n xai python -m ccir.ids.train_constrained
+Run: conda run -n xai python -m caie.ids.train_constrained
 """
 from __future__ import annotations
 
@@ -17,7 +17,7 @@ import joblib
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import classification_report, confusion_matrix
 
-from ccir.ids.dataset import RANDOM_STATE, load_raw, split
+from caie.ids.dataset import RANDOM_STATE, load_raw, split
 
 MODELS_DIR = Path(__file__).resolve().parents[3] / "models"
 # The real/sim separation is extremely redundant (D10): dropping a few features

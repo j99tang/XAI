@@ -97,7 +97,7 @@ Your human spot-check remains valid under this constraint: verifying "every clai
   ```bash
   conda env create -f environment.yml   # creates the `xai` env from the repo's pinned spec
   conda activate xai
-  python -m pip install -e .            # editable install: `import ccir` works everywhere
+  python -m pip install -e .            # editable install: `import caie` works everywhere
   ```
   *Why from the yml, not ad-hoc `conda create`:* `environment.yml` is the single source of truth for the env — reproducible and re-creatable anywhere. *Why `python -m pip`, never bare `pip`:* see Appendix B — bare `pip` can resolve to a different Python on this machine. **Status 2026-07: done** — env exists and verifies. `[model: none — just follow the commands]`
 - **0.2 Reproduce the benchmark.** Open `notebooks/legacy/iec104_benchmark.ipynb`, point it at the CSVs in `data/raw/iec104/`, and run it. Compare your numbers against the two references that exist: (a) the dataset authors' original run in `experiments/results/test1-iec104.log` (final table — e.g., Random Forest ≈ 0.82 accuracy / 0.81 F1 multiclass), and (b) the saved cell outputs inside the legacy notebooks. Expect *similar*, not identical — different library versions and random seeds shift scores a point or two. Note: the dataset's bundled `model-test1-iec104.pkl` (in your iCloud dataset folder, outside this repo) contains **only the 8 class-label names, not a trained model** — the legacy notebook already established this; there is no saved model to compare against. *Why this task matters:* if you can't reproduce the published result, you don't yet control the pipeline. **Status 2026-07: descoped by decision** — the full 14-model PyCaret sweep takes ~7 h on the laptop and nothing downstream consumes it. Close-out: reproduce only the RandomForest row (same SMOTE + MCC methodology, ~10 min) and report "RF row reproduced within X points; full sweep exceeded practical laptop runtime; authors' full table cited from the log." Pipeline control — this task's real purpose — was independently demonstrated by Phase 1 (own consolidation, training, artifacts). `[model: Sonnet-class to help debug path/library errors]`
@@ -120,7 +120,7 @@ The saved models were trained multiclass with SMOTE on a 256-vs-304k imbalance. 
 - **1.2 Train and persist the model.** Use `class_weight="balanced"` in a `RandomForestClassifier` rather than SMOTE-ing 300k synthetic rows. *Why:* class weighting doesn't fabricate data, so SHAP stays interpretable; report precision/recall/F1 and a confusion matrix, **not** accuracy (accuracy is meaningless at this imbalance — the original authors' log shows a dummy classifier already scoring 0.86). **Save three artifacts to `models/`** (git-ignored, regenerable): `ids_rf.joblib` (the model, via `joblib.dump` — scikit-learn's standard persistence format, a pickle variant optimized for numpy), `feature_list.json` (the exact ordered training columns — SHAP and inference must feed columns in this same order, and mismatched order is a *silent* wrong-answer bug, not a crash), and `metrics.json` (test-set precision/recall/F1 + confusion matrix, so results are inspectable without retraining). There is no pre-existing saved model anywhere — the dataset's bundled pkl is label names only; this is the first real one. `[model: Sonnet]`
 - **1.3 Leakage audit.** Train once, look at feature importances. If `Dst Port` or any single feature gives near-perfect separation, investigate — it likely encodes the real-vs-sim subnet artifact. Document what you keep and why. `[model: Opus — judgment call]`
 - **1.4 Wire SHAP.** Load `models/ids_rf.joblib` and `feature_list.json`; use `shap.TreeExplainer` (fast and exact for tree models). For a given flagged flow, output the top-k features (start with k=5) with their SHAP values and the feature's actual value, feature columns ordered exactly per `feature_list.json`. `[model: Sonnet, with Opus if the SHAP API confuses]`
-- **1.5 Emit the anomaly-event JSON.** The schema is **already designed and frozen** in `src/ccir/schemas/anomaly_event.py` (`AnomalyEvent` / `FeatureAttribution` dataclasses) — do not redesign it; import it. The metadata columns carried through from 1.1 fill `flow_id`/`src_ip`/`dst_ip`/`dst_port`; the SHAP output from 1.4 fills `top_features`. Example output:
+- **1.5 Emit the anomaly-event JSON.** The schema is **already designed and frozen** in `src/caie/schemas/anomaly_event.py` (`AnomalyEvent` / `FeatureAttribution` dataclasses) — do not redesign it; import it. The metadata columns carried through from 1.1 fill `flow_id`/`src_ip`/`dst_ip`/`dst_port`; the SHAP output from 1.4 fills `top_features`. Example output:
   ```json
   {
     "flow_id": "10.0.0.2-10.0.0.5-62883-2404-6",
@@ -387,7 +387,7 @@ Replaces §7.5. Full rationale and constraints in decision log **D34**.
 **The three acts.**
 1. **Ceiling run.** One frontier closed-weights synthesizer via API. Establishes that CPAS A<B<C is attainable *at all*, separating "framework broken" from "model too weak".
 2. **The pivot.** OT deployment constraints make a hosted-inference dependency unsafe for critical infrastructure — so the ceiling model is not deployable, and the question becomes what survives the constraint.
-3. **Capability sweep.** Open-weights synthesizers via OpenRouter, riding the existing `CCIR_SYNTH_BACKEND` seam. The swap through an unchanged `AnomalyEvent` contract *is* the model-agnosticism claim.
+3. **Capability sweep.** Open-weights synthesizers via OpenRouter, riding the existing `CAIE_SYNTH_BACKEND` seam. The swap through an unchanged `AnomalyEvent` contract *is* the model-agnosticism claim.
 
 **Frame it as locating a capability threshold, not as proving generalization.** "The framework generalizes" is a hope D29 already contradicts. The research question is *"at what model capability does grounded context begin to help?"* — under which every outcome is a result: a low threshold is a deployment story, a mid threshold is a concrete minimum on-prem spec, and a threshold above all open weights is a genuine negative finding (context grounding demands capability current air-gappable models lack) that is useful to the OT audience. D29 becomes supporting evidence rather than a disappointment.
 
@@ -446,15 +446,15 @@ Keep the *contracts* (the anomaly-event JSON schema, the CPAS rubric, the KB fil
 
 This appendix restates the phases as concrete deliverables so an AI coding agent (Claude Code) can build each piece without ambiguity. The layer boundaries below are deliberately hard: **each layer is a separate module with a file-based interface**, which is exactly what makes your A/B/C tiers possible — tier A consumes layer-1 output only, tier B consumes layers 1–2, tier C consumes all three. If the layers share in-memory state instead of files, you can't ablate them.
 
-**Ground rules for the agent:** activate the `xai` conda env before running anything; never modify files under `data/raw/`; never add IP addresses or topology fields as model training features; all generated artifacts go to `models/`, `rag_storage/`, or `experiments/results/` (git-ignored); every script must be runnable as `python -m ccir.<module>` or via `scripts/`, and must fail loudly (raise, don't warn) on missing inputs.
+**Ground rules for the agent:** activate the `xai` conda env before running anything; never modify files under `data/raw/`; never add IP addresses or topology fields as model training features; all generated artifacts go to `models/`, `rag_storage/`, or `experiments/results/` (git-ignored); every script must be runnable as `python -m caie.<module>` or via `scripts/`, and must fail loudly (raise, don't warn) on missing inputs.
 
-### A1 — Layer 1+2: IDS + SHAP (`src/ccir/ids/`, `src/ccir/xai/`)
+### A1 — Layer 1+2: IDS + SHAP (`src/caie/ids/`, `src/caie/xai/`)
 | Deliverable | Path | Acceptance check |
 |---|---|---|
-| Data consolidation | `src/ccir/ids/dataset.py` — loads the 8 raw CSVs (84 columns, read-only), splits columns into **metadata** (`Flow ID`, `Src IP`, `Src Port`, `Dst IP`, `Timestamp` — kept per-row for the `AnomalyEvent`) vs **features** (flow stats; `Dst Port` pending the 1.3 audit), binary label, stratified 70/30 split with `random_state=42` | Prints class counts per split; asserts no metadata column is in the feature matrix; raw CSVs untouched |
-| Binary RF model | `src/ccir/ids/train.py` — `class_weight="balanced"`; saves `models/ids_rf.joblib`, `models/feature_list.json`, `models/metrics.json` | Reports precision/recall/F1 + confusion matrix on the held-out test set; reloading the joblib reproduces the same test predictions |
-| SHAP wrapper | `src/ccir/xai/explain.py` — `TreeExplainer`, returns top-k `FeatureAttribution`s for one flow | Feature names match `models/feature_list.json` exactly (column order enforced) |
-| Event emitter | `src/ccir/xai/emit.py` — flow row → `AnomalyEvent` JSON (schema already in `src/ccir/schemas/anomaly_event.py`) | Round-trips through `AnomalyEvent.from_dict`; the `__main__` self-test passes |
+| Data consolidation | `src/caie/ids/dataset.py` — loads the 8 raw CSVs (84 columns, read-only), splits columns into **metadata** (`Flow ID`, `Src IP`, `Src Port`, `Dst IP`, `Timestamp` — kept per-row for the `AnomalyEvent`) vs **features** (flow stats; `Dst Port` pending the 1.3 audit), binary label, stratified 70/30 split with `random_state=42` | Prints class counts per split; asserts no metadata column is in the feature matrix; raw CSVs untouched |
+| Binary RF model | `src/caie/ids/train.py` — `class_weight="balanced"`; saves `models/ids_rf.joblib`, `models/feature_list.json`, `models/metrics.json` | Reports precision/recall/F1 + confusion matrix on the held-out test set; reloading the joblib reproduces the same test predictions |
+| SHAP wrapper | `src/caie/xai/explain.py` — `TreeExplainer`, returns top-k `FeatureAttribution`s for one flow | Feature names match `models/feature_list.json` exactly (column order enforced) |
+| Event emitter | `src/caie/xai/emit.py` — flow row → `AnomalyEvent` JSON (schema already in `src/caie/schemas/anomaly_event.py`) | Round-trips through `AnomalyEvent.from_dict`; the `__main__` self-test passes |
 
 ### A2 — Knowledge base + simulator (`knowledge_base/`, `scripts/`)
 Deliverables are the ★ files in the Section 2.6 manifest (○ files are deferred — do not build), authored **in the §2.9 order** (registry → generated docs → checker → authored docs, `check_kb.py` after every file), plus:
@@ -466,20 +466,20 @@ Deliverables are the ★ files in the Section 2.6 manifest (○ files are deferr
 | KB consistency check | `scripts/check_kb.py` — the five §2.9 rules: IP coverage, feature-name match vs `models/feature_list.json`, breaker existence, MITRE ID format/uniqueness, entity mentions resolve to `entities.yaml` | Exits 0 |
 | KB authoring skill | `.claude/skills/kb-author/` — doc templates, direct-vs-synthesize rule, evidence-trap rule, citation format, length caps | Every authored KB file was produced under it (noted in file frontmatter) |
 
-### A3 — Layer 3: contextualizer (`src/ccir/contextualizer/`)
+### A3 — Layer 3: contextualizer (`src/caie/contextualizer/`)
 | Deliverable | Path | Acceptance check |
 |---|---|---|
-| KB ingestion | `src/ccir/contextualizer/ingest.py` — LightRAG build from `knowledge_base/` into `rag_storage/` (run once) | Graph loads on restart without re-ingesting |
-| Retrieval | `src/ccir/contextualizer/retrieve.py` — `AnomalyEvent` → one query string (top SHAP features + dst IP + prediction) → Multi-Domain Context Block (plain text) | For a known scenario, the block contains the correct device name from the IP map |
-| Personas | `src/ccir/contextualizer/synthesize.py` — 3 system prompts (in `configs/personas/`), same context block, Ollama at `temperature=0`, ≤200 words each, "only facts from context" guardrail | Same event run twice → identical output (temp-0 determinism on local model) |
+| KB ingestion | `src/caie/contextualizer/ingest.py` — LightRAG build from `knowledge_base/` into `rag_storage/` (run once) | Graph loads on restart without re-ingesting |
+| Retrieval | `src/caie/contextualizer/retrieve.py` — `AnomalyEvent` → one query string (top SHAP features + dst IP + prediction) → Multi-Domain Context Block (plain text) | For a known scenario, the block contains the correct device name from the IP map |
+| Personas | `src/caie/contextualizer/synthesize.py` — 3 system prompts (in `configs/personas/`), same context block, Ollama at `temperature=0`, ≤200 words each, "only facts from context" guardrail | Same event run twice → identical output (temp-0 determinism on local model) |
 
-### A4 — Evaluation (`src/ccir/evaluation/`, `experiments/`)
+### A4 — Evaluation (`src/caie/evaluation/`, `experiments/`)
 | Deliverable | Path | Acceptance check |
 |---|---|---|
 | Scenario definitions | `experiments/scenarios/scenario_<01..15>.json` — frozen input flow + gold fact sheet, assembled by `scripts/make_fact_sheets.py` from the IP map, CSV label, feature dictionary, and `consequences_<id>.json` | Each references a real row in the test split; no hand-written physics claims |
-| Tier runners | `src/ccir/evaluation/tiers.py` — tier A (IDS JSON only), B (A + raw SHAP list), C (full pipeline); each writes `experiments/results/<scenario>_<tier>_<persona>.txt` | All 15×3×3 output files exist |
-| Judge | `src/ccir/evaluation/judge.py` — per Section 7.6: blinded, isolated calls, anchored rubric from `experiments/scenarios/cpas_protocol.md`, 3 repeats, median | Pilot on 3 scenarios matches your human scores within 1 point on ≥ 80% of dimension scores |
-| Aggregation | `src/ccir/evaluation/report.py` — CPAS table + plot by persona × tier | Table renders; lengths per tier reported alongside scores |
+| Tier runners | `src/caie/evaluation/tiers.py` — tier A (IDS JSON only), B (A + raw SHAP list), C (full pipeline); each writes `experiments/results/<scenario>_<tier>_<persona>.txt` | All 15×3×3 output files exist |
+| Judge | `src/caie/evaluation/judge.py` — per Section 7.6: blinded, isolated calls, anchored rubric from `experiments/scenarios/cpas_protocol.md`, 3 repeats, median | Pilot on 3 scenarios matches your human scores within 1 point on ≥ 80% of dimension scores |
+| Aggregation | `src/caie/evaluation/report.py` — CPAS table + plot by persona × tier | Table renders; lengths per tier reported alongside scores |
 
 ---
 
@@ -637,7 +637,7 @@ Rules that still stand even after cleanup (they cost a debugging session each):
 - With Jupyter/nbconvert, always name the kernel explicitly: `--ExecutePreprocessor.kernel_name=pycaret_env` for legacy notebooks, or pick "Python (pycaret_env)" in VS Code. Never trust an unqualified `python3` kernelspec.
 
 **Two conda envs, deliberate split — do not merge them:**
-- `xai` (Python 3.11) — everything new: pandas/sklearn/shap/lightrag-hku/pandapower, plus `ccir` editable-installed (`python -m pip install -e .`). `environment.yml` is its source of truth; after adding a package, re-freeze with `conda env export --no-builds > environment.yml`.
+- `xai` (Python 3.11) — everything new: pandas/sklearn/shap/lightrag-hku/pandapower, plus `caie` editable-installed (`python -m pip install -e .`). `environment.yml` is its source of truth; after adding a package, re-freeze with `conda env export --no-builds > environment.yml`.
 - `pycaret_env` — **legacy notebooks only** (`notebooks/legacy/*.ipynb` need pycaret 3.3.2 + mlflow + seaborn). PyCaret pins old library versions and would conflict with the `xai` stack; keep it quarantined. nbconvert + ipykernel are installed there.
 
 **Data locations:**

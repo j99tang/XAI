@@ -27,7 +27,7 @@ DEFAULT = "#bdbdbd"
 
 def main() -> None:
     if not GRAPHML.exists():
-        raise SystemExit(f"{GRAPHML} not found — run `python -m ccir.contextualizer.ingest` first")
+        raise SystemExit(f"{GRAPHML} not found — run `python -m caie.contextualizer.ingest` first")
     g = nx.read_graphml(GRAPHML)
 
     # `view_graph.py <node>` — print that node's relationships in the terminal

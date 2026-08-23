@@ -22,7 +22,7 @@ ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 from dotenv import load_dotenv                                    # noqa: E402
 load_dotenv(ROOT / ".env")
-from ccir.evaluation.judge import RUBRIC, PERSONA_EXPECT, SCHEMA, DIMS, cpas  # noqa: E402
+from caie.evaluation.judge import RUBRIC, PERSONA_EXPECT, SCHEMA, DIMS, cpas  # noqa: E402
 
 spec = importlib.util.spec_from_file_location("hs", ROOT / "scripts/human_score.py")
 hs = importlib.util.module_from_spec(spec); spec.loader.exec_module(hs)
@@ -40,7 +40,7 @@ def main() -> None:
                          f"own output. Pick a judge that wrote none of the narratives.")
     from openai import OpenAI
     client = OpenAI(base_url="https://openrouter.ai/api/v1",
-                    api_key=os.environ.get("CCIR_SYNTH_KEY") or os.environ["OPENROUTER_API_KEY"])
+                    api_key=os.environ.get("CAIE_SYNTH_KEY") or os.environ["OPENROUTER_API_KEY"])
 
     items = hs.sample()
     primary = {}

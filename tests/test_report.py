@@ -1,6 +1,6 @@
 """Exercise the report plumbing with synthetic scores -- no API calls."""
 import sys, json, random, statistics; sys.path.insert(0, "src")
-from ccir.evaluation.report import paired_test
+from caie.evaluation.report import paired_test
 
 random.seed(0)
 def rows_for(gap):

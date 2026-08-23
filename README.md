@@ -5,12 +5,12 @@ SHAP output into **role-specific narratives** (Operator / Data Scientist / Regul
 grounded in a power-grid knowledge graph. M.Eng project, ECE2500Y (Prof. Kundur's group).
 
 ## The pipeline (three layers)
-1. **IDS** (`src/ccir/ids`) — flow-based detector on IEC-104 traffic → prediction + confidence.
-2. **XAI** (`src/ccir/xai`) — SHAP attribution → an **`AnomalyEvent`** (the JSON contract in
-   `src/ccir/schemas`). This is the boundary that makes the system model-agnostic.
-3. **Contextualizer** (`src/ccir/contextualizer`) — LightRAG retrieves grid/physics context;
+1. **IDS** (`src/caie/ids`) — flow-based detector on IEC-104 traffic → prediction + confidence.
+2. **XAI** (`src/caie/xai`) — SHAP attribution → an **`AnomalyEvent`** (the JSON contract in
+   `src/caie/schemas`). This is the boundary that makes the system model-agnostic.
+3. **Contextualizer** (`src/caie/contextualizer`) — LightRAG retrieves grid/physics context;
    one LLM at `temperature=0` produces three persona narratives.
-   Evaluated by **CPAS** (`src/ccir/evaluation`) with an independent LLM-as-judge.
+   Evaluated by **CPAS** (`src/caie/evaluation`) with an independent LLM-as-judge.
 
 ## Repository map
 | Path | What lives here | In git? |
@@ -18,7 +18,7 @@ grounded in a power-grid knowledge graph. M.Eng project, ECE2500Y (Prof. Kundur'
 | `docs/` | Implementation plan, proposal, design notes | yes |
 | `data/` | Raw + processed IEC-104 CSVs (inputs) | no (only `data/README.md`) |
 | `knowledge_base/` | Synthetic RAG source docs (topology, physics, …) | yes |
-| `src/ccir/` | The Python package (all pipeline code) | yes |
+| `src/caie/` | The Python package (all pipeline code) | yes |
 | `configs/`, `experiments/scenarios/` | Experiment + scenario definitions | yes |
 | `notebooks/` | Exploration + legacy benchmark work | yes |
 | `models/`, `rag_storage/`, `experiments/results/` | Generated artifacts | no (regenerable) |
@@ -31,7 +31,7 @@ grounded in a power-grid knowledge graph. M.Eng project, ECE2500Y (Prof. Kundur'
 ```bash
 conda env create -f environment.yml
 conda activate xai
-pip install -e .          # makes `import ccir` work everywhere (needs pyproject.toml)
+pip install -e .          # makes `import caie` work everywhere (needs pyproject.toml)
 ```
 
 ## Status

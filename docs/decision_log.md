@@ -1,4 +1,4 @@
-# Decision Log — CCIR / IEC-104 XAI project
+# Decision Log — CAIE (Context-Aware Intrusion Explanation) / IEC-104 XAI project
 
 Chronological record of problems encountered during implementation and the
 decisions/mitigations made. Complements the plan (`IMPLEMENTATION_PLAN.md`, the
@@ -67,7 +67,7 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
 
 ### D7. Three-Pythons hazard → conda-only discipline
 - **Problem:** system python.org 3.14 was first on PATH and hijacked bare `pip`
-  (installed `ccir` into the wrong interpreter) and the default Jupyter kernel
+  (installed `caie` into the wrong interpreter) and the default Jupyter kernel
   (crashed on missing seaborn).
 - **Decision:** removed python.org 3.14 + brew python@3.13; kept brew python@3.14
   (a dependency of ollama/texlive — never used for project work). Rules: always
@@ -244,7 +244,7 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
 ### D26. Judge model is a pending user decision (blocks scoring only)
 - **Problem:** the plan requires judge ≠ synthesizer, stronger; no API keys are set
   and only llama3.1:8b is local.
-- **Decision:** built the harness judge-agnostic (`CCIR_JUDGE`); the actual model
+- **Decision:** built the harness judge-agnostic (`CAIE_JUDGE`); the actual model
   choice (Claude/Gemini API vs a distinct local model) is surfaced to the user. All
   judge-independent work (scenarios, fact sheets, tiers, pre-registered rubric) done
   first so only final scoring waits.
@@ -281,7 +281,7 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
   model now — but that would be reacting to anecdote, not the pre-registered CPAS
   measurement (§7.5 is a "measure, then decide" gate).
 - **Decision:** built the enabling infrastructure but **did not upgrade**.
-  `synthesize.py` now dispatches on `CCIR_SYNTH_BACKEND` — `ollama` (default,
+  `synthesize.py` now dispatches on `CAIE_SYNTH_BACKEND` — `ollama` (default,
   baseline unchanged) or `openai` (any OpenAI-compatible endpoint: OpenRouter, a
   hosted 70B, Gemini-compat). The upgrade is now a one-env-var swap. Sequence: run
   the 8B baseline CPAS first → read which dimensions are weak → only if R/C
@@ -427,7 +427,7 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
   that CPAS A<B<C is attainable at all; (2) the **pivot** — OT deployment constraints
   make an external API call an unsafe dependency for critical infrastructure; (3) a
   **capability sweep** over open-weights synthesizers via OpenRouter. Model swapping
-  rides the existing `CCIR_SYNTH_BACKEND` seam, so the `AnomalyEvent` contract is
+  rides the existing `CAIE_SYNTH_BACKEND` seam, so the `AnomalyEvent` contract is
   untouched — the swap *is* the model-agnosticism claim.
 - **Reframe (the important part): aim to LOCATE A CAPABILITY THRESHOLD, not to prove
   generalization.** "The framework generalizes" is a hope that [[D29]] already
@@ -1009,5 +1009,5 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
 - Raw data immutable; inputs (`data/`, `knowledge_base/`) vs regenerable outputs
   (`models/`, `rag_storage/`, `experiments/results/`) never mixed.
 - Commit straight to `main` (solo repo, linear history); no branch/PR overhead.
-- `python -m ccir.<module>` entry points; scripts fail loudly on missing inputs.
+- `python -m caie.<module>` entry points; scripts fail loudly on missing inputs.
 - Every KB fact traces to one file; `check_kb.py` gate must pass before Phase 3.

@@ -4,7 +4,7 @@ Graph construction uses the LLM (slow, costs tokens), so build once into
 rag_storage/ and reuse. Ingests every .md under knowledge_base/ except the entity
 registry (entities.yaml is structured config, not prose to graph).
 
-Run: conda run -n xai python -m ccir.contextualizer.ingest
+Run: conda run -n xai python -m caie.contextualizer.ingest
 Then visualize (§3.1b): lightrag-server, or open rag_storage/*.graphml in Gephi.
 """
 from __future__ import annotations
@@ -13,7 +13,7 @@ import asyncio
 
 from lightrag.kg.shared_storage import initialize_pipeline_status
 
-from ccir.contextualizer.rag import KB_DIR, build_rag
+from caie.contextualizer.rag import KB_DIR, build_rag
 
 
 async def main() -> None:

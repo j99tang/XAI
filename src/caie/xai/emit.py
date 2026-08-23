@@ -1,15 +1,15 @@
 """End of Layers 1+2: one flow -> AnomalyEvent JSON (the frozen contract).
 
 Run as a demo on one attack flow from the held-out test split:
-  conda run -n xai python -m ccir.xai.emit
+  conda run -n xai python -m caie.xai.emit
 """
 from __future__ import annotations
 
 import pandas as pd
 
-from ccir.ids.dataset import load_raw, split
-from ccir.schemas.anomaly_event import AnomalyEvent
-from ccir.xai.explain import load_model, top_attributions
+from caie.ids.dataset import load_raw, split
+from caie.schemas.anomaly_event import AnomalyEvent
+from caie.xai.explain import load_model, top_attributions
 
 
 def emit(model, features: list[str], row: pd.Series, meta: pd.Series, k: int = 5) -> AnomalyEvent:

@@ -11,7 +11,7 @@ Feature extraction: CICFlowMeter-style flow statistics (79 features + label).
 
 ## Layout
 - `raw/iec104/` — the 8 original CSVs + `headers_iec104*.txt`. Never edit by hand.
-- `processed/` — merged + train/test splits (written by `ccir.ids`). Regenerable.
+- `processed/` — merged + train/test splits (written by `caie.ids`). Regenerable.
 
 ## ⚠️ Two facts every consumer of this data must know
 1. **Features are flow statistics only** (`Flow IAT Std`, `Bwd Packet Length Max`, …).

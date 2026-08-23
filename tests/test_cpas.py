@@ -1,5 +1,5 @@
 # run: conda run -n xai python tests/test_cpas.py  (no API calls -- pure arithmetic)
-from ccir.evaluation.judge import (DIMS, PERSONA_EXPECT, SCHEMA, aggregate_runs,
+from caie.evaluation.judge import (DIMS, PERSONA_EXPECT, SCHEMA, aggregate_runs,
                                    cpas, judge_params)
 
 

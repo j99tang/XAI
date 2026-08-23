@@ -73,7 +73,7 @@ references/source_library/*.pdf
    [3] llama3.1:8b, temp 0 .............. THE SYSTEM UNDER TEST
         |    3 isolated completions, identical context, differing only by
         |    system prompt (configs/personas/*.md) + ROLE_LINE.
-        |    Swappable: CCIR_SYNTH_BACKEND=openai + CCIR_SYNTH_MODEL.
+        |    Swappable: CAIE_SYNTH_BACKEND=openai + CAIE_SYNTH_MODEL.
         v
    3 persona narratives  (operator / data_scientist / regulator)
 ```

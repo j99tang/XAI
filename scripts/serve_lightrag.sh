@@ -2,7 +2,7 @@
 # Launch the LightRAG web UI over the existing rag_storage graph.
 # Interactive knowledge-graph browser + a query playground at http://localhost:9621
 #
-# Config matches src/ccir/contextualizer/rag.py exactly — Ollama llama3.1:8b +
+# Config matches src/caie/contextualizer/rag.py exactly — Ollama llama3.1:8b +
 # nomic-embed-text at 768 dims. EMBEDDING_DIM=768 is load-bearing: a wrong dim is
 # the mismatch that broke Phase-3 ingestion, so do not change it without changing rag.py.
 #

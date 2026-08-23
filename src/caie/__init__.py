@@ -1,4 +1,4 @@
-"""ccir — Context-aware Cyber-physical Intrusion Response.
+"""caie — Context-aware Cyber-physical Intrusion Response.
 
 Three-layer pipeline:
   ids            Layer 1  flow-based intrusion detection

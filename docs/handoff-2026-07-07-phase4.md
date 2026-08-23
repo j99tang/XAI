@@ -1,4 +1,4 @@
-# Handoff — XAI repo (CCIR / IEC-104 XAI) — Phase 4 in progress
+# Handoff — XAI repo (CAIE / IEC-104 XAI) — Phase 4 in progress
 
 Written 2026-07-07. Fresh agent continuing work in `/Users/metis/Github/XAI`.
 Repo pushed to `origin/main` (github.com/j99tang/XAI); working tree clean.
@@ -21,8 +21,8 @@ Repo pushed to `origin/main` (github.com/j99tang/XAI); working tree clean.
 Run the CPAS scoring. **Blocked only on the user's Anthropic API key** (judge = Claude Opus 4.8, chosen by user; the independence rule needs judge ≠ local 8B synthesizer).
 
 1. User sets key in-session: `! export ANTHROPIC_API_KEY=sk-ant-...`  (redacted here; never commit it)
-2. Smoke test: `conda run -n xai python -m ccir.evaluation.judge` (scores one narrative)
-3. Full run: `conda run -n xai python -m ccir.evaluation.report` → writes `experiments/results/cpas_scores.json` + prints CPAS table by tier×persona. Hypothesis: C > B > A. ~405 Opus calls (15×3×3×3 repeats), modest cost.
+2. Smoke test: `conda run -n xai python -m caie.evaluation.judge` (scores one narrative)
+3. Full run: `conda run -n xai python -m caie.evaluation.report` → writes `experiments/results/cpas_scores.json` + prints CPAS table by tier×persona. Hypothesis: C > B > A. ~405 Opus calls (15×3×3×3 repeats), modest cost.
 4. **Human spot-check (§7.6 #7):** have the USER score ~5 scenarios by hand with the rubric BEFORE trusting the judge; report within-1-point agreement. This is the user's task, not the agent's.
 5. Interpret: expect residual 8B weakness to show as low R on tier C → informs §7.5 (escalate synthesizer to API/larger model?) decision. Then Phase 5 (write-up).
 

@@ -28,11 +28,11 @@ from lightrag import QueryParam
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT / "src"))
 
-from ccir.contextualizer.rag import build_rag                      # noqa: E402
-from ccir.contextualizer.retrieve import (evidence_block, event_to_query,  # noqa: E402
+from caie.contextualizer.rag import build_rag                      # noqa: E402
+from caie.contextualizer.retrieve import (evidence_block, event_to_query,  # noqa: E402
                                           resolve_device)
-from ccir.contextualizer.synthesize import PERSONAS, synthesize_one  # noqa: E402
-from ccir.schemas.anomaly_event import AnomalyEvent                # noqa: E402
+from caie.contextualizer.synthesize import PERSONAS, synthesize_one  # noqa: E402
+from caie.schemas.anomaly_event import AnomalyEvent                # noqa: E402
 
 CAPS = [9000, 15000, 20000, 30000]
 SCEN_DIR = ROOT / "experiments" / "scenarios"
