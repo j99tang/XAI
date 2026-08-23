@@ -58,6 +58,16 @@ that truncated row 3 mid-run). **Statement for the thesis:** API-hosted open wei
 a reasonable proxy for self-hosted, and a *pessimistic* one — the safe direction for a
 deployment claim.
 
+### 1.5 Figures
+`scripts/make_figures.py` -> `docs/figures/` (regenerable from `cpas_scores.json`):
+- **fig1 capability gradient** — tier C rises smoothly 2.27 -> 3.95 while tiers A and B
+  stay flat at ~1.5 across every model. The flat A/B lines are the strongest visual in
+  the set: those narratives are byte-identical between rows, so their flatness is also
+  an independent judge-consistency check.
+- **fig2 reliability separates** — raw vs penalised bars beside the hallucination curve
+  (38% -> 4%). Substance is similar across models; reliability is not.
+- **fig3 tier ablation by persona** — floor vs ceiling side by side.
+
 ---
 
 ## 2. Methodology contribution — the strongest transferable result
