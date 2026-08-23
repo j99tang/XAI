@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** ENG-WS-1, engineering workstation, zone ZONE-CC (10.0.0.4)
+
+**Physical Risk:** The device is experiencing a high volume of small packets with headers dominating the traffic, indicating a potential flood or scanning attack. This could lead to packet starvation and RTU connection table exhaustion, affecting power flow basics.
+
+**Immediate Action:**
+
+1. Check breaker ENG-WS-1's status in zone ZONE-CC.
+2. Verify if ENG-WS-1 is still connected to the grid.
+3. Switch to manual control for ENG-WS-1 to prevent further potential damage.
+4. Isolate ENG-WS-1 from the rest of the network to prevent propagation of the attack.
+
+**Next Steps:**
+
+1. Investigate the source of the attack and identify the malicious traffic.
+2. Review the security logs and system configurations to determine how the attack was initiated.
+3. Implement additional security measures to prevent similar attacks in the future.
+
+**Priority:** Safety and continuity of the physical process are paramount. Take immediate action to mitigate potential damage and ensure the grid remains stable.

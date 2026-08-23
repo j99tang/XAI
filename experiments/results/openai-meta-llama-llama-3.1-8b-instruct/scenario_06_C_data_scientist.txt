@@ -1,0 +1,13 @@
+Based on the provided context, the model's prediction of an attack is driven by the following flow features:
+
+* Bwd IAT Min: value=0, SHAP=+0.075
+* Packet Length Min: value=0, SHAP=+0.046
+* Bwd Packet Length Min: value=0, SHAP=+0.040
+* Packet Length Max: value=0, SHAP=+0.036
+* Fwd PSH Flags: value=0, SHAP=+0.031
+
+These features suggest that the flow is characterized by a low minimum inter-arrival time (IAT) between packets, small packet lengths, and a high maximum packet length. The presence of these features is indicative of a flooding attack, where the attacker sends a large number of small packets to overwhelm the RTU.
+
+The model's confidence is 1.00, indicating that it is highly certain about the prediction. However, it's essential to note that the model is not explicitly identifying the attack class, but rather indicating that the flow is likely an attack based on the statistical fingerprints.
+
+The caveat is that the model's evidence is limited to the flow statistics and does not provide information about the specific protocol actions or the IEC-104 protocol semantics. Therefore, the model's explanation should be interpreted as a statistical fingerprint, rather than a proof of a specific attack class.

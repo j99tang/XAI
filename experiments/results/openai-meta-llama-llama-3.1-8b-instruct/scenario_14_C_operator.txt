@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+**Physical Risk:** The RTU is experiencing a high volume of small packets with zero bytes, indicating a potential flood attack. This could lead to the RTU's CPU or link exhaustion, causing delayed or dropped telemetry, and potentially forcing the RTU offline.
+
+**Immediate Action:** Switch to manual control of the breakers to prevent any unintended switching or loss of control at Bus 2. Check the breaker status and RTU communication to ensure they are functioning correctly.
+
+**Next Steps:**
+
+1. Check the breaker status and RTU communication to ensure they are functioning correctly.
+2. Switch to manual control of the breakers to prevent any unintended switching or loss of control at Bus 2.
+3. Verify the RTU's CPU and link status to determine if it is experiencing any issues.
+4. Investigate the source of the high volume of small packets to determine if it is a legitimate traffic pattern or an attack.
+
+**Priority:** Safety and continuity of the physical process.

@@ -1,0 +1,14 @@
+Action briefing:
+
+Affected asset is RTU-2, GridCom GC-4000, IEC-104 controlled station at 10.0.0.3:2404, zone ZONE-C, Bus 4. Substation name: not in context.
+
+This incident evidence is network-flow only: detector flags attack with confidence 1.00 against RTU-2, showing very small/empty packet behavior and zero back-direction timing values. No IEC-104 message contents are in context.
+
+Immediate physical risk: loss, delay, or unreliability of supervisory view/control for Bus 4 breakers controlled by RTU-2. Breakers at risk for missed or unverified remote operation: BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Next actions:
+1. Treat RTU-2 remote control/telemetry as suspect.
+2. Check current status/alarms for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. Do not issue remote switching through RTU-2 unless status is independently confirmed.
+4. Switch Bus 4 breaker operations to manual/local control for continuity if telemetry is stale, missing, or commands fail.
+5. Maintain present breaker positions unless a confirmed grid safety condition requires switching.

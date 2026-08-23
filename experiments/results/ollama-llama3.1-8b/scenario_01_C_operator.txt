@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, 10.0.0.1, Zone ZONE-N, Bus 2
+
+Physical Risk: Potential loss of control and view of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 due to possible attack on the RTU.
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-1 by disconnecting it from the grid.
+2. Check breaker status and ensure they are not affected by any potential loss of control.
+3. Verify that all other breakers in Zone ZONE-N are functioning correctly.
+4. Investigate further, but prioritize safety and continuity of the physical process over investigation.
+
+**Note:** This is a high-priority incident requiring immediate attention to prevent potential damage to the grid.

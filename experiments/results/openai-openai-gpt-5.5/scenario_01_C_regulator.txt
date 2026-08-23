@@ -1,0 +1,9 @@
+Illustrative assessment; jurisdictional determination is not in context.
+
+An IDS generated a binary “attack” alert, confidence 1.00, for traffic to 10.0.0.1:2404. The authoritative IP map identifies this as RTU-1, an IEC-104 controlled station and BES Cyber Asset under NERC CIP, controlling breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5.
+
+On the provided facts, confirmed compromise or disruption of a BES Cyber System is not in context, so a NERC CIP-008-6 Reportable Cyber Security Incident is not established. However, because the alert targets a BES Cyber Asset, it plausibly warrants treatment as an attempted compromise under the NERC CIP-008-6 reporting context.
+
+Timeline: for attempted compromises, notification is due by the end of the next calendar day; the one-hour timeline would apply if a Reportable Cyber Security Incident involving compromise or disruption were confirmed.
+
+Notification: NCCIC/CISA under US jurisdiction; required attributes must be provided when notifying the E-ISAC or NCCIC/CISA. This response sits under the Detect & Analyze / Report functions in the NIST SP 800-61r3 lifecycle mapped to CSF functions.

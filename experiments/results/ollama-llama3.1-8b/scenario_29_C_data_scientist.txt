@@ -1,0 +1,15 @@
+Based on the provided context, I will analyze the flow features that drove the prediction and what they mean.
+
+The model predicted a normal flow with a confidence of 0.14. The top SHAP features contributing to this prediction are:
+
+* Flow Bytes/s: -0.083 (low value)
+* Fwd Packet Length Max: -0.076 (low value)
+* Fwd IAT Max: -0.068 (low value)
+* Subflow Fwd Packets: -0.052 (zero value)
+* FWD Init Win Bytes: -0.049 (low value)
+
+These features indicate a low-volume flow with small packet sizes and short inter-arrival times. The presence of zero subflow forward packets suggests that the flow is not carrying any significant data.
+
+Considering the context, this flow appears to be control traffic from RTU-4 (10.0.0.6) on port 2404, which is a typical IEC-104 endpoint for SCADA communication. The low volume and small packet sizes are consistent with control traffic, which often carries minimal data.
+
+The model's confidence of 0.14 suggests that the features do not strongly indicate an attack, but rather a normal flow. However, it is essential to note that this prediction is based on statistical patterns in the flow features and may not necessarily prove or disprove specific protocol actions.

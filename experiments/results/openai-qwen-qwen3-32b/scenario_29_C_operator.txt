@@ -1,0 +1,14 @@
+**Operator Action Briefing**  
+**Affected Device:** RTU-4 (10.0.0.6), IEC-104-controlled station at Bus 9, Zone ZONE-S. Manages breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+
+**Physical Risk:** Sustained high-flow activity (24k B/s, small packets, zero subflow fwd packets) suggests packet starvation or port scanning. RTU-4 may become unresponsive, causing loss of visibility/control over its breakers. Risk of misoperation during faults if RTU fails.  
+
+**Next Actions:**  
+1. **Isolate RTU-4 traffic** via firewall rules on port 2404.  
+2. **Switch breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 to manual mode** to retain physical control if RTU-4 fails.  
+3. **Verify RTU-4 status**: Check heartbeat signals and connection table via local HMI (if available).  
+4. **Inspect RTU-3 (10.0.0.5)** for similar anomalies (linked via port-scanning patterns).  
+5. **Activate redundancy pathways** for Zone ZONE-S if available.  
+6. **Log all actions** for post-incident analysis.  
+
+*Do not attempt protocol-level diagnostics; prioritize grid stability.*

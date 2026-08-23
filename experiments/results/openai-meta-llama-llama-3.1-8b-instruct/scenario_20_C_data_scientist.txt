@@ -1,0 +1,11 @@
+Based on the provided context, the model's prediction of an attack is driven by the following flow features:
+
+1. **Bwd IAT Min**: The minimum inter-arrival time between packets in the backward direction is 0, indicating a rapid succession of packets. This feature has a SHAP contribution of +0.054.
+2. **Flow IAT Min**: The minimum inter-arrival time between packets in the flow is 553, indicating a relatively short interval between packets. This feature has a SHAP contribution of +0.044.
+3. **Packet Length Min**: The minimum packet length is 0, indicating that the packets are very small. This feature has a SHAP contribution of +0.038.
+4. **Bwd Packet Length Min**: The minimum packet length in the backward direction is 0, reinforcing the previous feature. This feature has a SHAP contribution of +0.034.
+5. **Packet Length Max**: The maximum packet length is 0, indicating that the packets are very small. This feature has a SHAP contribution of +0.034.
+
+These features suggest a flood-like behavior, where a large number of small packets are being sent in a short period. This behavior is characteristic of a flood or scanning attack, which is a type of Denial of Service (DoS) attack.
+
+The model's confidence in this prediction is 1.00, indicating a high level of certainty. However, it's essential to note that the model is only seeing the flow statistics and not the IEC-104 protocol semantics. Therefore, the features can only provide statistical fingerprints of the behavior, not proof of specific protocol actions.

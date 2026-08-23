@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+**Incident Summary:** An intrusion alert was detected on RTU-4 (10.0.0.6) at Bus 9, which controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. The alert has a prediction confidence of 1.00 and indicates an attack on an IEC-104 endpoint (Dst_Port) on port 2404.
+
+**Reportability:** The affected asset, RTU-4, is a BES Cyber Asset under NERC CIP. The incident plausibly meets the threshold for a Reportable Cyber Security Incident, as it involves a potential compromise of a BES Cyber System.
+
+**Reporting Timeline:** The incident is an attempted compromise, so the next-day reporting timeline applies. The notification is due by the end of the next calendar day.
+
+**Notification:** The incident must be notified to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**CSF Function:** This response sits under the Detect function, as the incident was detected by an IDS system.

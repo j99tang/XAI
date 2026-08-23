@@ -1,0 +1,15 @@
+**Briefing:**
+
+Affected device: RTU-4 (IP 10.0.0.6), controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 at Bus 9, ZONE-S.
+
+What is happening: Network traffic to RTU-4 shows abnormally short inter-arrival times (Flow IAT Min = 4ms), very small packet lengths (min = 0, max = 42 bytes), and no forward PSH flags. This indicates a high-rate flood of small, header-dominated packets targeting port 2404 (IEC-104). Traffic pattern matches a flooding attack, risking RTU resource exhaustion.
+
+Immediate physical risk: RTU-4 may lose responsiveness, leading to loss of breaker control and telemetry at Bus 9. Uncontrolled conditions could destabilize ZONE-S if faults occur.
+
+Next actions:  
+1. Immediately switch control of Bus 9 breakers to manual at local substation panel.  
+2. Verify status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 via local RTU indication or field report.  
+3. Isolate RTU-4 network segment if possible without disrupting adjacent zones.  
+4. Do not attempt remote commands to RTU-4 until traffic normalizes.  
+
+Prioritize maintaining grid stability at Bus 9. Confirm breaker positions physically if doubt exists.

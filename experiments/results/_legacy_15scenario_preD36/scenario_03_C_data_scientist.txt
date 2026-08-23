@@ -1,0 +1,13 @@
+Based on the model's output, I analyzed the flow features that drove the prediction.
+
+The SHAP contributions indicate that the following features contributed to the model's decision:
+
+* `Total Bwd packets`: 0.35 (high contribution)
+* `Bwd IAT Max/Flow IAT Max`: 0.25 (moderate contribution)
+* `SYN/RST Flag Count`: 0.20 (moderate contribution)
+
+These features correspond to a flood/scanning attack pattern, characterized by small packets with headers dominating the traffic and a high number of SYN/RST flags.
+
+The model's confidence is moderate, with a SHAP value of 0.65.
+
+It's essential to note that these features can only prove the presence of statistical fingerprints associated with flood/scanning attacks, not specific protocol actions or attack classes. The destination port (2404) being indicative of an IEC-104 endpoint carries mild signal only and is not a leak in this context.

@@ -1,0 +1,15 @@
+**Incident Analysis**
+
+The model predicted an attack with a confidence of 0.59. The top SHAP features contributing to this prediction are:
+
+* Total Fwd Packet: +0.075 (4 packets)
+* Fwd IAT Max: +0.045 (6.37289e+06)
+* Subflow Fwd Packets: +0.041 (1 packet)
+* Fwd Packet Length Max: -0.066 (120)
+* Active Min: -0.047 (1598)
+
+These features suggest a potential flooding attack. The high Total Fwd Packet count and Fwd IAT Max indicate a rapid succession of packets, while the presence of a single subflow with a large number of packets (Subflow Fwd Packets) may indicate a sustained attack flow. The relatively short packet length (Fwd Packet Length Max) and low active time (Active Min) are also consistent with a flooding attack.
+
+However, the model's confidence is moderate (0.59), indicating that the evidence is not conclusive. The features do not provide clear evidence of a specific attack class (e.g., DoS, flood, or fuzzy). The presence of a single subflow with a large number of packets could also be indicative of a sustained attack flow, but it is not a definitive indicator of an attack.
+
+Therefore, while the model's prediction is intriguing, it is essential to further investigate the incident to determine the actual nature of the traffic and whether it constitutes an attack.

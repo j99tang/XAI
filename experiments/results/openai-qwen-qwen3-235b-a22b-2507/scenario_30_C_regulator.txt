@@ -1,0 +1,7 @@
+This incident involves destination 10.0.0.4, identified as ENG-WS-1, an engineering workstation within zone ZONE-CC, which is part of an EACMS/PACS under NERC CIP. The asset is associated with a BES Cyber System, making it in-scope for NERC CIP-008-6 reporting obligations. The intrusion alert, despite a "normal" prediction, exhibits network flow features contributing to an "attack" classification, though the detector only observes flow statistics and cannot confirm malicious intent or payload.
+
+Given the authoritative IP mapping and the asset’s role in an EACMS/PACS, any attempted compromise is reportable under NERC CIP-008-6. The low confidence (0.14) and lack of confirmed compromise suggest this may constitute an *attempted* compromise. Therefore, this event plausibly meets the threshold for a Reportable Cyber Security Incident.
+
+Notification is due to E-ISAC and, under US jurisdiction, NCCIC/CISA. The reporting timeline is **by the end of the next calendar day** for attempted compromises. This response falls under the **Detect** function of the NIST CSF 2.0 framework.
+
+*Note: This assessment is illustrative, based on a synthetic grid; no jurisdictional determination is intended.*

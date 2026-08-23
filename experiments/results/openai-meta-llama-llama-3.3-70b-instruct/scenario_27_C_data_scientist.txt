@@ -1,0 +1,11 @@
+**Incident Analysis**
+
+The intrusion detection model has flagged a flow to RTU-4 (10.0.0.6:2404) with low confidence (0.19) as potentially anomalous. The top SHAP features driving this prediction are:
+
+* Total Fwd Packet: 1 packet (SHAP: +0.115), indicating a small number of packets sent from the source to the destination.
+* Flow Bytes/s: 14733.6 bytes/s (SHAP: -0.081), suggesting a moderate to high data transfer rate.
+* FIN Flag Count: 1 flag (SHAP: -0.078), indicating a potential completion of a TCP connection.
+* Flow IAT Max: 17505 ms (SHAP: -0.073), showing a relatively long maximum inter-arrival time between packets.
+* Down/Up Ratio: 2 (SHAP: -0.068), indicating a potential imbalance in the flow's upload and download rates.
+
+These features collectively suggest a potential flooding or starvation attack pattern, characterized by a small number of packets and moderate data transfer rates. However, the low confidence score and lack of clear indicators of a specific attack class (e.g., DoS, scan) mean that this evidence is not conclusive. Further analysis is needed to determine the nature of this flow and potential impact on the RTU-4 device.

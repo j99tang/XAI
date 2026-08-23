@@ -1,0 +1,13 @@
+**Affected Device:** RTU-1 (10.0.0.1) at Bus 2, ZONE-N — controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 via IEC-104 on port 2404.
+
+**What’s Happening:** Network flow shows zero-length packets (Packet Length Min = 0), no backward traffic (Bwd IAT Min = 0), and no PSH flags — consistent with a flood or starvation attack from 121.142.26.0/24, which is known to be attack traffic. This is overwhelming RTU-1’s ability to process legitimate control messages.
+
+**Physical Risk:** RTU-1 may become unresponsive, leading to **loss of view and control** of all associated breakers. Uncontrolled fault propagation possible if automatic protection fails.
+
+**Next Actions:**  
+1. Immediately switch RTU-1 to **manual local control** at the substation to preserve breaker operability.  
+2. Check status of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 via backup SCADA polling or field crew.  
+3. Isolate RTU-1 from network if safe; do not attempt remote commands.  
+4. Confirm redundancy paths in IEEE 14-bus grid are active to maintain stability.  
+
+Prioritize physical system stability — assume RTU-1 is compromised until proven otherwise.

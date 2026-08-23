@@ -1,0 +1,13 @@
+**Briefing: RTU-4 at Bus 9 (ZONE-S) under network attack**
+
+Device **RTU-4 (10.0.0.6)** is experiencing abnormal traffic on port 2404. Observed patterns: minimal inter-packet timing (Flow IAT Min = 16ms), extreme packet size variation (max 6 bytes, min 0), and no forward PSH flags — consistent with a high-rate, small-packet flood or SYN flood. Source range 121.142.26.0/24 is confirmed attack traffic. This is not normal polling.
+
+**Physical risk:** RTU-4 may lose communication or fail to process valid commands. If unresponsive, breakers **BR-4-9, BR-7-9, BR-9-10, BR-9-14** at Bus 9 become uncontrollable. Loss of control risks instability if a fault occurs; grid remains energized but vulnerable.
+
+**Immediate actions:**
+1. Switch RTU-4 to **manual local control** immediately.
+2. Verify status of all four breakers via backup comms or field team — confirm they remain in last known position.
+3. Isolate RTU-4 from network if possible without physical access.
+4. Do not attempt remote operations on RTU-4 until traffic clears.
+
+Prioritize maintaining power flow and breaker visibility. Assume loss of remote control until further notice.

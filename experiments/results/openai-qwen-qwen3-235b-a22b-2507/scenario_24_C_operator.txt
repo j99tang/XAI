@@ -1,0 +1,13 @@
+**Briefing: RTU-1 at Bus 2 (ZONE-N) under active network attack.**
+
+Destination 10.0.0.1:2404 (RTU-1) shows flow anomalies: near-zero backward inter-arrival time (Bwd IAT Min = 0), maximum packet length of 8 bytes, and zero forward PSH flags — indicating small, frequent, header-only packets consistent with a flooding or starvation attack. This disrupts normal IEC-104 communication.
+
+**Physical risk:** Loss of control and visibility over breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The grid remains energized, but remote operation via RTU-1 is unreliable or lost. Unmitigated, this could prevent fault isolation or load shedding if a disturbance occurs.
+
+**Immediate actions:**  
+1. Switch RTU-1 to **manual local control** immediately. Confirm status via field team or backup HMI if available.  
+2. Check breaker states locally: verify BR-1-2, BR-2-3, BR-2-4, and BR-2-5 are in last commanded position.  
+3. Isolate RTU-1 from network if possible without physical risk.  
+4. Initiate NERC CIP-008-6 incident response: log event, notify coordinator.
+
+Do not attempt remote commands. Prioritize physical process stability. Assume loss of SCADA visibility until cleared.

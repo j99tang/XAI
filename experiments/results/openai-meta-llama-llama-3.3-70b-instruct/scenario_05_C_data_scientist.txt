@@ -1,0 +1,11 @@
+**Incident Analysis**
+
+The intrusion detection model has flagged a flow to RTU-1 (10.0.0.1) as an attack with 100% confidence. The top contributing features to this prediction are:
+
+* Flow IAT Min: 310 (SHAP: +0.135)
+* Packet Length Max: 48 (SHAP: +0.096)
+* Bwd IAT Min: 640 (SHAP: +0.093)
+* Fwd PSH Flags: 0 (SHAP: +0.047)
+* Flow IAT Mean: 1115.84 (SHAP: +0.031)
+
+These features suggest a potential flooding or denial-of-service attack, characterized by low inter-arrival times and small packet sizes. The absence of forward push flags (Fwd PSH Flags: 0) may indicate a scan or probing activity. However, the model's prediction is based on statistical fingerprints and does not provide conclusive evidence of a specific attack class. The confidence level is high, but the features can only prove unusual traffic patterns, not specific protocol actions or intentions. Further investigation is necessary to determine the nature and impact of this incident.

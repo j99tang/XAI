@@ -1,0 +1,4 @@
+**Compliance Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-1, IEC-104 controlled station) under NERC CIP. The intrusion alert (confidence: 1.00) targets this asset, plausibly meeting the **Reportable Cyber Security Incident** threshold under **NERC CIP-008-6** (attempted compromise of a BES Cyber System). The **1-hour reporting timeline** applies for initial notification to **E-ISAC** and **NCCIC/CISA** (US jurisdiction). Required attributes (functional impact, attack vector) must be included. This response falls under the **Detect** function of the NIST CSF.  
+
+**Note**: The synthetic grid context (SANDI-2024 testbed) clarifies this is illustrative, not a jurisdictional determination. Attack classification relies on flow statistics, not protocol content.

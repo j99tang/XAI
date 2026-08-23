@@ -1,0 +1,8 @@
+The model flagged this flow to 10.0.0.3:2404 (RTU-2) as attack with confidence 1.00, driven by **low inter-arrival times (IAT)** and **small packet sizes**. Key features:  
+- **Flow IAT Min=57ms** (SHAP +0.075) and **Bwd IAT Min=209ms** (SHAP +0.071) indicate rapid packet arrivals, consistent with flooding/scanning patterns.  
+- **Packet Length Min=0** (SHAP +0.058) and **Bwd Packet Length Min=0** (SHAP +0.053) suggest header-dominated traffic, typical of lightweight probes or SYN scans.  
+- **Packet Length Max=24** (SHAP +0.063) reinforces small-packet behavior, aligning with "flood/scan" fingerprints in the feature dictionary.  
+
+This signature matches **flooding-family attacks** (e.g., DoS/flood/starvation), where high packet rates with minimal payload overwhelm the target. The destination port (2404) identifies an IEC-104 endpoint, but the model does not infer protocol semantics—only statistical irregularities.  
+
+**Caveats**: The features cannot confirm *intent* (e.g., whether this is a probing scan vs. sustained flood) or *protocol-specific actions* (e.g., malformed IEC-104 commands). Small packets may also arise from legitimate control traffic (e.g., keep-alives), though their IAT profile deviates from normal IEC-104 polling patterns described in the attack taxonomy. The evidence bounds the anomaly to network-layer behavior, not physical consequences.

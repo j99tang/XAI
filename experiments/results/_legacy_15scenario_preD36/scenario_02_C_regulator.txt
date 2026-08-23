@@ -1,0 +1,13 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+**What occurred:** The RTU-3 at Bus 6 in Zone ZONE-S was affected by a sustained attack flow, as indicated by large packets observed in the network. This asset controls breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13.
+
+**Threshold for reportable cyber security incident:** The presence of large packets is indicative of a sustained attack flow, which meets the threshold for a reportable cyber security incident under NERC CIP-008-6.
+
+**Reporting timeline:** The reporting timeline applies within 60 minutes of detection, as specified in NERC CIP-008-6.
+
+**Notification due to:** Notification is due to the E-ISAC or NCCIC/CISA, as required by NERC CIP-008-6.
+
+This assessment is illustrative and does not imply jurisdictional determination.

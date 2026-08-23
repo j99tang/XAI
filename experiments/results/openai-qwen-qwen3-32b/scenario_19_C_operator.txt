@@ -1,0 +1,12 @@
+**Briefing:**  
+**Affected Device:** RTU-4 (10.0.0.6:2404, IEC-104), Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+
+**Physical Risk:** RTU-4 is under a high-confidence network attack (traffic pattern: small-header-dominated packets, zero-min inter-arrival times, asymmetric fwd/bwd flows). This matches flooding/scanning behavior targeting IEC-104 control channels. Risk includes RTU CPU/link exhaustion, delayed/dropped telemetry, or unintended breaker commands (e.g., misinterpreted PSH flags). Loss of real-time control could destabilize Bus 9’s load balance.  
+
+**Next Actions:**  
+1. **Check Breaker Status:** Verify positions of BR-4-9, BR-7-9, BR-9-10, BR-9-14 via local indicators (bypassing RTU if unresponsive).  
+2. **Isolate RTU-4 Network:** Temporarily block 10.0.0.6:2404 ingress/egress at the substation firewall to starve the attack flow.  
+3. **Switch to Manual Control:** If RTU-4 becomes unresponsive, manually override breaker controls using Bus 9’s local SCADA panel (per NERC CIP-008-6 protocols).  
+4. **Log Traffic Anomalies:** Note timestamped RTU-4 unresponsiveness and traffic patterns for post-incident analysis.  
+
+*Act immediately to preserve grid observability and prevent unintended switching.*

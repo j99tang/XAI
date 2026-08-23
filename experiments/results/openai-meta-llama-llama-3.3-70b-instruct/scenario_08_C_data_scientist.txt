@@ -1,0 +1,11 @@
+**Intrusion Analysis Briefing**
+
+The model has flagged a flow to RTU-4 (10.0.0.6) as an attack with 100% confidence. The top contributing features are:
+
+* Bwd IAT Min: 0 (SHAP: +0.055)
+* Flow IAT Min: 52 (SHAP: +0.048)
+* Packet Length Min: 0 (SHAP: +0.037)
+* Bwd Packet Length Min: 0 (SHAP: +0.034)
+* Packet Length Max: 0 (SHAP: +0.032)
+
+These features suggest a flooding pattern, characterized by minimal packet lengths and inter-arrival times. The model's confidence and feature attributions indicate a high likelihood of a Denial of Service (DoS) or flooding attack. However, the model does not identify the specific attack class. The features can only prove unusual network behavior, not specific protocol actions or intentions. The evidence is limited to statistical fingerprints and does not account for potential benign explanations. Further analysis is required to determine the attack's impact on the RTU's functionality and the grid's overall operation.

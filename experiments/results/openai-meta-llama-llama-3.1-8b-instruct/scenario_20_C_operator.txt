@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N
+
+**Physical Risk:** The RTU is experiencing a high volume of small packets with no payload, indicating a potential flood or scanning attack. This could lead to RTU CPU/link exhaustion, delayed or dropped telemetry, and operator flying blind on that zone.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch the affected breakers (BR-1-2, BR-2-3, BR-2-4, BR-2-5) to manual control to prevent any potential loss of control or unintended switching.
+2. **Check RTU status**: Verify the status of RTU-1 and ensure it is functioning correctly.
+3. **Monitor network traffic**: Continuously monitor network traffic to identify any further anomalies or potential attacks.
+4. **Isolate the RTU**: Consider isolating RTU-1 from the network to prevent further potential attacks.
+
+**Next Steps:**
+
+1. Investigate the source of the attack and identify the potential threat actor.
+2. Review the incident response plan and ensure all necessary personnel are notified.
+3. Implement additional security measures to prevent similar attacks in the future.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation.

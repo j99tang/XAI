@@ -1,0 +1,14 @@
+**Briefing: RTU-4 at Bus 9 (ZONE-S) affected.**  
+
+Network traffic to RTU-4 (10.0.0.6:2404) shows 1 forward packet, elevated flow bytes/sec (14.7K), one FIN flag, max flow inter-arrival time of 17.5 seconds, and down/up ratio of 2. Pattern matches low-volume, sporadic communication — inconsistent with normal IEC-104 control traffic, which typically has regular, low-byte exchanges. High Flow IAT Max and low packet count suggest disrupted or stalled communication, not sustained flood. However, risk of degraded RTU responsiveness exists.  
+
+**Immediate physical risk:** Loss of control and visibility over breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 if RTU-4 stops responding. Could impair fault isolation or load transfer.  
+
+**Next actions:**  
+1. Verify status of RTU-4 via local HMI at Bus 9 substation — confirm heartbeat and breaker feedback.  
+2. Check breaker positions manually if HMI indicates loss of telemetry.  
+3. Switch control of Bus 9 breakers to **manual mode** at the local control panel to ensure operability.  
+4. Isolate RTU-4 from network if unresponsive; prepare for local restart only after physical safety is confirmed.  
+5. Do not attempt remote commands until communication stability is verified.  
+
+Prioritize physical control and grid stability. No evidence of malicious payload — focus on restoring reliable RTU operation.

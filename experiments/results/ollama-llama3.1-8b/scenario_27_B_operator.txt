@@ -1,0 +1,10 @@
+INTRUSION ALERT
+prediction: normal
+confidence: 0.19
+destination: 10.0.0.6:2404
+top SHAP features (toward 'attack'):
+  Total Fwd Packet: value=1, SHAP=+0.115
+  Flow Bytes/s: value=14733.6, SHAP=-0.081
+  FIN Flag Count: value=1, SHAP=-0.078
+  Flow IAT Max: value=17505, SHAP=-0.073
+  Down/Up Ratio: value=2, SHAP=-0.068

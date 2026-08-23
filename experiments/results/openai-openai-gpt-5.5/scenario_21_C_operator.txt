@@ -1,0 +1,15 @@
+**Action briefing — Bus 4 / ZONE-C**
+
+**Affected equipment:** RTU-2, 10.0.0.3, GridCom GC-4000 IEC-104 controlled station at Bus 4, ZONE-C. Substation name: **not in context**. RTU-2 controls breakers **BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9**.
+
+**This incident evidence:** Alert shows attack prediction, confidence 1.00, traffic destined to **10.0.0.3:2404**. Detector saw only network timing/size/TCP-flow statistics, including very small/zero packet length values and short inter-arrival timing. No protocol contents or specific commands are in context.
+
+**Operational meaning:** Treat RTU-2 communications as unreliable until proven otherwise. Remote visibility/control for Bus 4 breakers may be delayed, dropped, or unavailable.
+
+**Immediate physical risk:** Loss of view/control at Bus 4. Breaker status or commands through RTU-2 may not be dependable, risking incorrect switching decisions.
+
+**Next actions:**  
+1. Check RTU-2 health/comms and current indications.  
+2. Verify breaker positions for **BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9** by independent/field-confirmed means if available.  
+3. Hold non-urgent remote switching through RTU-2.  
+4. Manual/local control capability: **not in context**; use approved manual/local procedure only if available and required for grid safety.

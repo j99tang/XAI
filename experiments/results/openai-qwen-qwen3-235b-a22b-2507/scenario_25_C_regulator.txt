@@ -1,0 +1,7 @@
+This incident involves a confirmed attack (confidence: 1.00) targeting 10.0.0.3, identified as RTU-2, a BES Cyber Asset under NERC CIP, located in ZONE-C and controlling multiple breakers at Bus 4. The destination port 2404 indicates IEC-104 protocol usage, consistent with control system communications. The intrusion detection system flagged anomalous network flow characteristics (e.g., zero packet lengths, minimal inter-arrival times), classified as an attack, though the specific MITRE ATT&CK technique is not identified in context.
+
+Given that the target is a BES Cyber System, and NERC CIP-008-6 defines both actual and *attempted* compromises of such systems as Reportable Cyber Security Incidents, this event plausibly meets the reporting threshold. Because the alert classifies the traffic as an "attack" with full confidence, but no functional impact is confirmed, the event should be treated as an *attempted* compromise.
+
+Per NERC CIP-008-6 R4, notification is due to the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**, **by the end of the next calendar day**. Required attributes (attack vector, functional impact, level of intrusion) must be provided, even if partially unknown.
+
+This response falls under the **Detect** function of the NIST CSF 2.0 framework. Jurisdictional applicability is not confirmed; NERC CIP obligations are applied illustratively.

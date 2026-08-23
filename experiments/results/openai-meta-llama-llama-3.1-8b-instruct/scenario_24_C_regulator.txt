@@ -1,0 +1,13 @@
+**Compliance Assessment**
+
+This incident involves a potential attack on RTU-1, a BES Cyber Asset under NERC CIP, at Bus 2. The attack prediction has a confidence level of 1.00, indicating a high likelihood of a malicious event. The affected asset is a critical component of the Bulk Electric System, making it a Reportable Cyber Security Incident under NERC CIP-008-6.
+
+The incident occurred on a device (RTU-1) that controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The attack is likely a reconnaissance or scanning attack, as indicated by the presence of small packets with headers dominating the traffic.
+
+**Reporting Obligations**
+
+As a Reportable Cyber Security Incident, this event must be reported to the E-ISAC or NCCIC/CISA within one hour or by the end of the next calendar day. The required attributes for reporting include the affected device, the type of attack, and the impact on the Bulk Electric System.
+
+**Timeline and Notification**
+
+The reporting timeline applies to the incident, and notification is due to the E-ISAC or NCCIC/CISA within the specified timeframe. This incident falls under the framework function of NERC CIP-008, which requires timely reporting of Reportable Cyber Security Incidents to ensure the reliability and security of the Bulk Electric System.

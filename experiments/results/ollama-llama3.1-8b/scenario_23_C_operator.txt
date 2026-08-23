@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+Device Affected: RTU-4, 10.0.0.6, Zone ZONE-S, Bus 9
+
+Physical Risk: Potential loss of control and view of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 due to possible RTU CPU/link exhaustion or delayed/dropped telemetry.
+
+Next Actions:
+
+1. Immediately switch to manual control for the affected zone (ZONE-S) to prevent potential loss of control.
+2. Check breaker status and ensure they are in a safe state.
+3. Verify that all other breakers in the grid are functioning normally.
+4. Investigate further, but prioritize safety and continuity of the physical process over investigation.
+
+Switching Steps:
+
+* Switch to manual control for ZONE-S using the RTU-4's manual override function.
+* Check breaker status on Bus 9 using the RTU-4's monitoring capabilities.
+* Verify that all other breakers in the grid are functioning normally by checking their status and monitoring system performance.

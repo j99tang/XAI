@@ -1,0 +1,9 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Total Bwd packets**: 1234 packets sent from the destination to the source, which is a significant increase compared to normal traffic.
+* **Fwd Act Data Pkts**: 567 client packets actually carrying payload, indicating potential bulk command injection or pure signalling (SYN scan carries none).
+* **Subflow Fwd/Bwd Packets/Bytes**: per-subflow volume of packets and bytes, with large values suggesting a sustained attack flow.
+
+These features correspond to the "flood/scan" behavior family. The model's confidence is moderate (0.65). However, I must note that the presence of small packets in the destination port 2404 (IEC-104 endpoint) does not necessarily indicate a leak, as mentioned in the knowledge base.
+
+The evidence provided by these features can only prove that this flow exhibits characteristics associated with flood/scan attacks, but it cannot definitively identify the attack class or confirm whether it is an actual attack. Further investigation and analysis are required to determine the true nature of this incident.

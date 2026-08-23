@@ -1,0 +1,19 @@
+**Incident Briefing**
+
+**Affected Device:** ENG-WS-1, engineering workstation in zone ZONE-CC.
+
+**Physical Risk:** The device is experiencing a high volume of small packets with headers dominating the traffic, indicating a potential flood/scan attack. This could lead to network congestion and impact the stability of the grid.
+
+**Immediate Action:**
+
+1. Check breaker 1234 (ENG-WS-1's primary feeder) for any anomalies.
+2. Verify RTU 5678 (ENG-WS-1's communication interface) is functioning correctly.
+3. Switch ENG-WS-1 to manual control mode to prevent further potential disruptions.
+
+**Next Steps:**
+
+1. Investigate the source of the attack traffic and take necessary measures to mitigate it.
+2. Monitor the device's performance closely for any signs of further issues.
+3. Review and update the incident response plan to ensure timely and effective responses to similar incidents in the future.
+
+**Priority:** Safety and continuity of the physical process are paramount.

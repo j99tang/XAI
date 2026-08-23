@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4, located at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14.
+
+**Physical Risk:** The sustained attack flow detected on the network may compromise the control of these critical breakers. If not addressed promptly, it could lead to a loss of grid stability or even a blackout.
+
+**Next Actions:**
+
+1. Immediately switch RTU-4 to manual control mode to prevent any potential malicious commands from being executed.
+2. Check the breaker status and ensure they are in a safe state.
+3. Investigate the source of the attack flow and take necessary measures to isolate it.
+4. Verify that all other breakers in the grid are functioning normally.
+
+**Priority:** Safety and continuity of the physical process over investigation. We must act quickly to prevent any potential harm to the grid or its users.

@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: RTU-4 (10.0.0.6) at Bus 9, Zone ZONE-S, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Physical risk: Potential loss of view and control of the breakers, or unintended switching, which could lead to grid instability.
+
+Analysis: The intrusion alert indicates a possible attack on RTU-4, with unusual network flow statistics, including low inter-arrival times and packet lengths. This pattern suggests a flooding or denial-of-service type of incident.
+
+Next actions: 
+
+1. Check the status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+2. Verify the integrity of RTU-4 and its communication with SCADA-1.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network traffic to RTU-4 for any further anomalies.

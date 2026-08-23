@@ -1,0 +1,8 @@
+The model flagged this flow to 10.0.0.1:2404 (an IEC-104 RTU) with **confidence 1.00**, driven by:  
+- **Bwd IAT Min=0** (zero backward inter-arrival time, suggesting rapid packet bursts in reverse direction),  
+- **Packet Length Max=8** (headers dominate traffic, consistent with scanning/flooding),  
+- **Bwd Packet Length Min=0** (zero-length packets in reverse direction, indicative of malformed or control-only traffic).  
+
+These features align with a **flooding-family attack** (e.g., low-rate DoS or probing), per the "small packets" fingerprint in `attack_taxonomy/attacks.md`. The **Flow IAT Min=641** (regular intervals) and **Fwd PSH Flags=0** (no data-transfer flags) suggest machine-generated traffic lacking legitimate IEC-104 payload. The destination port 2404 (IEC-104 endpoint) adds context but is not definitive evidence of protocol exploitation.  
+
+**Caveats**: The model observes only statistical fingerprints (e.g., packet sizes/timing), not IEC-104 protocol semantics. Zero-length packets and small headers could reflect benign control traffic (e.g., keep-alives) or malicious probing. The absence of high SYN/RST flags (not in top features) weakens a classic SYN flood hypothesis. This signature does not prove command injection or specific IEC-104 vulnerability exploitation but is consistent with network-level disruption targeting the RTU.

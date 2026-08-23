@@ -1,0 +1,9 @@
+Illustrative assessment: jurisdiction is not in context.
+
+An IDS detected a binary “attack” (confidence 1.00) with destination 10.0.0.3:2404. The affected asset is RTU-2, an IEC-104 controlled station at Bus 4 controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9, identified as a BES Cyber Asset under NERC CIP.
+
+Based on the context, this plausibly requires NERC CIP-008-6 consideration because a Reportable Cyber Security Incident involves compromise or disruption of a BES Cyber System. However, actual compromise or disruption is not in context; the detector observes network flow statistics only and does not identify the attack class. Therefore, the one-hour Reportable Cyber Security Incident threshold is not established from the provided facts. It is at least an attempted compromise affecting a BES Cyber Asset.
+
+Applicable timeline: by the end of the next calendar day for attempted compromises; one hour would apply only if compromise or disruption were confirmed. Notification is to E-ISAC or NCCIC/CISA with required attributes; NCCIC/CISA applies under US jurisdiction, which is not in context.
+
+Framework function: Detect & Analyze / Report under the NIST SP 800-61r3 lifecycle mapped to CSF functions.

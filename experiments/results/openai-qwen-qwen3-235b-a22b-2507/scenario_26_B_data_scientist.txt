@@ -1,0 +1,10 @@
+INTRUSION ALERT
+prediction: attack
+confidence: 0.59
+destination: 10.0.0.4:123
+top SHAP features (toward 'attack'):
+  Total Fwd Packet: value=4, SHAP=+0.075
+  Fwd Packet Length Max: value=120, SHAP=-0.066
+  Active Min: value=1598, SHAP=-0.047
+  Fwd IAT Max: value=6.37289e+06, SHAP=+0.045
+  Subflow Fwd Packets: value=1, SHAP=+0.041

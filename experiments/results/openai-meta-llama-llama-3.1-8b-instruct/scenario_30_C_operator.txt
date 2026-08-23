@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+**Affected Device:** ENG-WS-1 (engineering workstation) in zone ZONE-CC
+
+**Physical Risk:** The incident may be indicative of a potential attack on RTU-3, which could lead to a loss of visibility and control of its breakers, including BR-5-6, BR-6-11, BR-6-12, and BR-6-13. This could result in a full loss of control of the substation.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch the affected breakers to manual control to prevent any potential loss of control.
+2. **Check RTU-3 status**: Verify the status of RTU-3 and its connection to the grid.
+3. **Check breaker status**: Verify the status of the breakers supervised by RTU-3 (BR-5-6, BR-6-11, BR-6-12, and BR-6-13).
+4. **Investigate ENG-WS-1**: Investigate the ENG-WS-1 workstation to determine the cause of the incident and prevent future occurrences.
+
+**Next Steps:**
+
+1. **Review security logs**: Review security logs to determine the source and nature of the incident.
+2. **Conduct a thorough investigation**: Conduct a thorough investigation to determine the root cause of the incident and implement corrective actions to prevent future occurrences.
+3. **Notify relevant personnel**: Notify relevant personnel, including the substation operator and security team, of the incident and the actions taken.

@@ -1,0 +1,15 @@
+**Incident Analysis**
+
+The model predicted an attack with a confidence of 1.00. The top SHAP features driving this prediction are:
+
+* Flow IAT Min (minimum inter-arrival time in the flow): 57, SHAP=+0.075
+* Bwd IAT Min (minimum inter-arrival time in the backward flow): 209, SHAP=+0.071
+* Packet Length Max (maximum packet length): 24, SHAP=+0.063
+* Packet Length Min (minimum packet length): 0, SHAP=+0.058
+* Bwd Packet Length Min (minimum backward packet length): 0, SHAP=+0.053
+
+These features suggest a pattern of small, frequent packets with short inter-arrival times, which is characteristic of a flooding attack. The model's confidence in this prediction is high, indicating that these features are strong indicators of an attack.
+
+However, it's essential to note that these features alone do not prove the presence of a specific attack class (e.g., DoS, flood, or fuzzing). They only provide a statistical fingerprint that is commonly associated with these types of attacks. Further analysis is required to determine the actual attack class and its consequences.
+
+The destination IP address (10.0.0.3) is an IEC-104 endpoint, which is a controlled station (RTU-2) in zone ZONE-C. This information is not directly related to the model's prediction but provides context about the device being targeted.

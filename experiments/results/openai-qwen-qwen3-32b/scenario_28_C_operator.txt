@@ -1,0 +1,15 @@
+**Action Briefing**  
+**Affected Device:** RTU-4 (10.0.0.6), a GridCom GC-4000 RTU in zone ZONE-S at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14.  
+
+**Observed Behavior:** Traffic to RTU-4’s IEC-104 port (2404) shows unusually high **Flow IAT Max** (24,843 ms) and **Bwd IAT Max** (not in context), indicating prolonged delays between packet arrivals. **Total Fwd Packets** is low (6), with **Fwd Packet Length Max** at 16 bytes (minimal data transfer). **Flow Bytes/s** (28,248.2) suggests sustained low-volume traffic. These patterns align with **Packet Starvation** (overwhelming connections causing RTU slowdown/stall) and may indicate reconnaissance (e.g., MITRE ICS T0846/T0840).  
+
+**Physical Risk:** If RTU-4’s connection table is exhausted, it may stop responding to SCADA-1, causing **full loss of visibility and control** of its breakers. This could delay critical breaker operations during faults, risking grid instability or misoperation.  
+
+**Next Actions:**  
+1. **Verify RTU-4 status** via local Human-Machine Interface (HMI) or serial console to confirm if it is unresponsive.  
+2. **Monitor breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14** for status changes or alarms. Ensure local protection relays are operational.  
+3. **Isolate RTU-4’s network connection** if unresponsive, using zone ZONE-S firewall rules to prevent further traffic overload.  
+4. **Switch to manual control** for RTU-4’s breakers if SCADA-1 communication is lost, per NERC CIP procedures for BES Cyber Assets.  
+5. **Check traffic to other ZONE-S devices** (e.g., RTU-3 at Bus 6) for similar anomalies. Prioritize maintaining grid stability over investigation.  
+
+*Note: Low IDS confidence (15%) suggests possible false positive, but patterns match pre-attack/reconnaissance behavior. Proceed with caution.*

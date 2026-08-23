@@ -1,0 +1,15 @@
+Based on the provided context, the model flagged this flow as an attack with a confidence of 1.00.
+
+The top SHAP features driving the prediction are:
+
+* Flow IAT Min: +0.135
+* Packet Length Max: +0.096
+* Bwd IAT Min: +0.093
+* Fwd PSH Flags: +0.047
+* Flow IAT Mean: +0.031
+
+These features indicate a flow with short inter-arrival times (IATs) and large packet lengths, which is characteristic of a flood/scan attack family.
+
+The model's confidence in this prediction is high, but it's essential to note that the evidence provided by these features only indicates a statistical fingerprint of a potential attack, not proof of a specific protocol action. The destination port (2404) corresponds to an IEC-104 endpoint, which carries a mild signal but is not indicative of a leak.
+
+The model has identified a flow with characteristics consistent with a flood/scan attack family, but further analysis and investigation are necessary to determine the actual nature of this incident.

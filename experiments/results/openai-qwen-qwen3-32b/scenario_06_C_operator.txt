@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device:** RTU-2 (10.0.0.3, IEC-104, GridCom GC-4000) at Bus 4, ZONE-C. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Physical Risk:** Attack traffic targeting port 2404 (IEC-104) shows small packets with zero-byte intervals (Bwd IAT Min=0, Packet Length Min=0). Matches patterns of port scanning or packet starvation, risking loss of telemetry/control to RTU-2. If sustained, could delay or block breaker status updates, creating blind spots in grid operations.  
+
+**Next Actions:**  
+1. **Isolate RTU-2:** Open breakers BR-2-4, BR-3-4, BR-4-5 to decouple Bus 4 from adjacent circuits.  
+2. **Switch to Manual Control:** Manually secure breakers BR-4-7 and BR-4-9 to prevent unintended remote changes.  
+3. **Check RTU Status:** Verify RTU-2’s operational state (alarms, link health) via local HMI or redundant SCADA channels.  
+4. **Block Attack Source:** Coordinate with IT to filter traffic from 121.142.26.0/24 (flagged as attack traffic).  
+
+Proceed under NERC CIP-008-6 incident protocols. Prioritize grid stability over root-cause analysis.  
+
+---  
+*Word count: 160*

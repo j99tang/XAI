@@ -1,0 +1,13 @@
+**ACTION BRIEFING**  
+**Affected Device:** RTU-1 (10.0.0.1, IEC-104 controlled station, GridCom GC-4000) at Bus 2, Zone ZONE-N. Controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Physical Risk:** Attack traffic (small packets, min 0B, max 24B; low inter-arrival times: Flow IAT Min=11ms, Bwd IAT Min=506ms) indicates a flood/scanning attack targeting IEC-104 port (2404). This risks overwhelming RTU-1, causing packet starvation, loss of telemetry, or command rejection. Loss of RTU-1 communication would remove visibility/control of its breakers—grid remains operational but unobservable at this node.  
+
+**Next Actions:**  
+1. **Verify RTU-1 status:** Check heartbeat signals and connectivity (ping/traceroute 10.0.0.1).  
+2. **Switch to manual control** for breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 if RTU-1 is unresponsive.  
+3. **Inspect RTU-1 network interfaces** for sustained high packet rates (use flow analytics).  
+4. **Block ingress traffic** from 121.142.26.0/24 and 134.221.96.0/24 (known attack sources).  
+5. **Log and report** per NERC CIP-008-6 for incident documentation.  
+
+Prioritize grid continuity via manual breaker supervision while isolating attack vectors. Do not assume protocol-specific failures—act on observed traffic patterns.

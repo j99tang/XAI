@@ -1,0 +1,13 @@
+Based on the provided context, the model flagged this flow as an attack with a confidence of 1.00.
+
+The top SHAP features driving the prediction are:
+
+* Bwd IAT Min: value=0, SHAP=+0.054
+* Flow IAT Min: value=553, SHAP=+0.044
+* Packet Length Min: value=0, SHAP=+0.038
+* Bwd Packet Length Min: value=0, SHAP=+0.034
+* Packet Length Max: value=0, SHAP=+0.034
+
+These features indicate that the flow has a minimum inter-arrival time (IAT) of 553 packets in both forward and backward directions, with no packet length variation. This statistical fingerprint is characteristic of a flood/scan attack family.
+
+The model's confidence is high, but it's essential to note that these features can only prove the presence of a flood/scan behavior pattern, not the specific type of attack or its intent. The evidence boundary is limited to CICFlowMeter flow statistics and does not provide insight into IEC-104 protocol semantics.

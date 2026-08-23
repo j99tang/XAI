@@ -1,0 +1,15 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+**What occurred and which asset was affected:**
+The RTU-2 at Bus 4 in Zone ZONE-C has been compromised by a flood/scan attack, as indicated by many small packets with headers dominating the traffic. The destination port (2404) is indicative of an IEC-104 endpoint, but this is not a leak.
+
+**Plausibility of meeting the threshold for a reportable cyber security incident:**
+The presence of small packets and the indication of a flood/scan attack meet the criteria for a reportable incident under NERC CIP-008-6.
+
+**Reporting timeline and notification:**
+The reporting timeline applies within 24 hours, as specified in NERC CIP-008-6. Notification is due to the E-ISAC or NCCIC/CISA, providing required attributes as outlined in the standard.
+
+**Framework function this response sits under:**
+This response falls under the CSF (Cyber Security Framework) functions of Identify, Protect, Detect, Respond, and Recover, specifically related to incident reporting and response planning.

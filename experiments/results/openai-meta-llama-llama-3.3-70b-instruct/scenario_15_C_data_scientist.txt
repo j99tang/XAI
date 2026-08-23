@@ -1,0 +1,5 @@
+**Incident Analysis**
+
+The intrusion-detection model has flagged a flow to 10.0.0.3:2404 as an attack with 100% confidence. The top contributing features are Flow IAT Min, Bwd IAT Min, Packet Length Max, Packet Length Min, and Bwd Packet Length Min. These features suggest a pattern of low inter-arrival times and small packet lengths, which may indicate a flooding or scanning behavior. The low packet length variance and high packet rate are consistent with a flood or denial-of-service attack. However, the model only provides a binary classification, and the specific attack class is not identified.
+
+The features driving this prediction are statistical fingerprints and do not provide direct evidence of specific protocol actions. The confidence level is high, but it is essential to consider that the model is only analyzing flow statistics and not the actual protocol semantics. Therefore, while the evidence suggests a potential attack, it is crucial to investigate further to determine the nature and intent of the activity.

@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves an intrusion alert targeting RTU-3 (a BES Cyber Asset under NERC CIP, controlling breakers at Bus 6). The destination IP:port (10.0.0.5:2404) corresponds to an IEC-104 endpoint, a critical protocol for grid control. The alert (confidence: 1.00) plausibly meets the NERC CIP-008-6 threshold for a **reportable cyber security incident** as an *attempted compromise* of a BES Cyber System.  
+
+**Reporting timeline**: Notification must occur **by the end of the next calendar day** (per CIP-008-6 R4 for attempted incidents). **Recipients**: E-ISAC and NCCIC/CISA (under US jurisdiction). Required attributes (functional impact, attack vector, intrusion level) may be initially unknown but must be provided in updates.  
+
+**Framework function**: This response falls under the **Detect** function of NIST CSF 2.0, as the IDS identified anomalous network behavior.  
+
+**Note**: This assessment applies NERC CIP-008-6 illustratively to a synthetic grid (non-jurisdictional determination). The attack class (e.g., MITRE ATT&CK T0840) is not asserted beyond the alert’s binary classification.

@@ -1,0 +1,9 @@
+Assessment is illustrative; jurisdiction is not in context.
+
+An IDS/network-flow alert predicted “attack” (confidence 0.59) against destination 10.0.0.4:123. The authoritative IP map identifies 10.0.0.4 as ENG-WS-1, an engineering workstation in ZONE-CC and an EACMS under NERC CIP.
+
+Under NERC CIP-008-6, a Reportable Cyber Security Incident involves a compromise or disruption of an EACMS/PACS associated with a BES Cyber System. Because the affected asset is an EACMS, this plausibly falls within the reportability scope. However, actual compromise or disruption is not in context; the detector observes network flow statistics only and is binary, so the specific attack class is not established.
+
+If treated as a Reportable Cyber Security Incident under US jurisdiction, the context states notification to NCCIC/CISA within one hour; for attempted compromises, by the end of the next calendar day. Required attributes apply when notifying the E-ISAC or NCCIC/CISA.
+
+This response sits under the CSF function: Detect, specifically Detect & Analyze before Report.

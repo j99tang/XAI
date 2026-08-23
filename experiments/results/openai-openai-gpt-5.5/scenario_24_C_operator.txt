@@ -1,0 +1,13 @@
+**Action briefing — Bus 2 / ZONE-N**
+
+Affected device: **RTU-1**, IP **10.0.0.1**, IEC-104 controlled station at **Bus 2**, zone **ZONE-N**. Substation name: **not in context**. RTU-1 supervises **BR-1-2, BR-2-3, BR-2-4, BR-2-5**.
+
+This incident: alert is to **10.0.0.1:2404** with prediction **attack**, confidence **1.00**. Detector evidence is network-flow timing/size/TCP-flag pattern only: very small packets, zero/minimum backward timing/length values, and no forward PSH flags. No protocol contents are in context.
+
+Immediate physical risk: if RTU-1 communications are lost or degraded, SCADA loses remote visibility and control of the Bus 2 breakers. Grid keeps operating, but Bus 2 becomes unobservable/unswitchable remotely.
+
+Next actions:
+1. Check RTU-1 communications and SCADA indications now.
+2. Verify status/alarms for **BR-1-2, BR-2-3, BR-2-4, BR-2-5**.
+3. Do **not** issue non-essential remote switching through RTU-1 until control/indication is confirmed healthy.
+4. If remote control/visibility is lost, use local/manual control procedure: **not in context**. Keep current breaker positions unless safety requires action.

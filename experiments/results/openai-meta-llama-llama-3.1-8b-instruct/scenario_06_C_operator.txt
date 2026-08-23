@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-2 (10.0.0.3) at Bus 4, Zone C, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, and BES Cyber Asset.
+
+**Physical Risk:** The attack is causing a high volume of small packets to be sent to RTU-2, potentially overwhelming the device and disrupting control traffic. This could lead to a loss of view and control of the breakers, causing the grid to run but be unobservable at that node.
+
+**Next Actions:**
+
+1. Immediately switch to manual control of the breakers controlled by RTU-2 to prevent any potential disruptions.
+2. Check the status of the breakers and the RTU-2 device to ensure they are functioning correctly.
+3. Verify that the control traffic is being sent and received correctly.
+4. Investigate the cause of the attack and take necessary measures to prevent similar incidents in the future.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation. We must ensure the grid is running safely and reliably before we can investigate the cause of the attack.

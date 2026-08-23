@@ -1,0 +1,12 @@
+**Action briefing:** Alert is on **RTU-4** at **Bus 9 / ZONE-S**; substation name **not in context**. Device IP **10.0.0.6**, IEC-104 endpoint port **2404**, GridCom GC-4000.
+
+**This incident:** Detector reports attack with confidence **1.00** based only on network flow timing, packet sizes, and TCP flags. Operationally, RTU-4 is seeing abnormal small/zero-length traffic patterns, not confirmed control-message content.
+
+**Physical risk:** RTU-4 controls **BR-4-9, BR-7-9, BR-9-10, BR-9-14**. Immediate risk is delayed or lost remote visibility/control of these Bus 9 breakers if RTU-4 communications are impaired. Actual breaker movement is **not in context**.
+
+**Next actions now:**
+1. Check RTU-4 health and SCADA indications for Bus 9.
+2. Verify present status of **BR-4-9, BR-7-9, BR-9-10, BR-9-14** by trusted/local means if available.
+3. Do **not** issue remote switching through RTU-4 until indications are confirmed reliable.
+4. Switch Bus 9 breaker control to **manual/local control** if RTU-4 telemetry or command response is delayed, missing, or inconsistent.
+5. Other RTUs/breakers to check: **not in context**.

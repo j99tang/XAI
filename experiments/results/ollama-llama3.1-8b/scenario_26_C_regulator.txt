@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+* **Affected Asset**: The engineering workstation, ENG-WS-1 (10.0.0.4), is a BES Cyber System associated with an EACMS/PACS.
+* **Threshold for Reportability**: A compromise or disruption of a BES Cyber System triggers reportability.
+* **Reporting Timeline**: Notification to NCCIC/CISA is due within one hour or by the end of the next calendar day, as per NERC CIP-008-6.
+
+**Notification Due**: The incident should be reported to NCCIC/CISA, as it involves a potential compromise of a BES Cyber System.

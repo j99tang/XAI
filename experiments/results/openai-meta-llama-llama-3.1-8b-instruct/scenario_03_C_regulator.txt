@@ -1,0 +1,7 @@
+**Regulatory Assessment**
+
+This incident is reportable under NERC CIP-008-6 as a compromise of a BES Cyber System. The affected asset, RTU-3, is a BES Cyber Asset under NERC CIP. The intrusion alert indicates a prediction of an attack with a confidence level of 1.00, targeting the IEC-104 endpoint at 10.0.0.5:2404, which controls breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13, and is a critical component of the Bulk Electric System.
+
+The reporting timeline applies as follows: since this is a compromise, the initial notification must be made within one hour to the E-ISAC and, under US jurisdiction, to the NCCIC/CISA. The required attributes for the initial notification include functional impact, attack vector, and level of intrusion, which are unknown at this time.
+
+This response sits under the **Detect** capability of the NIST CSF 2.0 framework, which is responsible for identifying potential threats and anomalies in the network. The incident handling lifecycle, as outlined in NIST SP 800-61r3, will be followed to contain, eradicate, and recover from this incident.

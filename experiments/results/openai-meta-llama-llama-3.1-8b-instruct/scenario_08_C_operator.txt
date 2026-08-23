@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-4 (10.0.0.6) at Bus 9, Zone ZONE-S, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** The RTU is experiencing a high volume of small packets with irregular timing, indicating a potential flood or scanning attack. This could lead to RTU CPU/link exhaustion, delayed or dropped telemetry, and the operator flying blind on that zone.
+
+**Immediate Action:**
+
+1. Switch to manual control for RTU-4 to prevent potential RTU exhaustion or loss of view and control.
+2. Check the breaker status and RTU-4's communication with the PLC to ensure no commands are being executed.
+3. Verify the breaker positions and RTU-4's status to ensure the grid is safe and running.
+4. Initiate a manual check of the RTU-4's communication with the PLC to confirm if the attack is still ongoing.
+
+**Next Steps:**
+
+1. Investigate the source of the attack and take necessary measures to prevent future incidents.
+2. Review the RTU-4's communication logs to identify any potential security vulnerabilities.
+3. Collaborate with the security team to implement additional measures to protect the grid from similar attacks.
+
+**Safety First:** The immediate priority is to ensure the grid is safe and running, and the operator has a clear view of the situation.

@@ -3,7 +3,14 @@
 Authoritative join between the network world (flow records) and the physical world
 (the IEEE 14-bus grid in `ieee14_grid.md`). Canonical names: `entities.yaml`.
 This mapping is a synthetic overlay: device identities are fictional and authored;
-only their consistency is claimed, not field truth.
+only their consistency is claimed, not field truth. **NERC CIP asset classifications
+(`cip_class` in `entities.yaml`) are likewise AUTHORED, not cited**: RTUs and the SCADA
+master are treated as BES Cyber Assets, and the engineering workstation as an EACMS
+(it controls electronic access to BES Cyber Systems). These are plausible designations
+for a synthetic testbed, not a jurisdictional determination — a real entity performs its
+own CIP-002 categorisation. They are stated because CIP-008-6 reporting only triggers
+for in-scope assets, so a regulator-facing narrative cannot reason about reportability
+without them.
 
 ## Control-center systems (no primary equipment)
 

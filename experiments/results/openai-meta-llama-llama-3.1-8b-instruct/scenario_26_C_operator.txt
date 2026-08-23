@@ -1,0 +1,19 @@
+**Incident Briefing**
+
+**Affected Device:** ENG-WS-1 (10.0.0.4), engineering workstation in zone ZONE-CC
+
+**Physical Risk:** Potential loss of view and control of breakers in zone ZONE-CC due to possible denial of service or flooding attack.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch ENG-WS-1 to manual control to prevent any potential malicious actions from affecting the grid.
+2. **Check breaker status**: Verify the status of all breakers in zone ZONE-CC to ensure they are not affected by the potential attack.
+3. **RTU check**: Check the RTU connected to ENG-WS-1 for any signs of unusual activity or malfunction.
+4. **Network check**: Verify the network connection between ENG-WS-1 and the RTU to ensure it is secure and not compromised.
+5. **Alert team**: Alert the incident response team to investigate the incident and take further action as necessary.
+
+**Next Steps:**
+
+1. **Investigate the incident**: Investigate the incident to determine the cause and scope of the attack.
+2. **Contain the attack**: Contain the attack to prevent further damage to the grid.
+3. **Restore normal operations**: Restore normal operations in zone ZONE-CC once the attack has been contained and the incident has been resolved.

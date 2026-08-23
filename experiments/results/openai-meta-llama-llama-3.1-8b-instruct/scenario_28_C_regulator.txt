@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+**Incident Summary:** An intrusion alert was detected on device RTU-4 (10.0.0.6), an IEC-104 controlled station (GridCom GC-4000) in zone ZONE-S, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. The alert indicates a potential attack on a BES Cyber Asset.
+
+**Reportability:** The affected asset, RTU-4, is a BES Cyber Asset under NERC CIP. The incident plausibly meets the threshold for a Reportable Cyber Security Incident, as it involves a potential compromise of a BES Cyber System.
+
+**Reporting Timeline:** The incident occurred on a device in the North American Bulk Electric System, a jurisdiction under NERC CIP. Therefore, the one-hour reporting timeline applies. The incident must be reported to the E-ISAC and NCCIC/CISA within one hour of determination.
+
+**Notification:** The incident must be reported to the E-ISAC and NCCIC/CISA within one hour of determination. The required attributes for the initial notification include functional impact, attack vector, and level of intrusion, even if some are unknown at first notification.

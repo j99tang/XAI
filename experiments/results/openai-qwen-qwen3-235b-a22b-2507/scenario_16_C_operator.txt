@@ -1,0 +1,16 @@
+**Operator Briefing**
+
+Affected device: RTU-1 (IP 10.0.0.1) at Bus 2, ZONE-N, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+What’s happening: Network traffic to RTU-1 on port 2404 shows abnormally short flow inter-arrival times (min 11ms) and very small packet lengths (min 0, max 24 bytes), with minimal backward traffic. This indicates a high-rate, low-latency packet stream consistent with a flooding or denial-of-service condition.  
+
+Physical risk: RTU-1 may become unresponsive due to communication overload, leading to loss of breaker control and telemetry. If RTU fails, breakers under its control cannot be remotely operated — risk of uncontrolled isolation or fault propagation at Bus 2.  
+
+Next actions:  
+1. Immediately verify status of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 for unintended state changes.  
+2. Switch RTU-1 to local manual control mode if available.  
+3. Isolate RTU-1 network segment if safe to do so without disrupting adjacent zones.  
+4. Do not attempt remote commands until traffic normalizes.  
+5. Notify field team to stand by for physical inspection.  
+
+Prioritize grid stability: maintain Bus 2 integrity via adjacent breakers if needed.

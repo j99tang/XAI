@@ -1,0 +1,7 @@
+**Compliance Assessment (Illustrative – Synthetic Grid Context):**
+
+A reportable cybersecurity incident is plausibly triggered under **NERC CIP-008-6**. The destination IP 10.0.0.3 is authoritatively mapped to **RTU-2**, a **BES Cyber Asset** (IEC-104 endpoint, zone ZONE-C, Bus 4), which qualifies as a **BES Cyber System**. The intrusion alert indicates a sustained attack flow targeting port 2404, consistent with an attempted compromise. Per CIP-008-6, an *attempted* compromise of a BES Cyber System is reportable even if unsuccessful.
+
+Notification is due to the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**. Since this constitutes an *attempted* compromise, the reporting timeline allows **by the end of the next calendar day** from determination.
+
+This response sits under the **Detect** function of the **NIST CSF 2.0**, as defined by the IDS detection and contextualization of the attack flow. Jurisdictional applicability of NERC CIP is not asserted; this assessment is illustrative, based on synthetic testbed data.

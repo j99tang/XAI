@@ -1,0 +1,15 @@
+**Operator Briefing**
+
+Affected device: RTU-1 (IP 10.0.0.1), located at Bus 2, ZONE-N, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+What is happening: Network traffic to RTU-1 shows abnormally short inter-arrival times (Flow IAT Min = 58ms, Bwd IAT Min = 243ms) and small packet lengths (min = 0, max = 24 bytes). This pattern indicates a high-rate flood of small packets, consistent with a denial-of-service condition. The destination port 2404 confirms IEC-104 traffic. No evidence of command injection or payload-carrying packets is confirmed.
+
+Physical risk: RTU-1 may experience CPU or communication overload, leading to loss of telemetry and control. If RTU fails, breakers under its control become unresponsive — risk of uncontrolled outage at Bus 2.
+
+Next actions:  
+1. Immediately verify status of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 via local HMI or field inspection.  
+2. Switch RTU-1 to manual/local control mode to maintain breaker operability.  
+3. Isolate RTU-1 from network if traffic persists, per NERC CIP-008-6.  
+4. Do not attempt remote operations on RTU-1 until traffic normalizes.  
+
+Priority: Maintain physical grid stability at Bus 2.

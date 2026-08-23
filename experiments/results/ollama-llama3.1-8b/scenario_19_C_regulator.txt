@@ -1,0 +1,15 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+**What occurred:** An intrusion alert was triggered by a prediction of an attack with high confidence (1.00) towards RTU-4 (10.0.0.6), which controls breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14.
+
+**Affected asset:** The affected BES Cyber Asset is RTU-4, a critical component of the Bulk Electric System.
+
+**Plausibility of meeting reportable threshold:** Given that the intrusion alert was triggered by a prediction of an attack with high confidence, it is plausible that this incident meets the Reportable Cyber Security Incident threshold under NERC CIP-008-6.
+
+**Reporting timeline and notification:** The reporting timeline applies to attempted compromises, which requires notification within one hour or by the end of the next calendar day. In this case, since the intrusion alert was triggered with high confidence, it is likely that the incident was an actual compromise rather than an attempt. Therefore, notification should be made within one hour.
+
+**Notification:** Notification is due to both the E-ISAC and NCCIC/CISA under US jurisdiction.
+
+This response sits under the **Detect** function of the CSF framework, as the intrusion alert was triggered by a detection capability (IDS).

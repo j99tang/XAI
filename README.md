@@ -41,4 +41,6 @@ pip install -e .          # makes `import ccir` work everywhere (needs pyproject
 - [ ] LightRAG contextualizer + personas (Phase 3)
 - [ ] CPAS evaluation (Phase 4)
 
-See `docs/IMPLEMENTATION_PLAN.md` for the full phased plan.
+See `docs/IMPLEMENTATION_PLAN.md` for the full phased plan,
+`docs/model_map.md` for which model runs at which stage (and which stages use
+no model at all), and `docs/decision_log.md` for why things are the way they are.

@@ -1,0 +1,15 @@
+**Model Analysis**  
+The intrusion alert for destination IP 10.0.0.6:2404 (RTU-4) is driven by anomalous flow statistics:  
+- **Bwd IAT Min=0** (SHAP +0.068): Indicates zero backward inter-arrival time, suggesting rapid, back-to-back packets (e.g., flood/scanning).  
+- **Packet Length Min=0** (SHAP +0.046) and **Bwd Packet Length Min=0** (SHAP +0.039): Implies packets with minimal/zero payload, consistent with header-dominated traffic (e.g., SYN scans or probes).  
+- **Packet Length Max=0** (SHAP +0.034): Suggests uniform packet sizes (possibly malformed or zero-byte packets), deviating from normal IEC-104 traffic.  
+- **Fwd PSH Flags=0** (SHAP +0.031): No push operations in forward direction, indicating lack of data transfer (common in scanning).  
+
+These features align with a **flooding/scanning-family attack** (e.g., SYN flood or port scan), overwhelming the RTU with low-payload, high-frequency traffic. The model’s confidence (1.00) reflects strong deviation from normal IEC-104 patterns (e.g., balanced request/response flows with non-zero IATs and payloads).  
+
+**Caveats**:  
+- The model observes statistical fingerprints (e.g., zero IATs, small packets) but cannot confirm protocol-specific actions (e.g., IEC-104 command injection).  
+- Zero values in Packet Length Max may reflect data-edge anomalies or attack-generated malformed packets.  
+- Destination port 2404 (IEC-104) provides context but is not definitive evidence of exploitation (per knowledge graph).  
+
+This signature matches MITRE ATT&CK ICS T0814 (DoS) or T0846 (Remote System Discovery) behaviors but lacks specificity to confirm the exact attack class.

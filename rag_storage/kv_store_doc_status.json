@@ -1,0 +1,186 @@
+{
+  "doc-20dd56667c703dc8625ad1e91c0c460a": {
+    "status": "processed",
+    "content_summary": "# Attack Taxonomy (IEC-104 captures)\n\nOne section per attack class present in `data/raw/iec104/`. **Mechanisms are\nparaphrased from the SANDI-2024 dataset paper** (Gutiérrez Mlot et al., *Data in\nBrief* 57, 2024) — the authoritative description of ho...",
+    "content_length": 5974,
+    "created_at": "2026-07-07T18:55:41.122238+00:00",
+    "updated_at": "2026-07-07T18:58:26.379805+00:00",
+    "file_path": "attacks.md",
+    "track_id": "insert_20260707_145541_adb8a521",
+    "content_hash": "a26cee0ca83b770c6e369eab2f8c6dc9",
+    "metadata": {
+      "parse_start_time": 1783450541,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783450541,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783450541,
+      "process_end_time": 1783450706,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000",
+      "doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001"
+    ]
+  },
+  "doc-dce035de3069e4bd017ba5c0c9f30be1": {
+    "status": "processed",
+    "content_summary": "# Flow Feature Dictionary (CICFlowMeter → attack semantics)\n\nThe semantic bridge: it translates a SHAP feature name into what that feature\n*means* and which attack behavior a high/low value suggests. Covers exactly the\n**78 features the IDS trains on...",
+    "content_length": 5659,
+    "created_at": "2026-07-07T18:58:27.797388+00:00",
+    "updated_at": "2026-07-07T19:00:13.616685+00:00",
+    "file_path": "flow_features.md",
+    "track_id": "insert_20260707_145827_f11e46e5",
+    "content_hash": "00fc04163bacb3be21082125ceec22e8",
+    "metadata": {
+      "parse_start_time": 1783450707,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783450707,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783450707,
+      "process_end_time": 1783450813,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 2,
+    "chunks_list": [
+      "doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000",
+      "doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001"
+    ]
+  },
+  "doc-3d1dd06a33efdff91ff734e2995bc563": {
+    "status": "processed",
+    "content_summary": "# Power-Flow & Protection Reference (steady-state)\n\nConsequence-reasoning principles for the IEEE 14-bus overlay. **Scope is\ndeliberately steady-state** (what pandapower's power flow can compute): line\nloadings, bus voltages, post-contingency redistr...",
+    "content_length": 3432,
+    "created_at": "2026-07-07T19:00:14.184441+00:00",
+    "updated_at": "2026-07-07T19:01:07.201185+00:00",
+    "file_path": "power_flow_basics.md",
+    "track_id": "insert_20260707_150014_c166c3d1",
+    "content_hash": "cbfb625dbb0478a77a32e1a6cf32eae0",
+    "metadata": {
+      "parse_start_time": 1783450814,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783450814,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783450814,
+      "process_end_time": 1783450867,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000"
+    ]
+  },
+  "doc-dccea784b8a75e7bc42d7faea373fa50": {
+    "status": "processed",
+    "content_summary": "# Operator Response Playbooks\n\nRole-specific response steps per attack class. **Structure paraphrased from\nNIST SP 800-61r3** (incident-response lifecycle) and **NIST SP 800-82r3** (OT\nsecurity); reporting steps from `regulatory_compliance/compliance...",
+    "content_length": 3783,
+    "created_at": "2026-07-07T19:01:07.528226+00:00",
+    "updated_at": "2026-07-07T19:02:05.413274+00:00",
+    "file_path": "operator_response.md",
+    "track_id": "insert_20260707_150107_2c1e7a68",
+    "content_hash": "85c784fdb2701ff0c4c03afe643b602d",
+    "metadata": {
+      "parse_start_time": 1783450867,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783450867,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783450867,
+      "process_end_time": 1783450925,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000"
+    ]
+  },
+  "doc-64f013066eb61323018541892c3b0c4d": {
+    "status": "processed",
+    "content_summary": "# Regulatory & Compliance Reference (Regulator persona corpus)\n\nParaphrased and cited from public standards: **NERC CIP-008-6** (Incident\nReporting & Response Planning), **NIST CSF 2.0** (CSWP 29), **NIST SP 800-61r3**.\nNo policy IDs are invented; ev...",
+    "content_length": 2820,
+    "created_at": "2026-07-07T19:02:05.836856+00:00",
+    "updated_at": "2026-07-07T19:03:32.196298+00:00",
+    "file_path": "compliance.md",
+    "track_id": "insert_20260707_150205_98e2fe76",
+    "content_hash": "2c3c141ebb72d2a1236b1ebc114e6009",
+    "metadata": {
+      "parse_start_time": 1783450925,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783450925,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783450925,
+      "process_end_time": 1783451012,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "doc-64f013066eb61323018541892c3b0c4d-chunk-000"
+    ]
+  },
+  "doc-175edd49745fd51cfcfe311dfcf9a5a3": {
+    "status": "processed",
+    "content_summary": "# IEEE 14-Bus System — Grid Topology (generated)\n\n> GENERATED by `scripts/export_topology.py` from pandapower `case14`. Do not hand-edit — re-run the script.\n\n> pandapower version: 3.5.2\n\n\n## Buses\n\n| Bus | Name | Nominal kV | In service |\n|---|---|-...",
+    "content_length": 2341,
+    "created_at": "2026-07-07T19:03:32.614347+00:00",
+    "updated_at": "2026-07-07T19:05:00.651306+00:00",
+    "file_path": "ieee14_grid.md",
+    "track_id": "insert_20260707_150332_102372a3",
+    "content_hash": "7cd7c08c0545ab865ae6290cc1028bfb",
+    "metadata": {
+      "parse_start_time": 1783451012,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783451012,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783451012,
+      "process_end_time": 1783451100,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000"
+    ]
+  },
+  "doc-d4e8a7d968022dc34b14fa29c8d7f294": {
+    "status": "processed",
+    "content_summary": "# IP → Device Mapping (SANDI-2024 testbed onto the IEEE 14-bus overlay)\n\nAuthoritative join between the network world (flow records) and the physical world\n(the IEEE 14-bus grid in `ieee14_grid.md`). Canonical names: `entities.yaml`.\nThis mapping is ...",
+    "content_length": 2398,
+    "created_at": "2026-07-07T19:05:03.056064+00:00",
+    "updated_at": "2026-07-07T19:07:58.719396+00:00",
+    "file_path": "ip_device_map.md",
+    "track_id": "insert_20260707_150503_ab0ddfa3",
+    "content_hash": "8d57e3114c06fd60408590781410dc6a",
+    "metadata": {
+      "parse_start_time": 1783451103,
+      "parse_stage_skipped": true,
+      "parse_format": "raw",
+      "parse_engine": "legacy",
+      "analyzing_start_time": 1783451103,
+      "analyzing_stage_skipped": true,
+      "process_start_time": 1783451103,
+      "process_end_time": 1783451278,
+      "chunk_method": "legacy_chunking_func",
+      "chunk_opts": "size=1200, split_only=False, overlap=100"
+    },
+    "chunks_count": 1,
+    "chunks_list": [
+      "doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000"
+    ]
+  }
+}

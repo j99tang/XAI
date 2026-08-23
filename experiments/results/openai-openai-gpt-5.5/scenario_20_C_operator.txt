@@ -1,0 +1,13 @@
+**Action briefing**
+
+Affected asset: **RTU-1, 10.0.0.1:2404**, GridCom GC-4000 IEC-104 controlled station in **ZONE-N at Bus 2**. Substation name: **not in context**.
+
+This incident’s evidence: detector reports **attack, confidence 1.00** against RTU-1 based only on network flow timing/size/TCP statistics: very short/zero inter-arrival values and zero/minimum packet-length values. Plainly: RTU-1 is seeing abnormal rapid/empty-looking traffic on its IEC-104 service; no protocol contents are in context.
+
+Immediate physical risk: **loss or delay of supervisory view/control at Bus 2**. RTU-1 controls **BR-1-2, BR-2-3, BR-2-4, BR-2-5**. No confirmed breaker trip/open/close is in context.
+
+Next actions:
+1. **Verify RTU-1 communications/status** from control room; treat remote indications from RTU-1 as potentially unreliable until confirmed.
+2. **Check actual status/telemetry for breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5** and watch for unexpected state changes.
+3. **Do not issue non-essential remote switching through RTU-1** while abnormal traffic is active.
+4. **Manual/local control:** availability and procedure are **not in context**; prepare to use manual/local control for those breakers if required by approved operating procedure.

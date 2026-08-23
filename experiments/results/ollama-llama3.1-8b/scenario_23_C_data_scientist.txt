@@ -1,0 +1,13 @@
+Based on the model's output, the flow features that drove the prediction of an attack are:
+
+* Flow IAT Min: value=4, SHAP=+0.114
+* Packet Length Max: value=42, SHAP=+0.082
+* Bwd Packet Length Min: value=0, SHAP=+0.082
+* Packet Length Min: value=0, SHAP=+0.080
+* Fwd PSH Flags: value=0, SHAP=+0.054
+
+These features indicate a flow with short inter-arrival times (IAT), large packet lengths, and no packets in the backward direction. The presence of these features corresponds to a flood/scan behavior family, which is indicative of a potential Denial of Service (DoS) or flooding attack.
+
+The model's confidence is 1.00, indicating that it is highly certain about its prediction. However, it's essential to note that the evidence provided by these features can only prove the presence of a flood/scan behavior family and not specifically identify the type of attack. Further analysis would be required to determine the exact nature of the attack.
+
+It's also worth noting that the destination IP address (10.0.0.6) is an IEC-104 endpoint, which may indicate that the attack is targeting the RTU or PLC. However, without further context or information about the specific protocol semantics, we cannot draw any conclusions about the nature of the attack beyond what can be inferred from the flow features.

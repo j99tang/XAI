@@ -1,0 +1,10 @@
+**Compliance Assessment**  
+A cyber security incident plausibly triggered by an intrusion alert targeting **RTU-1** (BES Cyber Asset, IEC-104 controlled station, GridCom GC-4000) in **ZONE-N**. The alert (confidence: 1.00) indicates anomalous network traffic (e.g., low Bwd IAT Min, small packets) directed at port 2404, a known IEC-104 endpoint. Per **NERC CIP-008-6**, an *attempted compromise* of a BES Cyber System is reportable, even if unsuccessful.  
+
+**Reporting obligation**: Yes. The incident meets the threshold for a **Reportable Cyber Security Incident** under NERC CIP-008-6 R4, as it involves an attempted compromise of a BES Cyber Asset.  
+
+**Timeline**: Notification must be submitted to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) **by the end of the next calendar day** (per R4 for attempted compromises).  
+
+**Framework function**: This response falls under **Detect** (NIST CSF 2.0), as the IDS identified the anomaly.  
+
+**Note**: This assessment is illustrative; the synthetic grid context does not imply jurisdictional applicability. No protocol contents were analyzed—reportability is based on asset classification and intrusion detection.

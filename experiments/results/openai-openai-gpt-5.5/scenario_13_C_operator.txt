@@ -1,0 +1,12 @@
+Affected: RTU-4, GridCom GC-4000 RTU at Bus 9, ZONE-S; substation name not in context. It controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+This incident evidence: attack alert to 10.0.0.6:2404 with flow statistics showing very tight packet timing and zero/minimal packet lengths. Detector did not see IEC-104 contents or breaker commands.
+
+Immediate physical risk: RTU-4 telemetry/control for Bus 9 breakers may be delayed, dropped, or unreliable. No breaker trip/open/close is in context.
+
+Next actions:
+1. Treat RTU-4 remote operation as suspect; do not issue non-essential remote switching through RTU-4.
+2. Verify current status/indications for BR-4-9, BR-7-9, BR-9-10, BR-9-14 by available trusted means; trusted alternate indication is not in context.
+3. Check RTU-4 communications/health and Bus 9 breaker status before any switching.
+4. Do not open/close breakers based on this alert alone; no electrical fault or overload is in context.
+5. Manual control capability/procedure is not in context; switch to manual only if approved local procedure confirms safe manual operation.

@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, 10.0.0.1, Zone ZONE-N, Bus 2
+
+Physical Risk: Potential loss of control and view of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 due to possible attack on the RTU.
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-1.
+2. Check breaker status for BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are not affected by any potential loss of control.
+3. Verify the integrity of the IEC-104 protocol communication between RTU-1 and SCADA-1 (10.0.0.2).
+4. Monitor network traffic for any signs of continued attack or anomalies.
+
+**Note:** This is a high-priority incident requiring immediate attention to prevent potential loss of control and view of critical breakers in the grid.

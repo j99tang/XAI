@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+This incident involves an intrusion alert with a prediction of attack and confidence level of 1.00, targeting RTU-1 at Bus 2, which controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The affected asset is a BES Cyber Asset under NERC CIP.
+
+Based on the knowledge graph data, this incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6. The affected RTU is a critical component of the Bulk Electric System, and the intrusion alert suggests a potential compromise or disruption of its operation.
+
+The reporting timeline applies to attempted compromises, which must be notified to NCCIC/CISA within one hour or by the end of the next calendar day. Notification is due to NCCIC/CISA under US jurisdiction.
+
+This response sits under the CSF function "Report" as outlined in NIST SP 800-61r3 and NERC CIP-008-6.

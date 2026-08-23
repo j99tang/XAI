@@ -1,0 +1,11 @@
+Based on the provided context, the model's prediction of an attack is driven by the following flow features:
+
+1. **Bwd IAT Min**: The minimum inter-arrival time between packets in the backward direction is 0, indicating a high frequency of packet transmission.
+2. **Packet Length Min**: The minimum packet length is 0, suggesting that the packets are small.
+3. **Bwd Packet Length Min**: The minimum packet length in the backward direction is also 0, reinforcing the idea of small packets.
+4. **Packet Length Max**: The maximum packet length is 0, indicating that the packets are small and uniform in size.
+5. **Fwd PSH Flags**: The presence of PSH flags in the forward direction suggests that the packets are being sent with a push function, which can be indicative of a flood or scanning attack.
+
+These features correspond to a **flooding-family** attack pattern, which is characterized by a high frequency of small packets. This pattern is consistent with a **Denial of Service (DoS)** or **Packet Flooding** attack, where the attacker sends a large number of packets to the target system in an attempt to saturate its resources.
+
+The model's confidence in this prediction is 1.00, indicating a high degree of certainty. However, it's essential to note that the evidence is based solely on flow statistics and does not provide any information about the IEC-104 protocol semantics. Therefore, while the model's prediction is likely accurate, it cannot be taken as definitive proof of a specific attack class.

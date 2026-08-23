@@ -1,0 +1,11 @@
+**Compliance Assessment**
+
+This incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6. The affected asset, RTU-4 (10.0.0.6), is a BES Cyber System, and the intrusion alert indicates a prediction of an attack with high confidence. The attack is directed at the RTU, which controls breakers at Bus 9, making it a critical component of the Bulk Electric System.
+
+The reporting timeline applies: within one hour of determining a reportable cyber security incident. Since the incident is an attack on a BES Cyber System, notification is due to both the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+This response sits under the **Detect** function of the NIST CSF 2.0 framework, as the IDS system is a **Detect** capability. The incident handling lifecycle will follow the procedures outlined in NIST SP 800-61r3.
+
+**Illustrative Assessment**
+
+This assessment is illustrative, as the grid is a synthetic IEEE 14-bus overlay and the traffic originates from a European testbed (SANDI-2024). CIP obligations are applied here for demonstration purposes only, not as a jurisdictional determination.

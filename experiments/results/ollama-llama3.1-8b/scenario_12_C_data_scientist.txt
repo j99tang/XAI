@@ -1,0 +1,13 @@
+Based on the model's output, the top SHAP features driving the prediction of an attack are:
+
+* Bwd IAT Min: value=0, SHAP=+0.060
+* Flow IAT Min: value=258, SHAP=+0.052
+* Packet Length Min: value=0, SHAP=+0.042
+* Packet Length Max: value=0, SHAP=+0.036
+* Bwd Packet Length Min: value=0, SHAP=+0.035
+
+These features indicate that the model is flagging this flow due to a lack of packet inter-arrival time (IAT) and packet length variability. Specifically, the minimum IAT in both forward and backward directions is 0, suggesting a high rate of packets being sent. The minimum packet length is also 0, indicating that most packets are likely small.
+
+This pattern corresponds to a flooding-family attack, which can be characterized as a Denial of Service (DoS) or flood attack. However, it's essential to note that the model's confidence is 1.00, but we cannot conclude with certainty whether this is an actual DoS attack without further investigation.
+
+The evidence provided by these features only indicates statistical fingerprints and does not prove specific protocol actions. Further analysis of the flow data and network context is necessary to determine the true nature of this incident.

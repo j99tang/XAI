@@ -1,0 +1,7 @@
+The model's attack prediction (confidence 1.00) against RTU-4 (10.0.0.6:2404) is driven by statistical anomalies in packet timing and size. Key features:  
+- **Flow IAT Min=16** (SHAP +0.097): Extremely low inter-arrival time suggests rapid packet bursts, a fingerprint for flooding/DoS attacks.  
+- **Packet Length Min=0** and **Bwd Packet Length Min=0** (SHAP +0.074/+0.071): Indicates minimal or zero-length packets, consistent with header-only traffic (e.g., SYN floods or scanning).  
+- **Packet Length Max=6** (SHAP +0.077): Very small payload sizes align with "small_packets" patterns linked to flood/scanning attacks in the KB.  
+- **Fwd PSH Flags=0** (SHAP +0.054): Absence of push flags implies incomplete data transfer, possibly indicative of connection-establishment probes (e.g., SYN-only packets).  
+
+This signature matches **flooding-family attacks** (e.g., SYN flood or packet flood), where small packets overwhelm the target. The IEC-104 port (2404) adds contextual relevance, as attacks targeting protocol-specific endpoints are high-risk. However, the model cannot confirm protocol semantics (e.g., whether packets are malformed IEC-104 commands or generic TCP probes). The evidence proves statistical deviation from normal IEC-104 polling (balanced request/response with orderly IATs) but does not definitively prove the attack class (e.g., SYN flood vs. command injection). The absence of PSH flags and payload data suggests a low-interaction probe or denial-of-service attempt rather than a sustained command injection.

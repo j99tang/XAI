@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-4 (10.0.0.6) at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14
+
+**Physical Risk:** The RTU is experiencing a high volume of small packets with headers dominating the traffic, indicating a potential flood or scanning attack. This could lead to a denial of service or view, causing the RTU to lose supervisory reach to the substation, resulting in a loss of control and view of its breakers.
+
+**Immediate Next Actions:**
+
+1. **Switch to Manual Control:** Immediately switch the affected breakers (BR-4-9, BR-7-9, BR-9-10, BR-9-14) to manual control to prevent any potential loss of control or view.
+2. **Check RTU Status:** Verify the RTU's status and ensure it is functioning correctly.
+3. **Investigate Network Traffic:** Investigate the network traffic patterns to determine the source and nature of the attack.
+4. **Collaborate with Security Team:** Collaborate with the security team to determine the best course of action to mitigate the attack and prevent any potential damage to the grid.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation.

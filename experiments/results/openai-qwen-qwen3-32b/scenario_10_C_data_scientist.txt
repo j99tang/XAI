@@ -1,0 +1,10 @@
+**Model Analysis**  
+The intrusion alert for destination `10.0.0.1:2404` is driven by statistical anomalies in packet timing and size. Key features:  
+- **Flow IAT Min=5ms** (SHAP +0.116): Suggests rapid packet arrivals, indicative of a flood or scanning attack.  
+- **Bwd Packet Length Min=0** (SHAP +0.091) and **Packet Length Min=0** (SHAP +0.084): Implies zero-length packets, common in probing or SYN scans.  
+- **Packet Length Max=90B** (SHAP +0.058): Small packets with headers dominating, aligning with flood/scan patterns.  
+- **Fwd PSH Flags=0** (SHAP +0.054): Absence of data-push operations, consistent with connection-establishment attacks (e.g., SYN floods).  
+
+These features match a **flooding-family attack** (e.g., SYN flood, packet flood), where small packets overwhelm the target. The model’s confidence (1.00) reflects strong deviation from normal IEC-104 polling patterns (e.g., regular `Flow IAT Std`, balanced bidirectional traffic).  
+
+**Caveats**: The model observes only statistical fingerprints, not protocol semantics. While the destination port (2404) is IEC-104, the evidence cannot confirm protocol-specific exploitation (e.g., malformed IEC-104 commands). Zero-length packets may also arise from benign tools or misconfigurations. The absence of large payloads or sustained subflow volumes weakens evidence for command injection or sustained DoS. This signature supports *suspicion* of a scan or low-rate flood but does not prove intent or physical impact.

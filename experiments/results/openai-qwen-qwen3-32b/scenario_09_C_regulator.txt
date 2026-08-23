@@ -1,0 +1,10 @@
+**Compliance Assessment:**  
+The incident involves a detected cyber attack targeting RTU-1 (BES Cyber Asset under NERC CIP), an IEC-104-controlled station managing critical breakers. The intrusion alert (confidence: 1.00) plausibly meets the NERC CIP-008-6 threshold for a **Reportable Cyber Security Incident** as an *attempted compromise* of a BES Cyber System.  
+
+**Reporting timeline:** Notification must occur **by the end of the next calendar day** under US jurisdiction (per NERC CIP-008-6 R4). **Recipients:** E-ISAC and NCCIC/CISA, with required attributes (functional impact, attack vector, intrusion level).  
+
+**Framework function:** This response falls under the **Detect** function of NIST CSF 2.0, aligned with IDS capabilities (per NIST SP 800-61r3).  
+
+**Jurisdictional note:** Assessment is illustrative; the synthetic grid (SANDI-2024 testbed) is not a jurisdictional determination for NERC CIP applicability.  
+
+No attack class (e.g., port scanning, command injection) is asserted, as the detector observes only network flow statistics.

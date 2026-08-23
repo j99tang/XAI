@@ -1,0 +1,7 @@
+Prediction is **attack** with **0.59 confidence**, so this is a low-margin alert.
+
+The main positive drivers were **Total Fwd Packet=4 (SHAP +0.075)**, **Fwd IAT Max=6.37289e+06 (SHAP +0.045)**, and **Subflow Fwd Packets=1 (SHAP +0.041)**. These indicate a small forward-packet flow with sparse per-subflow volume and a large timing gap. In the provided fingerprint guidance, small subflow volume maps more to a **short probe** than a sustained attack flow; timing features are statistical flow fingerprints, not protocol evidence. The negative contributors were **Fwd Packet Length Max=120 (SHAP -0.066)** and **Active Min=1598 (SHAP -0.047)**, which pulled the score back toward normal.
+
+Behaviorally, this looks closer to a **probe/scan-style or short-flow anomaly fingerprint** than a flooding-family pattern: the context says flooding is associated with very high `Flow Packets/s`/`Flow Bytes/s`, high `Total Fwd Packet`, and repeated frames, which are not shown here.
+
+Caveat: the model is binary and only says **attack vs normal**; it does not identify an attack class. It sees CICFlowMeter statistics only, not IEC-104 semantics or payload intent. Destination is **10.0.0.4:123** on **ENG-WS-1**, but what service/protocol action occurred is **not in context**.

@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: RTU-2 (10.0.0.3) at Bus 4, Zone ZONE-C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Physical risk: Potential loss of view and control of the breakers supervised by RTU-2, which could lead to uncontrolled grid operation at that substation.
+
+Next actions: 
+
+1. Check the status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+2. Verify communication with RTU-2 and assess its responsiveness.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network flow statistics for any further anomalies.
+
+Note: The observed network flow pattern indicates a potential attack, but the specific type is not confirmed. Prioritize safety and continuity of the physical process.

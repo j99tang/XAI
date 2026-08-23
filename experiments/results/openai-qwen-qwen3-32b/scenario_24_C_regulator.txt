@@ -1,0 +1,10 @@
+**Compliance Assessment**  
+The incident involves a high-confidence intrusion alert targeting RTU-1 (a BES Cyber Asset under NERC CIP), with traffic directed to its IEC-104 endpoint (port 2404). The alert features anomalous network flow statistics (e.g., zero Bwd IAT Min, small packets), consistent with potential reconnaissance or disruption.  
+
+Under **NERC CIP-008-6**, a "Reportable Cyber Security Incident" includes attempted compromises of BES Cyber Systems. RTU-1 qualifies as such a system, and the alert plausibly indicates an attempted disruption.  
+
+**Reporting is required** to **NCCIC/CISA** within **one hour** of confirmation (per NERC CIP-008-6 timelines for attempted compromises). Required attributes (e.g., asset details, attack vector) must accompany the notification.  
+
+This response falls under the **Detect** function of the NIST CSF, as the IDS identified the anomaly, triggering the incident lifecycle.  
+
+*Note: This assessment is illustrative; jurisdictional applicability for a synthetic grid is not determined.*

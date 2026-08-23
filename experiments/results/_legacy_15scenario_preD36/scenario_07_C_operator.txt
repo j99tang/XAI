@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, located at Bus 4, Zone C.
+
+**Physical Risk:** The observed pattern of many small packets with headers dominating the traffic indicates a potential flood/scan attack on RTU-2. This could lead to packet loss or corruption, affecting breaker control and potentially causing a grid instability.
+
+**Next Actions:**
+
+1. Immediately switch to manual control for breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+2. Check the status of RTU-2's communication with the GridCom GC-4000 controller.
+3. Verify that breaker control is functioning correctly and not affected by the potential attack.
+
+**Note:** This briefing prioritizes immediate action to prevent grid instability and ensure safety. Further investigation into the nature of the attack will be conducted once the situation is under control.

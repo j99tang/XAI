@@ -1,0 +1,15 @@
+**Briefing: RTU-2 at Bus 4 (ZONE-C) under active network attack**
+
+Affected device: RTU-2 (10.0.0.3), IEC-104 endpoint at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+What’s happening: Network flow patterns show near-zero minimum backward and forward inter-arrival times (Bwd IAT Min = 0, Flow IAT Min = 295 μs), zero-length packets (Packet Length Min/Max = 0), and no response traffic (Bwd Packet Length Min = 0). This indicates a high-rate, machine-timed flood of small or empty packets targeting port 2404 — consistent with a denial-of-service flood.
+
+Physical risk: RTU-2 may be unresponsive due to CPU or communication overload. Loss of telemetry and control over five breakers at Bus 4 risks undetected overloads, failed fault isolation, or misoperation if breaker status is unknown.
+
+Next actions:  
+1. Immediately switch RTU-2 to **manual local control** at the substation to bypass compromised remote link.  
+2. Verify physical status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via field crew or independent HMI if available.  
+3. Isolate RTU-2 network segment to prevent spread.  
+4. Confirm redundancy paths for Bus 4 via IEEE 14-bus overlay.
+
+Prioritize grid stability — do not attempt remote commands until service is restored and traffic normalizes.

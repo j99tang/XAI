@@ -1,0 +1,17 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2 (10.0.0.3) in Zone C, Bus 4
+
+**Physical Risk:** The RTU-2 is experiencing a potential attack, which may compromise its ability to control breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. This could lead to a loss of control over these breakers, potentially causing a grid instability or even a blackout.
+
+**Immediate Action:**
+
+1. **Switch to Manual Control:** Immediately switch the affected breakers (BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9) to manual control to prevent any potential malicious actions.
+2. **Verify RTU-2 Status:** Check the status of RTU-2 to determine if it is still operational and communicating with the control center.
+3. **Check RTU-3 Status:** Verify the status of RTU-3 (10.0.0.5) in Zone S, Bus 6, as it is also connected to the same grid and may be affected by the attack.
+4. **Monitor Grid Conditions:** Continuously monitor the grid conditions and breaker statuses to ensure the grid stability and prevent any potential cascading failures.
+
+**Next Steps:**
+
+* Investigate the cause of the attack and take corrective actions to prevent future incidents.
+* Review the incident response plan and update it as necessary to ensure the grid's resilience against cyber threats.

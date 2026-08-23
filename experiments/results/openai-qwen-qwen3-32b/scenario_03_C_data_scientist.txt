@@ -1,0 +1,6 @@
+The model's attack prediction (confidence: 1.00) for destination 10.0.0.5:2404 is driven by statistical fingerprints consistent with **flood/scanning behavior**. Key features:  
+- **Low Flow IAT Min (53 ms)** and **Bwd IAT Min (408 ms)** indicate compressed inter-arrival times, deviating from normal IEC-104 polling (which has regular, balanced IATs).  
+- **Packet Length Min (0)** and **Bwd Packet Length Min (0)** suggest zero-length packets, a hallmark of scanning or probing (e.g., SYN scans).  
+- **Packet Length Max (24 B)** aligns with header-dominated traffic, typical of flood/scan attacks (per `attack_taxonomy/attacks.md`).  
+
+These features match the "many small packets" fingerprint (document chunk 2), which maps to **MITRE ATT&CK ICS T0814 (Denial of Service)** via flood/sustained traffic. However, the model cannot confirm protocol-specific actions (e.g., malformed IEC-104 commands) as it lacks visibility into packet payloads. The destination port (2404) is IEC-104, but this alone is a mild signal (per Dst_Port entity). While the pattern strongly suggests a **flooding-family attack** (e.g., packet flood or SYN flood), the absence of high SYN/ACK flags (not in SHAP features) prevents definitive classification. The confidence (1.00) reflects strong statistical deviation but does not prove intent or physical impact, which require contextual validation.

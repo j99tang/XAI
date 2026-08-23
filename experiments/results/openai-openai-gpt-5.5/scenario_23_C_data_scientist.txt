@@ -1,0 +1,7 @@
+The binary detector flagged the flow to RTU-4 at 10.0.0.6:2404 as attack with confidence 1.00.
+
+Main positive SHAP drivers were `Flow IAT Min` value 4, SHAP +0.114; `Packet Length Max` value 42, SHAP +0.082; `Bwd Packet Length Min` value 0, SHAP +0.082; `Packet Length Min` value 0, SHAP +0.080; and `Fwd PSH Flags` value 0, SHAP +0.054. The strongest evidence is therefore timing plus packet-size statistics: very small/zero-length packet observations and a small maximum packet length. In the provided feature guidance, “many small packets” with headers dominating are associated with flood/scan behavior; zero-byte/control-like traffic is also noted, but the exact meaning of `Fwd PSH Flags` is not in context.
+
+This signature is best characterized as a small-packet flood/scan-family statistical fingerprint, potentially consistent with DoS/flood/probe behavior. The model does not identify the attack class.
+
+Caveat: this is CICFlowMeter flow-statistical evidence only. It does not inspect IEC-104 semantics, payload content, command types, or breaker actions, and cannot prove RTU saturation, SYN behavior, remote discovery, or any specific protocol operation.

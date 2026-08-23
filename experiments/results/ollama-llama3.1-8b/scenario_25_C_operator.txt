@@ -1,0 +1,23 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, 10.0.0.3, Zone C, Bus 4
+**Physical Risk:** Potential loss of control and view of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9
+
+**Incident Analysis:**
+
+The intrusion alert indicates a potential attack on RTU-2. The observed pattern shows high `Bwd IAT Min` and `Flow IAT Min`, indicating rapid packet exchange with short intervals between packets. This is consistent with a flood or denial-of-service (DoS) attack, where the attacker sends a large number of small packets to overwhelm the system.
+
+**Immediate Action:**
+
+1. Switch RTU-2 to manual control mode to prevent further potential damage.
+2. Check breaker status and ensure they are not being manipulated by the attacker.
+3. Verify that all other breakers in Zone C are functioning correctly.
+4. Investigate and isolate the source of the attack.
+
+**Next Steps:**
+
+1. Check RTU-2's communication logs for any suspicious activity.
+2. Review network traffic to identify potential entry points for the attack.
+3. Consult with security team to determine the root cause and prevent future attacks.
+
+**Priority:** Safety and continuity of physical process over investigation.

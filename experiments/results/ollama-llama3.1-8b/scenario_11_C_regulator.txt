@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+Incident: Predicted attack on RTU-2 (10.0.0.3) at Bus 4, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+
+**Reportability**: The affected asset is a BES Cyber System (RTU-2), which is subject to NERC CIP-008-6. A predicted attack on this system meets the threshold for a reportable cyber security incident.
+
+**Reporting Timeline**: According to NERC CIP-008-6, notification must be made within one hour or by the end of the next calendar day if it qualifies as an attempted compromise.
+
+**Notification**: Notification is due to NCCIC/CISA under US jurisdiction.

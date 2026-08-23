@@ -1,0 +1,14 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert on a BES Cyber System, specifically ENG-WS-1, an engineering workstation in zone ZONE-CC. The alert indicates a potential compromise or disruption of the system.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident. As such, notification is due to both E-ISAC and NCCIC/CISA within one hour of determining the incident.
+
+The reporting timeline applies as follows:
+
+* Within one hour: Notification to E-ISAC and NCCIC/CISA
+* By the end of the next calendar day: Update with additional information on the attack vector, level of intrusion, and functional impact
+
+This response sits under the **Detect** function of the CSF framework, as it involves identifying potential security threats.
+
+**Illustrative Note**: This assessment is illustrative only, as our grid is a synthetic IEEE 14-bus overlay and not subject to NERC CIP jurisdiction.

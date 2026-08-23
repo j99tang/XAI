@@ -1,0 +1,10 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Flow Duration**: 0.23 SHAP contribution
+* **SYN/RST Flag Count**: -0.15 SHAP contribution
+* **Total Bwd packets**: 0.12 SHAP contribution
+* **Dst Port**: 0.08 SHAP contribution
+
+These features correspond to a **flooding-family** behavior, which is indicative of a potential DoS or flood attack. The high Flow Duration suggests that the flow was sustained over time, while the low SYN/RST Flag Count indicates a lack of normal TCP handshake activity. The large number of Total Bwd packets and the presence of an IEC-104 endpoint (Dst Port) on port 2404 suggest a potential scanning or probing activity.
+
+The model's confidence in this prediction is moderate, with a SHAP value of 0.23 for Flow Duration being the most significant contributor. However, it's essential to note that these features can only provide statistical evidence and do not prove specific protocol actions. Further analysis is required to determine the actual attack pattern and its implications on the system.

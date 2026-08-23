@@ -1,0 +1,8 @@
+**Compliance Assessment:**  
+The incident involves a **BES Cyber Asset** (RTU-3, a NERC CIP-scope device controlling critical breakers in the Bulk Electric System). The intrusion alert (confidence: 1.00) targets port 2404 (IEC-104 protocol), indicating a plausible **attempted compromise** of a BES Cyber System under **NERC CIP-008-6**. Per CIP-008-6 R4, this meets the reportable threshold for an *attempted* incident, even if unsuccessful.  
+
+**Reporting timeline:** Initial notification must occur **by the end of the next calendar day** (per CIP-008-6 R4 for attempted compromises). Notifications are due to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction). Required attributes (functional impact, attack vector, intrusion level) must be included, though details may be refined in updates.  
+
+**Framework function:** This response falls under **Detect** (NIST CSF 2.0), as the IDS identified anomalous network flow statistics (e.g., low IAT, small packets) consistent with a sustained attack flow.  
+
+**Note:** This assessment applies NERC CIP-008-6 *illustratively* to a synthetic grid (IEEE 14-bus overlay with SANDI-2024 testbed traffic); jurisdictional applicability is not determined.

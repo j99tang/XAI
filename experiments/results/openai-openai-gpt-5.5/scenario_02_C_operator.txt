@@ -1,0 +1,13 @@
+**Affected device/substation:** RTU-2, 10.0.0.3, GridCom GC-4000 IEC-104 controlled station in ZONE-C at Bus 4. Substation name: not in context.
+
+**This incident evidence:** Alert to RTU-2 on port 2404, confidence 1.00. Detector saw only network timing/size/TCP-flag statistics: very short inter-arrival timing and zero/minimum packet lengths. No protocol contents or breaker commands are confirmed.
+
+**Immediate physical risk:** Loss or delay of supervisory view/control for Bus 4 breakers controlled by RTU-2: BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. Risk is operating blind or remote commands not being reliable at Bus 4; no confirmed breaker operation in context.
+
+**Next actions:**  
+1. Do not issue remote open/close commands through RTU-2 until status is verified.  
+2. Check RTU-2 communications/health and confirm live indications for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+3. Verify actual breaker positions locally/manual indication for those five breakers.  
+4. Hold present switching state unless required for system safety.  
+5. Switch Bus 4 / RTU-2 controlled breakers to manual/local control if telemetry or remote control is unstable.  
+6. Other RTUs/breakers to check: not in context.

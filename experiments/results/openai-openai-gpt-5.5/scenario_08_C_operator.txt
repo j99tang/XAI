@@ -1,0 +1,13 @@
+Operator action briefing:
+
+Affected asset: RTU-4, IP 10.0.0.6, GridCom GC-4000 RTU, IEC-104 controlled station in ZONE-S at Bus 9. Substation name: not in context. RTU-4 controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+This incident’s evidence: detector reports attack confidence 1.00 on traffic to 10.0.0.6:2404. It saw abnormal network flow statistics only: very short timing gaps and zero/minimum packet lengths. No protocol contents are in context.
+
+Plain operational impact: treat RTU-4 remote telemetry/control as unreliable until checked. Physical risk is loss or delay of view/control for Bus 9 breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. No confirmed breaker operation is in context.
+
+Immediate actions:
+1. Check RTU-4 communications/health from control room and confirm whether telemetry is updating.
+2. Verify actual status of BR-4-9, BR-7-9, BR-9-10, BR-9-14 by independent/local indication if available.
+3. Do not issue remote switching through RTU-4 until status is confirmed reliable.
+4. If switching is required for safety or continuity, switch to manual/local control for those Bus 9 breakers.

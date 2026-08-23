@@ -1,0 +1,9 @@
+Illustrative assessment only: the context notes this is a synthetic grid, not a jurisdictional determination.
+
+Observed event: an intrusion alert for traffic to 10.0.0.6:2404, mapped authoritatively to RTU-4, an IEC-104 controlled station in ZONE-S at Bus 9 controlling BR-4-9, BR-7-9, BR-9-10, and BR-9-14. RTU-4 is identified as a BES Cyber Asset under NERC CIP.
+
+Reportability: based on the provided facts, this is not yet determined to be a NERC CIP-008-6 Reportable Cyber Security Incident. The detector prediction is “normal” with confidence 0.14, and it observes network flow statistics only. No compromise, disruption, or attempted compromise of a BES Cyber System or associated EACMS/PACS is established in context; attack vector, functional impact, and level of intrusion are not in context.
+
+Timeline/to whom: no notification clock is triggered on these facts. If later determined to be a Reportable Cyber Security Incident, initial notification is within one hour; if determined to be an attempt to compromise an in-scope system, notification is by the end of the next calendar day. Notify E-ISAC and, under US jurisdiction, NCCIC/CISA.
+
+Framework function: Detect.

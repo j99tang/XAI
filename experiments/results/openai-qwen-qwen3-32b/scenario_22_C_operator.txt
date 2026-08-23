@@ -1,0 +1,17 @@
+**Briefing:**  
+**Affected Device:** RTU-3 (10.0.0.5), IEC-104-controlled station at Bus 6, Zone ZONE-S. Controls breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13.  
+
+**Observed Behavior:** High-frequency backward traffic (Bwd IAT Min=0, Packet Length Min=0) and low inter-arrival times (Flow IAT Min=217) to port 2404. Matches flood-attack patterns: sustained packet bursts, small/zero-length packets, and elevated bidirectional flow volume.  
+
+**Physical Risk:** RTU-3 CPU/link saturation → delayed/dropped telemetry, loss of breaker status visibility. Sustained flooding could force RTU offline, risking unintended grid states if manual overrides are not pre-established.  
+
+**Next Actions:**  
+1. **Isolate RTU-3:** Disconnect from network via zone firewall (ZONE-S) to starve attack traffic.  
+2. **Manual Breaker Control:** Switch BR-5-6, BR-6-11, BR-6-12, BR-6-13 to manual mode using local switches. Verify positions via physical indicators.  
+3. **Check RTU Status:** Confirm RTU-3 heartbeat and logs (if accessible) for CPU/utilization alarms.  
+4. **Monitor Adjacent Zones:** Cross-check Bus 6 telemetry from neighboring RTUs for anomalies.  
+
+Prioritize manual control continuity. Do not trust RTU-3 telemetry until isolation and investigation complete.  
+
+---  
+*Word count: 160*

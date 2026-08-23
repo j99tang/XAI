@@ -1,0 +1,7 @@
+The model flagged traffic to 10.0.0.6:2404, which maps to RTU-4, an IEC-104 RTU endpoint. Confidence is 1.00.
+
+The strongest attack evidence is a compact timing/zero-length fingerprint: `Bwd IAT Min=0` with SHAP `+0.061`, `Flow IAT Min=250` with SHAP `+0.050`, `Packet Length Min=0` with SHAP `+0.040`, `Bwd Packet Length Min=0` with SHAP `+0.036`, and `Packet Length Max=0` with SHAP `+0.035`. The packet-length features indicate zero-byte/minimal observed packet sizes; the context links small packets/header-dominated traffic to flood/scan behavior and notes SYN scans can carry no payload. The IAT features indicate very small minimum inter-arrival timing values, contributing to the same statistical fingerprint.
+
+Behaviorally, this looks like a small-packet / no-payload probing or flooding-family signature, rather than normal balanced IEC-104 polling. Because the detector is binary, it does not identify a specific attack class.
+
+Caveat: these are CICFlowMeter flow statistics only. They do not prove IEC-104 command semantics, breaker actions, or a specific protocol-level operation. The evidence supports an attack-like network fingerprint against the RTU endpoint, not proof of the attacker’s intent or physical consequence.

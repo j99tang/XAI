@@ -1,0 +1,11 @@
+**Model Analysis**  
+The intrusion alert for destination `10.0.0.3:2404` (RTU-2, IEC-104 endpoint) was driven by anomalous flow features:  
+- **Bwd IAT Min=0** (SHAP +0.054): Zero backward inter-arrival time suggests rapid, back-to-back reverse-direction packets, indicative of a flood or scanning attack.  
+- **Flow IAT Min=468** (SHAP +0.044): Low minimum inter-arrival time across the flow implies compressed packet timing, consistent with sustained traffic bursts.  
+- **Packet Length Min=0** (SHAP +0.038) and **Bwd Packet Length Min=0** (SHAP +0.034): Zero-length packets (headers-only) are hallmark "small packets" often seen in scanning or denial-of-service (DoS) attacks.  
+
+These features align with a **flooding-family attack** (e.g., packet flood, SYN flood, or reconnaissance scan), per the `attack_taxonomy/attacks.md` fingerprint for "many small packets" and "low IAT" patterns. The destination port `2404` (IEC-104) adds contextual relevance but is not definitive evidence of protocol-specific exploitation.  
+
+**Confidence**: The model’s 1.00 confidence reflects strong statistical deviation from normal IEC-104 polling (e.g., balanced IAT, non-zero packet lengths). However, **flow statistics alone cannot confirm intent or exploit success**. Zero-length packets could represent benign keep-alives or malicious probes; timing anomalies may arise from network congestion. Correlation with protocol-level analysis (e.g., IEC-104 command validity) is required to confirm adversarial action.  
+
+**Caveat**: The model observes *statistical fingerprints*, not protocol semantics. While the signature matches MITRE ATT&CK ICS T0814 (DoS) or T0846 (discovery) *behavioral families*, it cannot distinguish between a sustained flood and a short-lived scan without temporal context or payload inspection.

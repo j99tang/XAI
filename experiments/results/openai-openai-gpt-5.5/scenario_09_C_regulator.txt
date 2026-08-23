@@ -1,0 +1,9 @@
+Illustrative assessment only: context notes a synthetic grid, not a jurisdictional determination.
+
+An IDS classified network flow statistics as “attack” with confidence 1.00, destined to 10.0.0.1:2404. The authoritative IP map identifies 10.0.0.1 as RTU-1, an IEC-104 controlled station at Bus 2 controlling breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5, and a BES Cyber Asset under NERC CIP. The detector is binary and does not identify a specific attack class; protocol contents are not in context.
+
+Under NERC CIP-008-6, a Reportable Cyber Security Incident involves compromise or disruption, or an attempt to compromise, a BES Cyber System or associated EACMS/PACS. Confirmed compromise or disruption is not in context. However, an “attack” alert against an in-scope BES Cyber Asset plausibly supports a determination of an attempted compromise.
+
+If determined to be an attempted compromise, initial notification is due by the end of the next calendar day. If later determined to have compromised or disrupted the BES Cyber System, notification is due within one hour of that determination. Notify the E-ISAC and, under US jurisdiction, NCCIC/CISA, with required attributes even if unknown.
+
+CSF function: Respond.

@@ -1,0 +1,12 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4 (10.0.0.6) at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** The RTU-4 is experiencing a high volume of connections, which may indicate a potential attack. If the RTU-4 is overwhelmed, it may stop responding, resulting in a loss of visibility and control of the breakers it supervises. This could lead to a physical risk of equipment damage or a power outage.
+
+**Next Steps:**
+
+1. **Switch to Manual Control:** Immediately switch to manual control of the breakers supervised by RTU-4 to prevent any potential damage or power outages.
+2. **Check Breaker Status:** Verify the status of the breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14 to ensure they are not in an unstable or critical state.
+3. **RTU-4 Status:** Check the status of RTU-4 to determine if it is still responding to commands. If it is not responding, consider isolating it from the network to prevent further potential damage.
+4. **Investigation:** Schedule an investigation to determine the cause of the high volume of connections and to identify any potential security threats.

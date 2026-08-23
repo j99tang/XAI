@@ -1,0 +1,13 @@
+Based on the provided context, the model's prediction of an attack is driven by the following flow features:
+
+* Bwd IAT Min: value=0, SHAP=+0.054
+* Flow IAT Min: value=217, SHAP=+0.048
+* Packet Length Min: value=0, SHAP=+0.038
+* Bwd Packet Length Min: value=0, SHAP=+0.034
+* Packet Length Max: value=0, SHAP=+0.033
+
+These features indicate a potential attack pattern, specifically a flooding-family attack. The low values for IAT Min and Packet Length Min, combined with the high SHAP values, suggest a rapid and synchronized flow of packets, which is characteristic of a flooding attack.
+
+The model's confidence is 1.00, indicating a strong prediction. However, it's essential to note that the model is binary (attack vs normal) and does not identify the attack class. The features can only prove that the flow exhibits a flooding-family behavior, but not that it is a specific attack type (e.g., DoS, flood, or starvation).
+
+A caveat about the evidence is that the model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. Therefore, the feature attributions should be framed as statistical fingerprints, not proof of specific protocol actions.

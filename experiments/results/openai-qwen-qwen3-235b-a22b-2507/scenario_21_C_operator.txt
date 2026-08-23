@@ -1,0 +1,15 @@
+**Operator Briefing:**
+
+Affected device: RTU-2 (10.0.0.3), located at Bus 4, zone ZONE-C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. This is an IEC-104 endpoint on port 2404.
+
+What is happening: Network traffic to RTU-2 shows abnormally low minimum inter-arrival times (Bwd IAT Min = 0, Flow IAT Min = 468 μs) and repeated zero-length packets (Packet Length Min = 0). This pattern indicates a high-rate flood of small packets targeting the RTU.
+
+Physical risk: RTU resource exhaustion — potential loss of telemetry and control. If sustained, RTU may become unresponsive, leading to **unobservable and uncontrollable breakers** at Bus 4, risking grid instability.
+
+Next actions:  
+1. Immediately verify status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via local HMI or field personnel.  
+2. Switch RTU-2 to **manual local control** to preserve breaker operability.  
+3. Isolate RTU-2 network segment if flooding persists.  
+4. Do not attempt remote commands until traffic normalizes.  
+
+Prioritize physical grid stability. Confirm breaker positions are secure and remain under manual supervision.

@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+**Incident:** An intrusion alert was detected on RTU-1 (10.0.0.1), a BES Cyber Asset under NERC CIP, at Bus 2, zone ZONE-N.
+
+**Reportability:** The alert indicates a sustained attack flow, which plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6. The affected asset is a BES Cyber System (RTU-1), which is a critical component of the Bulk Electric System.
+
+**Reporting Timeline:** Since the incident is a compromise of a BES Cyber System, the reporting timeline is within one hour of determining the incident. The incident was detected, and the reporting clock starts immediately.
+
+**Notification:** The incident must be notified to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. The required attributes for the initial notification include functional impact, attack vector, and level of intrusion, even if some are unknown at first notification.
+
+**Framework Function:** This response sits under the Detect function of the NIST CSF 2.0 framework, as the incident was detected by an IDS system. The subsequent response and recovery efforts will be covered under the Respond and Recover functions, respectively.

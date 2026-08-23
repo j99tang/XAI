@@ -1,0 +1,11 @@
+Affected device: RTU-2, GridCom GC-4000 IEC-104 controlled station at Bus 4, Zone-C. Substation name: not in context. Destination was 10.0.0.3:2404.
+
+What is happening: detector reports attack confidence 1.00 based only on network flow statistics. Observed pattern is abnormal traffic to the RTU-2 IEC-104 endpoint with zero/minimum packet sizes and timing features; no protocol contents are in context.
+
+Immediate physical risk: RTU-2 controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9. Risk is loss or delay of remote view/control for Bus 4 breaker operations if RTU-2 communications are degraded. No actual breaker trip or state change is in context.
+
+Next actions:
+1. Check RTU-2 communications/availability first.
+2. Verify present status of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 before any switching.
+3. Do not rely on RTU-2 remote control for Bus 4 switching until RTU-2 status is confirmed reliable.
+4. Switch to manual/local control: procedure and authorization not in context; prepare for manual control only if required by local operating procedure.

@@ -1,0 +1,15 @@
+**Model Analysis**  
+The intrusion alert (confidence: 1.00) was driven by anomalous flow statistics targeting RTU-3 (10.0.0.5:2404). Key features:  
+- **Bwd IAT Min=0** (SHAP +0.054): Zero backward inter-arrival time implies rapid, back-to-back reverse-direction packets, consistent with flooding or scanning.  
+- **Flow IAT Min=217** (SHAP +0.048): Low inter-arrival time across the flow suggests high packet-rate traffic, deviating from normal IEC-104 polling (which has regular, spaced intervals).  
+- **Packet Length Min=0** (SHAP +0.038) and **Bwd Packet Length Min=0** (SHAP +0.034): Indicates small or zero-length packets, aligning with header-dominant traffic (e.g., SYN scans or low-volume probes).  
+- **Packet Length Max=0** (SHAP +0.033): Suggests uniform packet sizes (possibly all zero-length), which is atypical for legitimate IEC-104 control traffic (which often has structured payloads).  
+
+**Attack Pattern**: The fingerprint matches *flooding/scanning families* (e.g., DoS, SYN scans) per `attack_taxonomy/attacks.md`, characterized by high packet rates and small/zero-length packets. However, the model cannot confirm protocol-specific actions (e.g., malformed IEC-104 commands) as it lacks semantic visibility into IEC-104.  
+
+**Caveats**:  
+- Features reflect statistical irregularities, not proof of malicious intent. Legitimate traffic could theoretically exhibit these patterns (e.g., rapid keep-alives).  
+- Zero-valued packet lengths may indicate data collection artifacts or edge cases (e.g., empty TCP segments).  
+- The model cannot distinguish between attack classes (e.g., SYN flood vs. packet flood) or physical consequences (e.g., RTU CPU exhaustion vs. network unavailability).  
+
+This signature warrants further protocol-level analysis to validate intent.

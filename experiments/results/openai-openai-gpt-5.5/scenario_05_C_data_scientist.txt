@@ -1,0 +1,7 @@
+The binary detector labeled the flow to 10.0.0.1:2404, RTU-1’s IEC-104 endpoint, as attack with confidence 1.00.
+
+Main positive drivers were timing and small-packet statistics: Flow IAT Min=310 (SHAP +0.135), Bwd IAT Min=640 (+0.093), and Flow IAT Mean=1115.84 (+0.031) indicate the model saw short/regular inter-arrival timing; low Flow IAT Mean is described in context as part of machine-regular flood fingerprints. Packet Length Max=48 (+0.096) means even the largest packet was small, matching the “many small packets / headers dominate” fingerprint associated with flood/scan behavior. Fwd PSH Flags=0 (+0.047) also pushed toward attack, but its detailed semantic meaning is not in context beyond the feature name/value.
+
+This signature is best characterized as a flooding/scanning-family statistical fingerprint: small packets plus tight inter-arrival timing resemble the documented flood/scan indicators. Because the detector is binary, it does not identify whether this is DoS, flood, scan, or another class.
+
+Caveat: the model sees CICFlowMeter flow statistics only, not IEC-104 protocol semantics. These features can support an anomalous traffic-pattern explanation toward an RTU endpoint, but they cannot prove specific IEC-104 commands, attacker intent, or physical grid consequences.

@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4 (10.0.0.6) at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** Potential loss of control at Bus 9 due to RTU-4 malfunction or denial of service. This could lead to unplanned switching or loss of control at its bus.
+
+**Immediate Action:**
+
+1. **Switch to Manual Control:** Immediately switch to manual control for RTU-4 to prevent any potential loss of control.
+2. **Check Breaker Status:** Verify the status of breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14 to ensure they are not tripped or blocked.
+3. **Verify RTU-4 Communication:** Check RTU-4's communication with the control center to ensure it is functioning correctly.
+4. **Monitor System:** Continuously monitor the system for any changes or anomalies.
+
+**Next Steps:**
+
+1. **Investigate RTU-4:** Investigate the cause of the potential issue with RTU-4 and take corrective action.
+2. **Review System Logs:** Review system logs to determine the source and nature of the potential attack.
+3. **Notify Authorities:** Notify relevant authorities and stakeholders of the potential incident.
+
+**Safety First:** Prioritize the safety of the grid and the public by taking immediate action to prevent any potential loss of control.

@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14.
+
+**Physical Risk:** The observed pattern of many small packets (headers dominate) indicates a potential flood/scan attack. This could lead to RTU connection table exhaustion, causing the system to become unresponsive or even shut down. If left unchecked, this could result in a loss of control over the grid and potentially cause power outages.
+
+**Next Actions:**
+
+1. Immediately switch to manual control for RTU-4 to prevent further potential damage.
+2. Check breaker BR-9-10 and BR-9-14 status to ensure they are not affected by the potential attack.
+3. Verify that breakers BR-4-9 and BR-7-9 are functioning correctly and have not been compromised.
+
+**Note:** The exact nature of the attack (flood/scan or sustained bulk) is still unknown, but immediate action is required to prevent potential damage to the grid.

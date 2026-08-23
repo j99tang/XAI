@@ -1,0 +1,10 @@
+**Compliance Assessment**  
+The incident involves an intrusion alert targeting RTU-4 (BES Cyber Asset, IEC-104 controlled station, GridCom GC-4000) in zone ZONE-S. Network flow statistics (e.g., elevated Flow IAT Max, Flow Bytes/s) suggest anomalous behavior, though the system’s "normal" prediction with low confidence (0.15) indicates uncertainty. Under NERC CIP-008-6, a *reportable incident* includes an *attempted* compromise of a BES Cyber System. Since RTU-4 is a BES Cyber Asset and the alert plausibly reflects an attempted disruption (per CIP-008-6’s expanded scope), this triggers reporting obligations.  
+
+**Reporting timeline**: Notification to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) is required **by the end of the next calendar day** for attempted compromises.  
+
+**Framework function**: This response falls under the **Detect** function of the NIST CSF, as the IDS identifies the anomaly.  
+
+**Jurisdictional note**: This assessment applies NERC CIP-008-6 illustratively, as the grid is synthetic (IEEE 14-bus overlay) and not a jurisdictional determination.  
+
+No attack type is asserted, as the detector observes only flow statistics, not protocol contents.

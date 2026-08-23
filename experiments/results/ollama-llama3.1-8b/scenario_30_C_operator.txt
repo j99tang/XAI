@@ -1,0 +1,12 @@
+**Incident Briefing**
+
+Device affected: ENG-WS-1, engineering workstation in zone ZONE-CC
+Physical risk: Potential loss of visibility and control of RTU-3's breakers due to packet starvation or denial-of-service attack.
+
+Next actions:
+
+1. Immediately switch ENG-WS-1 to manual control mode.
+2. Check the breaker status on RTU-3 (BR-5-6, BR-6-11, BR-6-12, BR-6-13) and ensure they are not affected by any potential attack.
+3. Verify that SCADA-1 is still communicating with RTU-3 and has not lost visibility or control of the breakers.
+
+We need to act quickly to prevent a potential loss of control over the substation's breakers. Switching ENG-WS-1 to manual control will allow us to maintain control over the system, even if the attack continues.

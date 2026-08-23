@@ -1,0 +1,13 @@
+**Briefing:**  
+**Affected Device:** RTU-2 (10.0.0.3:2404), GridCom GC-4000, Zone ZONE-C, Bus 4. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Physical Risk:** High likelihood of RTU-2 CPU/link saturation due to packet flooding (evidenced by zero-min IAT, small packets, and high fwd pkt rates). This could delay or block telemetry, causing loss of real-time visibility into Bus 4 breaker statuses. Sustained flooding may force RTU-2 offline, risking unintended grid states if manual overrides are not pre-staged.  
+
+**Next Actions:**  
+1. **Verify RTU-2 status:** Check local HMI/indicators for "unresponsive" or "high CPU" alerts.  
+2. **Breaker status check:** Manually confirm positions of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via local tags or auxiliary relays (no remote command reliance).  
+3. **Switch to manual control:** If RTU-2 is unresponsive, isolate Zone ZONE-C from SCADA-1 automation and lockout-tagout breaker controls until traffic normalizes.  
+4. **Monitor ZONE-C neighbors:** Check RTUs in IEEE 14-bus overlay for secondary effects (e.g., load imbalances).  
+5. **No protocol-specific mitigation yet:** Do not reset RTU-2 or breakers unless physical anomalies (e.g., tripped breakers) are confirmed.  
+
+*Act to preserve grid observability and prevent cascading failures.*

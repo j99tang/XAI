@@ -1,0 +1,7 @@
+**Compliance Assessment**
+
+The incident involves a potential cyber security incident targeting RTU-3, a BES Cyber Asset, at Bus 6. The asset is an IEC-104 controlled station, and the intrusion alert indicates a high confidence level of an attack. Given that RTU-3 is a BES Cyber Asset, this incident plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6.
+
+As this is an attempted compromise, the reporting timeline is by the end of the next calendar day. Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. Required attributes, including functional impact, attack vector, and level of intrusion, must be provided, even if some are unknown at initial notification.
+
+This response sits under the Detect function of the NIST CSF 2.0 framework. Note that this assessment is illustrative, as our grid is a synthetic IEEE 14-bus overlay, and CIP obligations are applied here to demonstrate regulator-aware explanation, not as a jurisdictional determination.

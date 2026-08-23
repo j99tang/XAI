@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert with a prediction of attack confidence of 1.00, targeting RTU-1 (10.0.0.1) at Bus 2, which controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The affected asset is a BES Cyber Asset under NERC CIP.
+
+Based on the knowledge graph data, a Reportable Cyber Security Incident is triggered when there is a compromise or disruption of a BES Cyber System or its associated EACMS/PACS. Since RTU-1 is a BES Cyber Asset and was targeted by an attack, this incident plausibly meets the threshold for reporting.
+
+The reporting timeline applies as follows: since the incident involves an attempted compromise (not a successful one), the clock for initial notification is the next calendar day. The required attributes to be provided are functional impact, attack vector, and level of intrusion.
+
+Notification is due to both the E-ISAC and NCCIC/CISA under US jurisdiction within the specified timeframe.
+
+This response sits under the **Detect** capability of the CSF functions, as it involves identifying potential threats to the grid.

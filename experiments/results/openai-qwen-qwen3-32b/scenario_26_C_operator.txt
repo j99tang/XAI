@@ -1,0 +1,12 @@
+**Briefing:**  
+**Affected Device:** ENG-WS-1 (10.0.0.4), engineering workstation in ZONE-CC (EACMS, NERC CIP).  
+**Physical Risk:** Unusual flow patterns (high total forward packets, extreme forward IAT max) suggest potential flooding or DoS targeting IEC-104 services (port 123). This could overwhelm linked RTUs, causing delayed/dropped telemetry or loss of control visibility in ZONE-CC.  
+
+**Next Actions:**  
+1. **Isolate ENG-WS-1’s network segment** to contain traffic anomalies.  
+2. **Check RTUs in ZONE-CC** (per NERC CIP-008-6) for signs of CPU/link saturation (e.g., dropped packets, delayed responses). Prioritize RTUs documented in `attack_taxonomy/attacks.md` as IEC-104 endpoints.  
+3. **Switch to manual control** for breakers managed by ZONE-CC RTUs if telemetry becomes unreliable. Use hardcoded setpoints from `physics/power_flow_basics.md` to maintain grid stability.  
+4. **Block flows from 121.142.26.0/24 and 134.221.96.0/24** (marked as attack traffic in knowledge graph).  
+5. **Log all actions** per NERC CIP-008-6 for post-incident reporting.  
+
+*No confirmed protocol exploitation yet; focus on traffic containment and redundancy activation.*

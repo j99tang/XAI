@@ -1,0 +1,3304 @@
+<?xml version='1.0' encoding='utf-8'?>
+<gexf xmlns:viz="http://www.gexf.net/1.2draft/viz" xmlns="http://www.gexf.net/1.2draft" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.gexf.net/1.2draft http://www.gexf.net/1.2draft/gexf.xsd" version="1.2">
+  <meta lastmodifieddate="2026-07-11">
+    <creator>NetworkX 3.6.1</creator>
+  </meta>
+  <graph defaultedgetype="undirected" mode="static" name="">
+    <attributes mode="static" class="edge">
+      <attribute id="7" title="description" type="string" />
+      <attribute id="8" title="keywords" type="string" />
+      <attribute id="9" title="source_id" type="string" />
+      <attribute id="10" title="file_path" type="string" />
+      <attribute id="11" title="created_at" type="long" />
+      <attribute id="12" title="truncate" type="string" />
+    </attributes>
+    <attributes mode="static" class="node">
+      <attribute id="0" title="entity_id" type="string" />
+      <attribute id="1" title="entity_type" type="string" />
+      <attribute id="2" title="description" type="string" />
+      <attribute id="3" title="source_id" type="string" />
+      <attribute id="4" title="file_path" type="string" />
+      <attribute id="5" title="created_at" type="long" />
+      <attribute id="6" title="truncate" type="string" />
+    </attributes>
+    <nodes>
+      <node id="Gutiérrez Mlot et al." label="Gutiérrez Mlot et al.">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Gutiérrez Mlot et al." />
+          <attvalue for="1" value="person" />
+          <attvalue for="2" value="Authors of the SANDI-2024 dataset paper" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SANDI-2024 dataset paper" label="SANDI-2024 dataset paper">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="SANDI-2024 dataset paper" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="Research paper on IEC-104 captures" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="MITRE ATT&amp;CK for ICS" label="MITRE ATT&amp;CK for ICS">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="MITRE ATT&amp;CK for ICS" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Framework for classifying and describing cyber attacks against industrial control systems" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SCADA-1" label="SCADA-1">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="SCADA-1" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="SCADA-1 has IP 10.0.0.2, role: SCADA master (IEC-104 controlling station), in zone ZONE-CC." />
+          <attvalue for="3" value="chunk-351bd8788c3b9ebce2d62c7cd55f5134" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTUs" label="RTUs">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="RTUs" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="Remote terminal units in the simulated substation" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="PLC" label="PLC">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="PLC" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="Programmable logic controllers in the simulated substation" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IEEE 14-bus grid" label="IEEE 14-bus grid">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IEEE 14-bus grid" />
+          <attvalue for="1" value="location" />
+          <attvalue for="2" value="Synthetic power grid used for simulation&lt;SEP&gt;A synthetic overlay of the IEEE 14-bus grid in `ieee14_grid.md`." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000&lt;SEP&gt;doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="4" value="attacks.md&lt;SEP&gt;ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ICS" label="ICS">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ICS" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Industrial control systems" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ICS security" label="ICS security">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ICS security" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Security measures for industrial control systems" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ICS threats" label="ICS threats">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ICS threats" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Potential security risks to industrial control systems" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Port Scanning" label="Port Scanning">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Port Scanning" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="A technique used for reconnaissance against the PLC, RTU, NTP server, and router." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Network Fingerprint" label="Network Fingerprint">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Network Fingerprint" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A set of characteristics that can be used to identify a network or system." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SYN/RST Flag Count" label="SYN/RST Flag Count">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="SYN/RST Flag Count" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="A measure of the number of SYN and RST flags in a flow." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Flow Duration" label="Flow Duration">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Flow Duration" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="The length of time a flow is active." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Fwd Act Data Pkts" label="Fwd Act Data Pkts">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Fwd Act Data Pkts" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="The number of packets sent from the source to the destination." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Dst Port" label="Dst Port">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Dst Port" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="The port on the destination host that is being targeted." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="MITRE ATT&amp;CK for ICS: T0846 (Remote System Discovery)" label="MITRE ATT&amp;CK for ICS: T0846 (Remote System Discovery)">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="MITRE ATT&amp;CK for ICS: T0846 (Remote System Discovery)" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A technique used to discover remote systems." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="MITRE ATT&amp;CK for ICS: T0840 (Network Connection Enumeration)" label="MITRE ATT&amp;CK for ICS: T0840 (Network Connection Enumeration)">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="MITRE ATT&amp;CK for ICS: T0840 (Network Connection Enumeration)" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A technique used to enumerate network connections." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU-3" label="RTU-3">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU-3" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="RTU-3 has IP 10.0.0.5, role: RTU (IEC-104 controlled station, GridCom GC-4000), in zone ZONE-S, located at Bus 6, controls breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13." />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Packet Starvation" label="Packet Starvation">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Packet Starvation" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="A technique used to overwhelm the RTU with connections until it stops responding." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Bwd IAT Max/Flow IAT Max" label="Bwd IAT Max/Flow IAT Max">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Bwd IAT Max/Flow IAT Max" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="A measure of the maximum inter-arrival time between packets in a flow." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Total Bwd packets" label="Total Bwd packets">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Total Bwd packets" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="The total number of packets sent from the destination to the source." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU Connection Table Exhaustion" label="RTU Connection Table Exhaustion">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU Connection Table Exhaustion" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A state where the RTU's connection table is exhausted, causing it to stop responding." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Denial of Service - resource exhaustion (T0814)" label="Denial of Service - resource exhaustion (T0814)">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Denial of Service - resource exhaustion (T0814)" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A technique used to exhaust resources on a system." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Denial of Control (T0813)" label="Denial of Control (T0813)">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Denial of Control (T0813)" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A consequence of a denial of service attack." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="feature_dictionary/flow_features.md" label="feature_dictionary/flow_features.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="feature_dictionary/flow_features.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document containing flow features." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="topology/ip_device_map.md" label="topology/ip_device_map.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="topology/ip_device_map.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document containing IP device mapping information." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="physics/power_flow_basics.md" label="physics/power_flow_basics.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="physics/power_flow_basics.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document explaining power flow basics." />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="flood" label="flood">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="flood" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="has physical consequence on the synthetic power grid" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="loss of view and control" label="loss of view and control">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="loss of view and control" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="results in loss of supervisory reach to the substation" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="unplanned switching or loss of control" label="unplanned switching or loss of control">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="unplanned switching or loss of control" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="results in unexpected tripping or blocking of a breaker" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="fuzzy" label="fuzzy">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="fuzzy" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="enables Modify Parameter or device fault" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="operator acts on a false picture" label="operator acts on a false picture">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="operator acts on a false picture" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="causes operator to act based on stale or spoofed RTU data" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="mitm" label="mitm">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="mitm" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="allows Person-in-the-Middle attack" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="mis-ordered event logs and degraded time-based protection coordination" label="mis-ordered event logs and degraded time-based protection coordination">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="mis-ordered event logs and degraded time-based protection coordination" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="causes loss of accurate time" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ntpddos" label="ntpddos">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ntpddos" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="has downstream risk of Loss of Protection" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="portscan" label="portscan">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="portscan" />
+          <attvalue for="3" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="2" value="has consequence on the PLC, RTU, NTP server, and router" />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="attacks.md" />
+          <attvalue for="5" value="1783450706" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="CICFlowMeter" label="CICFlowMeter">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="CICFlowMeter" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="A machine learning-based intrusion detection system developed by the University of Guelph, Canada." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ahlashkari" label="ahlashkari">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ahlashkari" />
+          <attvalue for="1" value="person" />
+          <attvalue for="2" value="The primary developer and researcher behind CICFlowMeter." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Engelen et al." label="Engelen et al.">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Engelen et al." />
+          <attvalue for="1" value="person" />
+          <attvalue for="2" value="Researchers who contributed to the corrected-behaviour analysis used in CICFlowMeter." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IEC-104" label="IEC-104">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IEC-104" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="International Electrotechnical Commission's standard for industrial automation and control systems." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ASDU" label="ASDU">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ASDU" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Application Service Data Unit, a data structure used in IEC-104 protocol." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IOA" label="IOA">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IOA" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Information Object Address, a data structure used in IEC-104 protocol." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="University of Guelph" label="University of Guelph">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="University of Guelph" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="A Canadian university that developed CICFlowMeter." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="small_packets" label="small_packets">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="small_packets" />
+          <attvalue for="1" value="other" />
+          <attvalue for="2" value="Small packets with headers dominating the traffic." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="large_packets" label="large_packets">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="large_packets" />
+          <attvalue for="1" value="other" />
+          <attvalue for="2" value="Few large packets observed in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="TCP_receive_window_advertised" label="TCP_receive_window_advertised">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="TCP_receive_window_advertised" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="The initial TCP receive-window advertised by the server." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="fingerprintable_stack" label="fingerprintable_stack">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="fingerprintable_stack" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A stack that is fingerprintable using scan tooling." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="bulk_command_injection" label="bulk_command_injection">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="bulk_command_injection" />
+          <attvalue for="1" value="event" />
+          <attvalue for="2" value="Bulk command injection attack detected in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SYN_scan" label="SYN_scan">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="SYN_scan" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="SYN scan carrying no payload, used for pure signalling." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="client_packets" label="client_packets">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="client_packets" />
+          <attvalue for="1" value="other" />
+          <attvalue for="2" value="Client packets actually carrying payload in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="payloads" label="payloads">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="payloads" />
+          <attvalue for="1" value="data" />
+          <attvalue for="2" value="Flood payloads sent to the server." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="control_traffic" label="control_traffic">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="control_traffic" />
+          <attvalue for="1" value="event" />
+          <attvalue for="2" value="Control traffic observed in the network, usually with zero bytes." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="subflow_volume" label="subflow_volume">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="subflow_volume" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="Per-subflow volume of packets and bytes measured in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="sustained_attack_flow" label="sustained_attack_flow">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="sustained_attack_flow" />
+          <attvalue for="1" value="event" />
+          <attvalue for="2" value="Sustained attack flow detected in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="probe/keep-alive" label="probe/keep-alive">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="probe/keep-alive" />
+          <attvalue for="1" value="event" />
+          <attvalue for="2" value="Probe or keep-alive traffic observed in the network." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IEC-104_endpoint" label="IEC-104_endpoint">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IEC-104_endpoint" />
+          <attvalue for="1" value="other" />
+          <attvalue for="2" value="A device that uses IEC-104 protocol on port 2404." />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Dst_Port" label="Dst_Port">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Dst_Port" />
+          <attvalue for="3" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="2" value="The destination port is indicative of an IEC-104 endpoint and carries a mild signal, but it's not a leak." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="flow_features.md" />
+          <attvalue for="5" value="1783450813" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IEEE 14-bus overlay" label="IEEE 14-bus overlay">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IEEE 14-bus overlay" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="A meshed transmission grid with multiple paths between buses, used for consequence-reasoning principles.&lt;SEP&gt;A synthetic grid model used for testing and demonstration purposes." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000&lt;SEP&gt;doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md&lt;SEP&gt;compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="MATPOWER/pandapower docs" label="MATPOWER/pandapower docs">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="MATPOWER/pandapower docs" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="Open references used to paraphrase grounding rules and quantitative claims about the grid." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="von Meier's *Electric Power Systems*" label="von Meier's *Electric Power Systems*">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="von Meier's *Electric Power Systems*" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A book on electric power systems, referenced for grounding principles." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="case14" label="case14">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="case14" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="The solved case used to provide base-case data and match topology/ieee14_grid.md.&lt;SEP&gt;A sample case file for the IEEE 14-Bus System in pandapower format." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000&lt;SEP&gt;doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md&lt;SEP&gt;ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="topology/ieee14_grid.md" label="topology/ieee14_grid.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="topology/ieee14_grid.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document describing the grid's normal state, including bus voltages and line loadings." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="scripts/simulate_consequences.py" label="scripts/simulate_consequences.py">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="scripts/simulate_consequences.py" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="A script used to reproduce quantitative claims about the grid and simulate consequences of attacks." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ntpddos attack" label="ntpddos attack">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="ntpddos attack" />
+          <attvalue for="1" value="event" />
+          <attvalue for="2" value="An attack that disrupts time sync, threatening protection by mis-timed relays." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="attack_taxonomy/attacks.md" label="attack_taxonomy/attacks.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="attack_taxonomy/attacks.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document describing different types of attacks on the grid." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="playbooks/operator_response.md" label="playbooks/operator_response.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="playbooks/operator_response.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document outlining operator actions in response to attacks." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="grid data" label="grid data">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="grid data" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="Grid data is stored in topology/ieee14_grid.md." />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="operator actions" label="operator actions">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="operator actions" />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="2" value="Playbooks/operator_response.md outlines operator actions in response to attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="protection" label="protection">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="protection" />
+          <attvalue for="3" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="2" value="The ntpddos attack threatens protection by disrupting time sync and causing mis-timed relays to trip the wrong element or too slowly." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="power_flow_basics.md" />
+          <attvalue for="5" value="1783450867" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NIST SP 800-61r3" label="NIST SP 800-61r3">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NIST SP 800-61r3" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document outlining the incident-response lifecycle.&lt;SEP&gt;An incident handling standard that supplies a lifecycle for responding to incidents, mapped to the CSF functions above." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000&lt;SEP&gt;doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="operator_response.md&lt;SEP&gt;compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NIST SP 800-82r3" label="NIST SP 800-82r3">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NIST SP 800-82r3" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document detailing OT security guidelines." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="4" value="operator_response.md" />
+          <attvalue for="5" value="1783450925" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="regulatory_compliance/compliance.md" label="regulatory_compliance/compliance.md">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="regulatory_compliance/compliance.md" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document describing reporting steps for regulatory compliance." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="4" value="operator_response.md" />
+          <attvalue for="5" value="1783450925" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="entities.yaml" label="entities.yaml">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="entities.yaml" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="A file containing device, breaker, and zone names specific to the grid." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="4" value="operator_response.md" />
+          <attvalue for="5" value="1783450925" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="OT" label="OT">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="OT" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="Operational Technology." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="4" value="operator_response.md" />
+          <attvalue for="5" value="1783450925" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU" label="RTU">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="A Remote Terminal Unit, a device used for monitoring and controlling grid operations.&lt;SEP&gt;A Remote Terminal Unit, a type of BES Cyber Asset." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000&lt;SEP&gt;doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="operator_response.md&lt;SEP&gt;compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IDS" label="IDS">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IDS" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="An Intrusion Detection System, a security tool used to monitor and detect potential threats.&lt;SEP&gt;An Intrusion Detection System, a type of Detect capability." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000&lt;SEP&gt;doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="operator_response.md&lt;SEP&gt;compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NERC CIP-008" label="NERC CIP-008">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NERC CIP-008" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A document outlining reporting requirements for cyber security incidents." />
+          <attvalue for="3" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="4" value="operator_response.md" />
+          <attvalue for="5" value="1783450925" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NERC CIP-008-6" label="NERC CIP-008-6">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NERC CIP-008-6" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A regulatory standard for incident reporting and response planning in the North American Bulk Electric System." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NIST CSF 2.0" label="NIST CSF 2.0">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NIST CSF 2.0" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A cybersecurity framework vocabulary used to frame responses, consisting of six functions: Govern, Identify, Protect, Detect, Respond, and Recover." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="E-ISAC" label="E-ISAC">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="E-ISAC" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="The Electricity Information Sharing and Analysis Center, responsible for receiving notifications of reportable cyber security incidents." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="NCCIC/CISA" label="NCCIC/CISA">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="NCCIC/CISA" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="The US Cybersecurity and Infrastructure Security Agency, responsible for receiving notifications of reportable cyber security incidents under US jurisdiction." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Regulator persona corpus" label="Regulator persona corpus">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Regulator persona corpus" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A collection of regulatory standards and guidelines for the North American Bulk Electric System." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BES Cyber System" label="BES Cyber System">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="BES Cyber System" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="A system that is critical to the reliable operation of the Bulk Electric System." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="EACMS/PACS" label="EACMS/PACS">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="EACMS/PACS" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="An Electronic Access Control and Monitoring System/Physical Access Control System." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="playbooks" label="playbooks">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="playbooks" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A collection of procedural documents for responding to cyber security incidents." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="CSWP 29" label="CSWP 29">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="CSWP 29" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A cybersecurity framework vocabulary used to frame responses, consisting of six functions: Govern, Identify, Protect, Detect, Respond, and Recover." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SANDI-2024" label="SANDI-2024">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="SANDI-2024" />
+          <attvalue for="1" value="naturalobject" />
+          <attvalue for="2" value="A European testbed used for testing and demonstration purposes." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="attack + topology docs" label="attack + topology docs">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="attack + topology docs" />
+          <attvalue for="1" value="content" />
+          <attvalue for="2" value="A collection of documents containing information about attacks and network topologies." />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Govern" label="Govern">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Govern" />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="2" value="The NIST CSF 2.0 framework vocabulary is used to frame responses, consisting of six functions: Govern, Identify, Protect, Detect, Respond, and Recover." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Detect" label="Detect">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Detect" />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="2" value="The NIST SP 800-61r3 incident handling standard supplies a lifecycle for responding to incidents, mapped to the CSF functions above." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="Required attributes" label="Required attributes">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="Required attributes" />
+          <attvalue for="3" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="2" value="Entities involved in reporting and responding to cyber security incidents must provide required attributes when notifying the E-ISAC or NCCIC/CISA." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="compliance.md" />
+          <attvalue for="5" value="1783451012" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="IEEE 14-Bus System" label="IEEE 14-Bus System">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="IEEE 14-Bus System" />
+          <attvalue for="1" value="concept" />
+          <attvalue for="2" value="A grid topology generated by `scripts/export_topology.py` from pandapower `case14`." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="pandapower" label="pandapower">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="pandapower" />
+          <attvalue for="1" value="organization" />
+          <attvalue for="2" value="An open-source power system analysis software." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="scripts/export_topology.py" label="scripts/export_topology.py">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="scripts/export_topology.py" />
+          <attvalue for="1" value="method" />
+          <attvalue for="2" value="A Python script used to export the grid topology from pandapower." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-1-2" label="BR-1-2">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-1-2" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-1-2 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-1-5" label="BR-1-5">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-1-5" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="A breaker connecting buses 1 and 5." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-2-3" label="BR-2-3">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-2-3" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-2-3 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-2-4" label="BR-2-4">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-2-4" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-2-4 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-2-5" label="BR-2-5">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-2-5" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-2-5 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-3-4" label="BR-3-4">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-3-4" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-3-4 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-4-5" label="BR-4-5">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-4-5" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-4-5 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-6-11" label="BR-6-11">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-6-11" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-6-11 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-6-12" label="BR-6-12">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-6-12" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-6-12 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-6-13" label="BR-6-13">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-6-13" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-6-13 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-9-10" label="BR-9-10">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-9-10" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-9-10 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-9-14" label="BR-9-14">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-9-14" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="2" value="Circuit breaker BR-9-14 on the IEEE 14-bus grid" />
+          <attvalue for="3" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-10-11" label="BR-10-11">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-10-11" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="A breaker connecting buses 10 and 11." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-12-13" label="BR-12-13">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-12-13" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="A breaker connecting buses 12 and 13." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-13-14" label="BR-13-14">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-13-14" />
+          <attvalue for="1" value="artifact" />
+          <attvalue for="2" value="A breaker connecting buses 13 and 14." />
+          <attvalue for="3" value="doc-175edd49745fd51cfcfe311dfcf9a5a3-chunk-000" />
+          <attvalue for="4" value="ieee14_grid.md" />
+          <attvalue for="5" value="1783451100" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="SANDI-2024 testbed" label="SANDI-2024 testbed">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="SANDI-2024 testbed" />
+          <attvalue for="1" value="other" />
+          <attvalue for="2" value="A testbed for simulating attacks." />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ENG-WS-1" label="ENG-WS-1">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="ENG-WS-1" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="ENG-WS-1 has IP 10.0.0.4, role: engineering workstation, in zone ZONE-CC." />
+          <attvalue for="3" value="chunk-2419dd590eaa9e0ae8ef6651f08f3ebb" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU-1" label="RTU-1">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU-1" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="RTU-1 has IP 10.0.0.1, role: RTU (IEC-104 controlled station, GridCom GC-4000), in zone ZONE-N, located at Bus 2, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5." />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU-2" label="RTU-2">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU-2" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="RTU-2 has IP 10.0.0.3, role: RTU (IEC-104 controlled station, GridCom GC-4000), in zone ZONE-C, located at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9." />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="RTU-4" label="RTU-4">
+        <viz:color r="230" g="85" b="13" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="RTU-4" />
+          <attvalue for="1" value="DEVICE" />
+          <attvalue for="2" value="RTU-4 has IP 10.0.0.6, role: RTU (IEC-104 controlled station, GridCom GC-4000), in zone ZONE-S, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14." />
+          <attvalue for="3" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="ZONE-CC" label="ZONE-CC">
+        <viz:color r="117" g="107" b="177" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="ZONE-CC" />
+          <attvalue for="1" value="ZONE" />
+          <attvalue for="2" value="Control Center (buses [])" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="121.142.26.0/24" label="121.142.26.0/24">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="121.142.26.0/24" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Any flow from this range is by construction attack traffic." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="134.221.96.0/24" label="134.221.96.0/24">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="134.221.96.0/24" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Attack simulation auxiliary network." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-5-6" label="BR-5-6">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-5-6" />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="2" value="Circuit breaker BR-5-6 on the IEEE 14-bus grid" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-4-7" label="BR-4-7">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-4-7" />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="2" value="Circuit breaker BR-4-7 on the IEEE 14-bus grid" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-7-9" label="BR-7-9">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-7-9" />
+          <attvalue for="3" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="2" value="Circuit breaker BR-7-9 on the IEEE 14-bus grid" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="BR-4-9" label="BR-4-9">
+        <viz:color r="49" g="163" b="84" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="BR-4-9" />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="2" value="Circuit breaker BR-4-9 on the IEEE 14-bus grid" />
+          <attvalue for="1" value="BREAKER" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="0.0.0.24" label="0.0.0.24">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="0.0.0.24" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="0.0.0.32" label="0.0.0.32">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="0.0.0.32" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="221.32.0.8" label="221.32.0.8">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="221.32.0.8" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="225.138.0.8" label="225.138.0.8">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="225.138.0.8" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="55.53.0.8" label="55.53.0.8">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="55.53.0.8" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="8.0.6.4" label="8.0.6.4">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="8.0.6.4" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="8.6.0.1" label="8.6.0.1">
+        <viz:color r="150" g="150" b="150" a="1.0" />
+        <viz:size value="12.0" />
+        <attvalues>
+          <attvalue for="0" value="8.6.0.1" />
+          <attvalue for="3" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="2" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="1" value="UNKNOWN" />
+          <attvalue for="4" value="ip_device_map.md" />
+          <attvalue for="5" value="1783451278" />
+          <attvalue for="6" value="" />
+        </attvalues>
+      </node>
+      <node id="GridCom" label="GridCom">
+        <viz:color r="227" g="119" b="194" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="GridCom" />
+          <attvalue for="1" value="VENDOR" />
+          <attvalue for="2" value="RTU manufacturer; model GC-4000" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="ZONE-N" label="ZONE-N">
+        <viz:color r="117" g="107" b="177" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="ZONE-N" />
+          <attvalue for="1" value="ZONE" />
+          <attvalue for="2" value="North Substation Zone (buses [1, 2, 3])" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 1" label="Bus 1">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 1" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 1 of the IEEE 14-bus grid, in zone ZONE-N (North Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 2" label="Bus 2">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 2" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 2 of the IEEE 14-bus grid, in zone ZONE-N (North Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 3" label="Bus 3">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 3" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 3 of the IEEE 14-bus grid, in zone ZONE-N (North Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="ZONE-C" label="ZONE-C">
+        <viz:color r="117" g="107" b="177" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="ZONE-C" />
+          <attvalue for="1" value="ZONE" />
+          <attvalue for="2" value="Central Substation Zone (buses [4, 5, 7, 8])" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 4" label="Bus 4">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 4" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 4 of the IEEE 14-bus grid, in zone ZONE-C (Central Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 5" label="Bus 5">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 5" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 5 of the IEEE 14-bus grid, in zone ZONE-C (Central Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 7" label="Bus 7">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 7" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 7 of the IEEE 14-bus grid, in zone ZONE-C (Central Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 8" label="Bus 8">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 8" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 8 of the IEEE 14-bus grid, in zone ZONE-C (Central Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="ZONE-S" label="ZONE-S">
+        <viz:color r="117" g="107" b="177" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="ZONE-S" />
+          <attvalue for="1" value="ZONE" />
+          <attvalue for="2" value="South Substation Zone (buses [6, 9, 10, 11, 12, 13, 14])" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 6" label="Bus 6">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 6" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 6 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 9" label="Bus 9">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 9" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 9 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 10" label="Bus 10">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 10" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 10 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 11" label="Bus 11">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 11" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 11 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 12" label="Bus 12">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 12" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 12 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 13" label="Bus 13">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 13" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 13 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="Bus 14" label="Bus 14">
+        <viz:color r="49" g="130" b="189" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="Bus 14" />
+          <attvalue for="1" value="BUS" />
+          <attvalue for="2" value="Bus 14 of the IEEE 14-bus grid, in zone ZONE-S (South Substation Zone)" />
+          <attvalue for="3" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.2" label="10.0.0.2">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.2" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of SCADA-1 (SCADA master (IEC-104 controlling station))" />
+          <attvalue for="3" value="chunk-351bd8788c3b9ebce2d62c7cd55f5134" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.4" label="10.0.0.4">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.4" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of ENG-WS-1 (engineering workstation)" />
+          <attvalue for="3" value="chunk-2419dd590eaa9e0ae8ef6651f08f3ebb" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.1" label="10.0.0.1">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.1" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of RTU-1 (RTU (IEC-104 controlled station, GridCom GC-4000))" />
+          <attvalue for="3" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.3" label="10.0.0.3">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.3" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of RTU-2 (RTU (IEC-104 controlled station, GridCom GC-4000))" />
+          <attvalue for="3" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.5" label="10.0.0.5">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.5" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of RTU-3 (RTU (IEC-104 controlled station, GridCom GC-4000))" />
+          <attvalue for="3" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+      <node id="10.0.0.6" label="10.0.0.6">
+        <viz:color r="253" g="141" b="60" a="1.0" />
+        <viz:size value="30.0" />
+        <attvalues>
+          <attvalue for="0" value="10.0.0.6" />
+          <attvalue for="1" value="IP_ADDRESS" />
+          <attvalue for="2" value="IP address of RTU-4 (RTU (IEC-104 controlled station, GridCom GC-4000))" />
+          <attvalue for="3" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="4" value="custom_kg" />
+          <attvalue for="5" value="1783452522" />
+        </attvalues>
+      </node>
+    </nodes>
+    <edges>
+      <edge source="Gutiérrez Mlot et al." target="MITRE ATT&amp;CK for ICS" id="0" label="aligned with,authored" weight="2.0">
+        <attvalues>
+          <attvalue for="7" value="describes cyber attacks against industrial control systems&lt;SEP&gt;cross-mapped to technique IDs in the framework" />
+          <attvalue for="8" value="aligned with,authored" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Gutiérrez Mlot et al." target="SANDI-2024 dataset paper" id="1" label="authored" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="describes cyber attacks against industrial control systems" />
+          <attvalue for="8" value="authored" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="PLC" id="2" label="mapped to" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="cross-mapped to technique IDs in the framework" />
+          <attvalue for="8" value="mapped to" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="flood" id="3" label="aligned with" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="consequence aligns with Denial of View" />
+          <attvalue for="8" value="aligned with" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="fuzzy" id="4" label="may cause" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="enables Modify Parameter or device fault" />
+          <attvalue for="8" value="may cause" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="mitm" id="5" label="enables" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="allows Person-in-the-Middle attack" />
+          <attvalue for="8" value="enables" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="ntpddos" id="6" label="against time service" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="has downstream risk of Loss of Protection" />
+          <attvalue for="8" value="against time service" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="portscan" id="7" label="reconnaissance against" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="has consequence on the PLC, RTU, NTP server, and router" />
+          <attvalue for="8" value="reconnaissance against" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS" target="SCADA-1" id="8" label="verified against" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="confirmed by the authors" />
+          <attvalue for="8" value="verified against" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="RTUs" id="9" label="communicates with" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="exchanges data with remote terminal units" />
+          <attvalue for="8" value="communicates with" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="IEEE 14-bus grid" id="10" label="used by" weight="2.0">
+        <attvalues>
+          <attvalue for="7" value="reasoned via physics and power flow basics" />
+          <attvalue for="8" value="used by" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="PLC" id="11" label="opens connections on port 2404 to" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="exchanges balanced request/response traffic with programmable logic controllers" />
+          <attvalue for="8" value="opens connections on port 2404 to" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="loss of view and control" id="12" label="causes" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="results in loss of supervisory reach to the substation" />
+          <attvalue for="8" value="causes" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="unplanned switching or loss of control" id="13" label="causes" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="results in unexpected tripping or blocking of a breaker" />
+          <attvalue for="8" value="causes" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="operator acts on a false picture" id="14" label="results in" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="causes operator to act based on stale or spoofed RTU data" />
+          <attvalue for="8" value="results in" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="mis-ordered event logs and degraded time-based protection coordination" id="15" label="results in" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="causes loss of accurate time" />
+          <attvalue for="8" value="results in" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="RTU-1" id="16" label="controls,supervises" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Loss of communication with an RTU means loss of visibility and control of its breakers - the grid keeps operating, but the operator can no longer see or switch that substation remotely." />
+          <attvalue for="8" value="controls,supervises" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="RTU-2" id="17" label="controls,supervises" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Loss of communication with an RTU means loss of visibility and control of its breakers - the grid keeps operating, but the operator can no longer see or switch that substation remotely." />
+          <attvalue for="8" value="controls,supervises" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="RTU-3" id="18" label="controls,supervises" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Loss of communication with an RTU means loss of visibility and control of its breakers - the grid keeps operating, but the operator can no longer see or switch that substation remotely." />
+          <attvalue for="8" value="controls,supervises" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="RTU-4" id="19" label="controls,supervises" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Loss of communication with an RTU means loss of visibility and control of its breakers - the grid keeps operating, but the operator can no longer see or switch that substation remotely." />
+          <attvalue for="8" value="controls,supervises" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="ENG-WS-1" id="20" label="communicates,interacts" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Used for RTU configuration and maintenance; does not speak IEC-104 in normal operation." />
+          <attvalue for="8" value="communicates,interacts" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="10.0.0.2" id="21" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.2 is the IP address of SCADA-1" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-351bd8788c3b9ebce2d62c7cd55f5134" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="SCADA-1" target="ZONE-CC" id="22" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="SCADA-1 is in zone ZONE-CC" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-351bd8788c3b9ebce2d62c7cd55f5134" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus grid" target="flood" id="23" label="affects" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="has physical consequence on the synthetic power grid" />
+          <attvalue for="8" value="affects" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-000" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Port Scanning" target="Packet Starvation" id="24" label="Connections,RTU,relationship_keywords: Overwhelming" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Port scanning can lead to packet starvation by overwhelming the RTU with connections." />
+          <attvalue for="8" value="Connections,RTU,relationship_keywords: Overwhelming" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Network Fingerprint" target="MITRE ATT&amp;CK for ICS: T0846 (Remote System Discovery)" id="25" label="Identification,Systems,relationship_keywords: Characteristics" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: A network fingerprint is used in remote system discovery to identify systems." />
+          <attvalue for="8" value="Identification,Systems,relationship_keywords: Characteristics" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Network Fingerprint" target="feature_dictionary/flow_features.md" id="26" label="Identification,Systems,relationship_keywords: Characteristics" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Network fingerprints are defined in the feature dictionary." />
+          <attvalue for="8" value="Identification,Systems,relationship_keywords: Characteristics" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SYN/RST Flag Count" target="Flow Duration" id="27" label="Packets,Time,relationship_keywords: Flags" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: The SYN/RST flag count and flow duration are related as they both affect the number of packets sent in a flow." />
+          <attvalue for="8" value="Packets,Time,relationship_keywords: Flags" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Fwd Act Data Pkts" target="Dst Port" id="28" label="Ports,Targets,relationship_keywords: Packets" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Forward active data packets are sent to the destination port." />
+          <attvalue for="8" value="Ports,Targets,relationship_keywords: Packets" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="MITRE ATT&amp;CK for ICS: T0840 (Network Connection Enumeration)" target="RTU-3" id="29" label="Devices,Systems,relationship_keywords: Connections" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Network connection enumeration is used to enumerate connections on RTU-3." />
+          <attvalue for="8" value="Devices,Systems,relationship_keywords: Connections" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="topology/ip_device_map.md" id="30" label="Mapping,Targets,relationship_keywords: Devices" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: RTU-3 is a device targeted by mapping information." />
+          <attvalue for="8" value="Mapping,Targets,relationship_keywords: Devices" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="ENG-WS-1" id="31" label="configures,maintains" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Used for RTU configuration and maintenance; does not speak IEC-104 in normal operation." />
+          <attvalue for="8" value="configures,maintains" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="BR-5-6" id="32" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 supervises breaker BR-5-6" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="BR-6-11" id="33" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 supervises breaker BR-6-11" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="BR-6-12" id="34" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 supervises breaker BR-6-12" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="BR-6-13" id="35" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 supervises breaker BR-6-13" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="10.0.0.5" id="36" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.5 is the IP address of RTU-3" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="ZONE-S" id="37" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 is in zone ZONE-S" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-3" target="Bus 6" id="38" label="device location" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-3 is located at Bus 6" />
+          <attvalue for="8" value="device location" />
+          <attvalue for="9" value="chunk-d90d14570c10f44f23d8c144b7522cb9" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="Packet Starvation" target="RTU Connection Table Exhaustion" id="39" label="Resources,System,relationship_keywords: Overwhelming" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Packet starvation leads to RTU connection table exhaustion by overwhelming the system with connections." />
+          <attvalue for="8" value="Resources,System,relationship_keywords: Overwhelming" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="Packet Starvation" target="physics/power_flow_basics.md" id="40" label="Resources,System,relationship_keywords: Overwhelming" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="relationship_description: Packet starvation affects power flow basics by overwhelming the system with connections." />
+          <attvalue for="8" value="Resources,System,relationship_keywords: Overwhelming" />
+          <attvalue for="9" value="doc-20dd56667c703dc8625ad1e91c0c460a-chunk-001" />
+          <attvalue for="10" value="attacks.md" />
+          <attvalue for="11" value="1783450706" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="CICFlowMeter" target="ahlashkari" id="41" label="Developed by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The primary developer and researcher behind CICFlowMeter is ahlashkari." />
+          <attvalue for="8" value="Developed by" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="CICFlowMeter" target="Engelen et al." id="42" label="Based on the work of" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="CICFlowMeter uses the corrected-behaviour analysis developed by Engelen et al." />
+          <attvalue for="8" value="Based on the work of" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="CICFlowMeter" target="IEC-104" id="43" label="Based on" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="CICFlowMeter is based on the IEC-104 protocol." />
+          <attvalue for="8" value="Based on" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="CICFlowMeter" target="University of Guelph" id="44" label="Developed by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="CICFlowMeter was developed by the University of Guelph." />
+          <attvalue for="8" value="Developed by" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ahlashkari" target="Engelen et al." id="45" label="Collaborated with" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="ahlashkari collaborated with Engelen et al. on the corrected-behaviour analysis." />
+          <attvalue for="8" value="Collaborated with" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEC-104" target="ASDU" id="46" label="Uses" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The IEC-104 protocol uses ASDU data structures." />
+          <attvalue for="8" value="Uses" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEC-104" target="IOA" id="47" label="Uses" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The IEC-104 protocol uses IOA data structures." />
+          <attvalue for="8" value="Uses" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-000" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="small_packets" target="large_packets" id="48" label="few_large_packets,flood/scanning" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The presence of small packets is indicative of a flood/scanning attack, while large packets are characteristic of a sustained attack flow." />
+          <attvalue for="8" value="few_large_packets,flood/scanning" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="TCP_receive_window_advertised" target="fingerprintable_stack" id="49" label="fingerprintable_stack,initial_TCP_receive-window_advertised" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The initial TCP receive-window advertised by the server is indicative of a fingerprintable stack." />
+          <attvalue for="8" value="fingerprintable_stack,initial_TCP_receive-window_advertised" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="bulk_command_injection" target="client_packets" id="50" label="bulk_command_injection,client_packets" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bulk command injection attacks are often carried out using client packets with payload." />
+          <attvalue for="8" value="bulk_command_injection,client_packets" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SYN_scan" target="control_traffic" id="51" label="control_traffic,pure_signalling" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="SYN scans carrying no payload are used for pure signalling and are typically accompanied by control traffic." />
+          <attvalue for="8" value="control_traffic,pure_signalling" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="payloads" target="subflow_volume" id="52" label="flood_payloads,subflow_volume" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Flood payloads sent to the server contribute to the per-subflow volume of packets and bytes." />
+          <attvalue for="8" value="flood_payloads,subflow_volume" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEC-104_endpoint" target="Dst_Port" id="53" label="NOT_leak,mild_signal" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The destination port is indicative of an IEC-104 endpoint and carries a mild signal, but it's not a leak." />
+          <attvalue for="8" value="NOT_leak,mild_signal" />
+          <attvalue for="9" value="doc-dce035de3069e4bd017ba5c0c9f30be1-chunk-001" />
+          <attvalue for="10" value="flow_features.md" />
+          <attvalue for="11" value="1783450813" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="MATPOWER/pandapower docs" id="54" label="references,uses" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The IEEE 14-bus overlay uses and references MATPOWER/pandapower docs for grounding rules." />
+          <attvalue for="8" value="references,uses" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="von Meier's *Electric Power Systems*" id="55" label="used as reference" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Von Meier's book is used as a reference for grounding principles in the IEEE 14-bus overlay." />
+          <attvalue for="8" value="used as reference" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="scripts/simulate_consequences.py" id="56" label="reproduces quantitative claims" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Scripts/simulate_consequences.py reproduces quantitative claims about the grid." />
+          <attvalue for="8" value="reproduces quantitative claims" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="attack_taxonomy/attacks.md" id="57" label="describes different types of attacks" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Attack_taxonomy/attacks.md describes different types of attacks on the grid." />
+          <attvalue for="8" value="describes different types of attacks" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="topology/ieee14_grid.md" id="58" label="contains,describes grid's normal state" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The IEEE 14-bus overlay contains and describes the grid's normal state in topology/ieee14_grid.md." />
+          <attvalue for="8" value="contains,describes grid's normal state" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IEEE 14-bus overlay" target="NERC CIP-008-6" id="59" label="application,jurisdiction" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="NERC CIP applies to the North American Bulk Electric System, which includes the IEEE 14-bus overlay." />
+          <attvalue for="8" value="application,jurisdiction" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="case14" target="topology/ieee14_grid.md" id="60" label="matches,provides base-case data" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Case14 matches and provides base-case data for topology/ieee14_grid.md." />
+          <attvalue for="8" value="matches,provides base-case data" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ntpddos attack" target="protection" id="61" label="mis-timed relays can trip wrong element or too slowly,threatens" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The ntpddos attack threatens protection by disrupting time sync and causing mis-timed relays to trip the wrong element or too slowly." />
+          <attvalue for="8" value="mis-timed relays can trip wrong element or too slowly,threatens" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="playbooks/operator_response.md" target="operator actions" id="62" label="outlines operator response to attacks" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Playbooks/operator_response.md outlines operator actions in response to attacks." />
+          <attvalue for="8" value="outlines operator response to attacks" />
+          <attvalue for="9" value="doc-3d1dd06a33efdff91ff734e2995bc563-chunk-000" />
+          <attvalue for="10" value="power_flow_basics.md" />
+          <attvalue for="11" value="1783450867" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-61r3" target="NIST SP 800-82r3" id="63" label="influenced_by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The incident-response lifecycle in NIST SP 800-61r3 was influenced by OT security guidelines in NIST SP 800-82r3." />
+          <attvalue for="8" value="influenced_by" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-61r3" target="regulatory_compliance/compliance.md" id="64" label="influenced_by,references" weight="2.0">
+        <attvalues>
+          <attvalue for="7" value="The reporting steps for regulatory compliance in `regulatory_compliance/compliance.md` were influenced by the incident-response lifecycle in NIST SP 800-61r3.&lt;SEP&gt;The incident-response lifecycle in NIST SP 800-61r3 references reporting steps for regulatory compliance in `regulatory_compliance/compliance.md`." />
+          <attvalue for="8" value="influenced_by,references" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-61r3" target="OT" id="65" label="influenced_by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The incident-response lifecycle in NIST SP 800-61r3 is influenced by Operational Technology (OT) guidelines." />
+          <attvalue for="8" value="influenced_by" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-61r3" target="IDS" id="66" label="used_by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The incident-response lifecycle in NIST SP 800-61r3 uses IDS systems for detecting anomalies." />
+          <attvalue for="8" value="used_by" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-61r3" target="Detect" id="67" label="incident handling lifecycle" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The NIST SP 800-61r3 incident handling standard supplies a lifecycle for responding to incidents, mapped to the CSF functions above." />
+          <attvalue for="8" value="incident handling lifecycle" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-82r3" target="entities.yaml" id="68" label="used_by" weight="2.0">
+        <attvalues>
+          <attvalue for="7" value="The device, breaker, and zone names specific to the grid contained in `entities.yaml` are used by NIST SP 800-82r3.&lt;SEP&gt;NIST SP 800-82r3 uses the device, breaker, and zone names specific to the grid contained in `entities.yaml`." />
+          <attvalue for="8" value="used_by" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST SP 800-82r3" target="RTU" id="69" label="used_by" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="NIST SP 800-82r3 uses the guidelines for securing RTUs in OT environments." />
+          <attvalue for="8" value="used_by" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="regulatory_compliance/compliance.md" target="NERC CIP-008" id="70" label="references" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The compliance document in `regulatory_compliance/compliance.md` references NERC CIP-008 for reporting requirements." />
+          <attvalue for="8" value="references" />
+          <attvalue for="9" value="doc-dccea784b8a75e7bc42d7faea373fa50-chunk-000" />
+          <attvalue for="10" value="operator_response.md" />
+          <attvalue for="11" value="1783450925" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU" target="NERC CIP-008-6" id="71" label="attack,threshold" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The Regulator-facing narrative should state whether an attack on an RTU plausibly meets the Reportable threshold." />
+          <attvalue for="8" value="attack,threshold" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="IDS" target="NIST CSF 2.0" id="72" label="capability,function" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The IDS is a Detect capability within the NIST CSF 2.0 framework vocabulary." />
+          <attvalue for="8" value="capability,function" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="E-ISAC" id="73" label="notification,reporting" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Entities involved in reporting and responding to cyber security incidents must notify the E-ISAC within one hour or by the end of the next calendar day for attempted compromises." />
+          <attvalue for="8" value="notification,reporting" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="NCCIC/CISA" id="74" label="notification,reporting" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Entities involved in reporting and responding to cyber security incidents must notify the NCCIC/CISA under US jurisdiction within one hour or by the end of the next calendar day for attempted compromises." />
+          <attvalue for="8" value="notification,reporting" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="Required attributes" id="75" label="attack vector,functional impact,level of intrusion" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Entities involved in reporting and responding to cyber security incidents must provide required attributes when notifying the E-ISAC or NCCIC/CISA." />
+          <attvalue for="8" value="attack vector,functional impact,level of intrusion" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="Regulator persona corpus" id="76" label="reference,standard" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The Regulator persona corpus references NERC CIP-008-6 as a regulatory standard for incident reporting and response planning." />
+          <attvalue for="8" value="reference,standard" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="BES Cyber System" id="77" label="compromise,disruption" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="A Reportable Cyber Security Incident involves a compromise or disruption of a BES Cyber System." />
+          <attvalue for="8" value="compromise,disruption" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="EACMS/PACS" id="78" label="compromise,disruption" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="A Reportable Cyber Security Incident involves a compromise or disruption of an EACMS/PACS associated with a BES Cyber System." />
+          <attvalue for="8" value="compromise,disruption" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="playbooks" id="79" label="reference,standard" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The playbooks reference NERC CIP-008-6 as a regulatory standard for incident reporting and response planning." />
+          <attvalue for="8" value="reference,standard" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="SANDI-2024" id="80" label="application,jurisdiction" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="NERC CIP applies to the North American Bulk Electric System, which includes traffic originating from the SANDI-2024 testbed." />
+          <attvalue for="8" value="application,jurisdiction" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NERC CIP-008-6" target="attack + topology docs" id="81" label="reference,standard" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The attack + topology docs reference NERC CIP-008-6 as a regulatory standard for incident reporting and response planning." />
+          <attvalue for="8" value="reference,standard" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST CSF 2.0" target="Govern" id="82" label="framework vocabulary" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The NIST CSF 2.0 framework vocabulary is used to frame responses, consisting of six functions: Govern, Identify, Protect, Detect, Respond, and Recover." />
+          <attvalue for="8" value="framework vocabulary" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="NIST CSF 2.0" target="CSWP 29" id="83" label="framework vocabulary,standard" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="The NIST CSF 2.0 framework vocabulary is based on the CSWP 29 standard." />
+          <attvalue for="8" value="framework vocabulary,standard" />
+          <attvalue for="9" value="doc-64f013066eb61323018541892c3b0c4d-chunk-000" />
+          <attvalue for="10" value="compliance.md" />
+          <attvalue for="11" value="1783451012" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-1-2" target="RTU-1" id="84" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 supervises breaker BR-1-2" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-2-3" target="RTU-1" id="85" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 supervises breaker BR-2-3" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-2-4" target="RTU-1" id="86" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 supervises breaker BR-2-4" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-2-4" target="RTU-2" id="87" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 supervises breaker BR-2-4" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-2-5" target="RTU-1" id="88" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 supervises breaker BR-2-5" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-3-4" target="RTU-2" id="89" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 supervises breaker BR-3-4" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-4-5" target="RTU-2" id="90" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 supervises breaker BR-4-5" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-9-10" target="RTU-4" id="91" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 supervises breaker BR-9-10" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="BR-9-14" target="RTU-4" id="92" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 supervises breaker BR-9-14" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="121.142.26.0/24" id="93" label="attack-simulation source network" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Any flow from this range is by construction attack traffic." />
+          <attvalue for="8" value="attack-simulation source network" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="134.221.96.0/24" id="94" label="attack-simulation auxiliary network" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Attack simulation auxiliary network." />
+          <attvalue for="8" value="attack-simulation auxiliary network" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="0.0.0.24" id="95" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="0.0.0.32" id="96" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="221.32.0.8" id="97" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="225.138.0.8" id="98" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="55.53.0.8" id="99" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="8.0.6.4" id="100" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="SANDI-2024 testbed" target="8.6.0.1" id="101" label="capture noise" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Capture noise: spoofed, malformed, or multicast addresses observed during attacks." />
+          <attvalue for="8" value="capture noise" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ENG-WS-1" target="RTU-1" id="102" label="configures,maintains" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Used for RTU configuration and maintenance; does not speak IEC-104 in normal operation." />
+          <attvalue for="8" value="configures,maintains" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ENG-WS-1" target="RTU-2" id="103" label="configures,maintains" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Used for RTU configuration and maintenance; does not speak IEC-104 in normal operation." />
+          <attvalue for="8" value="configures,maintains" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ENG-WS-1" target="RTU-4" id="104" label="configures,maintains" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Used for RTU configuration and maintenance; does not speak IEC-104 in normal operation." />
+          <attvalue for="8" value="configures,maintains" />
+          <attvalue for="9" value="doc-d4e8a7d968022dc34b14fa29c8d7f294-chunk-000" />
+          <attvalue for="10" value="ip_device_map.md" />
+          <attvalue for="11" value="1783451278" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="ENG-WS-1" target="10.0.0.4" id="105" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.4 is the IP address of ENG-WS-1" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-2419dd590eaa9e0ae8ef6651f08f3ebb" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ENG-WS-1" target="ZONE-CC" id="106" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="ENG-WS-1 is in zone ZONE-CC" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-2419dd590eaa9e0ae8ef6651f08f3ebb" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-1" target="10.0.0.1" id="107" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.1 is the IP address of RTU-1" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-1" target="ZONE-N" id="108" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 is in zone ZONE-N" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-1" target="Bus 2" id="109" label="device location" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-1 is located at Bus 2" />
+          <attvalue for="8" value="device location" />
+          <attvalue for="9" value="chunk-baf458be8e08f0f7986fc7909762f205" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-2" target="BR-4-7" id="110" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 supervises breaker BR-4-7" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-2" target="BR-4-9" id="111" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 supervises breaker BR-4-9" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-2" target="10.0.0.3" id="112" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.3 is the IP address of RTU-2" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-2" target="ZONE-C" id="113" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 is in zone ZONE-C" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-2" target="Bus 4" id="114" label="device location" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-2 is located at Bus 4" />
+          <attvalue for="8" value="device location" />
+          <attvalue for="9" value="chunk-0120a7f19d34ca6c91c1ba85d374fe4d" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-4" target="BR-7-9" id="115" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 supervises breaker BR-7-9" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-4" target="BR-4-9" id="116" label="device controls breaker" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 supervises breaker BR-4-9" />
+          <attvalue for="8" value="device controls breaker" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+          <attvalue for="12" value="" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-4" target="10.0.0.6" id="117" label="ip device mapping" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="10.0.0.6 is the IP address of RTU-4" />
+          <attvalue for="8" value="ip device mapping" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-4" target="ZONE-S" id="118" label="device zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 is in zone ZONE-S" />
+          <attvalue for="8" value="device zone" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="RTU-4" target="Bus 9" id="119" label="device location" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="RTU-4 is located at Bus 9" />
+          <attvalue for="8" value="device location" />
+          <attvalue for="9" value="chunk-bc38a385489334697811b2d7865717be" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-N" target="Bus 1" id="120" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 1 is in North Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-N" target="Bus 2" id="121" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 2 is in North Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-N" target="Bus 3" id="122" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 3 is in North Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-C" target="Bus 4" id="123" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 4 is in Central Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-C" target="Bus 5" id="124" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 5 is in Central Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-C" target="Bus 7" id="125" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 7 is in Central Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-C" target="Bus 8" id="126" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 8 is in Central Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 6" id="127" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 6 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 9" id="128" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 9 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 10" id="129" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 10 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 11" id="130" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 11 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 12" id="131" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 12 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 13" id="132" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 13 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+      <edge source="ZONE-S" target="Bus 14" id="133" label="topology zone" weight="1.0">
+        <attvalues>
+          <attvalue for="7" value="Bus 14 is in South Substation Zone" />
+          <attvalue for="8" value="topology zone" />
+          <attvalue for="9" value="chunk-dc85619b93e6f5b4dba4f7b59699dbf3" />
+          <attvalue for="10" value="custom_kg" />
+          <attvalue for="11" value="1783452522" />
+        </attvalues>
+      </edge>
+    </edges>
+  </graph>
+</gexf>

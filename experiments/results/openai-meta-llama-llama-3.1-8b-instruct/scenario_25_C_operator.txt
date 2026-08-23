@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2 (10.0.0.3) at Bus 4, Zone ZONE-C, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+**Physical Risk:** The RTU-2 is experiencing a high volume of small packets, indicating a potential flood or scanning attack. This could lead to a denial of service (DoS) or a loss of view and control of the breakers, causing the grid to run unobservable at that node.
+
+**Immediate Action:** Switch to manual control of the breakers to prevent any potential damage or loss of control. Check the breaker status and ensure they are in a safe position.
+
+**Next Steps:**
+
+1. Check the breaker status and ensure they are in a safe position.
+2. Switch to manual control of the breakers.
+3. Investigate the cause of the high packet volume and take corrective action to prevent future incidents.
+4. Monitor the situation closely and be prepared to take further action if necessary.
+
+**Priority:** Safety and continuity of the physical process are the top priority. We must ensure that the grid remains stable and observable, even if it means taking manual control of the breakers.

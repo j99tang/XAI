@@ -1,0 +1,15 @@
+**Incident Briefing**
+
+Device Affected: RTU-4, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Physical Risk: The observed network flow statistics indicate a potential packet starvation attack on RTU-4. This could lead to the RTU's connection table being exhausted, causing it to stop answering SCADA commands and resulting in a full loss of visibility and control of that substation's breakers until the RTU is restarted.
+
+Immediate Action: Switch to manual control for RTU-4 to prevent further potential damage. Check breaker BR-4-9, as it is directly controlled by RTU-4. Verify its status and ensure it is not affected by the potential attack.
+
+Next Steps:
+
+1. Check the status of breakers BR-7-9, BR-9-10, and BR-9-14 to confirm they are functioning correctly.
+2. Switch to manual control for these breakers as well, if necessary.
+3. Investigate further to determine the cause and scope of the potential attack.
+
+**Safety First**: Prioritize maintaining grid stability and preventing any potential disruptions or losses of visibility and control.

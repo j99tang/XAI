@@ -1,0 +1,13 @@
+Based on the model's output, the top SHAP features driving the prediction of an attack are:
+
+* Flow IAT Min: value=57, SHAP=+0.075
+* Bwd IAT Min: value=209, SHAP=+0.071
+* Packet Length Max: value=24, SHAP=+0.063
+* Packet Length Min: value=0, SHAP=+0.058
+* Bwd Packet Length Min: value=0, SHAP=+0.053
+
+These features indicate a flow with short inter-arrival times (IATs) and small packet lengths. The model's confidence is 1.00.
+
+The evidence suggests that this flow may be indicative of a flooding attack, as the short IATs and small packet lengths are consistent with a flood/scan behavior family. However, it's essential to note that these features can only prove the presence of a statistical fingerprint associated with flooding attacks, not the specific protocol actions or intentions behind them.
+
+The destination port (2404) is an IEC-104 endpoint, which carries a mild signal but is not indicative of a leak in this context. The model has seen only CICFlowMeter flow statistics and does not have access to IEC-104 protocol semantics.

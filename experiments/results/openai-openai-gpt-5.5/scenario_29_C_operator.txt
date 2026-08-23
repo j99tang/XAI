@@ -1,0 +1,12 @@
+Affected: RTU-4, IP 10.0.0.6, IEC-104 port 2404, ZONE-S at Bus 9. Substation name: not in context. RTU-4 controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+What is happening: detector reports “normal” with low confidence 0.14. Evidence is only network flow statistics to RTU-4: small forward packet size, timing/byte-rate features, and no protocol contents. No confirmed command or breaker operation is in context.
+
+Immediate physical risk: no confirmed immediate switching risk in context. If RTU-4 stops responding, remote visibility/control of Bus 9 breakers could be affected.
+
+Next actions:
+1. Check RTU-4 communications/response from SCADA for Bus 9.
+2. Verify current indications for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+3. Do not open or close any Bus 9 breakers based on this alert alone.
+4. Keep remote control in service if RTU-4 indications and controls are healthy.
+5. If RTU-4 becomes unresponsive or indications are unreliable, switch RTU-4/Bus 9 control to manual/local control and hold existing breaker positions unless grid safety requires action.

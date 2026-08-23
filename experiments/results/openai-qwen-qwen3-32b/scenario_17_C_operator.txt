@@ -1,0 +1,14 @@
+**ACTION BRIEFING**  
+**Affected Device:** RTU-2 (10.0.0.3), IEC-104 controlled station (GridCom GC-4000), Zone ZONE-C, Bus 4. Controls breakers: BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Observed Behavior:** High-confidence intrusion alert targeting RTU-2’s IEC-104 port (2404). Flow statistics show unusually low inter-arrival times (Flow IAT Min=298), small packet sizes (max 48B), and zero ACK flags—consistent with SYN flood or rapid scanning. Traffic matches known attack patterns (e.g., high SYN counts, unbalanced flow).  
+
+**Physical Risk:** Loss of remote visibility/control over RTU-2’s breakers. Grid remains operational, but manual intervention required for breaker status or switching.  
+
+**Next Actions:**  
+1. **Switch to manual control** for breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via local HMIs (if available).  
+2. **Isolate RTU-2** from the network: Block ingress/egress traffic to 10.0.0.3:2404 at the zone boundary firewall.  
+3. **Verify RTU-2 status**: Check local HMI or serial console for operational state (if accessible).  
+4. **Monitor adjacent RTUs** (e.g., RTU-3 in ZONE-S) for secondary impact, but no action required unless alerts escalate.  
+
+Prioritize grid continuity; reintegration of RTU-2 requires confirmed traffic clearance and NERC CIP-compliant incident reporting.

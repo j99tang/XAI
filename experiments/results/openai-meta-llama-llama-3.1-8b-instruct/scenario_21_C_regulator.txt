@@ -1,0 +1,13 @@
+**Compliance Assessment**
+
+The affected asset is RTU-2, a BES Cyber Asset under NERC CIP, which controls breakers at Bus 4. The intrusion alert indicates a prediction of an attack with a confidence level of 1.00, targeting the IEC-104 endpoint on port 2404.
+
+This incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6, as it involves a compromise or disruption of a BES Cyber System. The attack is directed at a critical control system, which could have significant consequences for the reliable operation of the Bulk Electric System.
+
+**Reporting Timeline and Notification**
+
+The reporting timeline applies to the initial notification, which must be made within one hour of determining a Reportable Cyber Security Incident. The notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**Framework Function**
+
+This response sits under the **Detect** capability, which is a function of the NIST CSF 2.0 (CSWP 29) framework. The incident response lifecycle, as outlined in NIST SP 800-61r3, will be followed to contain, eradicate, and recover from the attack.

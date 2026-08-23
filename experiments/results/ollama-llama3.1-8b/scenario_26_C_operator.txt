@@ -1,0 +1,19 @@
+**Incident Briefing for OT Control-Room Operator**
+
+**Affected Device:** ENG-WS-1, engineering workstation in zone ZONE-CC.
+
+**Physical Risk:** The device is experiencing a potential flood attack, characterized by high packet flow rates and low inter-arrival times (IAT). This could lead to RTU CPU/link exhaustion, delayed or dropped telemetry, and operator flying blind on that zone. Sustained flooding can force the RTU offline.
+
+**Immediate Action:**
+
+1. Check breaker status in zone ZONE-CC using ENG-WS-1's IEC-104 connections.
+2. Verify if any breakers have been tripped or blocked unexpectedly.
+3. Switch to manual control for ENG-WS-1 and isolate it from the grid, if necessary.
+
+**Next Steps:**
+
+1. Investigate further to determine the cause of the flood attack.
+2. Check network traffic patterns and flow statistics for other devices in the zone.
+3. Consult with security team to determine if this is a targeted or random attack.
+
+**Priority:** Safety and continuity of physical process over investigation.

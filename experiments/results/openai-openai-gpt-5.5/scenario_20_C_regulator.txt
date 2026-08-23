@@ -1,0 +1,9 @@
+Illustrative assessment only: the context notes a synthetic grid, not a jurisdictional determination.
+
+An IDS classified network flow statistics as “attack” with confidence 1.00 to destination 10.0.0.1:2404, mapped to RTU-1, an IEC-104 controlled station at Bus 2 controlling breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. RTU-1 is identified as a BES Cyber Asset under NERC CIP.
+
+This plausibly meets the NERC CIP-008-6 threshold for a Reportable Cyber Security Incident as an attempted compromise of an in-scope BES Cyber Asset/BES Cyber System. Actual compromise, disruption, functional impact, attack vector, and level of intrusion are not in context.
+
+Reporting timeline under NERC CIP-008-6 R4: if determined to be a Reportable Cyber Security Incident involving compromise or disruption, initial notification is within one hour of determination. If determined to be an attempt to compromise, notification is by the end of the next calendar day.
+
+Notification is due to the E-ISAC and, under US jurisdiction, NCCIC/CISA. This response sits under the NIST CSF 2.0 Detect function.

@@ -1,0 +1,25 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, Zone ZONE-N, Bus 2
+Controlled Breakers: BR-1-2, BR-2-3, BR-2-4, BR-2-5
+
+Observations:
+* Sustained attack flow detected on RTU-1 (10.0.0.1) from IP range 121.142.26.0/24.
+* Flow characteristics indicate a flood/scanning attack with many small packets and headers dominating the traffic.
+
+Physical Risk: Potential disruption to grid operations if control system is compromised.
+
+Immediate Actions:
+1. Switch RTU-1 to manual control mode to prevent further potential disruptions.
+2. Check breaker status for BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are in a safe state.
+3. Verify that the grid is stable and no other devices are affected.
+
+Next Steps:
+* Investigate the source of the attack traffic and take necessary measures to prevent future incidents.
+* Review and update security protocols for RTU-1 and other controlled devices.
+
+**Switching Steps:**
+
+1. Switch RTU-1 to manual control mode using the control panel or remote access.
+2. Verify that the breakers are in a safe state by checking their status on the control panel or through remote access.
+3. Monitor the grid for any further disruptions or anomalies.

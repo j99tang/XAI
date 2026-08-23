@@ -1,0 +1,6 @@
+**Compliance Assessment**  
+The incident involves a confirmed attack on RTU-2 (BES Cyber Asset under NERC CIP), an IEC-104-controlled station in ZONE-C. The intrusion alert targets port 2404 (IEC-104 endpoint), with statistical anomalies (e.g., zero Bwd IAT Min/Max, small packets) plausibly indicating a port scan or DoS attempt. Per NERC CIP-008-6, a compromise or disruption of a BES Cyber System (RTU-2) qualifies as a **Reportable Cyber Security Incident**.  
+
+Reporting is required under **NERC CIP-008-6** to **E-ISAC** and **NCCIC/CISA** within **1 hour** for attempted compromises (per relationship data). The incident falls under the **Detect** function of the NIST CSF, as per NIST SP 800-61r3.  
+
+**Note**: This assessment is illustrative (context is a synthetic grid). No specific attack class is identified; reportability hinges on the affected asset (BES Cyber System), not the attack type.

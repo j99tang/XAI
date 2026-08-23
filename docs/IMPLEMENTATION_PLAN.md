@@ -314,10 +314,11 @@ Your proposal has an LLM generate explanations grounded on a synthetic KB, then 
 
 ### Tasks
 
+- **4.0 (ADDED 2026-08-19) Rebuild the scenario set for consequence diversity — do this BEFORE any sweep.** The original 15 scenarios have only **4 distinct physical consequences and 2 distinct reportable strings**, because consequence was a pure function of *device* (one simulation per RTU, opening all its breakers). Effective n for the C, A and R dimensions was **4**, not 15 — and the three personas share a scenario, so the unit of analysis is the scenario, not the 45 rows (treating n=45 is pseudoreplication). Target **~30 scenarios stratified so consequence varies independently of device**, drawn from the 76 breaker-subsets × 4 load-levels the simulator now spans. Add the CIP-008-6 **"attempt"** case (end of next calendar day) — documented in the KB but never instantiated, so R currently cannot distinguish understanding from pattern-matching "attack → 1 hour". See decision log D35/D36. `[model: Sonnet]`
 - **4.1 Curate 15 scenarios:** 5 true-positive cyber, 5 true-positive physical, 5 false-positive noise (per your design). For each, fix the input flow and the expected key facts. **Where the 5 false positives come from (discovered in Phase 1):** the full model classifies the test set *perfectly* — it cannot produce a false positive to explain. Source them from a **deliberately feature-constrained model variant** (retrain with the top-N most separating features dropped until confidence spreads and errors appear; save as `models/ids_rf_constrained.joblib`). Methodologically honest as long as stated: FP scenarios are drawn from the constrained variant because the full model commits no errors on this testbed — and explaining the uncertain regime is exactly where explanation systems matter in deployment. `[model: Opus — designing fair test cases]`
 - **4.2 Implement the three tiers:** (A) IDS output only; (B) IDS + raw SHAP; (C) full system. *Why:* this A/B/C is your evidence that context — not just XAI — drives the improvement. `[model: Sonnet to code the harness]`
 - **4.3 Encode the CPAS rubric** (D, C, A, R each 1–5; H as a 0/1 penalty multiplier) as a strict judge prompt returning JSON scores. Pin down the weights `w` and *pre-register them* before running, so you can't be accused of tuning to the result. `[model: Opus — rubric + judge prompt]`
-- **4.4 Ground the C (Cascading Impact) dimension in the simulator.** For each scenario, `scripts/simulate_consequences.py` (pandapower) computes the physical consequence — disable the mapped device / open its breaker, re-run the power flow, record overloads and voltage violations. The judge scores C as *agreement with the simulated consequence*, not plausibility. This is what removes the need for a human power-systems expert. `[model: Sonnet to code; the simulator supplies the judgment]`
+- **4.4 Ground the C (Cascading Impact) dimension in the simulator.** **(CORRECTED 2026-08-19 — D36.)** `pn.case14()` inherits MATPOWER's `rateA = 0` ("unlimited"), rendered as `max_i_ka = 42.3` per line; at 2× load with no outage the worst line sat at **3.7%** against a 100% threshold, so the overload branch was **dead code that could never fire** — meaning the very phenomenon §1 uses to justify choosing IEEE-14 over a distribution feeder was unrepresentable. Lines are now rated on the **N-1 planning criterion** (worst current under any single-branch outage × `N1_MARGIN = 1.25`, putting N-0 at ~60% of rating): N-1 secure by construction, N-2 and deeper bite. `selfcheck()` asserts all three properties, including that the overload path is *reachable*, so the bug cannot silently return. Rate **lines only** — a transformer's `sn_mva` participates in pandapower's impedance model, so scaling it changes the power flow, not just the limit. For each scenario, `scripts/simulate_consequences.py` (pandapower) computes the physical consequence — disable the mapped device / open its breaker, re-run the power flow, record overloads and voltage violations. The judge scores C as *agreement with the simulated consequence*, not plausibility. This is what removes the need for a human power-systems expert. `[model: Sonnet to code; the simulator supplies the judgment]`
 - **4.5 Generate the gold fact sheets by script, not by hand.** `scripts/make_fact_sheets.py` assembles, per scenario: device + bus (from the IP map), attack class (from the CSV label), network fingerprint (from the feature dictionary), and simulated consequence (from 4.4). You review for readability only — no domain judgment involved. `[model: Sonnet]`
 - **4.6 Run, aggregate, plot** CPAS by persona × tier. Expect C > B > A. `[model: Sonnet]`
 
@@ -325,7 +326,15 @@ Your proposal has an LLM generate explanations grounded on a synthetic KB, then 
 
 ---
 
-## 7.5 Should you use the Trillium HPC cluster? (decision guide)
+## 7.5 Should you use the Trillium HPC cluster? (decision guide) — **SUPERSEDED 2026-08-19**
+
+> **Decision taken: NO. Trillium is dropped entirely** (decision log D34). The programme
+> that replaces it is **§7.7 below**: a frontier-API ceiling run, then an open-weights
+> capability sweep via OpenRouter. The reasoning in this section still stands and led to
+> that choice — branch 4 ("self-hosting is part of the contribution") turned out to be
+> right about the *claim* but wrong about the *mechanism*: model diversity via one API
+> gateway gets the same evidence without the SLURM learning curve, and open weights are
+> self-hostable whether or not we personally host them.
 
 **Short answer: not by default, and not before Phase 3. There is exactly one high-value use, and one nice-to-have.**
 
@@ -368,6 +377,28 @@ Section 7 already covers the circularity problem (judge ≠ synthesizer family).
 8. **Prompt leakage of the expected ranking.** If the judge prompt says "tier C is our full system," you've told it the answer. *Countermeasure:* the judge prompt contains only: the anomaly context, the KB excerpt/fact sheet, the persona definition, the rubric, and the anonymous output. Nothing about tiers, baselines, or hypotheses.
 
 **Pre-registration, restated concretely:** before running the full evaluation, commit to git one file (`experiments/scenarios/cpas_protocol.md`) containing: the rubric with anchors, the dimension weights `w`, the judge model version, the number of repeats, and the aggregation rule. The commit timestamp is your evidence that you didn't tune the metric to the result. This is standard practice from the empirical-ML playbook and cheap credibility.
+
+---
+
+## 7.7 Experimental programme (2026-08-19) — ceiling, pivot, capability sweep
+
+Replaces §7.5. Full rationale and constraints in decision log **D34**.
+
+**The three acts.**
+1. **Ceiling run.** One frontier closed-weights synthesizer via API. Establishes that CPAS A<B<C is attainable *at all*, separating "framework broken" from "model too weak".
+2. **The pivot.** OT deployment constraints make a hosted-inference dependency unsafe for critical infrastructure — so the ceiling model is not deployable, and the question becomes what survives the constraint.
+3. **Capability sweep.** Open-weights synthesizers via OpenRouter, riding the existing `CCIR_SYNTH_BACKEND` seam. The swap through an unchanged `AnomalyEvent` contract *is* the model-agnosticism claim.
+
+**Frame it as locating a capability threshold, not as proving generalization.** "The framework generalizes" is a hope D29 already contradicts. The research question is *"at what model capability does grounded context begin to help?"* — under which every outcome is a result: a low threshold is a deployment story, a mid threshold is a concrete minimum on-prem spec, and a threshold above all open weights is a genuine negative finding (context grounding demands capability current air-gappable models lack) that is useful to the OT audience. D29 becomes supporting evidence rather than a disappointment.
+
+**Non-negotiable constraints.**
+- **Vendor independence.** Synthesizer and judge must never share a vendor — OpenRouter puts Claude one string away from the synthesis slot, which would have the judge grading its own family and destroy §7.6. Frontier synthesis = GPT-5.x / Gemini class; Claude judges. Enforce in code.
+- **One axis only.** Vary the **synthesis slot**; hold the graph fixed. Embedding changes force a full re-index (`EMBED_DIM` trap); extraction changes rebuild the graph, changing tier C and forcing re-run + re-judge of everything.
+- **The evaluator is not part of the sweep.** The judge is the measuring instrument. Judge sensitivity is a separate appendix: freeze one narrative set, score with 2–3 judges, report whether the tier ordering survives.
+- **Self-hosting honesty.** Open weights will be run *via a cloud API* to argue for on-prem deployment. State that the API is experimental convenience and the weights are self-hostable — and keep **llama3.1:8b on local Ollama** in the sweep as the anchor datapoint proving the local path runs.
+- **Statistics.** Paired **Wilcoxon signed-rank, paired by scenario** (not a comparison of means), with multiple-comparison handling across models. Requires §4.0 first: at the current effective n the test has no power.
+
+**Wording for the pivot — do not overclaim.** NIST SP 800-82r3 (p.51) states plainly that OT/IT connectivity is *increasing* and that "relying on traditional measures (e.g., air gaps) is not enough", so "grids are air-gapped, therefore no API calls" is contradicted by our own reference. The defensible argument is structural: OT guidance directs organizations to restrict logical access to the control network via DMZ architectures and **unidirectional gateways** (§"Major security objectives"; Appendix E.1). A unidirectional gateway permits egress only, while an API call requires a returned response — so the pattern is impossible under a recommended control, not merely discouraged. Add the egress of operational telemetry beyond the control boundary, and an availability/latency dependency in a time-critical path. Claim *"must be evaluated under models that can run inside that boundary"*, not *"cloud is forbidden"*. **CIP-005 (Electronic Security Perimeter) is the natural citation and is NOT yet in `references/source_library/standards/`** — download it before relying on the ESP leg; only CIP-008-6 is held. Retain the existing scope-honesty paragraph (NERC CIP applies to the North American BES; our grid is synthetic and the traffic is a European testbed).
 
 ---
 

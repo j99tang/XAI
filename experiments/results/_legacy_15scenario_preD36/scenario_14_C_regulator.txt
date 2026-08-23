@@ -1,0 +1,13 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+**What occurred:** The RTU-4 at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14, has been affected by a sustained attack flow. This is indicated by the presence of few large packets and sustained bulk transfer estimators.
+
+**Affected asset:** The RTU-4 at Bus 9 is an IEC-104 endpoint (RTU) controlling critical breakers in the grid.
+
+**Threshold for reportability:** Given that the affected asset is a critical control system, this incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6.
+
+**Reporting timeline and recipient:** The reporting timeline is not specified in the context. However, as an illustrative assessment, it is likely that notification would be due to the E-ISAC or NCCIC/CISA within 24 hours of discovery, as per NERC CIP-008-6.
+
+This response sits under the CSF function "Identify" and "Protect", as the incident involves detection of a potential security threat to critical infrastructure.

@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2 (10.0.0.3) in Zone C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, and BES Cyber Asset.
+
+**Physical Risk:** The observed pattern of high `Flow IAT Min` (298), `Packet Length Max` (48), and `Fwd PSH Flags` (0) with low `ACK Flag Count` (0) indicates a potential flooding attack. If this is a sustained attack, it may cause RTU-2 to become overwhelmed, leading to a loss of control over its breakers and potentially disrupting the grid.
+
+**Immediate Action:**
+
+1. **Switch to Manual Control:** Immediately switch RTU-2 to manual control to prevent any potential disruption to the grid.
+2. **Check Breaker Status:** Verify the status of all breakers controlled by RTU-2 to ensure they are in a safe state.
+3. **Check RTU-2's Communication:** Verify RTU-2's communication with the SCADA system to ensure it is functioning correctly.
+4. **Investigate Further:** Investigate the source of the attack and take necessary measures to prevent future incidents.
+
+**Next Steps:**
+
+1. Check the status of RTU-3 (10.0.0.5) in Zone S, which is also an IEC-104 controlled station.
+2. Verify the status of breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13, which are controlled by RTU-3.
+3. Check the communication between RTU-3 and the SCADA system.
+
+**Safety First:** Prioritize the safety of the grid and take all necessary measures to prevent any potential disruption.

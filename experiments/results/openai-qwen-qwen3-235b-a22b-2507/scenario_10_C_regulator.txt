@@ -1,0 +1,5 @@
+This incident is reportable under NERC CIP-008-6. The intrusion alert targets IP 10.0.0.1, identified as RTU-1, a BES Cyber Asset under NERC CIP, used for IEC-104 control of critical breakers at Bus 2. The destination port 2404 confirms an IEC-104 endpoint, consistent with a BES Cyber System. The IDS detection of a sustained attack flow, characterized by anomalous packet timing and length (e.g., Flow IAT Min = 5), constitutes an *attempted* compromise, which meets the CIP-008-6 threshold for a Reportable Cyber Security Incident—even if unsuccessful.
+
+Notification is required to both the E-ISAC and NCCIC/CISA. Since this is an *attempted* compromise, the reporting timeline is **by the end of the next calendar day** from determination. Required attributes (functional impact, attack vector, level of intrusion) must be provided, even if partially unknown.
+
+This assessment sits under the **Detect** function of the NIST CSF 2.0 framework, as defined in NIST SP 800-61r3. Jurisdictional applicability of NERC CIP is not asserted; this evaluation is illustrative, based on synthetic grid data.

@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device:** RTU-2 (10.0.0.3:2404), ZONE-C, Bus 4 (GridCom GC-4000), controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Observed Behavior:** High packet rate with minimal inter-arrival times (Flow IAT Min=92ms, Bwd IAT Min=0ms) and small/zero-length packets (Packet Length Min=0). Matches flood-attack patterns: sustained traffic overwhelming RTU-2’s IEC-104 endpoint.  
+
+**Physical Risk:** RTU-2 CPU/link saturation → delayed/dropped telemetry, risk of offline failure. Loss of real-time visibility/control for Breakers BR-2-4 to BR-4-9. Potential for undetected grid state changes in ZONE-C.  
+
+**Next Actions:**  
+1. **Switch to manual control** for all RTU-2 breakers immediately to prevent unintended automated actions.  
+2. **Isolate RTU-2’s network connection** (if safe) to halt traffic flood; use physical switch or air gap if available.  
+3. **Manually verify breaker statuses** (BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9) via local indicators or alternative RTUs.  
+4. **Log and report** per NERC CIP-008-6, noting IEC-104 port 2404 traffic anomalies.  
+5. **Monitor adjacent RTUs** for secondary effects (e.g., load shifts).  
+
+Prioritize grid stability; do not restore RTU-2 until traffic normalization and BES asset validation.

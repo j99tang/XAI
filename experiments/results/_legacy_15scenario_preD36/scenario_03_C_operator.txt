@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-1, located at Bus 2, Zone ZONE-N.
+
+**Physical Risk:** The observed pattern of many small packets with headers dominating the traffic indicates a potential flood/scan attack. This could lead to packet starvation and disrupt control traffic, posing an immediate risk to grid stability.
+
+**Next Actions:**
+
+1. Immediately switch RTU-1 to manual control mode to prevent further disruption.
+2. Check breaker BR-1-2 for any anomalies or disruptions in operation.
+3. Verify the status of breakers BR-2-3, BR-2-4, and BR-2-5 to ensure they are functioning correctly.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation. We will investigate the cause of the incident once the grid is stable.

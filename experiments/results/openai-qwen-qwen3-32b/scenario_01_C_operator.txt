@@ -1,0 +1,13 @@
+**Action Briefing**  
+**Affected Device:** RTU-1 (10.0.0.1:2404), IEC-104-controlled station at Bus 2, Zone ZONE-N.  
+
+**Physical Risk:** Unusual traffic patterns (zero backward inter-arrival time, zero packet lengths, low PSH flags) suggest potential packet starvation or flooding. RTU-1 may experience CPU/link overload, risking delayed/dropped telemetry or control commands. This could lead to loss of visibility or delayed breaker responses at Bus 2, destabilizing grid operations in ZONE-N.  
+
+**Next Actions:**  
+1. **Isolate RTU-1** from 121.142.26.0/24 (attack source) via firewall rules.  
+2. **Switch breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 to manual control** to maintain grid stability if RTU-1 becomes unresponsive.  
+3. **Verify RTU-1 status** via local HMI or serial console (if available) to confirm operational health.  
+4. **Monitor IEEE 14-bus overlay** for topology changes or load imbalances due to potential control delays.  
+5. **Log incident** under NERC CIP-008-6 for regulatory compliance.  
+
+*Do not attempt protocol analysis; prioritize grid safety and manual override readiness.*

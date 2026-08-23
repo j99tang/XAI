@@ -1,0 +1,11 @@
+Based on the model's output, the top SHAP features driving the prediction of an attack are:
+
+* Bwd IAT Min: value=0, SHAP=+0.054
+* Flow IAT Min: value=92, SHAP=+0.048
+* Packet Length Min: value=0, SHAP=+0.038
+* Bwd Packet Length Min: value=0, SHAP=+0.034
+* Packet Length Max: value=0, SHAP=+0.033
+
+These features indicate that the flow has a low minimum inter-arrival time (IAT) between packets in both the forward and backward directions, as well as minimal packet lengths with no maximum length observed. This behavior is characteristic of flooding attacks, where an attacker sends a large number of small packets to overwhelm the system.
+
+The model's confidence is 1.00, indicating that it is highly certain about its prediction. However, it's essential to note that these features can only indicate potential malicious activity and do not provide conclusive evidence of an attack. Further investigation is necessary to determine the actual nature of the traffic.

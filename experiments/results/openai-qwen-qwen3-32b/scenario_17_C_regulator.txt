@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves a sustained attack flow targeting RTU-2 (BES Cyber Asset, IEC-104 endpoint on port 2404), a critical component of the Bulk Electric System (BES Cyber System). The intrusion alert (confidence: 1.00) plausibly meets the NERC CIP-008-6 threshold for a **Reportable Cyber Security Incident** as it constitutes an *attempted compromise* of a BES Cyber System, even if success is unconfirmed.  
+
+**Reporting timeline**: Notification must occur **by the end of the next calendar day** (per NERC CIP-008-6 R4) for attempted compromises. **Recipients**: E-ISAC and NCCIC/CISA (under US jurisdiction).  
+
+This response falls under the **Detect** function of the NIST CSF 2.0, as the IDS identified the anomaly.  
+
+**Note**: This assessment is illustrative; the synthetic grid (IEEE 14-bus overlay) does not establish jurisdictional applicability. Regulatory obligations are framed using NERC CIP-008-6 and NIST SP 800-61r3 standards.

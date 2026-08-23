@@ -1,0 +1,19 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, IP 10.0.0.1, Zone ZONE-N, Bus 2
+
+Physical Risk: Potential loss of view and control of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 due to possible attack on RTU-1.
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-1.
+2. Check breaker status for BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are not affected by the potential loss of view and control.
+3. Verify that all other breakers in Zone ZONE-N are functioning normally.
+
+Switching Steps:
+
+* Switch RTU-1 to manual control using the ENG-WS-1 interface.
+* Monitor breaker status for any changes or anomalies.
+* If necessary, take further action to isolate affected breakers or restore normal operation.
+
+**Note:** This briefing is based on the observed network flow statistics and potential attack patterns. Further investigation will be required to determine the root cause of the incident.

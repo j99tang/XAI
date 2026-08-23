@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-2 (10.0.0.3) at Bus 4, Zone C
+
+**Physical Risk:** The RTU is experiencing a high volume of small packets with no payload, indicating a potential flood or scanning attack. This could lead to RTU CPU/link exhaustion, delayed or dropped telemetry, and operator flying blind on that zone. Sustained flooding can force the RTU offline.
+
+**Immediate Action:**
+
+1. **Switch to Manual Control:** Immediately switch to manual control of the affected breakers (BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9) to prevent any potential loss of control or unintended switching.
+2. **Check RTU Status:** Verify the status of RTU-2 and its communication with the SCADA system.
+3. **Verify Breaker Status:** Confirm the status of the breakers under manual control to ensure they are in the correct position.
+4. **Investigate Further:** Once the immediate risk is mitigated, investigate the source of the attack and take corrective action to prevent future incidents.
+
+**Next Steps:**
+
+* Check the RTU's communication with the SCADA system and verify that it is functioning correctly.
+* Review the breaker status and ensure they are in the correct position.
+* Investigate the source of the attack and take corrective action to prevent future incidents.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation.

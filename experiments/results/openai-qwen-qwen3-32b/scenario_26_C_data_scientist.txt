@@ -1,0 +1,11 @@
+**Model Analysis**  
+The intrusion alert (confidence: 0.59) targets traffic to 10.0.0.4:123 (NTP port). Key features driving the "attack" prediction include:  
+- **Total Fwd Packets=4** (SHAP +0.075): Suggests a small forward-direction packet volume, consistent with probing or low-rate scanning.  
+- **Fwd IAT Max=6.37e6 ms** (SHAP +0.045): Indicates an unusually long interval between forward packets, potentially signaling a slow, intermittent attack (e.g., timing-based probing).  
+- **Subflow Fwd Packets=1** (SHAP +0.041): Implies minimal subflow activity, aligning with short, non-sustained interactions (e.g., reconnaissance).  
+
+Negative contributors (e.g., **Fwd Packet Length Max=120 B** and **Active Min=1598 s**) may reflect benign patterns, such as small-packet traffic or idle periods, but their SHAP weights (-0.066, -0.047) suggest they slightly counterbalance the attack signal.  
+
+**Attack Pattern**: The feature signature aligns with *scanning/probing* (small packets, low volume) or *low-rate DoS* (intermittent traffic with long IATs). However, the model cannot confirm protocol-specific actions (e.g., IEC-104 exploitation) as it lacks visibility into payload semantics.  
+
+**Caveats**: The evidence is statistical, not protocol-aware. While the fingerprint hints at a non-sustained attack, it cannot prove intent or rule out false positives (e.g., misconfigured devices). The destination port (123) is NTP, not IEC-104 (2404), but the model does not infer application-layer context. Confidence (0.59) is marginal, indicating ambiguity in the feature space.

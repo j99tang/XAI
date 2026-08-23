@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+The affected asset is RTU-2, a BES Cyber Asset under NERC CIP, located at Bus 4 and controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9. The intrusion alert indicates an attack on the device with a confidence level of 1.00.
+
+Based on the knowledge graph data, this incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6. As a BES Cyber Asset, RTU-2 is subject to reporting requirements in the event of a compromise or disruption.
+
+The reporting timeline applies as follows: notification must be made within one hour if the incident involves an attempted compromise, and by the end of the next calendar day for actual compromises or disruptions.
+
+Notification is due to NCCIC/CISA under US jurisdiction.

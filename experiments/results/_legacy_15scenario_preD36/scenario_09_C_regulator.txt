@@ -1,0 +1,20 @@
+**Regulatory Assessment**
+
+Based on the provided context, I assess that this incident is reportable under NERC CIP-008-6.
+
+The affected asset is RTU-4, an IEC-104 controlled station located at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14. This device is a critical component of the grid's control system.
+
+The incident involves small packets with headers dominating the traffic, which may indicate a flood/scan attack or a sustained bulk transfer. The presence of client packets carrying payload suggests a potential bulk command injection attack.
+
+Given that RTU-4 is an IEC-104 endpoint and controls critical breakers, this incident meets the threshold for a reportable cyber security incident under NERC CIP-008-6.
+
+**Reporting Timeline**
+
+The reporting timeline applies as follows:
+
+* The incident must be reported to the E-ISAC within 24 hours of discovery.
+* A follow-up report with additional information and analysis must be submitted to the E-ISAC within 72 hours of discovery.
+
+**Notification**
+
+Notification is due to the E-ISAC, which is responsible for coordinating incident response and reporting in the North American Bulk Electric System.

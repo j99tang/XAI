@@ -1,0 +1,11 @@
+**Compliance Assessment**
+
+**Incident:** The RTU-1 (10.0.0.1) at Bus 2, controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5, was targeted by an attack with a prediction confidence of 1.00.
+
+**Reportability:** This incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6. The RTU-1 is a BES Cyber System, and the attack was an attempt to compromise it.
+
+**Reporting Timeline:** The reporting timeline applies to this incident. The attack was an attempt to compromise the RTU-1, so the next calendar day reporting deadline applies.
+
+**Notification:** Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**Framework Function:** This response sits under the **Detect** capability, which is a function of the NIST CSF 2.0 framework. The incident was detected by the IDS system, and the response is to report the incident to the relevant authorities.

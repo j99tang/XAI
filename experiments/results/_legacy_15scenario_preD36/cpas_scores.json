@@ -1,0 +1,5537 @@
+[
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1286,
+    "D": 3,
+    "C": 1,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 1177,
+    "D": 5,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 1,
+    "cpas": 3.6,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        5,
+        4,
+        5
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_01",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1152,
+    "D": 4,
+    "C": 1,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 321,
+    "D": 3,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.8,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 321,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 321,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1069,
+    "D": 2,
+    "C": 1,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.95,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        1
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 817,
+    "D": 4,
+    "C": 3,
+    "A": 4,
+    "R": 3,
+    "H": 1,
+    "cpas": 3.55,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        3,
+        3
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_02",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 849,
+    "D": 3,
+    "C": 2,
+    "A": 3,
+    "R": 5,
+    "H": 1,
+    "cpas": 3.15,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        1,
+        2
+      ],
+      "A": [
+        3,
+        3,
+        3
+      ],
+      "R": [
+        5,
+        5,
+        5
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 890,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.7,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 774,
+    "D": 4,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 1,
+    "cpas": 3.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        5,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        2,
+        3
+      ],
+      "A": [
+        5,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_03",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1405,
+    "D": 4,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        2,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 322,
+    "D": 3,
+    "C": 1,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 322,
+    "D": 3,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.6,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 322,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1030,
+    "D": 2,
+    "C": 1,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.95,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        1
+      ],
+      "C": [
+        1,
+        2,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 1173,
+    "D": 3,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 1,
+    "cpas": 3.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_04",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 894,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        3,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 317,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 317,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 317,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1071,
+    "D": 1,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.2,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        1,
+        1
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 882,
+    "D": 4,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 1,
+    "cpas": 3.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        3,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_05",
+    "kind": "tp_physical",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1338,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        2,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 320,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 320,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 320,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        2
+      ],
+      "C": [
+        1,
+        2,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 958,
+    "D": 1,
+    "C": 2,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.65,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        1,
+        1
+      ],
+      "C": [
+        2,
+        2,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 969,
+    "D": 4,
+    "C": 1,
+    "A": 4,
+    "R": 3,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        4,
+        3,
+        4
+      ],
+      "R": [
+        3,
+        2,
+        3
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_06",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1271,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        1
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1337,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 846,
+    "D": 3,
+    "C": 1,
+    "A": 4,
+    "R": 3,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_07",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1089,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        3,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        3,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1095,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.25,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 941,
+    "D": 5,
+    "C": 3,
+    "A": 4,
+    "R": 3,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        5,
+        5
+      ],
+      "C": [
+        2,
+        3,
+        3
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        0,
+        0,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_08",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1002,
+    "D": 3,
+    "C": 2,
+    "A": 3,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        3,
+        3,
+        3
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 319,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1141,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.25,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        1,
+        2
+      ],
+      "R": [
+        2,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 957,
+    "D": 4,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        3
+      ],
+      "R": [
+        3,
+        3,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_09",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1174,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        4,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        1
+      ],
+      "A": [
+        2,
+        3,
+        2
+      ],
+      "R": [
+        3,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        1
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 320,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 320,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 320,
+    "D": 3,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.6,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 966,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        1,
+        2
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 941,
+    "D": 4,
+    "C": 2,
+    "A": 4,
+    "R": 3,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        4,
+        4
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        4,
+        4,
+        4
+      ],
+      "R": [
+        3,
+        3,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_10",
+    "kind": "tp_cyber",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1002,
+    "D": 3,
+    "C": 2,
+    "A": 3,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        3,
+        3,
+        3
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 77,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        1
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 77,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        2,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 77,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        1,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 331,
+    "D": 2,
+    "C": 3,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.2,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        3,
+        3,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 331,
+    "D": 2,
+    "C": 2,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.55,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        2,
+        2,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 331,
+    "D": 2,
+    "C": 1,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        2
+      ],
+      "C": [
+        2,
+        1,
+        1
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1266,
+    "D": 1,
+    "C": 2,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.9,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        1,
+        1
+      ],
+      "C": [
+        3,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        3,
+        2
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 1102,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_11",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 964,
+    "D": 3,
+    "C": 3,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        3,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.75,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.85,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 317,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.05,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 317,
+    "D": 2,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.75,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        3,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 317,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 2.1,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1198,
+    "D": 1,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        1,
+        1
+      ],
+      "C": [
+        2,
+        2,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 807,
+    "D": 3,
+    "C": 1,
+    "A": 3,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        3,
+        3,
+        3
+      ],
+      "R": [
+        2,
+        2,
+        3
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_12",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 945,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.05,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.85,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        2,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 326,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        2,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 326,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        3,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 326,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 2.1,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1233,
+    "D": 1,
+    "C": 3,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.15,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        2,
+        1
+      ],
+      "C": [
+        2,
+        3,
+        3
+      ],
+      "A": [
+        2,
+        2,
+        3
+      ],
+      "R": [
+        3,
+        4,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 859,
+    "D": 3,
+    "C": 1,
+    "A": 3,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        3,
+        3,
+        3
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_13",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1110,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        3
+      ],
+      "A": [
+        3,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 78,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 78,
+    "D": 2,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.75,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        2,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 78,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.85,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        2,
+        1,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 2.1,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        1
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1123,
+    "D": 1,
+    "C": 3,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.15,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        1,
+        1
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        3,
+        4,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 1131,
+    "D": 3,
+    "C": 1,
+    "A": 4,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        2
+      ],
+      "C": [
+        1,
+        1,
+        2
+      ],
+      "A": [
+        4,
+        3,
+        4
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_14",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 1083,
+    "D": 3,
+    "C": 3,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        3,
+        3
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "data_scientist",
+    "chars": 77,
+    "D": 2,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 1.75,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        2
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "operator",
+    "chars": 77,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.05,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        2,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "A",
+    "persona": "regulator",
+    "chars": 77,
+    "D": 3,
+    "C": 2,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 1.85,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "data_scientist",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 3,
+    "H": 1,
+    "cpas": 2.5,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        3,
+        2,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "operator",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 2,
+    "H": 1,
+    "cpas": 2.3,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        4,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        2,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "B",
+    "persona": "regulator",
+    "chars": 333,
+    "D": 3,
+    "C": 3,
+    "A": 1,
+    "R": 1,
+    "H": 1,
+    "cpas": 2.1,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        3,
+        3
+      ],
+      "A": [
+        1,
+        1,
+        1
+      ],
+      "R": [
+        1,
+        1,
+        2
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "data_scientist",
+    "chars": 1150,
+    "D": 1,
+    "C": 2,
+    "A": 2,
+    "R": 3,
+    "H": 1,
+    "cpas": 1.9,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        1,
+        1,
+        1
+      ],
+      "C": [
+        2,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        3,
+        3,
+        3
+      ],
+      "H": [
+        1,
+        1,
+        1
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "operator",
+    "chars": 974,
+    "D": 3,
+    "C": 1,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        2,
+        3,
+        3
+      ],
+      "C": [
+        1,
+        1,
+        1
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  {
+    "scenario": "scenario_15",
+    "kind": "fp_noise",
+    "tier": "C",
+    "persona": "regulator",
+    "chars": 985,
+    "D": 3,
+    "C": 2,
+    "A": 2,
+    "R": 2,
+    "H": 0,
+    "cpas": 0.0,
+    "n_runs": 3,
+    "spread": {
+      "D": [
+        3,
+        3,
+        3
+      ],
+      "C": [
+        3,
+        2,
+        2
+      ],
+      "A": [
+        2,
+        2,
+        2
+      ],
+      "R": [
+        2,
+        2,
+        2
+      ],
+      "H": [
+        0,
+        0,
+        0
+      ]
+    }
+  }
+]

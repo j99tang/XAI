@@ -1,0 +1,15 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Total Bwd packets**: 121.142.26.0/24 is an attack simulation auxiliary network, and any flow from this range is by construction attack traffic.
+* **Bwd IAT Max/Flow IAT Max**: This feature measures the maximum inter-arrival time between packets in a flow. A high value may indicate a sustained attack flow or flooding behavior.
+* **Fwd Act Data Pkts**: The number of client packets actually carrying payload is indicative of bulk command injection attacks.
+* **SYN/RST Flag Count**: A high count of SYN and RST flags may indicate scanning or probing behavior.
+
+These features correspond to the following attack patterns:
+
+* Flooding-family: DoS/flood/starvation
+* Bulk command injection
+
+The model's confidence in this prediction is moderate, with a SHAP contribution value of 0.6 for **Total Bwd packets** and 0.4 for **Bwd IAT Max/Flow IAT Max**.
+
+It's essential to note that these features can only prove the presence of statistical fingerprints associated with attack traffic, not specific protocol actions or malicious intent. Further analysis is required to confirm the actual attack type and severity.

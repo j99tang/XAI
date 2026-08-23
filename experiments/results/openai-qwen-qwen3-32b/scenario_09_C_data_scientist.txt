@@ -1,0 +1,14 @@
+**Model Analysis**  
+The intrusion alert for destination `10.0.0.1:2404` (RTU-1) was driven by anomalous flow features:  
+- **Flow IAT Min (58ms)** and **Bwd IAT Min (243ms)** suggest irregular packet timing, deviating from normal IEC-104 polling (which exhibits regular `Flow IAT Std`).  
+- **Packet Length Min (0B)** and **Bwd Packet Length Min (0B)** indicate zero-length packets, consistent with control traffic or malformed probes (e.g., SYN scans).  
+- **Packet Length Max (24B)** implies small packets dominated by headers, a fingerprint of scanning/flood attacks (per `attack_taxonomy/attacks.md`).  
+
+These features align with **flood/scan-family attacks** (e.g., SYN DoS or packet flooding), characterized by high packet rates and small payloads. The model’s confidence (`1.00`) reflects strong deviation from baseline IEC-104 patterns (regular IAT, balanced packet sizes).  
+
+**Caveats**:  
+- The model observes *statistical fingerprints* (e.g., IAT, packet sizes), not IEC-104 protocol semantics. Zero-length packets could reflect legitimate control traffic (`control_traffic` entity) or malicious probes.  
+- `Dst_Port=2404` (IEC-104 endpoint) is a mild signal (per knowledge graph), insufficient alone to confirm an attack.  
+- The features cannot prove *intent* or *physical consequences* (e.g., loss of RTU control), only statistical atypicality.  
+
+This signature warrants deeper protocol analysis to distinguish between benign control traffic and active probing.

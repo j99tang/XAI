@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+The affected asset is RTU-1, a BES Cyber Asset under NERC CIP, controlling breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 at Bus 2 in Zone ZONE-N. The intrusion alert indicates an attack with high confidence (1.00) on destination 10.0.0.1:2404.
+
+This incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6, as it involves a BES Cyber System. The reporting timeline applies to attempted compromises, which must be notified within one hour or by the end of the next calendar day.
+
+Notification is due to NCCIC/CISA, the US Cybersecurity and Infrastructure Security Agency responsible for receiving notifications under US jurisdiction.
+
+This response sits under the CSF function "Report" in the incident-response lifecycle outlined in NIST SP 800-61r3.

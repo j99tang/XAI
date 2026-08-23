@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves a potential cyber security threat to RTU-3, a BES Cyber Asset under NERC CIP. The detector has predicted an attack with high confidence on destination 10.0.0.5:2404, which is associated with the IEC-104 endpoint at RTU-3.
+
+Based on the knowledge graph data, this incident plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6. The affected asset is a BES Cyber System (RTU-3), and the detector has predicted an attack, which may compromise or disrupt the system.
+
+The reporting timeline applies as follows: since this is an attempted compromise, notification must be made by the end of the next calendar day to NCCIC/CISA under US jurisdiction. The required attributes for initial notification include functional impact, attack vector, and level of intrusion, even if some are unknown at first notification (updates will follow).
+
+This response sits under the **Detect** capability of the CSF functions, as per NIST SP 800-61r3.

@@ -1,54 +1,60 @@
 {
   "scenario_id": "scenario_13",
-  "kind": "fp_noise",
+  "kind": "tp_physical",
   "anomaly_event": {
-    "flow_id": "fp_noise-3",
-    "src_ip": "10.0.0.2",
+    "flow_id": "tp_physical-mitmattack-RTU-4-12",
+    "src_ip": "121.142.26.78",
     "dst_ip": "10.0.0.6",
     "dst_port": 2404,
-    "prediction": "normal",
-    "confidence": 0.1543068189425538,
+    "prediction": "attack",
+    "confidence": 1.0,
     "top_features": [
       {
-        "name": "Flow IAT Max",
-        "value": 24843.0,
-        "shap": -0.08448296045494523
+        "name": "Bwd IAT Min",
+        "value": 0.0,
+        "shap": 0.06138307207517272
       },
       {
-        "name": "Flow Bytes/s",
-        "value": 28248.212348630757,
-        "shap": -0.0838642430741049
+        "name": "Flow IAT Min",
+        "value": 250.0,
+        "shap": 0.05017695680042005
       },
       {
-        "name": "Fwd Packet Length Max",
-        "value": 16.0,
-        "shap": -0.07441914656034768
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.040036521627445504
       },
       {
-        "name": "Total Fwd Packet",
-        "value": 6.0,
-        "shap": 0.05946436602376774
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.03557983231322594
       },
       {
-        "name": "Fwd IAT Max",
-        "value": 6444.0,
-        "shap": -0.05771848701862051
+        "name": "Packet Length Max",
+        "value": 0.0,
+        "shap": 0.03465043003065836
       }
     ]
   },
   "gold_facts": {
-    "device": "DEVICE (authoritative, from IP map): 10.0.0.6 = RTU-4, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-S, at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.",
-    "attack_class": "attackfree",
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.6 = RTU-4, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-S, at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14, BES Cyber Asset under NERC CIP (authored overlay).",
+    "attack_class": "mitmattack",
     "top_features": [
-      "Flow IAT Max",
-      "Flow Bytes/s",
-      "Fwd Packet Length Max",
-      "Total Fwd Packet",
-      "Fwd IAT Max"
+      "Bwd IAT Min",
+      "Flow IAT Min",
+      "Packet Length Min",
+      "Bwd Packet Length Min",
+      "Packet Length Max"
     ],
-    "physical_consequence": "not simulated",
-    "is_physical": false,
-    "reportable": "likely NOT reportable \u2014 benign/borderline traffic; verify before escalating"
+    "physical_consequence": "physical: overloads: line 7 @ 168.6%, line 9 @ 131.3%, line 12 @ 138.6%, line 14 @ 163.1%; voltage: bus 9 @ 0.918pu, bus 10 @ 0.931pu, bus 14 @ 0.936pu",
+    "is_physical": true,
+    "reportable": "Reportable as an ATTEMPT to compromise a BES Cyber System \u2014 CIP-008-6 R4: notify E-ISAC/NCCIC by the end of the next calendar day. The evidence available (an IDS flow classification) does NOT establish compromise or disruption, so the 1-hour clock does not apply on these facts; it would apply only if a compromise or disruption were subsequently determined."
   },
-  "scenario_kind": "fp_noise"
+  "scenario_kind": "tp_physical",
+  "consequence_class": "OVER+VOLT",
+  "opened_breakers": [
+    "BR-4-9",
+    "BR-7-9"
+  ],
+  "load_scale": 1.25
 }

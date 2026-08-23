@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+**Physical Risk:** The attack is likely a Denial of Service (DoS) or a flood attack, which could lead to a loss of view and control of the breakers, causing the grid to run but be unobservable at that node. This could result in delayed or dropped telemetry, forcing the RTU offline.
+
+**Immediate Action:**
+
+1. **Switch to manual control:** Immediately switch the control of the breakers from RTU-1 to manual control to prevent any potential damage or loss of control.
+2. **Check RTU-1's breaker control:** Verify that the breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 are functioning correctly and are not under attack.
+3. **Check RTU-1's communication:** Verify that RTU-1's communication with the PLC is not being disrupted or spoofed.
+4. **Monitor network traffic:** Continuously monitor the network traffic to identify any potential anomalies or attacks.
+
+**Next Steps:**
+
+1. **Investigate the attack:** Once the immediate risk is mitigated, investigate the attack to determine the root cause and the extent of the damage.
+2. **Restore control:** Once the attack is mitigated, restore control of the breakers to RTU-1 and verify that the grid is functioning correctly.
+3. **Review incident response plan:** Review the incident response plan to ensure that it is up-to-date and effective in responding to similar attacks in the future.

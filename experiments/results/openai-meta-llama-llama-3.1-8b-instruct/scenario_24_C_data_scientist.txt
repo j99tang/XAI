@@ -1,0 +1,11 @@
+**Model Analysis**
+
+The model's prediction of an attack is driven by the following flow features:
+
+* Bwd IAT Min (minimum inter-arrival time between packets in the backward direction) is 0, indicating a potential flooding or scanning attack.
+* Packet Length Max (maximum packet length) is 8, which is a small packet size, consistent with a flood or scanning attack.
+* Flow IAT Min (minimum inter-arrival time between packets in the flow) is 641, which is a relatively short flow duration, suggesting a potential flood or sustained attack flow.
+* Bwd Packet Length Min (minimum packet length in the backward direction) is 0, indicating a potential flood or scanning attack.
+* Fwd PSH Flags (presence of PUSH flags in the forward direction) is 0, which is a mild signal, but not a leak.
+
+These features collectively suggest a potential flooding or scanning attack, which is consistent with the model's prediction of an attack. However, it is essential to note that these features do not prove a specific attack class, but rather indicate a behavior family (flooding-family: DoS/flood/starvation). The model's confidence is 1.00, indicating a high degree of certainty in its prediction.

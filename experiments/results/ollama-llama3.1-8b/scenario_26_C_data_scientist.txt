@@ -1,0 +1,11 @@
+Based on the model's output, the flow features that drove the prediction of an attack are:
+
+* Total Fwd Packet: 4 packets, SHAP contribution +0.075
+* Fwd IAT Max: 6.37289e+06 seconds, SHAP contribution +0.045
+* Subflow Fwd Packets: 1 packet, SHAP contribution +0.041
+
+These features indicate a high volume of forward traffic with long inter-arrival times and a single subflow packet. This behavior is consistent with a flooding attack (flood-family: DoS/flood/starvation), where the attacker sends a large number of packets to overwhelm the system.
+
+The model's confidence in this prediction is 0.59, indicating moderate certainty. However, it's essential to note that these features can only provide statistical evidence and do not prove the specific attack class or protocol actions involved. The destination port (2404) is indicative of an IEC-104 endpoint, but as noted in the knowledge base, this carries a mild signal only.
+
+Further investigation is required to determine the actual attack pattern and its consequences on the system.

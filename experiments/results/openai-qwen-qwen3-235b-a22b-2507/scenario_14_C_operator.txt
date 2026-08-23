@@ -1,0 +1,13 @@
+**Briefing: RTU-1 at Bus 2 (ZONE-N) under active network attack**
+
+Device **RTU-1 (10.0.0.1)**, controlling breakers **BR-1-2, BR-2-3, BR-2-4, BR-2-5**, is experiencing a high-rate network flood on port 2404. Observed traffic shows near-zero minimum backward inter-arrival time (Bwd IAT Min = 0), minimal flow inter-arrival time (Flow IAT Min = 89 μs), and zero-length min/max packet sizes — indicating a machine-speed inbound flood from the source. This pattern matches flood or SYN DoS behavior, causing resource starvation.
+
+**Physical risk:** RTU-1 may lose communication or fail to process valid commands, leading to loss of breaker control and telemetry at Bus 2. Unmitigated, this could result in uncontrolled isolation or instability in ZONE-N.
+
+**Immediate actions:**
+1. Switch supervision of RTU-1 to **manual control mode** immediately.
+2. Confirm status of breakers **BR-1-2, BR-2-3, BR-2-4, BR-2-5** via local HMI or field report if available.
+3. Isolate RTU-1 from network if safe to do so; prepare for local manual operation.
+4. Do not issue remote commands until traffic normalizes.
+
+Prioritize grid stability: assume loss of remote control. Verify physical state through alternate means. Notify field team for possible onsite intervention.

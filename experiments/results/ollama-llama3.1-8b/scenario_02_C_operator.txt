@@ -1,0 +1,21 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, 10.0.0.3, Zone C, Bus 4
+**Physical Risk:** Potential loss of control and view of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9
+
+**Incident Analysis:**
+
+The intrusion alert indicates a potential attack on RTU-2. The observed pattern shows high frequency of small packets with zero bytes, indicating a flood-like behavior. This is consistent with a flooding attack, which can cause the RTU to become overwhelmed and lose control of its breakers.
+
+**Immediate Action:**
+
+1. Switch to manual control for Zone C to prevent any potential loss of control.
+2. Check breaker status for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 to ensure they are not affected by the attack.
+3. Verify that RTU-2 is functioning correctly and not compromised.
+
+**Next Steps:**
+
+1. Investigate the source of the attack and take necessary measures to prevent future incidents.
+2. Review and update security protocols for RTUs and other critical devices in the grid.
+
+**Priority:** Safety and continuity of the physical process are paramount. Take immediate action to prevent any potential loss of control or view of breakers.

@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident triggers reporting obligations under NERC CIP-008-6. The affected asset is RTU-1, a BES Cyber System, which controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The intrusion alert indicates a prediction of an attack with a confidence level of 1.00, targeting RTU-1's IEC-104 endpoint (Dst_Port).
+
+The attack meets the threshold for a Reportable Cyber Security Incident, as it compromises a BES Cyber System. The reporting timeline applies: the incident must be reported within one hour of determination. Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+This response sits under the **Detect** capability, as the IDS system detects anomalies. The incident handling lifecycle, as per NIST SP 800-61r3, will be followed: Detect & Analyze → Contain, Eradicate, and Recover.
+
+**Illustrative Note**: This assessment is illustrative, as the grid is a synthetic IEEE 14-bus overlay, and the traffic originates from a European testbed (SANDI-2024). CIP obligations are applied here for demonstration purposes, not as a jurisdictional determination.

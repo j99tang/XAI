@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2 (10.0.0.3) at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, and BES Cyber Asset.
+
+**Physical Risk:** The RTU-2 is experiencing a high volume of small packets with irregular timing, indicating a potential flood attack. This could lead to a denial of service, causing the RTU to become unresponsive or offline, resulting in a loss of control and view of the breakers at Bus 4.
+
+**Immediate Next Actions:**
+
+1. **Switch to manual control:** Immediately switch the control of the breakers at Bus 4 to manual mode to prevent any unintended switching or loss of control.
+2. **Check RTU-2 status:** Verify the status of RTU-2 to determine if it is still operational and responding to commands.
+3. **Check breaker status:** Confirm the status of the breakers controlled by RTU-2 to ensure they are not in an unintended state.
+4. **Isolate RTU-2:** If necessary, isolate RTU-2 from the rest of the network to prevent further potential attacks.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation. We will investigate the incident after ensuring the grid is secure and running safely.

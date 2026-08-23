@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert on a BES Cyber Asset, RTU-4 (10.0.0.6), which controls breakers at Bus 9. The alert has a confidence level of 1.00 and indicates an attack prediction.
+
+Based on the knowledge graph data, NERC CIP-008-6 defines a Reportable Cyber Security Incident as one that compromises or disrupts a BES Cyber System or its associated EACMS/PACS. Since RTU-4 is a BES Cyber Asset, this incident plausibly meets the threshold for reporting.
+
+The reporting timeline applies as follows: since the incident was determined to be an attack (not just an attempt), notification must be made within one hour of determining the incident.
+
+Notification is due to both the E-ISAC and NCCIC/CISA under US jurisdiction. The required attributes for initial notification include functional impact, attack vector, and level of intrusion.
+
+This response sits under the **Detect** function of the CSF framework, as it involves identifying potential threats to BES Cyber Assets.
