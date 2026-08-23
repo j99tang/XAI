@@ -3,7 +3,7 @@
 Date 2026-07-07. Local stack: Ollama `llama3.1:8b` (LLM, temp 0) +
 `nomic-embed-text` (768-dim). Graph in `rag_storage/`.
 
-## What was built (Layer 3 code, `src/ccir/contextualizer/`)
+## What was built (Layer 3 code, `src/caie/contextualizer/`)
 - `rag.py` — shared LightRAG config (one place for models + storage).
 - `ingest.py` — builds the graph from `knowledge_base/*.md` (§3.1). Run once.
 - `retrieve.py` — `AnomalyEvent` → query → Multi-Domain Context Block (retrieve once).

@@ -29,8 +29,8 @@ import ipaddress
 import yaml
 from lightrag import QueryParam
 
-from ccir.contextualizer.rag import KB_DIR
-from ccir.schemas.anomaly_event import AnomalyEvent
+from caie.contextualizer.rag import KB_DIR
+from caie.schemas.anomaly_event import AnomalyEvent
 
 _ENTITIES = None
 

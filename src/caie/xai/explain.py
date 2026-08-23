@@ -13,7 +13,7 @@ import numpy as np
 import pandas as pd
 import shap
 
-from ccir.schemas.anomaly_event import FeatureAttribution
+from caie.schemas.anomaly_event import FeatureAttribution
 
 MODELS_DIR = Path(__file__).resolve().parents[3] / "models"
 
@@ -22,7 +22,7 @@ def load_model():
     """-> (fitted RF, ordered feature list). Fails loudly if train.py hasn't run."""
     model_path = MODELS_DIR / "ids_rf.joblib"
     if not model_path.exists():
-        raise FileNotFoundError(f"{model_path} missing — run `python -m ccir.ids.train` first")
+        raise FileNotFoundError(f"{model_path} missing — run `python -m caie.ids.train` first")
     features = json.loads((MODELS_DIR / "feature_list.json").read_text())
     return joblib.load(model_path), features
 

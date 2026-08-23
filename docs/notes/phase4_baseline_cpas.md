@@ -92,5 +92,5 @@ CPAS jumps above A/B.
 
 ## Next step
 Run the §7.5 upgrade test (backend already pluggable, D28): set
-`CCIR_SYNTH_BACKEND=openai` + a stronger model (e.g. via OpenRouter), regenerate
+`CAIE_SYNTH_BACKEND=openai` + a stronger model (e.g. via OpenRouter), regenerate
 tier C, re-run the batch (~$11), compare. Keep the judge (Opus 4.8) fixed.

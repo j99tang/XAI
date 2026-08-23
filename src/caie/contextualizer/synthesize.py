@@ -5,14 +5,14 @@ system prompts at temperature 0 (reproducible). The persona prompts carry the
 anti-hallucination and evidence-boundary guardrails (configs/personas/).
 
 Run a demo on one attack flow:
-  conda run -n xai python -m ccir.contextualizer.synthesize
+  conda run -n xai python -m caie.contextualizer.synthesize
 
 Synthesizer backend is pluggable (for the §7.5 "does a stronger model help?" test)
 via env vars — local Ollama is the default so the baseline run is unchanged:
-  CCIR_SYNTH_BACKEND=ollama   (default) — uses CCIR_LLM / OLLAMA_HOST from rag.py
-  CCIR_SYNTH_BACKEND=openai   — any OpenAI-compatible endpoint (OpenRouter, Gemini
-    compat, a hosted 70B, …). Set CCIR_SYNTH_MODEL, CCIR_SYNTH_BASE_URL
-    (default OpenRouter), and CCIR_SYNTH_KEY (or in .env). Needs `pip install openai`.
+  CAIE_SYNTH_BACKEND=ollama   (default) — uses CAIE_LLM / OLLAMA_HOST from rag.py
+  CAIE_SYNTH_BACKEND=openai   — any OpenAI-compatible endpoint (OpenRouter, Gemini
+    compat, a hosted 70B, …). Set CAIE_SYNTH_MODEL, CAIE_SYNTH_BASE_URL
+    (default OpenRouter), and CAIE_SYNTH_KEY (or in .env). Needs `pip install openai`.
 Swapping the backend is the model-agnostic upgrade path — the AnomalyEvent contract
 and everything downstream (judge, rubric) are unchanged.
 """
@@ -26,23 +26,23 @@ from pathlib import Path
 import ollama
 from dotenv import load_dotenv
 
-from ccir.contextualizer.rag import LLM_MODEL, OLLAMA_HOST, ROOT, build_rag
-from ccir.contextualizer.retrieve import retrieve_all
-from ccir.schemas.anomaly_event import AnomalyEvent
+from caie.contextualizer.rag import LLM_MODEL, OLLAMA_HOST, ROOT, build_rag
+from caie.contextualizer.retrieve import retrieve_all
+from caie.schemas.anomaly_event import AnomalyEvent
 
 load_dotenv(ROOT / ".env")
 
 PERSONA_DIR = ROOT / "configs" / "personas"
 PERSONAS = ["operator", "data_scientist", "regulator"]
 
-SYNTH_BACKEND = os.environ.get("CCIR_SYNTH_BACKEND", "ollama")
+SYNTH_BACKEND = os.environ.get("CAIE_SYNTH_BACKEND", "ollama")
 
 
 def synth_model() -> str:
     """The synthesizer model id for the active backend."""
     if SYNTH_BACKEND == "ollama":
         return LLM_MODEL
-    return os.environ.get("CCIR_SYNTH_MODEL", "unset")
+    return os.environ.get("CAIE_SYNTH_MODEL", "unset")
 
 
 def run_tag() -> str:
@@ -73,11 +73,11 @@ class TruncatedNarrative(RuntimeError):
 # actually costs ~$0.023 — an 85x over-reservation that 402s on a low balance. Pinning it
 # LOW would be worse: it would truncate reasoning models mid-answer. 4,000 cuts the
 # reservation to ~$0.12 while leaving ample room.
-MAX_OUTPUT_TOKENS = int(os.environ.get("CCIR_SYNTH_MAX_TOKENS", "4000"))
+MAX_OUTPUT_TOKENS = int(os.environ.get("CAIE_SYNTH_MAX_TOKENS", "4000"))
 
 
 def _complete(system: str, user: str) -> str:
-    """One chat completion at temperature 0. Dispatches on CCIR_SYNTH_BACKEND so
+    """One chat completion at temperature 0. Dispatches on CAIE_SYNTH_BACKEND so
     the synthesizer model is a swappable variable while everything else is fixed."""
     messages = [{"role": "system", "content": system}, {"role": "user", "content": user}]
     if SYNTH_BACKEND == "ollama":
@@ -91,9 +91,9 @@ def _complete(system: str, user: str) -> str:
     if SYNTH_BACKEND == "openai":  # OpenRouter / any OpenAI-compatible endpoint
         from openai import OpenAI
         client = OpenAI(
-            base_url=os.environ.get("CCIR_SYNTH_BASE_URL", "https://openrouter.ai/api/v1"),
-            api_key=os.environ.get("CCIR_SYNTH_KEY") or os.environ.get("OPENROUTER_API_KEY", ""))
-        model = os.environ["CCIR_SYNTH_MODEL"]
+            base_url=os.environ.get("CAIE_SYNTH_BASE_URL", "https://openrouter.ai/api/v1"),
+            api_key=os.environ.get("CAIE_SYNTH_KEY") or os.environ.get("OPENROUTER_API_KEY", ""))
+        model = os.environ["CAIE_SYNTH_MODEL"]
         resp = client.chat.completions.create(
             model=model, messages=messages, temperature=0,
             max_tokens=MAX_OUTPUT_TOKENS)
@@ -101,14 +101,14 @@ def _complete(system: str, user: str) -> str:
         if choice.finish_reason == "length":
             raise TruncatedNarrative(
                 f"{model} hit max_tokens={MAX_OUTPUT_TOKENS}; narrative is cut off. "
-                f"Raise CCIR_SYNTH_MAX_TOKENS — do NOT keep the partial text.")
+                f"Raise CAIE_SYNTH_MAX_TOKENS — do NOT keep the partial text.")
         text = (choice.message.content or "").strip()
         if not text:
             raise TruncatedNarrative(
                 f"{model} returned empty content (finish_reason={choice.finish_reason!r}); "
                 f"an empty narrative must not reach the judge")
         return text
-    raise ValueError(f"unknown CCIR_SYNTH_BACKEND={SYNTH_BACKEND!r} (use 'ollama' or 'openai')")
+    raise ValueError(f"unknown CAIE_SYNTH_BACKEND={SYNTH_BACKEND!r} (use 'ollama' or 'openai')")
 
 
 ROLE_LINE = {  # repeated in the USER turn: 8B under-weights the system role alone
@@ -163,7 +163,7 @@ async def _demo() -> None:
         prediction="attack", confidence=0.99,
         top_features=[],
     )
-    from ccir.schemas.anomaly_event import FeatureAttribution
+    from caie.schemas.anomaly_event import FeatureAttribution
     ev.top_features = [
         FeatureAttribution("Flow Packets/s", 4820.0, 0.19),
         FeatureAttribution("Flow IAT Std", 12.4, 0.15),

@@ -19,8 +19,8 @@ would then be judged against the new gold facts and score as a confident halluci
 The manifest records a fingerprint of each scenario's gold facts; report.py refuses to
 run when a narrative's fingerprint does not match the scenario it claims to explain.
 
-Run:  conda run -n xai python -m ccir.evaluation.tiers            # resumes by default
-      conda run -n xai python -m ccir.evaluation.tiers --fresh    # regenerate all
+Run:  conda run -n xai python -m caie.evaluation.tiers            # resumes by default
+      conda run -n xai python -m caie.evaluation.tiers --fresh    # regenerate all
 """
 from __future__ import annotations
 
@@ -31,11 +31,11 @@ import json
 from datetime import datetime, timezone
 from pathlib import Path
 
-from ccir.contextualizer.rag import ROOT, build_rag
-from ccir.contextualizer.retrieve import evidence_block
-from ccir.contextualizer.synthesize import (PERSONAS, SYNTH_BACKEND, run_tag,
+from caie.contextualizer.rag import ROOT, build_rag
+from caie.contextualizer.retrieve import evidence_block
+from caie.contextualizer.synthesize import (PERSONAS, SYNTH_BACKEND, run_tag,
                                             synth_model, synthesize_all)
-from ccir.schemas.anomaly_event import AnomalyEvent
+from caie.schemas.anomaly_event import AnomalyEvent
 
 SCEN_DIR = ROOT / "experiments" / "scenarios"
 RESULTS = ROOT / "experiments" / "results"

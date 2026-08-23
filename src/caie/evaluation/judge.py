@@ -12,8 +12,8 @@ the local 8B synthesizer (the independence rule). Bias controls, all from §7.6:
 Requires ANTHROPIC_API_KEY (or an `ant auth login` profile). Set it with the `!`
 prefix in this session, e.g.:  ! export ANTHROPIC_API_KEY=sk-ant-...
 
-Run:  conda run -n xai python -m ccir.evaluation.judge          # smoke-test one
-      conda run -n xai python -m ccir.evaluation.report         # full run + table
+Run:  conda run -n xai python -m caie.evaluation.judge          # smoke-test one
+      conda run -n xai python -m caie.evaluation.report         # full run + table
 """
 from __future__ import annotations
 
@@ -34,7 +34,7 @@ load_dotenv(ROOT / ".env")
 
 # Frozen across every run in the sweep: the judge is the ruler, not a variable
 # (D34). Opus 5 is the current top-tier model at the same $5/$25 per 1M as 4.8.
-JUDGE_MODEL = os.environ.get("CCIR_JUDGE", "claude-opus-5")
+JUDGE_MODEL = os.environ.get("CAIE_JUDGE", "claude-opus-5")
 REPEATS = 3
 WEIGHTS = {"D": 0.30, "C": 0.25, "A": 0.25, "R": 0.20}  # pre-registered; raw max = 5
 LAMBDA = 2.0  # subtractive hallucination penalty (proposal: CPAS = wD+wC+wA+wR - λH)
@@ -172,7 +172,7 @@ def assert_independent_of(synth_backend: str, synth_model: str) -> None:
         raise SystemExit(
             f"judge ({JUDGE_MODEL}) and synthesizer ({synth_model}) share a vendor.\n"
             f"The judge must be a different vendor (§7.6). Use a GPT/Gemini-class "
-            f"synthesizer, or set CCIR_JUDGE to a non-Anthropic judge.")
+            f"synthesizer, or set CAIE_JUDGE to a non-Anthropic judge.")
 
 
 def _client() -> anthropic.Anthropic:

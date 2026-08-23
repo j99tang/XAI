@@ -17,7 +17,7 @@ from pathlib import Path
 
 import yaml
 
-from ccir.contextualizer.rag import KB_DIR, build_rag
+from caie.contextualizer.rag import KB_DIR, build_rag
 
 ENTITIES = KB_DIR / "entities.yaml"
 

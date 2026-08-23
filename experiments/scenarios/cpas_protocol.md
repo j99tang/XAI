@@ -115,7 +115,7 @@ so the reason is the only place that distinction survives.
 ## Judge procedure (bias controls, §7.6)
 - **Judge ≠ synthesizer family.** Synthesizer = local llama3.1:8b; judge = a
   different, stronger model (Claude or Gemini via API, or a distinct stronger
-  model). Decided per `CCIR_JUDGE` at run time.
+  model). Decided per `CAIE_JUDGE` at run time.
 - **Blinded:** the judge never sees the tier label (A/B/C) or the hypothesis.
 - **Isolated:** one narrative + rubric + gold facts per call; no cross-comparison.
 - **Repeats:** 3 judge calls per narrative; report the **median** and the spread.

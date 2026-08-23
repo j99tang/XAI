@@ -9,7 +9,7 @@ verbosity-bias control, §7.6 #1).
 
 custom_id format: "<scenario>__<tier>__<persona>__r<repeat>"
 
-Requires ANTHROPIC_API_KEY. Run: conda run -n xai python -m ccir.evaluation.report
+Requires ANTHROPIC_API_KEY. Run: conda run -n xai python -m caie.evaluation.report
 Most batches finish in <1h (max 24h); the script polls and blocks until done.
 """
 from __future__ import annotations
@@ -25,11 +25,11 @@ from anthropic.types.messages.batch_create_params import Request
 
 from scipy.stats import wilcoxon
 
-from ccir.contextualizer.synthesize import run_tag
-from ccir.evaluation.judge import (JUDGE_MODEL, LAMBDA, REPEATS, SCEN_DIR, THRESHOLD,
+from caie.contextualizer.synthesize import run_tag
+from caie.evaluation.judge import (JUDGE_MODEL, LAMBDA, REPEATS, SCEN_DIR, THRESHOLD,
                                     _client, aggregate_runs, assert_independent_of,
                                     cpas, judge_params, parse_scores)
-from ccir.evaluation.tiers import PERSONAS, TIERS, fingerprint, run_dir
+from caie.evaluation.tiers import PERSONAS, TIERS, fingerprint, run_dir
 
 ROOT = Path(__file__).resolve().parents[3]
 SEP = "__"
@@ -47,7 +47,7 @@ def build_requests(rdir: Path) -> tuple[list[Request], dict[str, dict]]:
     printed a full-looking table."""
     manifest_path = rdir / "manifest.json"
     if not manifest_path.exists():
-        raise SystemExit(f"{manifest_path} missing — run `python -m ccir.evaluation.tiers` first")
+        raise SystemExit(f"{manifest_path} missing — run `python -m caie.evaluation.tiers` first")
     manifest = json.loads(manifest_path.read_text())
 
     requests, meta, missing, stale = [], {}, [], []
@@ -78,11 +78,11 @@ def build_requests(rdir: Path) -> tuple[list[Request], dict[str, dict]]:
             f"{len(stale)} scenario(s) changed since these narratives were generated "
             f"({', '.join(stale[:5])}{'...' if len(stale) > 5 else ''}).\n"
             f"Judging them would grade a narrative against a DIFFERENT incident's gold "
-            f"facts. Re-run: python -m ccir.evaluation.tiers")
+            f"facts. Re-run: python -m caie.evaluation.tiers")
     if missing:
         raise SystemExit(
             f"{len(missing)} narrative(s) missing from {rdir} "
-            f"(e.g. {', '.join(missing[:4])}).\nRe-run: python -m ccir.evaluation.tiers")
+            f"(e.g. {', '.join(missing[:4])}).\nRe-run: python -m caie.evaluation.tiers")
     return requests, meta
 
 
@@ -156,7 +156,7 @@ def main() -> None:
         raise SystemExit("Set ANTHROPIC_API_KEY first (see .env)")
     rdir = run_dir(args.run)
     if not rdir.exists():
-        raise SystemExit(f"{rdir} not found — run `python -m ccir.evaluation.tiers` first")
+        raise SystemExit(f"{rdir} not found — run `python -m caie.evaluation.tiers` first")
     manifest = json.loads((rdir / "manifest.json").read_text())
     assert_independent_of(manifest["synth_backend"], manifest["synth_model"])
     out_path = rdir / "cpas_scores.json"
@@ -166,7 +166,7 @@ def main() -> None:
     client = _client()
     requests, meta = build_requests(rdir)  # meta (custom_id map) is deterministic
     if not requests:
-        raise SystemExit("no tier outputs found — run `python -m ccir.evaluation.tiers` first")
+        raise SystemExit("no tier outputs found — run `python -m caie.evaluation.tiers` first")
 
     if args.batch:
         batch_id = args.batch  # reconnect to a prior submission — no new charge

@@ -30,10 +30,10 @@ from pathlib import Path
 
 import joblib
 
-from ccir.contextualizer.retrieve import resolve_device
-from ccir.ids.dataset import load_raw, split
-from ccir.schemas.anomaly_event import AnomalyEvent, FeatureAttribution
-from ccir.xai.explain import top_attributions
+from caie.contextualizer.retrieve import resolve_device
+from caie.ids.dataset import load_raw, split
+from caie.schemas.anomaly_event import AnomalyEvent, FeatureAttribution
+from caie.xai.explain import top_attributions
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "experiments" / "scenarios"

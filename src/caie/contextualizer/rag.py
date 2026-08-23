@@ -21,8 +21,8 @@ ROOT = Path(__file__).resolve().parents[3]
 RAG_STORAGE = ROOT / "rag_storage"
 KB_DIR = ROOT / "knowledge_base"
 
-LLM_MODEL = os.environ.get("CCIR_LLM", "llama3.1:8b")
-EMBED_MODEL = os.environ.get("CCIR_EMBED", "nomic-embed-text")
+LLM_MODEL = os.environ.get("CAIE_LLM", "llama3.1:8b")
+EMBED_MODEL = os.environ.get("CAIE_EMBED", "nomic-embed-text")
 OLLAMA_HOST = os.environ.get("OLLAMA_HOST", "http://localhost:11434")
 EMBED_DIM = 768  # nomic-embed-text (do NOT use lightrag.llm.ollama.ollama_embed —
                  # it is pre-decorated with embedding_dim=1024 and will mismatch nomic)

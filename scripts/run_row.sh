@@ -10,7 +10,7 @@
 #
 # Outputs land in experiments/results/<run_tag>/, namespaced by backend+model, so no
 # row can overwrite another. Judge afterwards with:
-#   conda run -n xai python -m ccir.evaluation.report --run <run_tag>
+#   conda run -n xai python -m caie.evaluation.report --run <run_tag>
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -31,7 +31,7 @@ case "$MODEL" in anthropic/*|*claude*)
   exit 1 ;;
 esac
 
-export CCIR_SYNTH_BACKEND="$BACKEND" CCIR_SYNTH_MODEL="$MODEL"
+export CAIE_SYNTH_BACKEND="$BACKEND" CAIE_SYNTH_MODEL="$MODEL"
 echo "row $ROW: $NOTE"
 echo "  backend=$BACKEND  model=$MODEL"
-conda run -n xai --no-capture-output python -m ccir.evaluation.tiers "$@"
+conda run -n xai --no-capture-output python -m caie.evaluation.tiers "$@"
