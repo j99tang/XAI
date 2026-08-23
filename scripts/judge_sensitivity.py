@@ -15,7 +15,7 @@ comparable if you later fill in the sheet.
 Run: conda run -n xai python scripts/judge_sensitivity.py [--model <openrouter id>]
 """
 from __future__ import annotations
-import importlib.util, json, os, sys
+import importlib.util, json, os, sys, time
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -30,7 +30,8 @@ hs = importlib.util.module_from_spec(spec); spec.loader.exec_module(hs)
 MODEL = "google/gemini-3.1-pro-preview"
 if "--model" in sys.argv:
     MODEL = sys.argv[sys.argv.index("--model") + 1]
-OUT = ROOT / "experiments" / "results" / "judge_sensitivity.json"
+OUT = ROOT / "experiments" / "results" / f"judge_sensitivity_{MODEL.replace('/','-')}.json"
+RATE_DELAY = float(os.environ.get("CAIE_JUDGE_DELAY", "7"))   # seconds between calls
 BANNED = ("llama-3.1-8b", "llama3.1:8b", "gpt-5.5")   # the two synthesizers under test
 
 
@@ -64,6 +65,10 @@ def main() -> None:
         # Retry: OpenRouter routes vary, and a route can return empty content or
         # non-JSON. Skipping silently would quietly shrink n and bias the sample toward
         # whatever this judge finds easy to score.
+        # New OpenRouter accounts are capped (e.g. 10 rpm on gpt-5.4). Pace requests so
+        # a rate limit does not silently shrink n -- a partial sample here is worse than
+        # a slow one, because agreement on 10 arbitrary items is not agreement.
+        time.sleep(RATE_DELAY)
         parsed = None
         for attempt in range(3):
             try:
@@ -78,8 +83,10 @@ def main() -> None:
                 parsed = {d: int(obj[d]) for d in DIMS}
                 break
             except Exception as e:
-                print(f"    retry {attempt+1}/3 on item {n:02d}: {type(e).__name__}: {e}",
+                msg = str(e)[:80]
+                print(f"    retry {attempt+1}/3 on item {n:02d}: {type(e).__name__}: {msg}",
                       flush=True)
+                time.sleep(RATE_DELAY * 2 if "429" in str(e) else 2)
         if parsed is None:
             print(f"  {n:02d} FAILED after 3 attempts — excluded from n"); continue
         out[key] = parsed
@@ -105,6 +112,22 @@ def main() -> None:
     a = [out[k]["H"] for k in keys]; b = [primary[k]["H"] for k in keys]
     print(f"{'H':>4} {'(binary)':>10} {sum(x==y for x,y in zip(a,b))/len(a):>7.0%} "
           f"{'':>8} {st.mean(b)-st.mean(a):>+8.2f}")
+    # --- same-family bias check -------------------------------------------------
+    # A judge from the same family as one run's synthesizer may prefer its sibling's
+    # output. Split agreement by which model WROTE the narrative: if this judge is
+    # systematically kinder to gpt-5.5's narratives than the cross-vendor judge is,
+    # that is self-preference showing up as quality.
+    fam = [k for k in keys if "gpt-5.5" in k]
+    oth = [k for k in keys if "gpt-5.5" not in k]
+    if fam and oth:
+        def gap(ks):
+            return st.mean(sum(out[k][d] for d in "DCAR") - sum(primary[k][d] for d in "DCAR")
+                           for k in ks)
+        print(f"\n  SAME-FAMILY BIAS CHECK (this judge vs claude-opus-5, sum of D+C+A+R):")
+        print(f"    on gpt-5.5-authored narratives (n={len(fam)}): {gap(fam):+.2f}")
+        print(f"    on other narratives            (n={len(oth)}): {gap(oth):+.2f}")
+        print(f"    difference: {gap(fam)-gap(oth):+.2f}  "
+              f"(a large positive value = this judge favours its own family)")
     print("\n  mean Δ > 0 -> the PRIMARY judge (claude-opus-5) scores higher.")
     print("  Does the tier ordering survive? (mean CPAS by tier, second judge)")
     for t in ("A", "B", "C"):

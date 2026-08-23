@@ -115,9 +115,54 @@ exact but 100% within-1 with mean Δ +0.60 — a systematic offset, not disagree
 it cancels because CPAS compares tiers within one judge. The second judge was chosen to
 be neither run's synthesizer; the script refuses a judge that authored narratives.
 
+**Clean panel** — every item scored by a second judge that did NOT author it:
+`gpt-5.4` on the 11 llama-authored items, `gemini-3.1-pro` on the 9 gpt-5.5-authored
+ones (n=20). Spearman ρ = D .664, C .402, A .848, R .896; H agreement 95%; tier ordering
+survives (A 1.85 < B 2.26 < C 2.80).
+
+**Same-family bias: measured, none found.** `gpt-5.4` scored gpt-5.5-authored narratives
++2.44 vs the primary judge and other narratives +2.55 — a difference of **−0.10**, i.e.
+marginally *harsher* on its own family. The independence rule stays the right default,
+but for this pairing self-preference is not detectable at n=20.
+
 **Judge consistency, free.** Tiers A and B are byte-identical across all six rows and
 scored 1.48–1.62 with H=0% everywhere — an independent check that the judge is stable
 across batches.
+
+### 3.1 IMPORTANT QUALIFIER — the effect SIZE is judge-dependent
+The cross-judge disagreement is **not** a constant offset, so it does not fully cancel:
+
+| tier | D | C | A | R | CPAS Δ (2nd judge − primary) |
+|---|---|---|---|---|---|
+| A | −0.50 | **+1.00** | 0.00 | +0.17 | +0.13 |
+| B | +0.29 | **+1.57** | 0.00 | +0.71 | +0.62 |
+| C | 0.00 | +0.14 | +0.14 | 0.00 | −0.21 |
+
+The second judges are markedly more generous to the *sparse* tiers but not to tier C, so
+the measured gap shrinks:
+
+```
+C−A gap, claude-opus-5 (primary) : +1.30
+C−A gap, clean panel             : +0.95      (~27% smaller)
+```
+
+**What this changes:** the direction and significance are robust — A<B<C holds under
+every judge configuration tested, and +0.95 remains a large gap on a 1–5 scale. The
+*magnitude* carries judge-dependent uncertainty of roughly ±25%. State the effect as
+"context adds roughly 1.0–1.3 CPAS depending on grader", not as a precise quantity.
+
+**Cause — a known rubric gap, now costed.** The disagreement concentrates in **C on
+tiers A and B** (+1.00, +1.57). A tier-A narrative is a four-line alert that says nothing
+about consequence, and the C anchor reads *5 = matches / 3 = vague or partial /
+1 = contradicts*. **Silence is not "contradicts."** A strict judge scores it 1, a lenient
+one scores 3 for "vague" — both defensible readings. This is the same wrong-vs-absent
+collapse identified during D39 and patched only in the *reason* text (the judge is asked
+to say which), never in the anchors themselves. It is now measurably costing ~0.35 of
+effect size. **Fix for any future run: add an explicit anchor for "absent" distinct from
+"contradicts", on C and on every dimension whose floor conflates the two.**
+
+**Caveat:** n=20, 6–7 items per tier. The direction of the qualifier is clear; the exact
+27% is not precise.
 
 ---
 
@@ -146,7 +191,12 @@ across batches.
 7. **The ceiling is a lower bound.** All rows share the 8B-built graph, so headroom lost
    to weak entity/relation extraction is invisible. The ceiling understates the
    architecture — the safe direction.
-8. **No human-agreement check yet.** Cross-judge agreement is not human validation: if
+8. **Effect size is judge-dependent (§3.1).** The C−A gap is +1.30 under the primary
+   judge and +0.95 under a clean cross-vendor panel, because second judges are more
+   generous to the sparse tiers on the C dimension. Direction and significance are robust;
+   the magnitude carries ~±25% grader-dependent uncertainty. Root cause is a rubric anchor
+   that conflates "absent" with "contradicts".
+9. **No human-agreement check yet.** Cross-judge agreement is not human validation: if
    models share a bias they agree with each other and human agreement stays unmeasured.
    `scripts/human_score.py` and the worksheet are ready; this is the outstanding gap.
 
