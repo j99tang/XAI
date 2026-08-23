@@ -47,10 +47,23 @@ pip install -e .          # makes `import caie` work everywhere (needs pyproject
 conda run -n xai streamlit run app.py
 ```
 
-Live pipeline: pick an incident (or paste a tier-A alert), and watch the same event
-rendered at three levels of grounding — IDS alone, + SHAP, + retrieved context per
-persona. Synthesizer switchable across the six models from the capability sweep;
-`llama3.1:8b` runs fully offline.
+Live pipeline — the RandomForest and SHAP run on the flow you give it, and retrieval
+and synthesis run on demand. Four input modes:
+
+| mode | input | tiers A/B are |
+|---|---|---|
+| Pick a scenario | one of the 30 curated incidents | precomputed |
+| **Paste a flow record** | 78 comma-separated feature values | **computed live** |
+| **Search the capture** | any of 320k real captured flows | **computed live** |
+| Resolve an alert | a tier-A alert | looked up (and shown to be ambiguous) |
+
+The two live modes ask you to choose a target device as well as a flow. That is not a
+shortcut: no attack flow in the capture targets a real RTU (D24 — attack traffic is on
+the 121.x testbed subnet), so pairing real flow statistics with an authored target is
+exactly what the scenario generator does.
+
+Synthesizer switchable across the six models from the capability sweep; `llama3.1:8b`
+runs fully offline.
 
 See `docs/IMPLEMENTATION_PLAN.md` for the full phased plan,
 `docs/model_map.md` for which model runs at which stage (and which stages use

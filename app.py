@@ -59,6 +59,40 @@ def load_scenarios():
     return [json.loads(p.read_text()) for p in sorted(SCEN.glob("scenario_*.json"))]
 
 
+@st.cache_resource(show_spinner="loading capture (320k flows)…")
+def load_test_split():
+    from caie.ids.dataset import load_raw, split
+    df = load_raw()
+    X_tr, X_te, y_tr, y_te, m_tr, m_te = split(df)
+    return X_te, m_te, df.loc[X_te.index, "Label"]
+
+
+@st.cache_data(show_spinner=False)
+def devices():
+    import yaml
+    d = yaml.safe_load((ROOT / "knowledge_base" / "entities.yaml").read_text())
+    return {x["id"]: x for x in d["devices"]}
+
+
+def event_from_flow(row, model, feats, dst_id: str, k: int = 5) -> AnomalyEvent:
+    """Run the REAL pipeline on a flow record: RandomForest -> SHAP -> AnomalyEvent.
+
+    `dst_id` is the authored target device. It has to be chosen rather than read from the
+    flow because of the data reality this project is built around (decision log D24): no
+    attack flow in the SANDI-2024 capture targets a real RTU — attack traffic lives on the
+    121.x testbed subnet, only benign traffic reaches 10.0.0.x. So a genuine attack flow
+    yields working tiers A and B and a DEAD tier C, since the device join correctly
+    reports no grid asset at 121.x. Pairing real flow statistics with an authored target
+    is exactly what `scripts/make_fact_sheets.py` does to build the scenarios.
+    """
+    d = devices()[dst_id]
+    proba = float(model.predict_proba(row[feats].to_frame().T.astype(float))[0, 1])
+    return AnomalyEvent(
+        flow_id=str(row.name), src_ip="121.142.26.78", dst_ip=d["ip"], dst_port=2404,
+        prediction="attack" if proba >= 0.5 else "normal", confidence=proba,
+        top_features=top_attributions(model, feats, row, k))
+
+
 def tier_a(ev: AnomalyEvent) -> str:
     return (f"INTRUSION ALERT\nprediction: {ev.prediction}\n"
             f"confidence: {ev.confidence:.2f}\ndestination: {ev.dst_ip}:{ev.dst_port}")
@@ -105,40 +139,88 @@ st.title("From alert to explanation")
 st.caption("The same incident at three levels of grounding. Tiers A and B are computed "
            "from the model; tier C adds retrieved context and role conditioning.")
 
-tab_pick, tab_paste = st.tabs(["Pick an incident", "Paste a tier-A alert"])
-rec = None
+tab_pick, tab_flow, tab_search, tab_paste = st.tabs(
+    ["Pick a scenario", "Paste a flow record", "Search the capture", "Resolve an alert"])
+rec, ev = None, None
+
 with tab_pick:
     labels = [f"{s['scenario_id']}  ·  {s['gold_facts']['attack_class']}  ·  "
               f"{s['kind']}  ·  {s.get('consequence_class','n/a')}" for s in scenarios]
     rec = scenarios[st.selectbox("incident", range(len(scenarios)),
                                  format_func=lambda i: labels[i], label_visibility="collapsed")]
+    ev = AnomalyEvent.from_dict(rec["anomaly_event"])
+
+with tab_flow:
+    st.caption("Paste a flow record — 78 comma-separated values, or a CSV row from the "
+               "capture. The IDS and SHAP run on it for real; nothing is looked up.")
+    model, feats = load_model()
+    raw = st.text_area("flow", height=110, label_visibility="collapsed",
+                       placeholder=", ".join(feats[:6]) + ", …  (78 values)")
+    tgt = st.selectbox("target device (authored overlay — see note below)",
+                       [d for d in devices() if devices()[d].get("bus")], key="flow_tgt")
+    if raw.strip():
+        vals = [v.strip() for v in re.split(r"[,\s]+", raw.strip()) if v.strip()]
+        if len(vals) != len(feats):
+            st.error(f"Expected {len(feats)} values, got {len(vals)}. "
+                     f"Order must match `models/feature_list.json`.")
+        else:
+            try:
+                import pandas as pd
+                row = pd.Series([float(v) for v in vals], index=feats, name="pasted")
+                ev = event_from_flow(row, model, feats, tgt); rec = None
+                st.success(f"IDS + SHAP computed on your input → target {tgt}", icon="✅")
+            except ValueError as e:
+                st.error(f"Could not parse as numbers: {e}")
+
+with tab_search:
+    st.caption("Pick a real captured flow. Tiers A and B are computed on it live.")
+    X_te, m_te, labels_te = load_test_split()
+    c1, c2, c3 = st.columns([2, 1, 1])
+    lab = c1.selectbox("attack class", sorted(labels_te.unique()), key="s_lab")
+    tgt2 = c2.selectbox("target device", [d for d in devices() if devices()[d].get("bus")], key="s_tgt")
+    pool = X_te.index[(labels_te == lab).values]
+    n = c3.number_input(f"row (of {len(pool):,})", 0, max(len(pool) - 1, 0), 0, key="s_n")
+    if st.button("Analyse this flow", key="s_go"):
+        model, feats = load_model()
+        idx = pool[int(n)]
+        st.session_state["searched"] = (idx, tgt2)
+    if "searched" in st.session_state:
+        idx, t = st.session_state["searched"]
+        model, feats = load_model()
+        ev = event_from_flow(X_te.loc[idx], model, feats, t); rec = None
+        st.success(f"flow `{m_te.loc[idx,'Flow ID']}` · true label **{labels_te.loc[idx]}** "
+                   f"· real dst `{m_te.loc[idx,'Dst IP']}` → analysed against **{t}**", icon="✅")
+        st.caption("The real destination is the testbed attack subnet; no capture flow targets "
+                   "an RTU (D24), so the physical target is the authored overlay.")
+
 with tab_paste:
-    txt = st.text_area("alert", height=120, label_visibility="collapsed",
+    st.caption("Resolve a tier-A alert back to a known incident. Its real value is showing "
+               "how little an alert identifies.")
+    txt = st.text_area("alert", height=110, label_visibility="collapsed",
                        placeholder="INTRUSION ALERT\nprediction: attack\nconfidence: 1.00\n"
                                    "destination: 10.0.0.1:2404")
     if txt.strip():
         hits = parse_alert(txt, scenarios)
         if not hits:
-            st.error("No known flow matches that destination. Use the picker.")
+            st.error("No known flow matches that destination.")
         else:
             if len(hits) > 1:
-                st.warning(
-                    f"**This alert matches {len(hits)} different incidents.** Destination and "
-                    f"confidence do not identify which one — that is how little a tier-A alert "
-                    f"carries. Pick one to continue.", icon="⚠️")
+                st.warning(f"**This alert matches {len(hits)} different incidents.** Destination "
+                           f"and confidence do not identify which one — that is how little a "
+                           f"tier-A alert carries.", icon="⚠️")
                 rec = hits[st.radio("which incident?", range(len(hits)), horizontal=True,
                                     format_func=lambda i: f"{hits[i]['scenario_id']} · "
                                                           f"{hits[i]['gold_facts']['attack_class']}")]
             else:
                 rec = hits[0]
                 st.info(f"Resolved to **{rec['scenario_id']}**.", icon="✅")
+            ev = AnomalyEvent.from_dict(rec["anomaly_event"])
             st.caption("A tier-A alert carries no flow features, so SHAP is recovered from the "
                        "underlying record — it cannot be computed from the pasted text.")
 
-if rec is None:
+if ev is None:
     st.stop()
 
-ev = AnomalyEvent.from_dict(rec["anomaly_event"])
 go = st.button("Explain this incident", type="primary", use_container_width=True)
 
 # ---------------------------------------------------------------- tiers A & B
@@ -152,9 +234,11 @@ with c2:
     st.caption("XAI, but nothing physical to attach it to")
     st.code(evidence_block(ev), language=None)
 
-if show_gold:
+if show_gold and rec is not None:
     with st.expander("gold facts (the judge's answer key)"):
         st.json(rec["gold_facts"])
+elif show_gold:
+    st.caption("No gold facts — this flow was analysed live, not drawn from the scenario set.")
 
 # ---------------------------------------------------------------- tier C
 st.subheader("Tier C · + retrieved context, per role")
