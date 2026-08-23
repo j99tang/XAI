@@ -1005,6 +1005,40 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
 - **Cost:** both rows regenerated (row 0 local ~50 min free; ceiling ~15 min, ~$2). Scenarios
   regenerated first so the gold's device string carries the classification too.
 
+### D48. Judge sensitivity: ordering robust, effect SIZE is not
+- **Three grading configurations** (2026-08-23): primary `claude-opus-5` on all 4,860
+  calls; `gemini-3.1-pro-preview` on a blind 20-item sample; and a **clean panel** where
+  every item is scored by a second judge that did NOT author it (`gpt-5.4` on the 11
+  llama-authored items, Gemini on the 9 gpt-5.5-authored ones).
+- **The tier ordering survives all three.** Clean panel: A 1.85 < B 2.26 < C 2.80.
+  Gemini alone: A 1.50 < B 1.59 < C 2.84. H agreement 95-100% throughout — the dimension
+  carrying the λ=2 penalty is the most reproducible thing in the metric.
+- **Same-family bias measured, none found.** `gpt-5.4` scored its sibling gpt-5.5's
+  narratives **+2.44** vs the primary judge and other narratives **+2.55** — a difference
+  of −0.10, i.e. marginally harsher on its own family. Keep the independence rule as the
+  default (it costs nothing), but self-preference was not detectable here at n=20.
+- **The qualifier that matters: disagreement is TIER-DEPENDENT, so it does not cancel.**
+  Second judges are far more generous to the sparse tiers on the C dimension
+  (A +1.00, B +1.57) but not to tier C (+0.14). The measured gap shrinks:
+  **C−A = +1.30 (primary) vs +0.95 (clean panel), ~27% smaller.** Direction and
+  significance are robust; the MAGNITUDE carries ~±25% grader-dependent uncertainty.
+  Report the effect as "roughly 1.0-1.3 CPAS depending on grader", never as a point value.
+- **Root cause is a rubric gap identified in [[D39]] and only half-fixed.** The C anchor
+  reads *5 = matches / 3 = vague or partial / 1 = contradicts*, and **silence is not
+  "contradicts"**. A tier-A alert says nothing about consequence: a strict judge scores 1,
+  a lenient one scores 3 for "vague". D39 patched this in the *reason* text (the judge is
+  asked to say whether a 1 means wrong or absent) but never in the anchors. It is now
+  costed at ~0.35 of effect size. **Fix for any future run: give "absent" its own anchor,
+  distinct from "contradicts", on every dimension whose floor conflates them.**
+- **Method note:** the tier-dependence was only visible because the offset was checked
+  PER TIER. A pooled mean Δ would have shown a small overall difference and looked like
+  harmless noise. Always test whether a judge offset varies across the comparison you are
+  actually making.
+- **Also fixed here:** OpenRouter rate-limits new accounts (10 rpm on gpt-5.4), which
+  silently truncated the first sensitivity run to n=10 with one tier-A item. The script
+  now paces requests and backs off on 429 — a partial sample is worse than a slow one,
+  because agreement on 10 arbitrary items is not agreement.
+
 ## Cross-cutting conventions established
 - Raw data immutable; inputs (`data/`, `knowledge_base/`) vs regenerable outputs
   (`models/`, `rag_storage/`, `experiments/results/`) never mixed.
