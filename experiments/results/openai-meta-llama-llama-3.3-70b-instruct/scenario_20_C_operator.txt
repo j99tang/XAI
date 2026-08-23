@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Physical risk: Potential loss of view and control of the breakers, or unintended switching, which could lead to grid instability or equipment damage.
+
+Analysis: The intrusion alert indicates a possible attack on RTU-1, with unusual network flow statistics, including low inter-arrival times and packet lengths. This pattern suggests a potential flooding or denial-of-service attack.
+
+Next actions:
+
+1. Check the status of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 and verify their control signals.
+2. Switch RTU-1 to manual control to prevent potential malicious commands.
+3. Monitor the network traffic to RTU-1 and prepare to isolate it if necessary.
+4. Notify the incident response team for further investigation and support.

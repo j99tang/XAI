@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+**Incident Summary:** An intrusion alert was detected on RTU-2 (10.0.0.3), a BES Cyber Asset under NERC CIP, at Bus 4, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+
+**Reportability:** The incident plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6, as it involves a potential compromise of a BES Cyber System (RTU-2).
+
+**Reporting Timeline:** The incident is reportable within one hour of determination, as it is not an attempted compromise.
+
+**Notification:** Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**Framework Function:** This response sits under the **Detect** function of the NIST CSF 2.0 framework, as the incident was detected by an IDS system. The **Respond** and **Recover** functions will be invoked in subsequent playbooks.

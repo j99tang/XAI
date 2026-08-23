@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+This incident involves a potential cyber security incident targeting RTU-2, a BES Cyber Asset under NERC CIP, located at Bus 4. The asset controls multiple breakers, and the incident may plausibly meet the threshold for a Reportable Cyber Security Incident.
+
+Given the potential impact on the BES Cyber System, this incident may trigger reporting obligations under NERC CIP-008-6. As the incident is still being assessed, it is unclear whether the incident was an attempted compromise or an actual disruption. 
+
+If determined to be a Reportable Cyber Security Incident, notification would be due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. The reporting timeline would be within one hour if the incident is determined to be a compromise or disruption, or by the end of the next calendar day if it is determined to be an attempt.
+
+This response sits under the **Detect** and **Respond** functions of the NIST CSF 2.0 framework. Note that this assessment is illustrative, as our grid is a synthetic IEEE 14-bus overlay and not a jurisdictional determination.

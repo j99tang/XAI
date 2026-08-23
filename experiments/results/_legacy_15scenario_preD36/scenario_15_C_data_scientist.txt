@@ -1,0 +1,9 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Fwd Act Data Pkts**: The number of packets sent from the source to the destination is high, indicating a potential attack.
+* **SYN/RST Flag Count**: The count of SYN and RST flags in the flow is elevated, which can be indicative of a scanning or probing activity.
+* **Flow Duration**: The duration of the flow is short, suggesting a brief but intense activity.
+
+These features correspond to a **flooding-family** attack pattern, characterized by a high volume of packets sent to overwhelm the system. However, it's essential to note that these features alone do not prove the presence of an IEC-104 protocol-specific attack, as they are based on general flow statistics.
+
+The model's confidence in this prediction is moderate (0.65). While the evidence suggests a potential attack, it's crucial to consider other factors and context before making any conclusions. The SHAP contributions indicate that these features are significant contributors to the model's decision, but further analysis is necessary to understand the underlying reasons for the prediction.

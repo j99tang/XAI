@@ -1,0 +1,13 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Flow Duration**: 12.3 seconds
+* **Total Bwd packets**: 50 packets
+* **Bwd IAT Max/Flow IAT Max**: 0.5 seconds
+* **Dst_Port**: 2404 (indicative of an IEC-104 endpoint)
+* **Fwd Act Data Pkts**: 20 packets
+
+The model's confidence is moderate, with a SHAP contribution score of 0.7 for the feature "Flow Duration". This suggests that the flow duration was a significant factor in the model's decision to flag this flow as an attack.
+
+These features correspond to a **flooding-family** behavior (DoS/flood/starvation). The presence of many small packets and a short inter-arrival time between packets indicates a potential flooding or scanning attack. Additionally, the destination port being indicative of an IEC-104 endpoint suggests that the attack may be targeting the RTU.
+
+However, it's essential to note that these features can only provide statistical evidence of suspicious behavior and do not prove specific protocol actions. Further analysis is required to determine the actual nature of the attack.

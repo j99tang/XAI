@@ -1,0 +1,11 @@
+**Incident Analysis Briefing**
+
+The intrusion detection model has flagged a flow to RTU-4 (10.0.0.6:2404) with low confidence (0.14) as potentially anomalous. The top contributing features toward an 'attack' classification are:
+
+* Flow Bytes/s: 24321.1 (SHAP: -0.083)
+* Fwd Packet Length Max: 16 (SHAP: -0.076)
+* Fwd IAT Max: 8303 (SHAP: -0.068)
+* Subflow Fwd Packets: 0 (SHAP: -0.052)
+* FWD Init Win Bytes: 259 (SHAP: -0.049)
+
+These features suggest a potential flooding or scanning behavior, characterized by a moderate to high flow byte rate and small packet sizes. However, the confidence level is low, and the features alone cannot prove a specific attack class. The Subflow Fwd Packets value of 0 may indicate a short-lived or probing flow. Further analysis is required to determine the intent and potential impact of this flow. The RTU's connection table and response to subsequent flows should be monitored for signs of resource exhaustion or starvation.

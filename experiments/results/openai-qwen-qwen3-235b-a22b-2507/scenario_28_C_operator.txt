@@ -1,0 +1,15 @@
+**Action Briefing:**
+
+Affected device: RTU-4 (IP 10.0.0.6), located at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Observed network pattern: Low packet count (Total Fwd Packet = 6), low flow rate (Flow Bytes/s = 28,248.2), with high maximum inter-arrival times (Flow IAT Max = 24,843 ms). No evidence of scanning or high-volume flood. Pattern inconsistent with portscan or sustained attack flow. No protocol content observed.
+
+Physical risk: **Not in context** — no direct indication of breaker mis-operation or fault condition. However, RTU communication loss would result in **loss of visibility and control** of Bus 9 breakers, risking delayed response to actual grid events.
+
+Next actions:
+1. **Verify RTU-4 status immediately** — check SCADA-1 communication link; confirm RTU heartbeat.
+2. **Check breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14** via local indication or field team if comms lost.
+3. **Switch RTU-4 to manual control mode locally** if remote comms unstable, to maintain control capability.
+4. Do not re-energize or reconfigure without field confirmation.
+
+Prioritize grid stability: assume RTU may become unresponsive. Maintain manual oversight at Bus 9.

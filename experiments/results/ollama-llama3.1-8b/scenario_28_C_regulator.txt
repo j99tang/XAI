@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert on a BES Cyber Asset, RTU-4 (10.0.0.6), which controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 in zone ZONE-S at Bus 9. The alert has a low confidence level of 0.15 and is classified as "normal" by the prediction model.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident because it involves a BES Cyber System (RTU-4). The reporting timeline applies within one hour of determining the incident. Notification is due to both E-ISAC and NCCIC/CISA.
+
+This response sits under the **Detect** function, as per NIST SP 800-61r3. The incident will be reported in accordance with the regulatory requirements outlined in NERC CIP-008-6.
+
+**Illustrative Note**: This assessment is illustrative only, as our grid is a synthetic IEEE 14-bus overlay and not subject to NERC CIP jurisdiction.

@@ -1,0 +1,12 @@
+The model's prediction of "normal" with a confidence of 0.15 suggests that it is uncertain about this flow being an attack or normal traffic. The top SHAP features contributing to this prediction are:
+
+* Flow IAT Max: -0.084 (indicating a relatively short inter-arrival time between packets)
+* Flow Bytes/s: -0.084 (suggesting low packet volume)
+* Fwd Packet Length Max: -0.074 (indicating small packet sizes)
+* Total Fwd Packet: +0.059 (a moderate number of forward packets)
+
+These features are indicative of a "flood/scan" behavior family, which is characterized by many small packets or few large packets. However, the SHAP values are relatively low, suggesting that these features do not strongly contribute to an attack classification.
+
+Given the context, it's possible that this flow is normal traffic from the RTU-4 (10.0.0.6) communicating with its IEC-104 endpoint on port 2404. The model's uncertainty and low confidence suggest that further investigation is needed to determine whether this flow is indeed normal or indicative of an attack.
+
+It's worth noting that the SHAP values are relatively small, indicating that these features do not strongly contribute to an attack classification. Therefore, it's possible that other factors, such as protocol semantics or network context, may be more relevant in determining the nature of this flow.

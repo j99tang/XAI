@@ -1,0 +1,15 @@
+**Incident Analysis**
+
+The model predicted an attack with a confidence of 1.00. The top SHAP features driving this prediction are:
+
+* Bwd IAT Min: 0, SHAP=+0.055
+* Flow IAT Min: 52, SHAP=+0.048
+* Packet Length Min: 0, SHAP=+0.037
+* Bwd Packet Length Min: 0, SHAP=+0.034
+* Packet Length Max: 0, SHAP=+0.032
+
+These features indicate that the flow has a very short inter-arrival time (IAT) between packets, with a minimum IAT of 0 and a minimum flow IAT of 52. This suggests a high-volume, low-latency flow. The minimum packet length is also 0, indicating that the flow consists of small packets. The maximum packet length is also 0, suggesting that the flow is dominated by small packets.
+
+This pattern is consistent with a flooding attack, where an attacker sends a high volume of small packets to overwhelm the target system. The model's confidence of 1.00 suggests that it is highly confident in this prediction.
+
+However, it's essential to note that these features can only indicate a potential flooding attack and do not provide conclusive evidence of the attack's intent or the specific attack class (e.g., DoS, flood, or starvation). Further analysis is required to determine the actual attack class and its consequences.

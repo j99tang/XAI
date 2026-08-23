@@ -1,0 +1,15 @@
+**Action Briefing:**
+
+Affected device: RTU-2 (IP 10.0.0.3), located at Bus 4, Zone ZONE-C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+What is happening: Network traffic to RTU-2 shows abnormally short packet inter-arrival times (Flow IAT Min = 298μs, Mean = 1.38ms), maximum packet size of 48 bytes, no PSH flags, and zero ACK flags. This pattern indicates a high-rate, unidirectional flow of small packets — consistent with a flooding or denial-of-service attack targeting IEC-104 communications on port 2404.
+
+Immediate physical risk: RTU-2 may become unresponsive, leading to loss of visibility and control over its supervised breakers. The grid continues operating, but remote switching and monitoring at Bus 4 are compromised if RTU-2 fails.
+
+Next actions:  
+1. Immediately verify status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 — confirm they remain in known, safe positions.  
+2. Check RTU-2 health via local HMI or field inspection; do not rely on remote SCADA.  
+3. Switch control of RTU-2 to manual/local mode if available to preserve local operability.  
+4. Isolate RTU-2 network segment if possible, without disrupting adjacent systems.  
+
+Prioritize maintaining physical process stability. Do not attempt remote commands to RTU-2 until communication is restored and verified.

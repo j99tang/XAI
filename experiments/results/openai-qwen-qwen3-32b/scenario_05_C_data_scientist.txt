@@ -1,0 +1,7 @@
+The model flagged this flow as an attack (confidence: 1.00) due to a statistical fingerprint consistent with flooding/scanning behavior. Key features:  
+- **Flow IAT Min (310 ms)** and **Bwd IAT Min (640 ms)** show irregular inter-arrival timing, deviating from normal IEC-104 polling (which has regular `Flow IAT Std`).  
+- **Packet Length Max (48 B)** indicates small packets (headers dominate), a hallmark of flood/scanning attacks (per `attack_taxonomy/attacks.md`).  
+- **Fwd PSH Flags (0)** suggests lack of data transfer, inconsistent with normal control traffic (which often uses PSH flags for payload delivery).  
+- **Flow IAT Mean (1115.84 ms)** is elevated, implying sparse forward traffic, possibly due to sustained low-rate probing.  
+
+This aligns with the "flood/scan" family (e.g., SYN flood or packet flooding), where attackers overwhelm targets with small, frequent packets. However, the model cannot confirm protocol-specific actions (e.g., IEC-104 command injection) as it lacks semantic visibility into IEC-104 payloads. The destination port (2404) is IEC-104, but this alone is not indicative (per `Dst_Port` note). While the fingerprint strongly suggests an attack, it does not prove intent or physical impact—only that the flow statistically diverges from normal IEC-104 patterns.

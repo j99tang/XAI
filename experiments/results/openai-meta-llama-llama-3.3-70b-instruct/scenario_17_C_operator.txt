@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+Device affected: RTU-2 (10.0.0.3) at Bus 4, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Physical risk: Potential loss of supervisory control and visibility of the breakers, but the grid will continue to operate.
+
+Observed pattern: Unusual network flow statistics, including low Forward PSH Flags, high Packet Length Max, and low ACK Flag Count, indicating a possible flooding or denial-of-service attack.
+
+Next actions: 
+
+1. Check the status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+2. Verify RTU-2's communication with SCADA-1.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network flow statistics for further anomalies.
+
+Priority is to maintain grid stability and safety. Investigation into the cause of the anomaly will follow.

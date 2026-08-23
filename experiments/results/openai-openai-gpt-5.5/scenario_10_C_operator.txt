@@ -1,0 +1,14 @@
+Action briefing:
+
+Affected device is RTU-1, GridCom GC-4000 at Bus 2, ZONE-N. Substation name: not in context. RTU-1 controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+This incident’s evidence: network-flow detector flags attack, confidence 1.00, targeting 10.0.0.1:2404. Observed pattern is rapid small/zero-length packet flow statistics toward the IEC-104 endpoint. No protocol contents or specific commands are visible.
+
+Immediate physical risk: loss or degradation of supervisory view/control of Bus 2 breakers through RTU-1. No evidence in context of an actual breaker operation, trip, or load impact.
+
+Next actions:
+1. Treat RTU-1 remote control/telemetry as unreliable until checked.
+2. Immediately verify current states of BR-1-2, BR-2-3, BR-2-4, and BR-2-5.
+3. Check RTU-1 communications and telemetry quality for Bus 2.
+4. Do not issue switching commands through RTU-1 unless breaker status and command path are confirmed reliable.
+5. Manual/local control availability and procedure: not in context. If authorized by local procedure, shift Bus 2 breaker control away from unreliable RTU remote operation to maintain safe continuity.

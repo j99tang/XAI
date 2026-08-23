@@ -1,0 +1,7 @@
+The model flagged this flow as **attack** with **confidence 1.00**, targeting **10.0.0.1:2404**, which the context maps to **RTU-1** on an IEC-104 endpoint.
+
+Main positive SHAP drivers were: **Flow IAT Min=5** (**+0.116**), indicating a very small minimum packet inter-arrival time; **Bwd Packet Length Min=0** (**+0.091**) and **Packet Length Min=0** (**+0.084**), showing zero-length/minimal packets in the flow; **Packet Length Max=90** (**+0.058**), consistent with small packets rather than large payloads; and **Fwd PSH Flags=0** (**+0.054**), whose detailed interpretation is **not in context** beyond being a CICFlowMeter flag statistic.
+
+This feature signature is a statistical fingerprint of **small, tightly spaced packets**, which the context associates with **flood/scan behavior**; more broadly it fits a **flooding/probing-family** pattern rather than normal balanced IEC-104 polling.
+
+Caveat: this binary detector only predicts **attack vs normal** and does **not** identify the attack class. These features do **not** prove IEC-104 command semantics, breaker actions, payload content, or physical impact. They only show flow-level timing, size, and TCP-flag statistics consistent with attack traffic.

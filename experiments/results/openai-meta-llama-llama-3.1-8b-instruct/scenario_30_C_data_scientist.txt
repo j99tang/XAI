@@ -1,0 +1,15 @@
+**Model Analysis**
+
+The model's prediction is normal with a low confidence of 0.14. The top SHAP features contributing to this prediction are:
+
+* Total Fwd Packet: value=26, SHAP=-0.101
+* Active Std: value=1.46191e+07, SHAP=-0.077
+* Fwd Packet Length Max: value=120, SHAP=-0.065
+* Active Mean: value=9.07436e+06, SHAP=-0.064
+* Active Min: value=1585, SHAP=-0.052
+
+These features indicate a flow with a moderate number of packets, a high standard deviation of packet sizes, and a relatively short maximum packet length. The SHAP values suggest that these features are contributing to the model's prediction of a normal flow, but with a relatively low confidence.
+
+**What these features prove/can't prove**
+
+These features are indicative of a normal flow, but the low confidence suggests that the model is not entirely sure. The features do not provide conclusive evidence of a specific attack pattern, but rather suggest a normal flow with some unusual characteristics. The model's confidence is low, indicating that there may be other factors at play that are not captured by these features.

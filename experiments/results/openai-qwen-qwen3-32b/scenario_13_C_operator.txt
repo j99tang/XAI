@@ -1,0 +1,13 @@
+**Briefing:**  
+**Affected Device:** RTU-4 (10.0.0.6), IEC-104-controlled station at Bus 9, Zone ZONE-S. Manages breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. NERC CIP-critical asset.  
+
+**Physical Risk:** Attack traffic targeting port 2404 (IEC-104) shows **small-packet flooding** (Bwd IAT Min=0, Packet Length Min=0). This risks RTU CPU/link saturation, causing delayed/dropped telemetry or control commands. Loss of real-time visibility/control over breakers at Bus 9 could destabilize Zone ZONE-S if misoperations occur.  
+
+**Next Actions:**  
+1. **Isolate RTU-4’s network port** temporarily to block anomalous traffic (port 2404).  
+2. **Switch breaker controls to manual mode** for BR-4-9, BR-7-9, BR-9-10, BR-9-14. Verify local status via physical indicators (e.g., lights, local HMI).  
+3. **Check RTU-4’s health**: Confirm heartbeat/status via redundant channels (if available).  
+4. **Log all actions** under NERC CIP-008-6 incident protocol.  
+5. **Monitor adjacent buses** for cascading effects (e.g., load imbalances).  
+
+*Do not assume protocol-specific attack details (e.g., “malformed commands”); focus on traffic patterns and physical safeguards.*

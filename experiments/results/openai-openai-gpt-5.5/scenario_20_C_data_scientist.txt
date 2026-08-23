@@ -1,0 +1,7 @@
+The binary detector flagged this flow as **attack** with **confidence 1.00** for traffic to **10.0.0.1:2404**, the mapped IEC-104 RTU endpoint **RTU-1**.
+
+The strongest attack-side SHAP drivers were timing and zero-length packet statistics: **Bwd IAT Min=0** (**+0.054**) and **Flow IAT Min=553** (**+0.044**) indicate very small minimum inter-arrival gaps in the backward direction and overall flow. The packet-size features were also strongly attack-positive: **Packet Length Min=0** (**+0.038**), **Bwd Packet Length Min=0** (**+0.034**), and **Packet Length Max=0** (**+0.034**). In this context, zero/small packet lengths align with traffic where headers dominate or no payload is observed; the KB notes small packets are indicative of **flood/scanning** behavior, and pure signalling such as SYN scans can carry no payload.
+
+This signature is therefore a statistical fingerprint of a **flood/scan or pure-signalling DoS-family pattern**, not a confirmed attack class. The model is binary and does not identify whether this is DoS, flood, scan, or another class.
+
+Caveat: the evidence is only CICFlowMeter flow statistics. It does **not** prove IEC-104 command semantics, malformed protocol actions, breaker operations, RTU compromise, or physical impact.

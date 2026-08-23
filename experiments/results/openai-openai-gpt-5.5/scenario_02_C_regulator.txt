@@ -1,0 +1,11 @@
+Illustrative assessment only: the context notes this is a synthetic IEEE 14-bus overlay, not a jurisdictional determination.
+
+An IDS classified network-flow statistics as “attack” against 10.0.0.3:2404, which the authoritative IP map identifies as RTU-2, an IEC-104 controlled station at Bus 4 controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9. RTU-2 is identified as a BES Cyber Asset under the authored NERC CIP overlay.
+
+Based on the available facts, this plausibly meets the NERC CIP-008-6 threshold for a Reportable Cyber Security Incident as an attempted compromise of an in-scope BES Cyber System/BES Cyber Asset. The detector does not establish compromise, disruption, protocol contents, or a specific attack class.
+
+Reporting timeline: by the end of the next calendar day for a determination that the incident was an attempt to compromise an in-scope system. If later determined to be a compromise or disruption, the one-hour initial notification clock would apply.
+
+Notification is due to the E-ISAC and, under US jurisdiction, NCCIC/CISA, with required attributes even if initially unknown.
+
+CSF function: Detect.

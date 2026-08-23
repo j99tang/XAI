@@ -1,0 +1,9 @@
+**Regulatory Assessment:**  
+The incident involves a cyber attack alert on **ENG-WS-1** (EACMS, NERC CIP-regulated BES Cyber System). The destination port 123 (NTP) suggests potential time-sync disruption, aligning with "ntpddos" playbooks. Under **NERC CIP-008-6**, a Reportable Cyber Security Incident requires compromise/disruption of a BES Cyber System. While the attack type is not explicitly named (IDS confidence: 0.59), the affected asset qualifies as reportable if the intrusion disrupted EACMS functionality.  
+
+**Reporting Obligation:**  
+- **Threshold Met?** Plausibly yes: the attack targeted a NERC CIP-regulated BES Cyber System (EACMS).  
+- **Timeline:** Notify **E-ISAC** and **NCCIC/CISA** within **1 hour** (for attempted compromises) or by **end of next calendar day** (for successful compromises).  
+- **Framework Function:** **Detect** (NIST CSF 2.0), as the incident was identified via IDS and network flow analysis.  
+
+**Jurisdiction Note:** This assessment is illustrative; the synthetic grid context does not confirm actual jurisdictional applicability.

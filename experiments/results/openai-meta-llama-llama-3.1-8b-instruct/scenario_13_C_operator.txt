@@ -1,0 +1,15 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-4 (10.0.0.6) at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** The RTU's anomalous behavior may lead to a loss of control or view of the breakers it controls, potentially causing unplanned switching or a loss of control at Bus 9.
+
+**Next Actions:**
+
+1. **Switch to Manual Control:** Immediately switch the affected breakers to manual control to prevent any potential damage or loss of control.
+2. **Verify Breaker Status:** Verify the status of the breakers controlled by RTU-4 to ensure they are in a safe state.
+3. **RTU-4 Check:** Check RTU-4's communication with the PLC to determine if the issue is with the RTU or the communication link.
+4. **Breaker RTUs Check:** Check the status of the other RTUs controlling breakers in the same zone to ensure they are functioning correctly.
+5. **Manual Override:** If necessary, perform a manual override of the breakers to ensure they are in a safe state.
+
+**Priority:** Safety and continuity of the physical process are the top priority. We must act quickly to prevent any potential damage or loss of control.

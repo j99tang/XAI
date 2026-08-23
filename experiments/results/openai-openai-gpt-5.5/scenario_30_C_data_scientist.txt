@@ -1,0 +1,7 @@
+The detector classified this flow to ENG-WS-1 (10.0.0.4:123) as **normal** with **low confidence = 0.14**.
+
+The listed SHAP values are all **negative for the attack class**, so they did **not** drive an attack decision; they pushed the score away from “attack”: `Total Fwd Packet=26` (SHAP `-0.101`), `Active Std=1.46191e+07` (`-0.077`), `Fwd Packet Length Max=120` (`-0.065`), `Active Mean=9.07436e+06` (`-0.064`), and `Active Min=1585` (`-0.052`). Exact definitions for `Total Fwd Packet`, `Active Std`, `Active Mean`, `Active Min`, and `Fwd Packet Length Max` are **not in context**; only related forward-packet concepts are described generally as source-to-destination packet counts/payload activity.
+
+This feature signature does **not** support a documented flooding/scan/starvation fingerprint in the provided context. Portscan would involve many very short flows, high SYN/RST counts, tiny duration, 1–2 packets, and `Fwd Act Data Pkts≈0`; starvation would involve many concurrent long-lived flows to port 2404 with rising IAT/stall behavior. Those required features are **not in context for this flow**.
+
+Caveat: the model sees only CICFlowMeter flow statistics, not protocol semantics or actions on ENG-WS-1. These SHAP values are statistical fingerprints only, not proof of benign intent or absence of compromise.

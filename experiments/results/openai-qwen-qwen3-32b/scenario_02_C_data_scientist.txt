@@ -1,0 +1,7 @@
+The model flagged this flow to 10.0.0.3:2404 (an IEC-104 RTU) as attack with **1.00 confidence**, driven by **five low-Inter-arrival-Time (IAT) and small-packet features**:  
+- **Bwd IAT Min=0** (max SHAP +0.054): indicates zero backward packet delay, consistent with rapid, unscheduled responses or flood traffic.  
+- **Flow IAT Min=92** (SHAP +0.048): unusually low minimum IAT across the flow, suggesting bursty or high-rate packet transmission.  
+- **Packet Length Min=0** (SHAP +0.038) and **Bwd Packet Length Min=0** (SHAP +0.034): headers dominate traffic, a fingerprint of scanning/flood attacks (per `feature_dictionary/flow_features.md`).  
+- **Packet Length Max=0** (SHAP +0.033): implies all packets are minimal (e.g., SYN/ACKs), aligning with SYN floods or probes.  
+
+This signature matches **flood/scan-family attacks** (e.g., MITRE ICS T0814 Denial of Service), where small packets overwhelm IEC-104 endpoints. The destination port (2404) confirms targeting of an RTU, but the model cannot prove protocol-specific exploitation (e.g., IEC-104 command injection). **Caveats**: The absence of large packets or payload data rules out sustained command floods but does not exclude short-term availability attacks (e.g., SYN flood). The statistical fingerprint suggests abnormal traffic timing/size but cannot confirm intent or physical impact without correlating with protocol semantics or grid-state telemetry.

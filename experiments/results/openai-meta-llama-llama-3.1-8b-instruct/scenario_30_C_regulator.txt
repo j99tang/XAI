@@ -1,0 +1,25 @@
+**Compliance Assessment**
+
+**Incident Analysis**
+
+The affected asset is ENG-WS-1, an engineering workstation in zone ZONE-CC, which is part of the EACMS under NERC CIP. The intrusion alert indicates a potential attack on this asset.
+
+**Reportability**
+
+The incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6. The affected asset is a BES Cyber System, and the incident may have compromised or disrupted its operation.
+
+**Reporting Timeline**
+
+The reporting timeline applies to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. The initial notification must be made within one hour of determining a Reportable Cyber Security Incident.
+
+**Notification**
+
+Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**Framework Function**
+
+This response sits under the **Detect** function of the NIST CSF 2.0 framework, which is part of the incident handling lifecycle outlined in NIST SP 800-61r3.
+
+**Illustrative Note**
+
+This assessment is illustrative, as the grid is a synthetic IEEE 14-bus overlay and the traffic originates from a European testbed (SANDI-2024). CIP obligations are applied here for demonstration purposes only, not as a jurisdictional determination.

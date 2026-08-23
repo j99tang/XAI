@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-3, 10.0.0.5, Zone-S, Bus 6
+**Physical Risk:** Potential loss of control and view of breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13
+
+The security alert indicates a potential attack on RTU-3. The observed pattern shows high `Bwd IAT Min` (0) and `Flow IAT Min` (258), indicating rapid packet exchange with short intervals. This is consistent with a flood or denial-of-service (DoS) attack, which could cause the RTU to become overwhelmed and lose control of its breakers.
+
+**Immediate Action:**
+
+1. Switch to manual control for Zone-S to prevent any potential loss of control.
+2. Check breaker status for BR-5-6, BR-6-11, BR-6-12, and BR-6-13 to ensure they are not affected by the attack.
+3. Verify that RTU-3 is functioning correctly and has not been compromised.
+
+**Next Steps:**
+
+1. Investigate the source of the attack traffic to determine its origin and intent.
+2. Review the security logs for any suspicious activity or anomalies.
+3. Consult with the security team to determine the best course of action to mitigate the threat and prevent future attacks.

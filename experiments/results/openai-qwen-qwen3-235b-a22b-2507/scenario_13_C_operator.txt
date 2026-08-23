@@ -1,0 +1,15 @@
+**Briefing: RTU-4 at Bus 9 (ZONE-S) under active network attack**
+
+**Affected Device:** RTU-4 (IP 10.0.0.6), controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 at Bus 9.
+
+**What’s Happening:** Network traffic to RTU-4 shows near-zero minimum backward inter-arrival time (Bwd IAT Min = 0) and minimal packet lengths (Packet Length Min = 0), with very short flow intervals (Flow IAT Min = 250 μs). This indicates a high-rate inbound packet stream with little to no response traffic — consistent with a flooding or SYN flood-style denial-of-service attack.
+
+**Physical Risk:** RTU-4 may lose communication or become unresponsive, leading to **loss of breaker control and telemetry** at Bus 9. Unmitigated, this risks instability in ZONE-S due to blind operation and inability to isolate faults.
+
+**Next Actions:**  
+1. **Switch RTU-4 to manual local control mode immediately** to preserve breaker operability.  
+2. **Verify status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14** via backup SCADA channels or field confirmation.  
+3. **Isolate RTU-4 network segment** if flooding persists, to protect upstream systems.  
+4. Maintain grid stability — defer investigation until control is secured.  
+
+Safety and continuity are priority. Do not attempt remote commands until traffic normalizes.

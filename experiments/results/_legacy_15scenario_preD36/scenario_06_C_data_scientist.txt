@@ -1,0 +1,11 @@
+**Model Analysis**
+
+The model flagged this flow as an attack, with a confidence of 95%. The SHAP attributions reveal that the following features drove the prediction:
+
+* **Total Bwd packets**: 85% contribution
+* **Flow Duration**: 10% contribution
+* **Bwd IAT Max/Flow IAT Max**: 5% contribution
+
+These features indicate a sustained attack flow, with a large number of packets sent from the destination to the source (Total Bwd packets) and a long duration of the flow. The high value of Bwd IAT Max/Flow IAT Max suggests that there is a significant delay between packets in the backward direction.
+
+This pattern corresponds to a **flooding-family** attack, which can be used for reconnaissance or to overwhelm the system with connections. However, it's essential to note that this evidence cannot prove specific protocol actions, such as packet starvation or bulk command injection, but rather indicates a statistical fingerprint of a potential attack flow.

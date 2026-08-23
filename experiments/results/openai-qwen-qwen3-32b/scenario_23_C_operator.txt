@@ -1,0 +1,14 @@
+**Briefing:**  
+**Affected Device:** RTU-4 (10.0.0.6:2404), Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+
+**Physical Risk:** High-probability flood/scanning attack (small packets, low inter-arrival times, imbalanced flow). RTU-4 may become unresponsive, causing loss of telemetry/control for Bus 9 breakers. Risk of delayed/tripped breaker actions if RTU-4 is starved or crashes.  
+
+**Next Actions:**  
+1. **Isolate RTU-4’s control functions:** Switch breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 to **manual local control** immediately to maintain grid stability.  
+2. **Verify breaker statuses:** Confirm positions of all RTU-4-controlled breakers via local indicators or alternative SCADA nodes (e.g., RTU-3/RTU-5 in ZONE-S).  
+3. **Check RTU-4 health:** Ping 10.0.0.6 and inspect serial console (if available) for connectivity/status.  
+4. **Block traffic:** Coordinate with network team to filter traffic to 10.0.0.6:2404 (ICMP/TCP) from suspicious IPs (e.g., 121.142.26.0/24, 134.221.96.0/24 per knowledge graph).  
+
+Proceed with manual operations until RTU-4’s availability is confirmed. Report to NERC CIP-008-6 incident protocol post-stabilization.  
+
+*(<=200 words)*

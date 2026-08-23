@@ -1,0 +1,9 @@
+This incident involves a sustained attack flow targeting 10.0.0.3, identified as RTU-2 — a BES Cyber Asset under NERC CIP, located in ZONE-C at Bus 4 and controlling multiple critical breakers via IEC-104 (port 2404). The intrusion alert, with 100% confidence, indicates an attempted compromise of this asset, supported by anomalous network flow characteristics (e.g., zero ACK flags, low Flow IAT Min), consistent with disruptive communication patterns.
+
+Under **NERC CIP-008-6**, any *attempt* to compromise a BES Cyber System constitutes a **Reportable Cyber Security Incident**. This event therefore plausibly meets the reporting threshold due to the asset’s classification and the nature of the detected attack flow.
+
+Notification is required to the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**. Since this is an *attempted* compromise, the reporting timeline allows notification **by the end of the next calendar day** from the time of determination.
+
+This response sits under the **Detect** function of the NIST CSF 2.0 framework, as it involves identification of a potential incident via monitoring systems (IDS) and contextualization of asset criticality.
+
+*Note: This assessment is illustrative, applying NERC CIP obligations to a synthetic grid (IEEE 14-bus overlay) with traffic from a European testbed (SANDI-2024); not a jurisdictional determination.*

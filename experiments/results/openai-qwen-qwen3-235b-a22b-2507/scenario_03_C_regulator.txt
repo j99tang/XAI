@@ -1,0 +1,9 @@
+The incident involves a confirmed attack (confidence: 1.00) targeting IP 10.0.0.5, identified as RTU-3, a BES Cyber Asset under NERC CIP, located in ZONE-S and controlling critical breakers at Bus 6. The destination port 2404 indicates an IEC-104 endpoint, consistent with control system communications. Network flow anomalies (e.g., minimal inter-arrival times, small packet lengths) suggest a potential bulk command injection or scanning attack, though the detector does not confirm payload content.
+
+Under NERC CIP-008-6, a Reportable Cyber Security Incident includes any attempt to compromise a BES Cyber System. Given that RTU-3 is a BES Cyber Asset and the intrusion alert indicates a directed attack, this plausibly meets the reporting threshold—even if the attempt was unsuccessful.
+
+Notification is due to the E-ISAC and, under US jurisdiction, NCCIC/CISA. Since this constitutes an *attempted* compromise, the reporting timeline allows **by the end of the next calendar day**.
+
+This response falls under the **Detect** function of the NIST CSF 2.0 framework, as it involves identification of a potential incident via monitoring systems.
+
+*Note: This assessment is illustrative, based on a synthetic grid; no jurisdictional determination is made.*

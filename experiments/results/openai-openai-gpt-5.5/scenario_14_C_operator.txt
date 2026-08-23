@@ -1,0 +1,12 @@
+Affected: RTU-1, GridCom GC-4000, IP 10.0.0.1, IEC-104 controlled station in ZONE-N at Bus 2. Substation name: not in context.
+
+This incident evidence: traffic to RTU-1 on port 2404 is flagged as attack with abnormal flow timing/sizing statistics, including very low inter-arrival times and zero minimum packet lengths. Detector saw flow statistics only, not command contents.
+
+Operational risk: RTU-1 controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5. Immediate physical risk is loss, delay, or unreliability of remote view/control for Bus 2 breakers. Grid may continue running, but Bus 2 switching indications and remote commands may not be dependable.
+
+Next actions:
+1. Check RTU-1 health/communications immediately.
+2. Verify present status/position of BR-1-2, BR-2-3, BR-2-4, BR-2-5 by trusted indication; if inconsistent, treat as unknown.
+3. Avoid non-essential remote switching through RTU-1.
+4. If RTU-1 telemetry or command response is delayed, missing, or inconsistent, switch Bus 2 breaker operation to manual/local control.
+5. Maintain continuity: only operate breakers for safety or grid stability until RTU-1 control is confirmed reliable.

@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves a potential cyber security threat to a BES Cyber Asset, specifically RTU-4 at Bus 9, which controls critical breakers in the grid. The detector has identified an attack prediction with high confidence (1.00) targeting the IEC-104 endpoint on port 2404 of RTU-4.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident as it involves an attempted compromise of a BES Cyber System. The reporting timeline applies: within one hour of determining the incident, notification is due to both the E-ISAC and NCCIC/CISA (under US jurisdiction).
+
+The required attributes for initial notification include functional impact, attack vector, and level of intrusion. While some details may be unknown at this stage, the Operator must provide an update with additional information as soon as possible.
+
+This response sits under the **Detect** capability of the CSF functions, which is mapped to NIST SP 800-61r3's incident handling lifecycle.

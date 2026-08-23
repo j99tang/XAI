@@ -1,0 +1,13 @@
+Based on the model's output, the top SHAP features driving the prediction of an attack are:
+
+* Bwd IAT Min: value=0, SHAP=+0.068
+* Packet Length Min: value=0, SHAP=+0.046
+* Bwd Packet Length Min: value=0, SHAP=+0.039
+* Packet Length Max: value=0, SHAP=+0.034
+* Fwd PSH Flags: value=0, SHAP=+0.031
+
+These features indicate that the model is flagging this flow due to a pattern of small packet sizes and minimal inter-arrival times between packets in both forward and backward directions. This behavior corresponds to a flooding-family attack pattern, which can be indicative of a Denial of Service (DoS) or flood attack.
+
+The model's confidence is 1.00, indicating that it is highly certain about its prediction. However, it's essential to note that the features only provide statistical fingerprints and do not prove specific protocol actions. The evidence boundary is limited to CICFlowMeter flow statistics, which may not capture all aspects of the IEC-104 protocol semantics.
+
+In this case, the model's explanation suggests a potential flooding attack, but further analysis would be necessary to confirm the actual attack class and its implications for the grid's security.

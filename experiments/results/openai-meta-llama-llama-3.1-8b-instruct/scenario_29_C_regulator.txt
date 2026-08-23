@@ -1,0 +1,20 @@
+**Regulatory Assessment**
+
+**Incident Details:**
+
+* Affected Asset: RTU-4 (BES Cyber Asset) at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14
+* Incident Type: Potential compromise or disruption of a BES Cyber System (RTU-4)
+* Detection Method: IDS (Intrusion Detection System)
+* Confidence: 0.14 (low confidence)
+
+**Reporting Obligation:**
+
+Based on NERC CIP-008-6, a Reportable Cyber Security Incident is triggered when a BES Cyber System or its associated EACMS/PACS is compromised or disrupted. Since RTU-4 is a BES Cyber Asset, this incident plausibly meets the Reportable threshold.
+
+**Reporting Timeline:**
+
+The incident occurred on an unknown date and time, but the reporting timeline is not specified. However, since the incident is a potential compromise or disruption of a BES Cyber System, the reporting clock starts when the incident is determined to be a Reportable Cyber Security Incident. If the incident is determined to be an attempt to compromise the system, the reporting clock starts at the time of the attempt.
+
+**Notification:**
+
+The incident must be notified to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.

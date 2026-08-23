@@ -1,0 +1,7 @@
+**Regulatory Assessment**
+
+This incident involves a potential cyber security threat to a BES Cyber Asset, specifically RTU-1 at Bus 2, which controls critical breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The intrusion alert indicates an attack confidence of 1.00 on destination port 2404, associated with the IEC-104 endpoint.
+
+Based on the Knowledge Graph Data (Relationship), a Reportable Cyber Security Incident under NERC CIP-008-6 involves a compromise or disruption of a BES Cyber System. Since RTU-1 is a BES Cyber Asset and the incident may have compromised its control, this incident plausibly meets the threshold for a reportable cyber security incident.
+
+The reporting timeline applies as follows: within one hour or by the end of the next calendar day for attempted compromises (NERC CIP-008-6). Notification is due to E-ISAC, which is responsible for receiving notifications of reportable cyber security incidents in this jurisdiction.

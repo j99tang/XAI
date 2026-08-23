@@ -1,0 +1,7 @@
+The flow targets 10.0.0.6:2404, i.e., RTU-4 on the IEC-104 endpoint. The detector predicted **normal** with reported confidence **0.14**.
+
+All listed SHAP values are negative for the attack class, so these features pushed the model **away from “attack”**: `Flow Bytes/s` = 24321.1, SHAP -0.083; `Fwd Packet Length Max` = 16, SHAP -0.076; `Fwd IAT Max` = 8303, SHAP -0.068; `Subflow Fwd Packets` = 0, SHAP -0.052; `FWD Init Win Bytes` = 259, SHAP -0.049. In context, `FWD Init Win Bytes` is the initial TCP receive-window fingerprint; `Subflow Fwd Packets` is per-subflow packet volume. Meanings for `Flow Bytes/s`, `Fwd Packet Length Max`, and `Fwd IAT Max` are not in context beyond their names.
+
+The statistical fingerprint does **not** support a flooding/starvation-family attack: starvation is associated with many concurrent long-lived flows, rising `Bwd IAT Max`/`Flow IAT Max`, and RTU response stall; those indicators are not shown here. Small/short-flow patterns can relate to scans, but here the model weights are against attack.
+
+Caveat: this is CICFlowMeter flow-stat evidence only. It cannot prove IEC-104 commands, breaker actions, or protocol semantics.

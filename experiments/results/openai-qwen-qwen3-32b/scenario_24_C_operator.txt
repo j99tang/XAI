@@ -1,0 +1,14 @@
+**Action Briefing**  
+**Affected Device:** RTU-1 (10.0.0.1), IEC-104 controlled station at Bus 2, Zone ZONE-N. Supervises breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Observed Behavior:** Unusual inbound traffic to RTU-1:2404 (IEC-104 endpoint). Flow statistics show minimal backward inter-arrival time (Bwd IAT Min=0), small packet sizes (Packet Length Max=8), and irregular forward traffic timing (Flow IAT Min=641). No PSH flags detected. Traffic pattern aligns with flood/scanning attacks (high packet rates, low Bwd IAT), potentially overwhelming RTU-1.  
+
+**Immediate Physical Risk:** Loss of communication with RTU-1 could disable remote monitoring and control of its breakers. Grid operations at Bus 2 remain unaffected unless manual intervention is required.  
+
+**Next Actions:**  
+1. **Verify RTU-1 status:** Confirm connectivity and responsiveness via local HMIs or serial links.  
+2. **Isolate traffic:** Block flows from 121.142.26.0/24 and 134.221.96.0/24 (known attack ranges).  
+3. **Switch to manual control:** For breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5, if RTU-1 is unresponsive. Prioritize breaker positions matching last known safe state.  
+4. **Log and report:** Document traffic anomalies and follow NERC CIP-008-6 procedures for incident response.  
+
+*Do not assume protocol-specific attack details. Focus on maintaining grid stability and breaker control.*

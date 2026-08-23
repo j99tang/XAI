@@ -1,0 +1,5 @@
+The model predicts **normal** with low confidence (0.19), but the top SHAP features reveal a weakly suspicious fingerprint. The **Total Fwd Packet=1** (SHAP +0.115) indicates a single forward packet, consistent with a short probe or scan. Negative SHAP contributions from **Flow Bytes/s=14733.6**, **FIN Flag Count=1**, **Flow IAT Max=17505**, and **Down/Up Ratio=2** suggest low volume, infrequent communication, and balanced bidirectional traffic — all atypical for sustained attack flows.
+
+Per the knowledge base, this fingerprint weakly aligns with **portscan** (T0846): short flows, minimal forward packets, no payload (implied by Fwd Act Data Pkts ≈ 0). However, **Dst_Port=2404** is not a strong signal here, as IEC-104 endpoints are expected targets. The elevated Flow Bytes/s contradicts typical scan behavior but may reflect a single large packet.
+
+This flow could be reconnaissance, but the evidence is inconclusive. CICFlowMeter features cannot confirm protocol semantics or intent. The model lacks confidence because the traffic is sparse but not definitively malicious. **Cannot prove** scanning or attack; **cannot rule out** benign polling or misconfiguration.

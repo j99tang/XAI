@@ -1,0 +1,16 @@
+**Briefing:**
+
+Affected device: ENG-WS-1 (10.0.0.4), engineering workstation in ZONE-CC.  
+
+What is happening: Network traffic to ENG-WS-1 shows high forward packet count (4 packets), maximum forward inter-arrival time of 6.37 seconds, and minimal active time (1598 ms). This pattern indicates irregular, sparse traffic with long gaps — inconsistent with normal IEC-104 polling or control. Port 123 is targeted, which is not associated with IEC-104 (expected on port 2404). No evidence of sustained flood or SYN flood in flow features. Source IP not in known attack ranges (121.142.26.0/24, 134.221.96.0/24).  
+
+Physical risk: Low immediate risk to grid operations. ENG-WS-1 is not a real-time control node; no RTUs or breakers are directly affected. No indication of ongoing command injection, spoofing, or denial of service to field devices.  
+
+Next actions:  
+- Verify ENG-WS-1 network connections; isolate if unauthorized.  
+- Check RTUs and IEC-104 endpoints (port 2404) for normal polling from SCADA-1 (10.0.0.2).  
+- Confirm all breaker status via local HMI if any doubt.  
+- No switch to manual control required — no impact to control or telemetry observed.  
+- Maintain normal grid operations.  
+
+Priority: Monitor — no immediate action on physical process.

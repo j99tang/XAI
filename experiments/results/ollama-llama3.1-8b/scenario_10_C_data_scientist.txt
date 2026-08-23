@@ -1,0 +1,13 @@
+Based on the model's output, the top SHAP features driving the prediction of an attack are:
+
+* Flow IAT Min: value=5, SHAP=+0.116
+* Bwd Packet Length Min: value=0, SHAP=+0.091
+* Packet Length Min: value=0, SHAP=+0.084
+* Packet Length Max: value=90, SHAP=+0.058
+* Fwd PSH Flags: value=0, SHAP=+0.054
+
+These features indicate a flow with short inter-arrival times (IAT) and small packet lengths, which is characteristic of a flood/scan attack family. The presence of zero Bwd Packet Length Min suggests that the destination is not responding to incoming packets.
+
+The model's confidence in this prediction is 1.00, indicating high certainty. However, it's essential to note that these features can only provide statistical evidence and do not prove specific protocol actions or attack classes. Further analysis is required to determine the actual nature of the attack.
+
+In particular, the feature "Flow IAT Min" suggests a potential flood/scan attack, but without more context, it's difficult to say whether this is a legitimate concern or simply normal traffic.

@@ -1,0 +1,17 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, located at Bus 2 in Zone ZONE-N, controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5.
+
+Physical Risk: The observed pattern of small packets with headers dominating the traffic (small_packets) indicates a potential flood/scanning attack. If this continues, it may lead to packet starvation or loss of view and control of the breakers controlled by RTU-1.
+
+Immediate Action:
+
+1. Switch to manual control for RTU-1 to prevent any potential damage.
+2. Check breaker status: BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are not affected by the potential attack.
+3. Verify communication with RTU-1 to confirm it is still operational.
+
+Next Steps:
+
+* Investigate further to determine the source of the attack and its impact on the grid.
+* Implement measures to prevent similar attacks in the future, such as network segmentation or intrusion detection systems.
+* Document this incident for future reference and review.

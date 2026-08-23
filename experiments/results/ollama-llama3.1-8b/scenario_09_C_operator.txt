@@ -1,0 +1,26 @@
+**Incident Briefing**
+
+Device Affected: RTU-1, IP 10.0.0.1, Zone ZONE-N, Bus 2
+
+Observations:
+
+* High frequency of small packets with headers dominating traffic (Packet Length Max: 24, Packet Length Min: 0)
+* Low inter-arrival time between packets in a flow (Flow IAT Min: 58, Bwd IAT Min: 243)
+* No indication of large packets or sustained attack flows
+
+Physical Risk:
+
+* Potential loss of view and control of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5
+* Grid operation may be compromised if RTU-1 is overwhelmed or becomes unresponsive
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-1 to prevent further potential damage.
+2. Check the status of breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are functioning correctly.
+3. Verify that all other devices in Zone ZONE-N are operating normally.
+
+**Switching Steps:**
+
+* Switch RTU-1 to manual control using the ENG-WS-1 interface.
+* Check breaker status using the RTU-1's IEC-104 protocol on port 2404.
+* If necessary, manually switch breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to a safe state.

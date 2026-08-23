@@ -1,0 +1,11 @@
+**Affected device/station:** RTU-2, GridCom GC-4000, IP 10.0.0.3, IEC-104 port 2404, ZONE-C, Bus 4. Substation name: **not in context**.
+
+**What is happening:** Attack alert with confidence 1.00 on traffic to RTU-2. Detector saw network flow timing/size pattern: very short inter-arrival times and small/zero-length packets. No protocol contents are in context.
+
+**Immediate physical risk:** RTU-2 controls Bus 4 breakers **BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9**. Risk is loss or unreliability of remote visibility/control for these breakers; no actual breaker operation or power-flow impact is in context.
+
+**Next actions:**  
+1. Hold normal grid configuration; do not issue remote switching to RTU-2 unless required for safety.  
+2. Immediately verify indication and control availability for RTU-2 and breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+3. If indications are stale, inconsistent, or commands fail, switch Bus 4 controlled bays to local/manual control and dispatch field/local operator.  
+4. Before any required switching, confirm breaker position locally/manual path first.

@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: ENG-WS-1 (10.0.0.4), an engineering workstation in zone ZONE-CC.
+
+The workstation is experiencing unusual network activity, with a high number of forward packets (4) and a maximum forward packet length of 120. The inter-arrival time between packets is also notable, with a maximum of 6.37289e+06.
+
+Physical risk: Potential loss of view and control of substation breakers, or unintended switching operations.
+
+Next actions:
+
+1. Check the status of breakers and RTUs connected to ENG-WS-1.
+2. Verify the integrity of the EACMS system under NERC CIP.
+3. Consider switching to manual control to prevent potential automated actions.
+4. Investigate the source of the unusual network activity, but prioritize ensuring the continuity of the physical process over investigation.

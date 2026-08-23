@@ -1,0 +1,59 @@
+{
+  "scenario_id": "scenario_21",
+  "kind": "tp_cyber",
+  "anomaly_event": {
+    "flow_id": "tp_cyber-portscanattack-RTU-2-20",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.3",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
+    "top_features": [
+      {
+        "name": "Bwd IAT Min",
+        "value": 0.0,
+        "shap": 0.05433351887466074
+      },
+      {
+        "name": "Flow IAT Min",
+        "value": 468.0,
+        "shap": 0.04434893491939106
+      },
+      {
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.03770999501662813
+      },
+      {
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.034011583288633025
+      },
+      {
+        "name": "Packet Length Max",
+        "value": 0.0,
+        "shap": 0.033626270419152046
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.3 = RTU-2, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-C, at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, BES Cyber Asset under NERC CIP (authored overlay).",
+    "attack_class": "portscanattack",
+    "top_features": [
+      "Bwd IAT Min",
+      "Flow IAT Min",
+      "Packet Length Min",
+      "Bwd Packet Length Min",
+      "Packet Length Max"
+    ],
+    "physical_consequence": "no physical violation \u2014 consequence is loss of visibility/control only (the grid absorbs the outage; remaining branches stay within thermal rating and all bus voltages stay in band)",
+    "is_physical": false,
+    "reportable": "Reportable as an ATTEMPT to compromise a BES Cyber System \u2014 CIP-008-6 R4: notify E-ISAC/NCCIC by the end of the next calendar day. Reconnaissance probes without compromising, so the 1-hour clock does not apply."
+  },
+  "scenario_kind": "tp_cyber",
+  "consequence_class": "ABSORBED",
+  "opened_breakers": [
+    "BR-2-4"
+  ],
+  "load_scale": 1.0
+}

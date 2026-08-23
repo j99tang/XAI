@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert on a BES Cyber Asset, RTU-4 (10.0.0.6), which controls breakers at Bus 9. The alert has a low confidence level of 0.19 and is classified as "normal" by the prediction model.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident because it involves an attempt to compromise a BES Cyber System (RTU-4). The reporting timeline applies within one hour of determining the incident. Notification is due to both the E-ISAC and NCCIC/CISA under US jurisdiction.
+
+This response sits under the **Detect** function of the CSF framework, as the IDS system detected the anomaly. The required attributes for notification are functional impact (unknown), attack vector (unknown), and level of intrusion (low confidence).
+
+As this is an illustrative assessment, it's essential to note that CIP obligations are applied here synthetically, not as a jurisdictional determination.

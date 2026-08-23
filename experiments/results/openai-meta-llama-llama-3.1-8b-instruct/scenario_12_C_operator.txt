@@ -1,0 +1,21 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-3 (10.0.0.5) at Bus 6, Zone ZONE-S, controls breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13.
+
+**Physical Risk:** The RTU's control of the breakers is compromised, posing a risk to the grid's stability and safety.
+
+**Immediate Action:**
+
+1. **Switch to manual control:** Immediately switch the control of the breakers to manual mode to prevent any potential damage to the grid.
+2. **Verify breaker status:** Check the status of the breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13 to ensure they are not in an unstable or critical state.
+3. **RTU-3 isolation:** Isolate RTU-3 from the network to prevent any further potential attacks.
+4. **Investigation:** Initiate an investigation to determine the cause of the attack and to identify any potential vulnerabilities in the system.
+
+**Next Steps:**
+
+* Verify the status of the breakers and the RTU-3.
+* Isolate RTU-3 from the network.
+* Initiate an investigation to determine the cause of the attack.
+* Collaborate with the security team to identify any potential vulnerabilities in the system.
+
+**Safety and Continuity:** The primary concern is the safety and continuity of the grid. The immediate action is to switch to manual control and verify the status of the breakers to prevent any potential damage to the grid.

@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-2, IEC-104 controlled station) in **ZONE-C**, a NERC CIP-covered asset. The intrusion alert (destination: 10.0.0.3:2404, IEC-104 port) indicates a **plausible attempted compromise** of a BES Cyber System under **NERC CIP-008-6**, as the RTU is a critical control point for breakers in the Bulk Electric System. The alert’s high confidence (1.00) and traffic anomalies (e.g., irregular inter-arrival times, small packets) suggest a **sustained attack flow** targeting the IEC-104 endpoint, though the specific attack class is not identified.  
+
+Under **NERC CIP-008-6 R4**, this qualifies as a **reportable attempted compromise**. Notification must be made to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) **within one hour** of determination. Required attributes (functional impact, attack vector) must be included.  
+
+This response aligns with the **Detect** function of the NIST CSF 2.0. The assessment is **illustrative**, as the synthetic grid (SANDI-2024 testbed) is not a jurisdictional determination for NERC CIP.  
+
+(Word count: 199)

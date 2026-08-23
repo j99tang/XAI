@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-4, IEC-104 controlled station) in **ZONE-S**, a NERC CIP-covered asset. An intrusion alert with high confidence (1.00) targets its IEC-104 endpoint (port 2404), indicating a plausible **attempted compromise** of a BES Cyber System. Under **NERC CIP-008-6**, this meets the reportable threshold for an *attempted* incident, as the RTU is explicitly authorized as a BES Cyber Asset.  
+
+**Reporting timeline**: Notification must occur **within one hour** of determination (per R4) to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction). Required attributes (functional impact, attack vector) are initially unknown but must be included in updates.  
+
+**Framework function**: This response falls under **Detect** (NIST CSF 2.0), as the IDS identified anomalous flow statistics (e.g., min IAT, packet lengths) consistent with a sustained attack flow.  
+
+**Note**: This assessment is illustrative; the synthetic grid (SANDI-2024 testbed) is not a jurisdictional determination. The attack vector (e.g., port 2404) aligns with IEC-104 endpoints but does not confirm a successful breach.

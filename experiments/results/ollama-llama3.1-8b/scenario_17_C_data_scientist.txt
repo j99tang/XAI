@@ -1,0 +1,13 @@
+Based on the model's output, the top SHAP features driving the prediction towards "attack" are:
+
+* Flow IAT Min: value=298, SHAP=+0.156
+* Packet Length Max: value=48, SHAP=+0.114
+* Fwd PSH Flags: value=0, SHAP=+0.056
+* Flow IAT Mean: value=1381.82, SHAP=+0.037
+* ACK Flag Count: value=0, SHAP=+0.030
+
+These features indicate a flow with short inter-arrival times (IAT), small packet lengths, and no PSH flags. The model's confidence is 1.00.
+
+The evidence suggests that this flow may be indicative of a flooding attack or a scanning activity. However, it's essential to note that the model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. Therefore, we cannot directly infer specific attack classes or protocols from these features.
+
+The presence of short IATs and small packet lengths may indicate a flood or scan-like behavior, but without further context, it's challenging to pinpoint the exact attack pattern. The model's confidence is high, but caution should be exercised when interpreting the results, as the evidence boundary is limited to flow statistics.

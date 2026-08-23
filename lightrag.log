@@ -1,0 +1,124 @@
+2026-07-11 09:01:38,728 - lightrag - INFO - Ollama LLM Options: {}
+2026-07-11 09:01:38,728 - lightrag - INFO - Ollama Embedding Options: {}
+2026-07-11 09:01:38,842 - lightrag - INFO - Embedding config: binding=ollama model=nomic-embed-text embedding_dim=768 max_token_size=8192
+2026-07-11 09:01:38,842 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=768, has_param=True, binding=ollama)
+2026-07-11 09:01:38,842 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-07-11 09:01:38,842 - lightrag - INFO - Reranking is disabled
+2026-07-11 09:01:39,611 - lightrag - INFO - [] Loaded graph from /Users/metis/Github/XAI/rag_storage/graph_chunk_entity_relation.graphml with 153 nodes, 134 edges
+2026-07-11 09:01:39,616 - lightrag - INFO - Role LLM Configuration (initialized):
+2026-07-11 09:01:39,616 - lightrag - INFO -  - extract: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-11 09:01:39,616 - lightrag - INFO -  - keyword: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-11 09:01:39,616 - lightrag - INFO -  - query: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-11 09:01:39,616 - lightrag - INFO -  - vlm: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-11 09:01:39,617 - lightrag - INFO - Role LLM Option:
+2026-07-11 09:01:39,617 - lightrag - INFO -  - extract: Ollama {}
+2026-07-11 09:01:39,617 - lightrag - INFO -  - keyword: Ollama {}
+2026-07-11 09:01:39,617 - lightrag - INFO -  - query: Ollama {}
+2026-07-11 09:01:39,617 - lightrag - INFO -  - vlm: Ollama {}
+2026-07-11 09:01:39,633 - lightrag - INFO - WebUI assets mounted at /webui
+2026-07-11 09:01:39,774 - uvicorn.error - INFO - Started server process [21889]
+2026-07-11 09:01:39,774 - uvicorn.error - INFO - Waiting for application startup.
+2026-07-11 09:01:39,775 - lightrag - INFO - [] Process 21889 KV load full_docs with 7 records
+2026-07-11 09:01:39,775 - lightrag - INFO - [] Process 21889 KV load text_chunks with 16 records
+2026-07-11 09:01:39,776 - lightrag - INFO - [] Process 21889 KV load full_entities with 7 records
+2026-07-11 09:01:39,776 - lightrag - INFO - [] Process 21889 KV load full_relations with 6 records
+2026-07-11 09:01:39,776 - lightrag - INFO - [] Process 21889 KV load entity_chunks with 129 records
+2026-07-11 09:01:39,777 - lightrag - INFO - [] Process 21889 KV load relation_chunks with 104 records
+2026-07-11 09:01:39,778 - lightrag - INFO - [] Process 21889 KV load llm_response_cache with 38 records
+2026-07-11 09:01:39,778 - lightrag - INFO - [] Process 21889 doc status load doc_status with 7 records
+2026-07-11 09:01:39,778 - uvicorn.error - INFO - Application startup complete.
+2026-07-11 09:01:39,779 - uvicorn.error - INFO - Uvicorn running on http://127.0.0.1:9621 (Press CTRL+C to quit)
+2026-07-11 09:01:55,250 - uvicorn.access - INFO - 127.0.0.1:59974 - "GET / HTTP/1.1" 307
+2026-07-11 09:01:55,274 - uvicorn.access - INFO - 127.0.0.1:59976 - "GET /graph/label/list HTTP/1.1" 200
+2026-07-11 09:02:06,847 - uvicorn.access - INFO - 127.0.0.1:59982 - "GET /webui/assets/index-DnPVhc7x.js HTTP/1.1" 200
+2026-07-11 09:02:06,857 - uvicorn.access - INFO - 127.0.0.1:59984 - "GET /webui/assets/src-DWlNNfc5.js HTTP/1.1" 200
+2026-07-11 09:02:06,858 - uvicorn.access - INFO - 127.0.0.1:59985 - "GET /webui/assets/chunk-CSCIHK7Q-DGtgSxmY.js HTTP/1.1" 200
+2026-07-11 09:02:06,859 - uvicorn.access - INFO - 127.0.0.1:59983 - "GET /webui/assets/chunk-QTnfLwEv.js HTTP/1.1" 200
+2026-07-11 09:02:06,859 - uvicorn.access - INFO - 127.0.0.1:59987 - "GET /webui/assets/chunk-5ZQYHXKU-CkER5msB.js HTTP/1.1" 200
+2026-07-11 09:02:06,859 - uvicorn.access - INFO - 127.0.0.1:59986 - "GET /webui/assets/dist-BExdoQxQ.js HTTP/1.1" 200
+2026-07-11 09:02:06,877 - uvicorn.access - INFO - 127.0.0.1:59983 - "GET /webui/assets/chunk-O5CBEL6O-Dby7T2LG.js HTTP/1.1" 200
+2026-07-11 09:02:06,878 - uvicorn.access - INFO - 127.0.0.1:59985 - "GET /webui/assets/array-BifhSqXX.js HTTP/1.1" 200
+2026-07-11 09:02:06,878 - uvicorn.access - INFO - 127.0.0.1:59982 - "GET /webui/assets/chunk-L5ZTLDWV-wdSumQ3D.js HTTP/1.1" 200
+2026-07-11 09:02:06,879 - uvicorn.access - INFO - 127.0.0.1:59984 - "GET /webui/assets/index-DocW-KSH.css HTTP/1.1" 200
+2026-07-11 09:02:06,879 - uvicorn.access - INFO - 127.0.0.1:59987 - "GET /webui/assets/path-BWPyau1x.js HTTP/1.1" 200
+2026-07-11 09:02:06,880 - uvicorn.access - INFO - 127.0.0.1:59986 - "GET /webui/assets/line-B0KKq2N_.js HTTP/1.1" 200
+2026-07-11 09:02:06,899 - uvicorn.access - INFO - 127.0.0.1:59983 - "GET /webui/assets/chunk-NZK2D7GU-BP4v2TD5.js HTTP/1.1" 200
+2026-07-11 09:02:06,899 - uvicorn.access - INFO - 127.0.0.1:59985 - "GET /webui/assets/rough.esm-CSKSodPl.js HTTP/1.1" 200
+2026-07-11 09:02:06,900 - uvicorn.access - INFO - 127.0.0.1:59982 - "GET /webui/assets/chunk-3OPIFGDE-Cqs4cZpM.js HTTP/1.1" 200
+2026-07-11 09:02:06,900 - uvicorn.access - INFO - 127.0.0.1:59987 - "GET /webui/assets/chunk-BSJP7CBP-D8Ua6mpo.js HTTP/1.1" 200
+2026-07-11 09:02:07,053 - uvicorn.access - INFO - 127.0.0.1:59982 - "GET /auth-status HTTP/1.1" 200
+2026-07-11 09:02:07,055 - uvicorn.access - INFO - 127.0.0.1:59987 - "GET /webui/favicon.png HTTP/1.1" 200
+2026-07-11 09:02:07,466 - uvicorn.access - INFO - 127.0.0.1:59986 - "GET /docs?theme=light HTTP/1.1" 200
+2026-07-11 09:02:07,470 - uvicorn.access - INFO - 127.0.0.1:59985 - "GET /graph/label/popular?limit=300 HTTP/1.1" 200
+2026-07-11 09:02:07,478 - lightrag - INFO - [] Subgraph query successful | Node count: 153 | Edge count: 134
+2026-07-11 09:02:07,486 - uvicorn.access - INFO - 127.0.0.1:59983 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-07-11 09:02:07,489 - uvicorn.access - INFO - 127.0.0.1:59985 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-07-11 09:02:07,490 - uvicorn.access - INFO - 127.0.0.1:59986 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2026-07-11 09:02:07,654 - uvicorn.access - INFO - 127.0.0.1:59986 - "GET /openapi.json HTTP/1.1" 200
+2026-07-11 09:14:36,006 - uvicorn.access - INFO - 127.0.0.1:60192 - "GET /docs?theme=light HTTP/1.1" 200
+2026-07-11 09:14:36,106 - uvicorn.access - INFO - 127.0.0.1:60192 - "GET /openapi.json HTTP/1.1" 200
+2026-07-11 09:24:09,784 - lightrag - INFO - [] Subgraph query successful | Node count: 10 | Edge count: 9
+2026-07-11 09:24:09,787 - uvicorn.access - INFO - 127.0.0.1:60355 - "GET /graphs?label=SANDI-2024%20testbed&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-07-11 09:24:32,531 - lightrag - INFO - [] Subgraph query successful | Node count: 153 | Edge count: 134
+2026-07-11 09:24:32,543 - uvicorn.access - INFO - 127.0.0.1:60359 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-07-17 10:56:11,546 - lightrag - INFO - Ollama LLM Options: {}
+2026-07-17 10:56:11,551 - lightrag - INFO - Ollama Embedding Options: {}
+2026-07-17 10:56:11,655 - lightrag - INFO - Embedding config: binding=ollama model=nomic-embed-text embedding_dim=768 max_token_size=8192
+2026-07-17 10:56:11,655 - lightrag - INFO - Send embedding dimension: False by env var (dimensions=768, has_param=True, binding=ollama)
+2026-07-17 10:56:11,655 - lightrag - INFO - Embedding max_token_size: 8192 (from ollama provider default)
+2026-07-17 10:56:11,655 - lightrag - INFO - Reranking is disabled
+2026-07-17 10:56:12,590 - lightrag - INFO - [] Loaded graph from /Users/metis/Github/XAI/rag_storage/graph_chunk_entity_relation.graphml with 153 nodes, 134 edges
+2026-07-17 10:56:12,596 - lightrag - INFO - Role LLM Configuration (initialized):
+2026-07-17 10:56:12,596 - lightrag - INFO -  - extract: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-17 10:56:12,596 - lightrag - INFO -  - keyword: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-17 10:56:12,596 - lightrag - INFO -  - query: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-17 10:56:12,596 - lightrag - INFO -  - vlm: ollama/llama3.1:8b, host=http://localhost:11434, max_async=4, timeout=240
+2026-07-17 10:56:12,596 - lightrag - INFO - Role LLM Option:
+2026-07-17 10:56:12,596 - lightrag - INFO -  - extract: Ollama {}
+2026-07-17 10:56:12,596 - lightrag - INFO -  - keyword: Ollama {}
+2026-07-17 10:56:12,596 - lightrag - INFO -  - query: Ollama {}
+2026-07-17 10:56:12,596 - lightrag - INFO -  - vlm: Ollama {}
+2026-07-17 10:56:12,615 - lightrag - INFO - WebUI assets mounted at /webui
+2026-07-17 10:56:12,628 - uvicorn.error - INFO - Started server process [68307]
+2026-07-17 10:56:12,628 - uvicorn.error - INFO - Waiting for application startup.
+2026-07-17 10:56:12,629 - lightrag - INFO - [] Process 68307 KV load full_docs with 7 records
+2026-07-17 10:56:12,629 - lightrag - INFO - [] Process 68307 KV load text_chunks with 16 records
+2026-07-17 10:56:12,630 - lightrag - INFO - [] Process 68307 KV load full_entities with 7 records
+2026-07-17 10:56:12,630 - lightrag - INFO - [] Process 68307 KV load full_relations with 6 records
+2026-07-17 10:56:12,631 - lightrag - INFO - [] Process 68307 KV load entity_chunks with 129 records
+2026-07-17 10:56:12,633 - lightrag - INFO - [] Process 68307 KV load relation_chunks with 104 records
+2026-07-17 10:56:12,634 - lightrag - INFO - [] Process 68307 KV load llm_response_cache with 38 records
+2026-07-17 10:56:12,634 - lightrag - INFO - [] Process 68307 doc status load doc_status with 7 records
+2026-07-17 10:56:12,635 - uvicorn.error - INFO - Application startup complete.
+2026-07-17 10:56:12,635 - uvicorn.error - ERROR - [Errno 48] error while attempting to bind on address ('127.0.0.1', 9621): address already in use
+2026-07-17 10:56:12,635 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-07-17 10:56:12,635 - lightrag - INFO - Successfully finalized 12 storages
+2026-07-17 10:56:12,635 - uvicorn.error - INFO - Application shutdown complete.
+2026-07-17 11:05:14,893 - uvicorn.access - INFO - 127.0.0.1:56931 - "GET /webui/assets/index-DnPVhc7x.js HTTP/1.1" 200
+2026-07-17 11:05:14,928 - uvicorn.access - INFO - 127.0.0.1:56932 - "GET /webui/assets/chunk-CSCIHK7Q-DGtgSxmY.js HTTP/1.1" 200
+2026-07-17 11:05:14,930 - uvicorn.access - INFO - 127.0.0.1:56933 - "GET /webui/assets/chunk-QTnfLwEv.js HTTP/1.1" 304
+2026-07-17 11:05:14,930 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /webui/assets/src-DWlNNfc5.js HTTP/1.1" 304
+2026-07-17 11:05:14,931 - uvicorn.access - INFO - 127.0.0.1:56936 - "GET /webui/assets/array-BifhSqXX.js HTTP/1.1" 304
+2026-07-17 11:05:14,931 - uvicorn.access - INFO - 127.0.0.1:56935 - "GET /webui/assets/chunk-O5CBEL6O-Dby7T2LG.js HTTP/1.1" 304
+2026-07-17 11:05:14,934 - uvicorn.access - INFO - 127.0.0.1:56935 - "GET /webui/assets/dist-BExdoQxQ.js HTTP/1.1" 304
+2026-07-17 11:05:14,934 - uvicorn.access - INFO - 127.0.0.1:56933 - "GET /webui/assets/index-DocW-KSH.css HTTP/1.1" 200
+2026-07-17 11:05:14,935 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /webui/assets/line-B0KKq2N_.js HTTP/1.1" 304
+2026-07-17 11:05:14,935 - uvicorn.access - INFO - 127.0.0.1:56936 - "GET /webui/assets/chunk-L5ZTLDWV-wdSumQ3D.js HTTP/1.1" 304
+2026-07-17 11:05:14,936 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /webui/assets/path-BWPyau1x.js HTTP/1.1" 304
+2026-07-17 11:05:14,937 - uvicorn.access - INFO - 127.0.0.1:56936 - "GET /webui/assets/chunk-NZK2D7GU-BP4v2TD5.js HTTP/1.1" 304
+2026-07-17 11:05:14,937 - uvicorn.access - INFO - 127.0.0.1:56935 - "GET /webui/assets/chunk-5ZQYHXKU-CkER5msB.js HTTP/1.1" 304
+2026-07-17 11:05:14,939 - uvicorn.access - INFO - 127.0.0.1:56935 - "GET /webui/assets/chunk-BSJP7CBP-D8Ua6mpo.js HTTP/1.1" 304
+2026-07-17 11:05:14,940 - uvicorn.access - INFO - 127.0.0.1:56936 - "GET /webui/assets/rough.esm-CSKSodPl.js HTTP/1.1" 304
+2026-07-17 11:05:14,940 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /webui/assets/chunk-3OPIFGDE-Cqs4cZpM.js HTTP/1.1" 200
+2026-07-17 11:05:15,267 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /auth-status HTTP/1.1" 200
+2026-07-17 11:05:15,483 - lightrag - INFO - [] Subgraph query successful | Node count: 153 | Edge count: 134
+2026-07-17 11:05:15,501 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /graphs?label=*&max_depth=3&max_nodes=1000 HTTP/1.1" 200
+2026-07-17 11:05:15,523 - uvicorn.access - INFO - 127.0.0.1:56931 - "GET /docs?theme=light HTTP/1.1" 200
+2026-07-17 11:05:15,576 - uvicorn.access - INFO - 127.0.0.1:56931 - "GET /static/swagger-ui/swagger-ui.css HTTP/1.1" 200
+2026-07-17 11:05:15,614 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /static/swagger-ui/swagger-ui-bundle.js HTTP/1.1" 200
+2026-07-17 11:05:15,803 - uvicorn.access - INFO - 127.0.0.1:56934 - "GET /openapi.json HTTP/1.1" 200
+2026-08-12 22:03:21,636 - uvicorn.error - INFO - Shutting down
+2026-08-12 22:03:21,748 - uvicorn.error - INFO - Waiting for application shutdown.
+2026-08-12 22:03:21,769 - lightrag - INFO - Successfully finalized 12 storages
+2026-08-12 22:03:21,780 - uvicorn.error - INFO - Application shutdown complete.
+2026-08-12 22:03:21,783 - uvicorn.error - INFO - Finished server process [21889]

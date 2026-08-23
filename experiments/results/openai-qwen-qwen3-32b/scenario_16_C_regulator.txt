@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+A sustained attack flow (confidence: 1.00) was detected targeting **RTU-1** (BES Cyber Asset under NERC CIP, IEC-104 endpoint on port 2404). The RTU controls critical breakers (BR-1-2, BR-2-3, BR-2-4, BR-2-5) in a BES Cyber System. Per **NERC CIP-008-6**, an *attempted compromise* of a BES Cyber System or its associated EACMS/PACS is reportable. This incident plausibly meets the threshold as an attempted disruption of a BES Cyber Asset.  
+
+**Reporting timeline**: Notification to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) is required *by the end of the next calendar day* (R4 for attempted compromises). **Required attributes** (functional impact, attack vector, level of intrusion) must be included, though initial details may be incomplete.  
+
+This response aligns with the **Detect** function of the NIST CSF 2.0, as the IDS identified anomalous flow statistics (e.g., low IAT, zero-byte packets) consistent with a sustained attack. The assessment is illustrative, as the synthetic grid (SANDI-2024 testbed) is not a jurisdictional determination under NERC CIP.  
+
+**Conclusion**: Reportable under NERC CIP-008-6 as an attempted compromise of a BES Cyber Asset. Notify E-ISAC and NCCIC/CISA within 24 hours. Framework function: **Detect**.

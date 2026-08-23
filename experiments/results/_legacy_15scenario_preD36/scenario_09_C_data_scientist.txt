@@ -1,0 +1,11 @@
+Based on the model's output, I analyzed the flow features that drove the prediction.
+
+The top contributing feature is "Dst Port" with a SHAP contribution of 0.35. This indicates that the destination port played a significant role in the model's decision to flag this flow as an attack. The knowledge graph data reveals that the destination port 2404 is indicative of an IEC-104 endpoint, which carries a mild signal but is not a leak.
+
+The second contributing feature is "SYN/RST Flag Count" with a SHAP contribution of 0.25. This suggests that the number of SYN and RST flags in the flow also contributed to the model's decision.
+
+The model's confidence in this prediction is moderate, with a probability of 0.65.
+
+It's essential to note that these features can only provide statistical fingerprints of the flow behavior and do not prove specific protocol actions or attack classes. The model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics.
+
+The feature attributions suggest that this flow may be related to a scanning or flooding attack, but further analysis is required to determine the exact nature of the threat.

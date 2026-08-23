@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device Affected: RTU-3, located at Bus 6, controlling breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13.
+
+Physical Risk: The sustained attack flow detected on RTU-3 may cause a denial-of-service (DoS) condition, potentially leading to a loss of control over the affected breakers. This could result in an unstable grid operation and potential power outages.
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-3 to prevent further potential damage.
+2. Check breaker BR-5-6 for any signs of malfunction or instability.
+3. Verify that all other breakers controlled by RTU-3 are functioning correctly.
+4. Investigate the source of the attack flow and take necessary measures to mitigate it.
+
+**Action Priority:** Safety and continuity of grid operation take precedence over investigation.

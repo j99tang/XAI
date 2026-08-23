@@ -1,0 +1,9 @@
+Illustrative assessment only: the context states this is a synthetic grid, not a jurisdictional determination.
+
+What occurred: a binary intrusion detector classified network flow to 10.0.0.4:123 as **normal** with confidence 0.14. The affected destination asset is **ENG-WS-1**, an engineering workstation in **ZONE-CC**, identified as an **EACMS under NERC CIP**.
+
+Reportability: Based only on the provided facts, this does **not** currently meet the **NERC CIP-008-6 Reportable Cyber Security Incident** threshold. A reportable incident requires a compromise, disruption, or attempted compromise of a BES Cyber System or associated EACMS/PACS. Compromise: not in context. Disruption: not in context. Attempted compromise: not in context. The detector observes network flow statistics only and did not classify this as an attack.
+
+Timeline / notification: No notification is due on the current facts. If later determined to be a **Reportable Cyber Security Incident**, initial notification would be **within one hour**; if determined to be an **attempt** to compromise an in-scope system, notification would be **by the end of the next calendar day**. Notification would be to **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**.
+
+Framework function: this assessment sits under **NIST CSF 2.0 Detect**; any triggered reporting would support **Respond**.

@@ -1,0 +1,9 @@
+The affected asset is RTU-2 (10.0.0.3), a BES Cyber Asset under NERC CIP, located in ZONE-C at Bus 4 and controlling multiple breakers (BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9). It is an IEC-104 endpoint (port 2404) used for control, confirming its critical role in the Bulk Electric System (BES).
+
+The intrusion alert indicates anomalous traffic directed to this RTU, with network flow features (e.g., Bwd IAT Min = 0, Packet Length Max = 8, Bwd Packet Length Min = 0) suggesting small, frequent packets consistent with scanning or denial-of-service activity. While the specific attack type is not confirmed by payload analysis (not observable), the destination is a known BES Cyber System.
+
+Under NERC CIP-008-6, a Reportable Cyber Security Incident includes any unauthorized access or disruption of a BES Cyber System. Given the targeting of a confirmed BES Cyber Asset with high-confidence malicious traffic, this plausibly meets the reporting threshold.
+
+Notification is required to E-ISAC and NCCIC/CISA per NERC CIP-008-6. The timeline requires reporting within one hour of confirmation if the incident is confirmed as successful; otherwise, by the end of the next calendar day for attempted compromises.
+
+This response falls under the **Detect** function of the CSF, aligned with NIST SP 800-61r3. Jurisdictional determination is not made; assessment is illustrative based on provided context.

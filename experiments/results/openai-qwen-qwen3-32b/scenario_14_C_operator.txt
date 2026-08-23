@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device:** RTU-1 (10.0.0.1:2404), IEC-104-controlled station at Bus 2, Zone ZONE-N. Manages breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Incident:** High-confidence attack detected. Traffic shows **zero backward inter-arrival times (Bwd IAT Min=0)**, **small/zero packet lengths**, and **low forward IAT variance**, consistent with **packet flooding** (per attack taxonomy). Attack vector: sustained low-size packet blast to IEC-104 endpoint.  
+
+**Physical Risk:** RTU-1 CPU/link saturation → delayed/dropped telemetry → loss of real-time control over Breakers 2-x. Risk of unintended grid instability if manual intervention is required.  
+
+**Next Actions:**  
+1. **Switch to manual control** for Breakers 2-1 through 2-5 immediately.  
+2. **Check RTU-1 status**: Confirm operational state (online/offline) and breaker positions via local HMI or redundant SCADA channel.  
+3. **Isolate RTU-1 network interface** if unresponsive (per NERC CIP-008-6 incident response).  
+4. **Verify IEC-104 command integrity**: Ensure no unauthorized commands are being executed (check last command logs).  
+5. **Escalate to cybersecurity** for traffic analysis but prioritize physical grid stability.  
+
+*Do not assume protocol-level exploit; treat as bandwidth-exhaustion attack. Validate breaker states locally if SCADA visibility is lost.*

@@ -1,0 +1,5 @@
+The intrusion detection model has flagged a flow to RTU-2 (10.0.0.3) as an attack with 100% confidence. The top contributing features to this prediction are Flow IAT Min, Packet Length Max, Fwd PSH Flags, Flow IAT Mean, and ACK Flag Count. 
+
+The low Flow IAT Min (298) and Flow IAT Mean (1381.82) suggest a potential flooding pattern, which is consistent with a Denial of Service (DoS) or flood attack. The high Packet Length Max (48) may indicate a burst of small packets, which could be part of a flooding or scanning attack. The absence of Fwd PSH Flags and ACK Flag Count (both 0) further supports this hypothesis, as it may indicate a lack of legitimate communication.
+
+These features collectively point to a flooding-family attack, potentially aimed at overwhelming the RTU. However, the model's evidence is limited to statistical fingerprints and does not provide direct proof of specific protocol actions or attack classes. The confidence in the prediction is high, but the features can only suggest a potential attack pattern, not definitively identify the attack class or its consequences.

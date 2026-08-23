@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device/Location:** RTU-1 (10.0.0.1:2404), GridCom GC-4000, Bus 2, Zone ZONE-N. Controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Current Activity:** Unusual network traffic detected: high-frequency small packets (min 0B) with low inter-arrival times (min 5ms). Matches flood/scanning patterns per knowledge graph. Traffic origin unknown but not from confirmed attack ranges (e.g., 121.142.26.0/24).  
+
+**Physical Risk:** RTU-1 may lose telemetry responsiveness or crash, causing delayed/dropped breaker status updates. Unplanned tripping or loss of control on Bus 2 breakers risks grid instability.  
+
+**Next Actions:**  
+1. **Switch to manual control** for BR-1-2, BR-2-3, BR-2-4, BR-2-5 via local HMI to prevent unintended remote changes.  
+2. **Check RTU-1 status:** Verify heartbeat/alarms on local HMI. If unresponsive, initiate hard reboot per NERC CIP-008-6.  
+3. **Isolate RTU-1’s network port** if traffic persists (block 10.0.0.1:2404 ingress).  
+4. **Monitor redundancy:** Confirm backup RTU/SCADA systems (if active) are handling Bus 2 telemetry.  
+5. **Log and report** per NERC CIP-008-6.  
+
+*Do not assume protocol-level exploit; treat as bandwidth/resource exhaustion.*

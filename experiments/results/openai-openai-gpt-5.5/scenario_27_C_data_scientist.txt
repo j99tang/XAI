@@ -1,0 +1,7 @@
+The model predicted **normal** for traffic to **10.0.0.6:2404** (**RTU-4**, IEC-104 endpoint) with reported **confidence 0.19**, so the normal decision is weak.
+
+The only top feature pushing toward **attack** was **`Total Fwd Packet` = 1, SHAP +0.115**: a one-packet forward direction flow is statistically short/probe-like. That can resemble the short-flow side of scan/flood fingerprints, but by itself it does not establish scanning.
+
+The other top features pushed away from attack: **`Flow Bytes/s` = 14733.6, SHAP -0.081**, **`FIN Flag Count` = 1, SHAP -0.078**, **`Flow IAT Max` = 17505, SHAP -0.073**, and **`Down/Up Ratio` = 2, SHAP -0.068**. In this model, those values made the flow less attack-like. This weakens a starvation/flood-family interpretation; starvation context would require broader evidence such as many concurrent long-lived flows, rising `Bwd IAT Max`/`Flow IAT Max`, and high early `Total Bwd packets` followed by stall, which is **not in context**.
+
+Evidence boundary: the detector is binary and uses CICFlowMeter flow statistics only. It does **not** inspect IEC-104 semantics and cannot prove protocol actions, breaker control, or a specific attack class.

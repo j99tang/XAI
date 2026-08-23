@@ -1,0 +1,13 @@
+The model's attack prediction (confidence 1.00) for destination 10.0.0.1:2404 is driven by **low inter-arrival times (IAT)** and **minimal packet sizes**. Key features:  
+- **Bwd IAT Min=0** (maximally compressed backward traffic intervals) and **Flow IAT Min=89** (overall flow IAT compression) suggest rapid packet bursts, consistent with flooding/scanning patterns.  
+- **Packet Length Min=0** and **Bwd Packet Length Min=0** indicate headers-dominated traffic, aligning with "small_packets" fingerprints (common in flood/scan attacks).  
+- **Packet Length Max=0** implies uniform minimal packet sizes, potentially signaling repeated identical frames (e.g., malformed or probing packets).  
+
+This signature matches **flooding-family attacks** (e.g., DoS/flood/starvation), where low IAT and small packets overwhelm the target. The destination port 2404 identifies an IEC-104 endpoint but carries only mild signal (not definitive proof of attack). The absence of high `SYN Flag Count` or `ACK Flag Count` (not in top SHAP features) weakens direct linkage to a SYN flood.  
+
+**Caveats**:  
+- The model observes only statistical fingerprints (e.g., timing, size), not IEC-104 protocol semantics. These features cannot confirm whether packets carried malicious payloads or exploited protocol-specific vulnerabilities.  
+- Zero-length packets may reflect normal IEC-104 control traffic (per `control_traffic`), but their combination with compressed IATs suggests abnormal volume.  
+- No evidence of sustained bulk transfers (e.g., `Subflow Fwd Packets/Bytes` not highlighted), which would indicate a different attack family (e.g., command injection).  
+
+The fingerprint aligns with **MITRE ATT&CK for ICS: T0814 (Denial of Service)** but cannot distinguish between scanning, flooding, or starvation without additional protocol context.

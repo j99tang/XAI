@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves an intrusion alert on a BES Cyber Asset, RTU-4 (10.0.0.6), which controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 in zone ZONE-S at Bus 9. The alert indicates a potential attack on the IEC-104 endpoint.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident as it involves a BES Cyber System (RTU-4) and its associated EACMS/PACS (not explicitly mentioned but implied). The reporting timeline applies: within one hour of determining the incident.
+
+Notification is due to both the E-ISAC and, under US jurisdiction, the NCCIC/CISA. Required attributes for initial notification include functional impact, attack vector, and level of intrusion, which may be unknown at this time.
+
+This response sits under the **Detect** function of the CSF framework, as per NIST SP 800-61r3.

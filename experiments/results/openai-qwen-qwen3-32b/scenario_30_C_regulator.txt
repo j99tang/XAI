@@ -1,0 +1,10 @@
+**Compliance Assessment**  
+The incident involves an engineering workstation (ENG-WS-1) in zone ZONE-CC, part of the EACMS under NERC CIP. The intrusion alert shows anomalous network flow statistics (e.g., elevated packet counts, irregular inter-arrival times) targeting port 123 (not explicitly IEC-104). While the IDS prediction is "normal" (confidence 0.14), the SHAP features suggest potential attack signals.  
+
+Under **NERC CIP-008-6**, a reportable incident includes an *attempted* compromise of a BES Cyber System or EACMS/PACS. The asset (ENG-WS-1) is in-scope as a BES Cyber System component. The alert plausibly meets the "attempted compromise" threshold due to the asset’s criticality and anomalous traffic patterns, even if the attack did not succeed.  
+
+**Reporting timeline**: Notification to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) is required *by the end of the next calendar day* for attempted compromises.  
+
+**Framework function**: This response falls under **Detect** (NIST CSF 2.0), as the IDS identifies and signals the incident for further analysis.  
+
+*Note: This assessment is illustrative; the synthetic grid context does not confirm jurisdictional applicability.*

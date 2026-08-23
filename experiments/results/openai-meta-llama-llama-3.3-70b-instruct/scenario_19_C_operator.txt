@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+Device affected: RTU-4 (10.0.0.6) at Bus 9, Zone ZONE-S, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Observed pattern: Unusual network flow statistics indicate a potential attack, with features suggesting minimal packet sizes and inter-arrival times, and no forward PSH flags.
+
+Physical risk: Possible loss of view and control of the breakers, or delayed/dropped telemetry, which could lead to unplanned switching or loss of control at Bus 9.
+
+Next actions: 
+
+1. Check the status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+2. Verify RTU-4's connection and response to SCADA-1.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network flow statistics for further anomalies.
+
+Priority is to ensure the continuity and safety of the physical process. Investigation into the cause of the anomaly will follow.

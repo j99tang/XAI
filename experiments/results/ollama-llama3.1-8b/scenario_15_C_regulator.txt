@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves a potential cyber security threat to a BES Cyber Asset, specifically RTU-2 at Bus 4, which controls critical breakers in Zone C. The detector has predicted an attack with high confidence (1.00) on the IEC-104 endpoint at port 2404.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident as it involves a potential compromise or disruption of a BES Cyber System. The affected asset is a critical RTU controlling breakers in Zone C, which is a reportable event under NERC CIP.
+
+The reporting timeline applies: within one hour of determining a Reportable Cyber Security Incident. Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+This response sits under the **Detect** function of the CSF framework, as it involves identifying potential threats to BES Cyber Assets.

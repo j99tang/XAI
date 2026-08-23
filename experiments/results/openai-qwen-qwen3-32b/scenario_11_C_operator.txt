@@ -1,0 +1,13 @@
+**ACTION BRIEFING**  
+**Affected Device:** RTU-2 (GridCom GC-4000, 10.0.0.3:2404) at Bus 4, Zone ZONE-C. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Physical Risk:** Attack traffic (small packets, zero backward inter-arrival times, low Bwd IAT Max) indicates port scanning or packet starvation. RTU-2 may lose supervisory control, risking delayed/dropped telemetry or unintended breaker actions.  
+
+**Next Actions:**  
+1. **Switch to manual control** for breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 immediately to maintain grid stability.  
+2. **Check RTU-2 status** via local HMI (GridCom GC-4000 interface) for operational health, error codes, or command timeouts.  
+3. **Isolate RTU-2 network connection** by disabling its switch port or applying firewall rules to block ingress on port 2404 until traffic analysis confirms safety.  
+4. **Verify redundancy** in Zone ZONE-C: Confirm SCADA-1 (10.0.0.2) can maintain visibility via alternate RTUs or manual reporting.  
+5. **Log incident** under NERC CIP-008-6 for mandatory reporting.  
+
+*Do not assume protocol-specific attack vectors (e.g., malformed IEC-104 commands). Prioritize physical grid continuity over root-cause analysis.*

@@ -1,0 +1,13 @@
+**Action Briefing**  
+**Affected Device:** RTU-2 (10.0.0.3, GridCom GC-4000) at Bus 4, Zone ZONE-C.  
+
+**Physical Risk:** Attack traffic targeting RTU-2’s IEC-104 port (2404) shows **flood-like patterns**: low backward inter-arrival times (Bwd IAT Min=0), minimal packet lengths (Packet Length Min/Max=0), and high forward packet rates. This suggests **CPU/link saturation** or **command injection**, risking delayed/dropped telemetry, unintended breaker actions, or RTU offline status. Breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 may lose real-time control.  
+
+**Next Actions:**  
+1. **Switch to manual control** for all breakers managed by RTU-2 (BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9) to prevent unintended automated actions.  
+2. **Verify RTU-2 status**: Check if it remains responsive via local HMI or serial interfaces (if available).  
+3. **Isolate RTU-2’s network connection** if it exhibits signs of unresponsiveness (e.g., no ACKs, stalled telemetry).  
+4. **Monitor subflow_volume** for sustained traffic spikes on port 2404.  
+5. **Log and report** per NERC CIP-008-6 protocols for incident response.  
+
+*Do not attempt remote diagnostics until traffic is contained. Prioritize grid stability over root-cause analysis.*

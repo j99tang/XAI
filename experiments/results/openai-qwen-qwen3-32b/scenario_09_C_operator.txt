@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device:** RTU-1 (10.0.0.1, GridCom GC-4000) at Bus 2, Zone ZONE-N. Controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Incident:** Unusual network traffic targeting RTU-1’s IEC-104 port (2404). Observed patterns: abnormally low inter-arrival times (Flow IAT Min=58ms, Bwd IAT Min=243ms), mixed with small packets (max 24B, min 0B). Matches flooding/scanning behavior (e.g., SYN DoS or packet starvation).  
+
+**Physical Risk:** Loss of RTU-1 communication → loss of remote visibility/control over Breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5. Grid remains operational but vulnerable to undetected faults at Bus 2.  
+
+**Next Actions:**  
+1. **Verify RTU-1 status:** Check local HMI for connectivity loss or CPU overload.  
+2. **Breaker Status Check:** Manually confirm positions of BR-1-2, BR-2-3, BR-2-4, BR-2-5 via local indicators or SCADA fallback (if available).  
+3. **Switch to Manual Control:** Engage local control mode for affected breakers to maintain physical operability if RTU-1 goes offline.  
+4. **Network Mitigation:** Isolate RTU-1’s network segment (if safe) to contain traffic anomalies.  
+5. **Log Traffic:** Capture packets for post-event analysis per NERC CIP-008-6.  
+
+Prioritize grid stability; assume RTU-1 is compromised until cleared.

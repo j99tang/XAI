@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+An intrusion alert has been triggered, indicating a potential attack on RTU-2 (10.0.0.3), a BES Cyber Asset under NERC CIP. The affected asset is a critical component of the Bulk Electric System, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+
+This incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6, as it involves a potential compromise or disruption of a BES Cyber System. 
+
+The reporting timeline for this incident is within one hour or by the end of the next calendar day for attempted compromises, as per NERC CIP-008-6. Notification is due to the E-ISAC or NCCIC/CISA.
+
+This response sits under the Detect function of the NIST Cybersecurity Framework (CSF), as we are confirming the anomaly and identifying the affected device. Further analysis will determine if containment and eradication measures are necessary.

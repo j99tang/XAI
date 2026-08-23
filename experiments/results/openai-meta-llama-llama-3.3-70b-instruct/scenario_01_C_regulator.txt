@@ -1,0 +1,7 @@
+**Compliance Assessment**
+
+The incident involves a potential cyber security incident targeting RTU-1, a BES Cyber Asset under NERC CIP, at Bus 2. The destination port 2404 indicates an IEC-104 endpoint. Given the confidence level of 1.00 and the affected asset's criticality to the Bulk Electric System, this incident plausibly meets the threshold for a reportable cyber security incident under NERC CIP-008-6.
+
+The reporting timeline for a confirmed or suspected cyber security incident under NERC CIP-008-6 requires notification to the E-ISAC or NCCIC/CISA within one hour or by the end of the next calendar day for attempted compromises. 
+
+This response falls under the Detect function of the NIST Cybersecurity Framework (CSF), as we are assessing the incident's reportability. Notification is due to the E-ISAC or NCCIC/CISA, depending on jurisdiction, which is not specified in the context, making this assessment illustrative.

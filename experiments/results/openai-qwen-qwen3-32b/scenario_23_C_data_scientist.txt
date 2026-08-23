@@ -1,0 +1,10 @@
+**Model Analysis**  
+The intrusion alert for destination 10.0.0.6:2404 (RTU-4) was triggered by statistical anomalies in flow features. Key drivers:  
+- **Flow IAT Min=4** (SHAP +0.114): Extremely low inter-arrival times suggest rapid packet bursts, consistent with flood/scanning attacks (per `attack_taxonomy/attacks.md`).  
+- **Packet Length Min=0** and **Bwd Packet Length Min=0** (SHAP +0.080/+0.082): Zero-length packets are atypical for IEC-104 control traffic (which usually has minimal payload) and align with probing or header-dominant traffic (e.g., SYN scans).  
+- **Packet Length Max=42** (SHAP +0.082): Small maximum packet size reinforces a "small packets" fingerprint, indicative of scanning or low-volume exploitation attempts.  
+- **Fwd PSH Flags=0** (SHAP +0.054): Absence of push flags implies no data transfer, consistent with connection-establishment probes (e.g., SYN scans).  
+
+**Attack Pattern**: The feature signature matches **flood/scanning-family attacks** (e.g., MITRE ATT&CK ICS T0814 Denial of Service or T0846 Remote System Discovery). Zero-length packets and low IAT align with SYN scans or header-based reconnaissance.  
+
+**Caveats**: The model observes only statistical fingerprints (e.g., packet sizes, timing), not IEC-104 protocol semantics. While the pattern suggests a scan or flood targeting an IEC-104 endpoint (port 2404), it cannot confirm protocol-specific actions (e.g., malformed IEC-104 commands). Confidence=1.00 reflects strong statistical deviation but does not equate to proof of exploitation.

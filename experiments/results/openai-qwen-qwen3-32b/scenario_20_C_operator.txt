@@ -1,0 +1,15 @@
+**Briefing:**  
+**Affected Device/Location:** RTU-1 (GridCom GC-4000, IEC-104) at Bus 2, Zone ZONE-N. Controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Observed Behavior:** Unusual network traffic to RTU-1’s IEC-104 port (2404): high reverse inter-arrival time minima (Bwd IAT Min=0), small packet lengths (min=0), and irregular flow timing. Matches patterns of flood/scanning attacks (e.g., low Flow IAT Min, small packets).  
+
+**Physical Risk:** RTU-1 may experience CPU/link saturation, causing delayed/dropped telemetry or control commands. This risks loss of visibility/control over Breakers BR-1-2 to BR-2-5, potentially leading to unintended grid states if manual intervention is required.  
+
+**Next Actions:**  
+1. **Verify RTU status:** Check local RTU-1 indicators (alarms, link activity) for anomalies.  
+2. **Breaker status confirmation:** Cross-check breaker positions (BR-1-2, BR-2-3, BR-2-4, BR-2-5) via local Human-Machine Interface (HMI) or field operators.  
+3. **Switch to manual control:** Isolate RTU-1’s automated controls temporarily to prevent unintended remote commands. Use local switches for critical breaker adjustments.  
+4. **Network mitigation:** Block unsolicited traffic to 10.0.0.1:2404 via firewall rules (if available) to reduce load.  
+5. **Log preservation:** Ensure traffic logs and RTU event buffers are retained for post-incident analysis per NERC CIP-008-6.  
+
+Prioritize grid stability and physical safety; assume RTU-1 is compromised until cleared.

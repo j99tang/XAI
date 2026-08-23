@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+Device affected: RTU-1 (10.0.0.1) at Bus 2, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 in zone ZONE-N.
+
+Observed pattern: Unusual network flow statistics indicate a potential attack, with minimal packet length and no forward push flags. The flow's inter-arrival time is consistently low.
+
+Physical risk: Possible loss of view and control of the breakers, or delayed/dropped telemetry, which could lead to unplanned switching or loss of control at Bus 2.
+
+Next actions: 
+
+1. Check the status of breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+2. Verify RTU-1's connectivity and response to commands.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network flow statistics for further anomalies.
+
+Priority is to ensure the continuity of the physical process and safety of the grid. Investigation into the cause of the anomaly will follow.

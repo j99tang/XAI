@@ -1,0 +1,14 @@
+Action briefing:
+
+Affected device is RTU-1, IP 10.0.0.1, GridCom GC-4000 IEC-104 controlled station in ZONE-N at Bus 2. It supervises breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+This incident’s evidence: traffic to RTU-1 on port 2404 is classified as attack with confidence 1.00. Detector evidence is flow timing and packet-size pattern only: very short inter-arrival times and small/zero-length packets. No protocol contents are in context.
+
+Immediate physical risk: if RTU-1 communications are impaired, SCADA-1 can lose visibility and remote control of the Bus 2 breakers. Grid may keep operating, but Bus 2 becomes unobservable/uncontrollable remotely.
+
+Next actions:
+1. Check RTU-1 communications from SCADA-1 now.
+2. Verify current status/telemetry for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+3. Do not issue remote switching through RTU-1 unless control/feedback is confirmed healthy.
+4. Hold existing breaker positions unless a separate grid operating need exists; no open/close command is justified by this context.
+5. Whether to switch to manual control: not in context. If remote visibility/control is lost, manual/local procedure is not in context.

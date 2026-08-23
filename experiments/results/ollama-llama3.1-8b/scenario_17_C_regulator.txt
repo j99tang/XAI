@@ -1,0 +1,13 @@
+**Regulatory Assessment**
+
+Based on the provided context, this incident is reportable under NERC CIP-008-6.
+
+**What occurred:** A sustained attack flow was detected in the network by an Intrusion Detection System (IDS), targeting a BES Cyber Asset, specifically RTU-2 (10.0.0.3) at Bus 4, which controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+
+**Affected asset:** The affected asset is a BES Cyber System, specifically RTU-2 (10.0.0.3), which is a critical component of the Bulk Electric System.
+
+**Reporting timeline:** Since this incident plausibly meets the threshold for a Reportable Cyber Security Incident, notification must be made within one hour of determining the incident.
+
+**Notification:** Notification is due to both the E-ISAC and NCCIC/CISA (under US jurisdiction).
+
+This response sits under the **Detect** capability of the CSF functions, as it involves detecting an attack on a BES Cyber System.

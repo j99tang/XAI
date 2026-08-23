@@ -1,0 +1,16 @@
+**Action Briefing:**
+
+Affected device: RTU-4 (10.0.0.6), at Bus 9, zone ZONE-S, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+What is happening: Network flow patterns show sustained traffic with zero-length packets, minimal backward packet length, and no PSH flags — consistent with a denial-of-service condition targeting RTU-4. Source IPs include 121.142.26.0/24, which is confirmed attack traffic. The RTU is unresponsive to polling; loss of view and control is confirmed.
+
+Physical risk: Loss of telemetry and command capability at Bus 9. Uncontrolled fault propagation possible if a disturbance occurs — risk to grid stability and safety.
+
+Next actions:  
+1. Immediately switch RTU-4 to local manual control.  
+2. Verify status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 via local site check or backup SCADA path.  
+3. Isolate RTU-4 network segment if not already done.  
+4. Do not attempt remote commands until service is restored and traffic normalizes.  
+5. Report under NERC CIP-008-6 per incident protocol.
+
+Priority: Maintain physical grid stability. Assume no remote control until further notice.

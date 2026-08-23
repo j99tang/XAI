@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+A high-confidence intrusion alert (confidence: 1.00) targeted RTU-3 (BES Cyber Asset, IEC-104 controlled station, GridCom GC-4000) at destination port 2404, indicating anomalous traffic patterns (e.g., zero-byte packets, low inter-arrival times). Per **NERC CIP-008-6**, a *Reportable Cyber Security Incident* includes attempted compromises of BES Cyber Systems. RTU-3 qualifies as a BES Cyber Asset, and the alert plausibly meets the threshold for an *attempted compromise* due to its control-critical role.  
+
+**Reporting timeline**: Notification must occur **by the end of the next calendar day** (per R4 for attempted compromises). **Recipients**: E-ISAC and NCCIC/CISA (under US jurisdiction). **Required attributes** (functional impact, attack vector, intrusion level) must be included, though initial details may be incomplete.  
+
+This response falls under the **Detect** function of the NIST CSF framework, as the IDS identified the anomaly.  
+
+*Note: This assessment is illustrative; the synthetic grid context (IEEE 14-bus overlay) does not confirm jurisdictional applicability of NERC CIP-008-6.*

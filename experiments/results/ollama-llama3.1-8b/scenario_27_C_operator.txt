@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+Device: RTU-4, IP address 10.0.0.6
+Location: Bus 9, Zone ZONE-S
+Controlled breakers: BR-4-9, BR-7-9, BR-9-10, BR-9-14
+
+Alert received: Anomalous network flow statistics indicating potential attack on RTU-4.
+
+Physical risk: Potential loss of control over the substation's breakers if RTU-4 is compromised. This could lead to a full loss of visibility and control until the RTU is restarted.
+
+Next actions:
+
+1. Immediately switch to manual control for all controlled breakers (BR-4-9, BR-7-9, BR-9-10, BR-9-14) to prevent potential malicious operation.
+2. Check breaker status and ensure they are in a safe state.
+3. Verify RTU-4's connection table is not exhausted and it can still respond to commands.
+4. Investigate further to determine the cause of the anomaly.
+
+**Note:** This incident requires immediate attention to prevent potential loss of control over the substation's breakers.

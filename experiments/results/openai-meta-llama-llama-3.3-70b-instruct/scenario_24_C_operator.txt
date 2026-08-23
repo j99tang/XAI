@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+Device affected: RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Physical risk: Potential loss of supervisory control and visibility of the breakers, but the grid will continue to operate.
+
+Observed pattern: Unusual network flow statistics, including low backward inter-arrival time, small packet lengths, and no forward PSH flags.
+
+Next actions:
+
+1. Check the status of breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5.
+2. Verify RTU-1's communication with SCADA-1.
+3. Consider switching to manual control of the affected breakers to ensure grid stability.
+4. Monitor the network flow statistics for any further anomalies.
+
+Priority is to ensure the continuity and safety of the physical process. Investigation into the cause of the anomaly will follow.

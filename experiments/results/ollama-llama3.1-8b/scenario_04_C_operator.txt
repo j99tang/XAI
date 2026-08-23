@@ -1,0 +1,15 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** The observed pattern of small packets with headers dominating the traffic (Flow IAT Min: value=16) and high SYN Flag Count with low ACK Flag Count indicates a potential flood/scanning attack. This could lead to RTU CPU/link exhaustion, delayed or dropped telemetry, and operator flying blind on that zone.
+
+**Immediate Action:** Switch to manual control for RTU-4 to prevent further damage. Check the breaker status at Bus 9 using BR-4-9, BR-7-9, BR-9-10, and BR-9-14 breakers' RTUs. Verify if any other devices in the zone are affected.
+
+**Next Steps:**
+
+1. Switch to manual control for RTU-4.
+2. Check breaker status at Bus 9 using BR-4-9, BR-7-9, BR-9-10, and BR-9-14 breakers' RTUs.
+3. Verify if any other devices in the zone are affected.
+
+**Note:** This is a high-priority incident requiring immediate attention to prevent potential damage to the grid.

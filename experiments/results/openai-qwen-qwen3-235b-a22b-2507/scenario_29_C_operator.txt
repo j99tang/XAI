@@ -1,0 +1,13 @@
+**Briefing: RTU-4 at Bus 9 (ZONE-S) affected.**  
+
+Destination 10.0.0.6:2404 (RTU-4) shows elevated flow activity: 24,321 bytes/sec, max forward packet length 16 bytes, no subflow forward packets, and high forward inter-arrival time (8,303 ms). These patterns indicate many small, irregular packets with long gaps—consistent with scanning or early-stage flooding.  
+
+RTU-4 controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. Risk: if packet load overwhelms RTU, connection table saturation may cause loss of control and visibility (packet starvation effect). Physical impact: inability to open/close breakers during faults—risk of uncontrolled outages or equipment damage.  
+
+**Immediate actions:**  
+1. Switch RTU-4 to **manual local control** at the substation to preserve breaker operability.  
+2. Check status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 for unintended changes.  
+3. Verify RTU-4 responsiveness via local HMI; if unresponsive, prepare for controlled restart per site procedure.  
+4. Monitor adjacent RTU-3 (10.0.0.5) for similar patterns.  
+
+Prioritize maintaining physical system stability. Do not rely on remote SCADA commands to RTU-4 until traffic normalizes. Notify field team for on-site assessment.

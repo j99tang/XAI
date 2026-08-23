@@ -1,0 +1,9 @@
+Illustrative assessment only: the context notes a synthetic grid, not a jurisdictional determination.
+
+Observed event: an IDS/network-flow alert for traffic to 10.0.0.6:2404, mapped to RTU-4, an RTU at Bus 9 controlling listed breakers and designated a BES Cyber Asset under NERC CIP. The detector prediction is “normal” with confidence 0.19; no compromise, disruption, or attempted compromise is in context.
+
+Reportability: On these facts, this does not currently meet the NERC CIP-008-6 threshold for a Reportable Cyber Security Incident, because the context does not establish a compromise, disruption, or attempted compromise of a BES Cyber System or associated EACMS/PACS.
+
+Timeline / notification: No notification is due on the current facts. If later determined to be a Reportable Cyber Security Incident, initial notification is due within one hour to the E-ISAC and, under US jurisdiction, NCCIC/CISA. If determined to be an attempted compromise, notification is due by the end of the next calendar day to the same recipients.
+
+Framework function: Detect.

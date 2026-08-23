@@ -1,0 +1,15 @@
+**Incident Briefing**
+
+Device Affected: RTU-4, IP 10.0.0.6, Zone ZONE-S, Bus 9
+
+Physical Risk: Potential loss of visibility and control of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 due to RTU-4 malfunction.
+
+Next Actions:
+
+1. Check breaker status on Bus 9 using manual controls.
+2. Switch to manual control for RTU-4 to prevent further potential loss of visibility and control.
+3. Verify communication with RTU-4 by checking its IEC-104 endpoint (port 2404) for any signs of packet starvation or other anomalies.
+
+**Immediate Action Required**
+
+Switch to manual control for RTU-4 to ensure continued grid stability and safety.

@@ -1,0 +1,14 @@
+**Operator action briefing**
+
+Affected device: **RTU-3**, IP **10.0.0.5**, IEC-104 endpoint on port **2404**, **ZONE-S**, **Bus 6**. Substation name: **not in context**. RTU-3 controls **BR-5-6, BR-6-11, BR-6-12, BR-6-13**.
+
+This incident: detector reports an **attack** with confidence **1.00** based only on network flow timing, packet sizes, and TCP flags. Observed pattern is abnormal traffic toward RTU-3 with very small/zero-length packet statistics and timing features. No protocol contents or specific control commands are in context.
+
+Immediate physical risk: **loss or delay of remote view/control at Bus 6** through RTU-3. No breaker trip/open/close is evidenced in context, but Bus 6 breaker supervision may be unreliable.
+
+Next actions:
+1. **Check RTU-3 communications and telemetry immediately.**
+2. **Verify actual status/position** of **BR-5-6, BR-6-11, BR-6-12, BR-6-13** using trusted/local indications if available.
+3. **Do not rely on RTU-3 remote indications alone** for Bus 6 switching until verified.
+4. **Avoid non-essential remote switching through RTU-3.**
+5. Manual/local control availability and procedure: **not in context**. If required for safety/continuity, follow approved site procedure.

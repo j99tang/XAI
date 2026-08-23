@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: RTU-4 (10.0.0.6) at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Observed pattern: Unusual network flow statistics, including high Flow Bytes/s, low Fwd Packet Length Max, and high Fwd IAT Max, indicating potential malicious activity.
+
+Physical risk: Possible loss of visibility and control of the substation's breakers if the RTU is overwhelmed or compromised.
+
+Next actions:
+
+1. Check the status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 for any unusual behavior.
+2. Verify RTU-4's connection table and packet response times to ensure it is not being overwhelmed.
+3. Prepare to switch to manual control of the breakers if necessary to maintain grid stability.
+4. Monitor the network flow statistics for further anomalies and be prepared to take additional measures to protect the substation's operations.

@@ -1,0 +1,11 @@
+**Incident Analysis**
+
+The model predicted an attack with a confidence of 1.00. The top SHAP features driving this prediction are:
+
+1. **Flow IAT Min**: The minimum inter-arrival time between packets in the flow is 310ms, with a SHAP value of +0.135. This suggests that the packets are arriving at a relatively consistent rate, which could be indicative of a flood or scan attack.
+2. **Packet Length Max**: The maximum packet length is 48 bytes, with a SHAP value of +0.096. This could indicate that the packets are small, which is consistent with a flood or scan attack.
+3. **Bwd IAT Min**: The minimum inter-arrival time between packets in the reverse direction is 640ms, with a SHAP value of +0.093. This suggests that the packets are arriving at a slower rate in the reverse direction, which could be indicative of a flood or scan attack.
+4. **Fwd PSH Flags**: The number of packets with the PSH flag set is 0, with a SHAP value of +0.047. This could indicate that the packets are not being sent with the PSH flag set, which is consistent with a flood or scan attack.
+5. **Flow IAT Mean**: The mean inter-arrival time between packets in the flow is 1115.84ms, with a SHAP value of +0.031. This suggests that the packets are arriving at a relatively consistent rate, which could be indicative of a flood or scan attack.
+
+These features suggest that the attack is likely a flood or scan attack, possibly a **flooding-family** attack (DoS/flood/starvation). However, it's essential to note that these features can only provide statistical evidence and do not prove the specific attack class. Further analysis is required to determine the exact nature of the attack.

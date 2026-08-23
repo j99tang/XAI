@@ -1,0 +1,13 @@
+**Action Briefing**  
+**Affected Device:** RTU-1 (10.0.0.1, IEC-104, Bus 2, ZONE-N) controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+
+**Physical Risk:** Attack traffic targeting RTU-1’s IEC-104 port (2404) shows patterns consistent with flooding/scanning (low inter-arrival times, uneven packet sizes). This risks **loss of remote visibility/control** of RTU-1’s breakers, per SCADA-1 communication loss consequences. The grid remains operational, but manual intervention will be required for breaker actions at Bus 2.  
+
+**Next Actions:**  
+1. **Verify RTU-1 status:** Check if RTU-1 is unresponsive (e.g., no heartbeat, failed pings).  
+2. **Isolate traffic:** Block flows from IP ranges 121.142.26.0/24 and 134.221.96.0/24 (known attack sources).  
+3. **Switch to manual control:** If RTU-1 is compromised, manually monitor breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 via local switches. Prioritize stability on Bus 2.  
+4. **Inspect RTU-1 logs:** Look for SYN flood indicators (high SYN counts, low ACKs) or sustained packet bursts.  
+5. **Report under NERC CIP-008-6:** Document incident and response steps for regulatory compliance.  
+
+*Do not assume protocol-specific attack details (e.g., malformed commands). Focus on network behavior and physical grid safety.*

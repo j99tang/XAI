@@ -1,0 +1,11 @@
+**Model Analysis**
+
+The model's prediction of "normal" with a confidence of 0.14 is driven by the following flow features:
+
+* **Flow Bytes/s**: -0.083 SHAP contribution indicates that the flow's packet rate is lower than expected, which is a characteristic of normal traffic.
+* **Fwd Packet Length Max**: -0.076 SHAP contribution suggests that the maximum packet length is smaller than usual, which is consistent with normal traffic.
+* **Fwd IAT Max**: -0.068 SHAP contribution indicates that the maximum inter-arrival time between packets is shorter than expected, which is a characteristic of normal traffic.
+* **Subflow Fwd Packets**: -0.052 SHAP contribution suggests that there are no subflows, which is a characteristic of normal traffic.
+* **FWD Init Win Bytes**: -0.049 SHAP contribution indicates that the initial TCP receive window is smaller than expected, which is consistent with normal traffic.
+
+These features collectively suggest that the flow is normal, with no indication of a sustained attack or flood/scanning behavior. However, the low confidence level (0.14) indicates that the model is not entirely sure about the prediction, and further analysis is needed to confirm the result.

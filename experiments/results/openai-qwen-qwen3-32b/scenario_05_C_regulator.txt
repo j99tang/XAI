@@ -1,0 +1,6 @@
+**Compliance Assessment**  
+The incident involves an intrusion alert targeting **RTU-1** (a BES Cyber Asset under NERC CIP), which controls breakers at Bus 2 in **ZONE-N**. The alert (confidence: 1.00) indicates a potential compromise of the RTU’s IEC-104 endpoint (port 2404). Under **NERC CIP-008-6**, a Reportable Cyber Security Incident includes a "compromise or disruption" of a BES Cyber System. The RTU’s role in controlling critical breakers and its classification as a BES Cyber Asset plausibly meet this threshold.  
+
+Reporting is required to **E-ISAC** and **NCCIC/CISA** (per jurisdiction) within **one hour or by the end of the next calendar day** for attempted compromises, as specified in NERC CIP-008-6. Required attributes (e.g., asset details, impact assessment) must accompany notifications.  
+
+This response aligns with the **Detect** function of the NIST CSF, leveraging IDS systems (per NIST SP 800-61r3) to identify anomalies. The synthetic grid context precludes jurisdictional certainty, but the assessment is illustrative. No evidence confirms the attack class (e.g., DoS, MITM), but the affected asset and alert severity trigger reporting obligations.

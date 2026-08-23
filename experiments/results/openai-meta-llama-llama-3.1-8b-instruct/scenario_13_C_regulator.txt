@@ -1,0 +1,11 @@
+**Regulatory Assessment**
+
+**Incident Summary:** An intrusion alert was detected on RTU-4 (10.0.0.6), a BES Cyber Asset, with a prediction confidence of 1.00. The alert indicates an attack on the device, which controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Reportability:** The affected asset, RTU-4, is a BES Cyber Asset, which is a Reportable Cyber Security Incident under NERC CIP-008-6. The incident plausibly meets the threshold for a reportable cyber security incident.
+
+**Reporting Timeline:** Since the incident is a compromise of a BES Cyber Asset, the reporting timeline is within one hour of determining the incident. The incident was detected, and the reporting clock starts immediately.
+
+**Notification:** The incident must be notified to the E-ISAC and, under US jurisdiction, the NCCIC/CISA.
+
+**Framework Function:** This response sits under the Detect function of the NIST CSF 2.0 framework, as the incident was detected by an IDS system. The subsequent response and recovery efforts would fall under the Respond and Recover functions, respectively.

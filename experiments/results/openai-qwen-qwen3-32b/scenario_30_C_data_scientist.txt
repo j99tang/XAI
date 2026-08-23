@@ -1,0 +1,9 @@
+**Model Analysis**  
+The model predicted "normal" with low confidence (0.14), indicating uncertainty. The top SHAP features driving this prediction (all negative for "attack") suggest a **non-attack fingerprint**:  
+- **Low packet volume**: `Total Fwd Packets=26` (small flow size), inconsistent with flooding/scanning attacks (which require high packet counts).  
+- **High inter-arrival time variability**: `Active Std=1.46e7`, `Active Mean=9.07e6`, and `Active Min=1585` (seconds?), implying long pauses between packets—unlike attack patterns (e.g., port scans with rapid, short bursts or starvation attacks with sustained traffic).  
+- **Small packet sizes**: `Fwd Packet Length Max=120` (bytes), aligning with normal control traffic (e.g., headers-only) rather than bulk data exfiltration or command injection.  
+
+**Attack Pattern Context**: These features contradict known fingerprints like port scans (many short flows, high SYN/RST flags) or starvation attacks (high concurrent flows to IEC-104 ports). The flow lacks signals of MITRE ATT&CK T0846 (Remote System Discovery) or T0814 (DoS).  
+
+**Caveats**: The model observes only statistical flow metadata (packet counts, timing, sizes), not IEC-104 protocol semantics. While the fingerprint rules out flooding/scanning families, it cannot confirm protocol-level anomalies (e.g., malformed IEC-104 commands). The destination port (123, NTP) is not inherently suspicious (per context). Low confidence reflects weak alignment with both attack and normal baselines.

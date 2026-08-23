@@ -1,0 +1,16 @@
+**Incident Briefing**
+
+Device affected: RTU-4 (10.0.0.6) at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Observed pattern: A single packet with a FIN flag has been sent to the RTU, with a relatively high flow byte rate (14733.6 bytes/s) and a long maximum inter-arrival time (17505).
+
+Physical risk: Potential disruption to substation operations, potentially leading to loss of visibility and control of the breakers.
+
+Next actions: 
+
+1. Check the status of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+2. Verify RTU-4's connection status and response to commands.
+3. Prepare to switch to manual control if RTU-4 becomes unresponsive.
+4. Monitor network traffic for further anomalies.
+
+Priority is to ensure continuity of the physical process and safety of the substation. Further investigation into the cause of the alert will follow.

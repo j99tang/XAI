@@ -1,0 +1,14 @@
+**Briefing:**  
+**Affected Device:** RTU-2 (10.0.0.3), ZONE-C, Bus 4. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.  
+
+**Situation:** Unusual network traffic detected on RTU-2’s IEC-104 port (2404). Flow stats show abnormally low inter-arrival times (Flow IAT Min=57ms, Bwd IAT Min=209ms) and small packet sizes (max 24B, min 0B). Pattern matches flood/scanning behavior (rapid, tiny packets).  
+
+**Physical Risk:** If RTU-2 is overwhelmed, SCADA-1 loses remote visibility/control of its breakers. Grid remains operational, but manual intervention required for critical switching at Bus 4.  
+
+**Next Actions:**  
+1. **Check Breaker Status:** Verify real-time status of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via local Human-Machine Interface (HMI) or field operators.  
+2. **Switch to Manual Control:** Engage manual override for all RTU-2–controlled breakers to maintain physical process continuity.  
+3. **Isolate RTU-2 Network:** Temporarily block unsolicited ingress traffic to 10.0.0.3:2404 (preserve IEC-104 polling only from SCADA-1).  
+4. **Log and Escalate:** Capture traffic logs for forensic analysis; notify cybersecurity team per NERC CIP-008-6.  
+
+*Do not assume protocol-specific attack details (e.g., malformed commands). Prioritize grid stability over root-cause analysis.*

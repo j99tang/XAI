@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+The incident involves a detected attack on RTU-3 (10.0.0.5), a BES Cyber Asset under NERC CIP, which controls breakers at Bus 6. Given the asset's criticality to the Bulk Electric System, this incident plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6.
+
+As this is an attempted compromise, the reporting timeline is by the end of the next calendar day. Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. Required attributes for reporting include functional impact, attack vector, and level of intrusion.
+
+This response sits under the **Detect** and **Respond** functions of the NIST CSF 2.0 framework. Note that our grid is a synthetic IEEE 14-bus overlay, and NERC CIP obligations are applied illustratively, not as a jurisdictional determination. 
+
+The incident's reportability rests on the affected asset, not the attack type, which is not specified beyond a high-confidence prediction of an attack.

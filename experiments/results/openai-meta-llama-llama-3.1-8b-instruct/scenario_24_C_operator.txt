@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N, controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+**Physical Risk:** The RTU-1 is experiencing a potential security incident, which may compromise its ability to control the breakers it supervises. This could lead to a loss of view and control of the substation, potentially causing a grid instability or even a blackout.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch the control of the breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to manual mode to prevent any potential loss of control.
+2. **Verify breaker status**: Check the status of the breakers to ensure they are in a safe state.
+3. **Isolate RTU-1**: Isolate RTU-1 from the network to prevent further potential attacks.
+4. **Investigate and contain**: Investigate the incident and contain the affected device to prevent further potential damage.
+
+**Next Steps:**
+
+1. **Check RTU-1's communication**: Verify that RTU-1 is not communicating with any other devices on the network.
+2. **Check breaker settings**: Verify that the breaker settings are not compromised.
+3. **Review network logs**: Review the network logs to determine the source and nature of the attack.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation.

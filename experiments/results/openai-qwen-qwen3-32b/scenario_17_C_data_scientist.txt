@@ -1,0 +1,6 @@
+The model flagged this flow as an attack (confidence: 1.00) due to a statistical fingerprint consistent with **SYN flood/DoS behavior**. Key features:  
+- **Flow IAT Min=298** (SHAP +0.156) and **Flow IAT Mean=1381.82** (SHAP +0.037) suggest irregular inter-arrival timing, deviating from normal IEC-104 polling’s regular intervals.  
+- **Packet Length Max=48** (SHAP +0.114) aligns with "small packets (headers dominate) ⇒ flood/scan" patterns, indicative of header-heavy traffic typical in SYN floods.  
+- **ACK Flag Count=0** (SHAP +0.030) and **Fwd PSH Flags=0** (SHAP +0.056) imply incomplete TCP handshakes and lack of data transfer, matching SYN flood tactics where attackers avoid completing connections to exhaust resources.  
+
+This signature corresponds to **MITRE ATT&CK ICS T0814 (Denial of Service)**, specifically SYN-based flooding. However, the model cannot confirm protocol semantics (e.g., whether packets target IEC-104-specific operations) or distinguish between automated scans and sustained attacks without temporal context. While the statistical profile strongly suggests a flooding-family attack, it does not prove intent or physical impact, which require correlating with grid topology and operational data (outside the model’s scope). The destination port (2404) indicates an IEC-104 endpoint but carries only mild signal, per the context.

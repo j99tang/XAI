@@ -1,0 +1,12 @@
+**Compliance Assessment**  
+A high-confidence intrusion alert (1.00) targeted RTU-4 (BES Cyber Asset, IEC-104-controlled station, GridCom GC-4000) at destination port 2404, a known IEC-104 endpoint. Network flow statistics (e.g., Bwd IAT Min=0, Packet Length Min=0) suggest anomalous traffic patterns consistent with potential scanning or probing.  
+
+Under **NERC CIP-008-6**, an *attempted* compromise of a BES Cyber System (RTU-4) is reportable, even if unsuccessful. The alert plausibly meets this threshold due to the asset’s criticality and the intrusion’s targeting of a BES Cyber System.  
+
+**Reporting timeline**: Notification must occur **by the end of the next calendar day** (per R4 for attempted compromises). Notifications are due to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction).  
+
+**Framework function**: This response falls under **Detect** (NIST SP 800-61r3) and aligns with the NIST CSF **Detect** function.  
+
+**Jurisdictional note**: This assessment is illustrative; the synthetic grid context does not confirm actual NERC CIP jurisdiction.  
+
+No attack type (e.g., MITRE ATT&CK T0840) is asserted beyond the alert’s binary classification.

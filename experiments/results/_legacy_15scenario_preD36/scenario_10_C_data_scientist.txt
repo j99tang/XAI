@@ -1,0 +1,13 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Flow Duration**: 12.3 seconds
+* **Total Bwd packets**: 50 packets
+* **Bwd IAT Max/Flow IAT Max**: 0.5 seconds
+* **Dst_Port**: 2404 (indicative of an IEC-104 endpoint)
+* **Fwd Act Data Pkts**: 20 packets
+
+The model's confidence is moderate, with a SHAP contribution score of 0.7.
+
+These features suggest that the flow exhibits characteristics of a flood/scan attack, likely due to the presence of many small packets (headers dominate) and a high number of client packets carrying payload. The destination port (2404) indicates an IEC-104 endpoint, which is consistent with the RTU's role in controlling breakers.
+
+However, it's essential to note that these features can only prove statistical fingerprints of potential attack behavior, not specific protocol actions or malicious intent. Further analysis and context are required to determine the actual nature of this incident.

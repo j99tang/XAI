@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device Affected: RTU-4, 10.0.0.6, Zone ZONE-S, Bus 9
+
+Physical Risk: Potential loss of control and view of breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 due to possible attack on the RTU.
+
+Next Actions:
+
+1. Immediately switch to manual control for RTU-4.
+2. Check breaker status for BR-4-9, BR-7-9, BR-9-10, and BR-9-14 to ensure they are not affected by potential loss of control.
+3. Verify the integrity of the IEC-104 connection between RTU-4 and SCADA-1 (10.0.0.2).
+4. Monitor network traffic for any signs of continued attack or unusual activity.
+
+Priority: Ensure safety and continuity of the physical process over investigation.

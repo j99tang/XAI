@@ -1,0 +1,7 @@
+Model verdict: **attack**, confidence **1.00**, targeting **RTU-3 (10.0.0.5) on TCP/2404**, an IEC-104 endpoint.
+
+The prediction was driven by a zero/small-packet timing fingerprint: **Bwd IAT Min=0** with SHAP **+0.054** indicates the minimum backward inter-arrival time was zero; **Flow IAT Min=217** with SHAP **+0.048** indicates a very short minimum flow inter-arrival gap, though units are **not in context**. Size features also pushed strongly toward attack: **Packet Length Min=0** (**+0.038**), **Bwd Packet Length Min=0** (**+0.034**), and **Packet Length Max=0** (**+0.033**). In the provided taxonomy, small/zero-byte traffic is associated with header-dominated traffic, control traffic, short probes, SYN-scan-like pure signalling, and flood/scan fingerprints.
+
+This feature signature therefore fits a **flood/scan/probe-family statistical fingerprint**, especially no-payload or very-small-packet signalling behavior, rather than normal balanced IEC-104 polling.
+
+Caveat: these are **CICFlowMeter flow statistics only**. They do **not** prove a specific IEC-104 command, breaker action, SYN state, payload content, or attack class. The detector is binary, so it only supports “attack-like vs normal,” not a definitive DoS, scan, or protocol-semantic diagnosis.

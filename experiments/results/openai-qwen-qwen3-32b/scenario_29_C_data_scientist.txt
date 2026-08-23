@@ -1,0 +1,16 @@
+**Model Analysis**  
+The model predicted "normal" with low confidence (0.14), but the top SHAP features (all negative) suggest a weak signal toward attack-like patterns. Key features include:  
+- **Flow Bytes/s (24321.1)**: Low-to-moderate throughput, consistent with small-packet floods/scans (document 1: "many small packets ⇒ flood/scan").  
+- **Fwd Packet Length Max (16)**: Extremely small packets, aligning with header-dominant traffic (document 1: "small packets ⇒ flood/scan").  
+- **Fwd IAT Max (8303)**: High inter-arrival time, possibly indicating irregular timing (e.g., slow probing).  
+- **Subflow Fwd Packets (0)**: No subflow activity, suggesting a short, isolated interaction (document 1: "small ⇒ short probe").  
+- **FWD Init Win Bytes (259)**: Modest initial window size, potentially fingerprintable (document 1: "fingerprintable stack").  
+
+**Attack Pattern**: The signature resembles **reconnaissance** (e.g., MITRE ATT&CK T0846: Remote System Discovery) or a **short probe** (document 2: "portscan" with "tiny Fwd Act Data Pkts"). However, the model lacks confidence due to weak statistical fingerprints.  
+
+**Caveats**:  
+- The model uses CICFlowMeter features (e.g., packet sizes, timing) but cannot infer IEC-104 protocol semantics. Small packets may reflect legitimate control traffic (e.g., IEC-104 commands), not attacks.  
+- Zero subflow packets and low flow bytes could indicate a benign one-time command (e.g., breaker status query) rather than malicious activity.  
+- No evidence of sustained flows, high packet counts, or protocol anomalies (e.g., malformed IEC-104) to confirm exploitation.  
+
+**Conclusion**: The features are consistent with low-intensity reconnaissance but lack definitive proof of an attack. Contextual validation (e.g., protocol analysis, topology checks) is required.

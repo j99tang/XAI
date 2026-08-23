@@ -1,0 +1,10 @@
+INTRUSION ALERT
+prediction: attack
+confidence: 1.00
+destination: 10.0.0.3:2404
+top SHAP features (toward 'attack'):
+  Flow IAT Min: value=298, SHAP=+0.156
+  Packet Length Max: value=48, SHAP=+0.114
+  Fwd PSH Flags: value=0, SHAP=+0.056
+  Flow IAT Mean: value=1381.82, SHAP=+0.037
+  ACK Flag Count: value=0, SHAP=+0.030

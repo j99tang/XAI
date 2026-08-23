@@ -1,0 +1,18 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4 (10.0.0.6) in Zone S, Bus 9
+
+**Physical Risk:** The RTU is experiencing a potential denial of service (DoS) attack, which could lead to a loss of visibility and control of the substation's breakers. If the RTU is overwhelmed, it may stop responding, causing a full loss of control of the substation.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch to manual control of the affected breakers (BR-4-9, BR-7-9, BR-9-10, BR-9-14) to prevent any potential loss of control.
+2. **Check RTU-4's connection table**: Verify the RTU's connection table to determine if it has reached its limit and is unable to accept new connections.
+3. **Verify breaker status**: Confirm the status of the breakers controlled by RTU-4 to ensure they are not malfunctioning or causing any safety issues.
+4. **Monitor the situation**: Continuously monitor the RTU's performance and the breaker status to ensure the situation does not escalate.
+
+**Next Steps:**
+
+* Investigate the cause of the attack and take corrective action to prevent future incidents.
+* Review the RTU's configuration and security settings to ensure they are up-to-date and secure.
+* Consider implementing additional security measures to protect the RTU and the substation from similar attacks.

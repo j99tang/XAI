@@ -1,0 +1,23 @@
+**Regulatory Assessment**
+
+**Incident Details:**
+
+* Affected Asset: RTU-2 (IEC-104 controlled station, GridCom GC-4000), a BES Cyber Asset under NERC CIP
+* Incident Type: Predicted attack on RTU-2
+* Destination: 10.0.0.3:2404 (IEC-104 endpoint)
+
+**Reportability:**
+
+Based on NERC CIP-008-6, a Reportable Cyber Security Incident is triggered when a BES Cyber System or its associated EACMS/PACS is compromised or disrupted. Since RTU-2 is a BES Cyber Asset, this incident plausibly meets the Reportable threshold.
+
+**Reporting Timeline:**
+
+The incident is an attempted compromise, so the next-calendar-day reporting timeline applies. The incident must be reported to the E-ISAC and, under US jurisdiction, the NCCIC/CISA by the end of the next calendar day.
+
+**Notification:**
+
+The required attributes for notification include functional impact, attack vector, and level of intrusion. Although some of these attributes may be unknown at first notification, they must be provided as soon as possible.
+
+**Framework Function:**
+
+This response sits under the Detect function of the NIST CSF 2.0 framework, as the IDS system detected the potential attack. The subsequent response and recovery efforts will be covered under the Respond and Recover functions, respectively.

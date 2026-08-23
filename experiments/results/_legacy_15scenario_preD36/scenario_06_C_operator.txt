@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, located at Bus 4 in Zone C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, and BR-4-9.
+
+**Physical Risk:** The observed pattern of many small packets (headers dominating) indicates a potential flood/scan attack. This could lead to RTU connection table exhaustion, causing the system to become unresponsive or even crash. If left unchecked, this could disrupt power flow on Bus 4, affecting multiple breakers and potentially leading to a grid instability.
+
+**Next Actions:**
+
+1. Immediately switch control of RTU-2 to manual mode to prevent further potential damage.
+2. Check breaker BR-2-4 for any signs of malfunction or unusual behavior.
+3. Verify the status of all five breakers controlled by RTU-2 and take corrective action if necessary.
+
+**Note:** The exact nature of the attack (flood/scan) is not yet confirmed, but the observed pattern warrants immediate attention to prevent potential grid instability.

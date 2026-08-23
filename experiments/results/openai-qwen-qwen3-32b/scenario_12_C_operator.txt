@@ -1,0 +1,13 @@
+**Briefing:**  
+**Affected Device:** RTU-3 (10.0.0.5, IEC-104, Bus 6, ZONE-S) controls breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13.  
+
+**Physical Risk:** Attack traffic targeting port 2404 shows **zero-minimum backward/flow inter-arrival times (Bwd IAT Min=0, Flow IAT Min=258)** and **zero-min packet lengths**, consistent with flooding patterns (high packet rates, irregular timing). This risks RTU-3 CPU/link saturation, causing delayed/dropped telemetry or loss of control over its breakers.  
+
+**Next Actions:**  
+1. **Switch to manual control** for breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13 immediately to retain physical process control.  
+2. **Check RTU-3 status** via local HMI (if accessible) for signs of unresponsiveness or command failures.  
+3. **Isolate RTU-3’s network connection** by tripping the circuit breaker for its network segment (ZONE-S, Bus 6) to block attack traffic.  
+4. **Disable IEC-104 on port 2404** at RTU-3 to prevent further command/reply loops.  
+5. Monitor breaker statuses manually; do not re-enable IEC-104 until network traffic normalizes and RTU-3 is verified operational.  
+
+*Per NERC CIP-008-6, escalate incident reporting post-stabilization.*

@@ -1,0 +1,11 @@
+Based on the provided context, the model's prediction of an attack is driven by the following flow features:
+
+* Bwd IAT Min (minimum inter-arrival time between packets in the backward direction) with a value of 0 and a SHAP contribution of +0.061.
+* Flow IAT Min (minimum inter-arrival time between packets in the flow) with a value of 250 and a SHAP contribution of +0.050.
+* Packet Length Min (minimum packet length) with a value of 0 and a SHAP contribution of +0.040.
+* Bwd Packet Length Min (minimum packet length in the backward direction) with a value of 0 and a SHAP contribution of +0.036.
+* Packet Length Max (maximum packet length) with a value of 0 and a SHAP contribution of +0.035.
+
+These features suggest a flooding or scanning attack, as the minimum inter-arrival times are low, indicating a high rate of packets being sent. The fact that the packet lengths are all 0 suggests that the attack is using small packets, which is a characteristic of flooding or scanning attacks.
+
+The model's confidence is 1.00, indicating that it is highly certain in its prediction. However, it's essential to note that the model is only seeing CICFlowMeter flow statistics, not IEC-104 protocol semantics, so the explanation is limited to statistical fingerprints rather than proof of specific protocol actions.

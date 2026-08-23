@@ -1,0 +1,14 @@
+Action briefing:
+
+Affected device: RTU-1, GridCom GC-4000 RTU at Bus 2, ZONE-N. Substation name: not in context. RTU-1 controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+What is happening: Alert shows attack prediction confidence 1.00 on traffic to 10.0.0.1:2404, the IEC-104 endpoint. Evidence is network flow statistics only: timing, packet sizes, TCP flags. No protocol contents are in context.
+
+Immediate physical risk: possible loss or delay of supervisory view/control for Bus 2 breakers. No evidence in context of an actual breaker trip, close, or command.
+
+Next actions:
+1. Verify RTU-1 communications and health immediately.
+2. Check present status/telemetry for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+3. Do not perform nonessential remote switching through RTU-1 until communications are confirmed reliable.
+4. Manual/local control capability is not in context. If approved site procedure confirms manual control is available, use manual/local control for any required Bus 2 switching until RTU-1 is verified.
+5. Maintain grid continuity; only switch if needed for safety or system stability.

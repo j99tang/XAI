@@ -1,0 +1,14 @@
+**Incident Briefing**
+
+Device affected: RTU-2 (10.0.0.3) at Bus 4, Zone ZONE-C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Physical risk: Potential loss of view and control of the breakers, or unintended switching, which could lead to grid instability or equipment damage.
+
+Next actions:
+
+1. Check the status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 for any unusual activity.
+2. Verify the integrity of RTU-2's connections and data exchange with SCADA-1.
+3. Consider switching to manual control of the affected breakers to prevent potential damage or instability.
+4. Investigate the network traffic pattern that triggered the alert, characterized by minimum backward inter-arrival time (Bwd IAT Min) and flow inter-arrival time (Flow IAT Min), and minimum packet lengths.
+
+Prioritize safety and continuity of the physical process. Further analysis of the network traffic pattern will be conducted to determine the cause of the alert.

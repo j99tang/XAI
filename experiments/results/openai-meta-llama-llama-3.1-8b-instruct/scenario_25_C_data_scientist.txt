@@ -1,0 +1,13 @@
+**Model Analysis**
+
+The model's prediction of an attack is driven by the following flow features:
+
+* Bwd IAT Min (value=0, SHAP=+0.063): The minimum inter-arrival time between packets in the backward direction is 0, indicating a high rate of packet transmission.
+* Flow IAT Min (value=295, SHAP=+0.053): The minimum inter-arrival time between packets in the flow is 295, indicating a high rate of packet transmission.
+* Packet Length Min (value=0, SHAP=+0.043): The minimum packet length is 0, indicating a high rate of packet transmission.
+* Packet Length Max (value=0, SHAP=+0.036): The maximum packet length is 0, indicating a high rate of packet transmission.
+* Bwd Packet Length Min (value=0, SHAP=+0.035): The minimum packet length in the backward direction is 0, indicating a high rate of packet transmission.
+
+These features suggest a flooding attack, where the attacker is sending a high volume of packets to the destination IP address (10.0.0.3:2404). The model's confidence is 1.00, indicating a strong prediction of an attack.
+
+The evidence boundary is limited to the CICFlowMeter flow statistics, which do not provide information about the IEC-104 protocol semantics. Therefore, we cannot assert that the attack is a specific type of attack (e.g., flooding, scanning, etc.) without further analysis.

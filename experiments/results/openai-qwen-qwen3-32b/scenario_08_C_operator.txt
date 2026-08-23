@@ -1,0 +1,13 @@
+**Briefing:**  
+**Affected Device:** RTU-4 (10.0.0.6) at Bus 9, Zone ZONE-S, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+
+**Physical Risk:** High-volume small-packet traffic (Bwd IAT Min=0, Flow IAT Min=52) indicates a **packet-flooding attack** targeting IEC-104 port 2404. This risks RTU CPU/link saturation, causing delayed/dropped telemetry or breaker command failures. Loss of real-time visibility/control at Bus 9 could destabilize Zone ZONE-S if breakers trip unexpectedly or fail to respond.  
+
+**Next Actions:**  
+1. **Switch to manual control** for breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14 immediately to prevent unintended automated actions.  
+2. **Check RTU-4 status** via local HMI (if available) for CPU/load errors or communication timeouts.  
+3. **Isolate RTU-4’s network connection** (e.g., disable port or apply rate-limiting ACLs) to mitigate flood traffic.  
+4. **Verify breaker positions** (BR-4-9, BR-7-9, BR-9-10, BR-9-14) via direct status checks to confirm alignment with grid state.  
+5. **Log and report** per NERC CIP-008-6 requirements post-stabilization.  
+
+*Do not attempt protocol-level analysis during mitigation; prioritize grid stability and physical safety.*

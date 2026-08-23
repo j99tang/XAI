@@ -1,0 +1,12 @@
+Affected device: RTU-2, GridCom GC-4000 IEC-104 controlled station, IP 10.0.0.3:2404, ZONE-C, Bus 4. Substation name: not in context.
+
+What is happening: Alert shows abnormal network flow statistics to RTU-2 control port, including very short/zero-length packet measures and tight timing. Detector labels this as attack with confidence 1.00, but it saw only timing, sizes, and TCP flags — no command contents.
+
+Immediate physical risk: RTU-2 may have delayed, lost, or unreliable supervisory view/control at Bus 4. Risk is loss of dependable remote status/control for breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. No breaker operation is evidenced in context.
+
+Next actions:
+1. Do not issue non-essential remote switching through RTU-2 until control/telemetry is verified.
+2. Immediately verify RTU-2 health/communications and current indications for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. Cross-check breaker status by independent/local indication if available; availability not in context.
+4. If RTU-2 telemetry/control is not dependable, switch affected Bus 4 breaker control to manual/local control where available; availability/procedure not in context.
+5. Maintain current grid configuration unless a confirmed electrical condition requires switching.

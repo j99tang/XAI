@@ -1,0 +1,12 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* The maximum inter-arrival time between packets in a flow (Bwd IAT Max/Flow IAT Max) was high.
+* The total number of packets sent from the destination to the source (Total Bwd packets) was low.
+* The number of client packets actually carrying payload (Fwd Act Data Pkts) was low.
+* The per-subflow volume of packets and bytes (subflow_volume) was high.
+
+These features correspond to a sustained attack flow, which is indicative of a DoS/flood/starvation behavior family. However, it's essential to note that the presence of an IEC-104 endpoint (Dst Port = 2404) carries a mild signal only, as scans/DoS hit varied ports.
+
+The model's confidence in this prediction is moderate, but not high. The evidence boundary is limited to CICFlowMeter flow statistics, which do not provide insight into the IEC-104 protocol semantics. Therefore, we cannot assert that this is a specific attack class (e.g., bulk command injection) without further analysis.
+
+In conclusion, while the model's prediction suggests a sustained attack flow, it's crucial to investigate further to determine the actual attack pattern and its implications for the system's security.

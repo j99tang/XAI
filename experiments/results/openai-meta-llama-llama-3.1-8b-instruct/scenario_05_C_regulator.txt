@@ -1,0 +1,11 @@
+**Compliance Assessment**
+
+**Incident Summary:** An intrusion alert was detected on RTU-1 (10.0.0.1) at Bus 2, zone ZONE-N, which controls breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5. The alert indicates a prediction of an attack with high confidence (1.00) targeting the IEC-104 endpoint on port 2404.
+
+**Reportability:** The affected asset is a BES Cyber Asset under NERC CIP, which is a Reportable Cyber Security Incident under NERC CIP-008-6. The incident meets the threshold for reporting as it involves a potential compromise of a BES Cyber System.
+
+**Reporting Timeline:** The incident must be reported to the E-ISAC within one hour or by the end of the next calendar day.
+
+**Notification:** The report must be submitted to the E-ISAC, as per the relationship between E-ISAC and NERC CIP-008-6.
+
+**Framework Function:** This response sits under the CSF function of Detect & Analyze, as the incident was detected by the IDS system, and the affected device was identified.

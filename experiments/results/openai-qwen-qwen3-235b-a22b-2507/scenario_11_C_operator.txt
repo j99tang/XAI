@@ -1,0 +1,15 @@
+**Briefing:**
+
+Affected device: RTU-2 (10.0.0.3), Zone C, Bus 4. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+What is happening: Network traffic to RTU-2 shows zero backward inter-arrival times (Bwd IAT Min and Max = 0), minimal packet sizes (min 0, max 8 bytes), and no forward PSH flags. This indicates a flood of small, frequent inbound packets with no responsive traffic from the RTU — consistent with a denial-of-service condition.
+
+Physical risk: RTU-2 may be unresponsive due to resource exhaustion. Loss of telemetry and control at Bus 4. Uncontrolled fault isolation or load imbalance possible if breakers cannot be operated.
+
+Next actions:  
+1. Immediately switch RTU-2 to manual local control at the substation.  
+2. Verify status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via field personnel or backup SCADA path.  
+3. Isolate RTU-2 network segment if possible without disrupting adjacent zones.  
+4. Do not attempt remote commands. Maintain grid stability through adjacent buses.
+
+Priority: Preserve physical process integrity. Assume RTU is compromised or offline until proven otherwise.

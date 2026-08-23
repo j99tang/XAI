@@ -1,0 +1,15 @@
+Action briefing:
+
+Affected device: ENG-WS-1, 10.0.0.4, engineering workstation in ZONE-CC, EACMS. Affected substation: not in context.
+
+What is happening: detector flagged traffic to ENG-WS-1 on port 123 as “attack” with 0.59 confidence. Evidence is network flow statistics only: packet counts, packet size, timing gaps, and TCP-flow features. No protocol contents or control commands were observed.
+
+Immediate physical risk: no affected breaker, RTU, bus, or substation is identified in context. Direct physical switching risk is not in context.
+
+Next actions:
+1. Do not initiate breaker switching based on this alert alone.
+2. Keep the grid in normal control mode unless independent operational alarms appear.
+3. Breakers to check: not in context.
+4. RTUs to check: not in context.
+5. Manual control: do not switch to manual solely from this alert; manual-control target is not in context.
+6. Confirm ENG-WS-1 status and maintain operator attention on normal SCADA indications for loss of view/control; any specific downstream dependency is not in context.

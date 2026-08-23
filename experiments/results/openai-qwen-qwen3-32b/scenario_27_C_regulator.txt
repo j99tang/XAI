@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-4, IEC-104 controlled station) in **ZONE-S**, a NERC CIP-covered asset. The intrusion alert (destination: 10.0.0.6:2404) plausibly meets the **Reportable Cyber Security Incident** threshold under **NERC CIP-008-6** as an *attempted compromise* of a BES Cyber System. The alert’s SHAP features (e.g., anomalous packet counts, flow metrics) suggest suspicious activity, though the detector classified it as "normal" with low confidence (0.19). Per CIP-008-6, *attempts* to compromise in-scope systems are reportable.  
+
+**Reporting timeline**: **Within one hour** of determination to **E-ISAC** and **NCCIC/CISA** (US jurisdiction). **Required attributes** (functional impact, attack vector) must be included, even if incomplete.  
+
+**Framework function**: **Detect** (NIST CSF 2.0), as the IDS triggered the alert.  
+
+**Note**: This assessment is illustrative; the synthetic grid context does not imply jurisdictional applicability.

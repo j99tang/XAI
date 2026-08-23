@@ -1,0 +1,5 @@
+The binary detector flagged the flow to RTU-2 at 10.0.0.3:2404 as attack with confidence 1.00. The strongest positive SHAP drivers were timing and packet-size statistics: `Bwd IAT Min=0` (+0.054), `Flow IAT Min=468` (+0.044), `Packet Length Min=0` (+0.038), `Bwd Packet Length Min=0` (+0.034), and `Packet Length Max=0` (+0.034). This means the model saw a flow fingerprint with zero/minimal inter-arrival gaps and packet-length statistics recorded as zero, including backward-direction minimum length.
+
+In the provided taxonomy, small packets where headers dominate are associated with flood/scan behavior, and pure signalling such as SYN scans can carry no payload. Thus, this feature signature is consistent with a flooding/scanning/probe-style statistical pattern rather than normal balanced IEC-104 polling.
+
+Caveat: the detector is binary and does not identify the attack class. These SHAP features do not prove a SYN scan, DoS, IEC-104 command, malformed payload, or physical effect. The model sees CICFlowMeter flow statistics only, not IEC-104 protocol semantics or RTU state. Port 2404 indicates an IEC-104 endpoint but is not listed as a top driver here.

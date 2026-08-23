@@ -1,0 +1,13 @@
+**Incident Analysis**
+
+The model's prediction of an attack is driven by the following flow features:
+
+* Flow IAT Min (value=16, SHAP=+0.097): This feature indicates a short inter-arrival time between packets, which is a characteristic of flooding attacks.
+* Packet Length Max (value=6, SHAP=+0.077): This feature suggests that the packets are small, which is consistent with flooding attacks.
+* Packet Length Min (value=0, SHAP=+0.074): This feature indicates that the packets are extremely small, which is a strong indicator of a flooding attack.
+* Bwd Packet Length Min (value=0, SHAP=+0.071): This feature suggests that the packets are extremely small, which is a strong indicator of a flooding attack.
+* Fwd PSH Flags (value=0, SHAP=+0.054): This feature indicates that there are no push flags, which is a characteristic of flooding attacks.
+
+These features correspond to a flooding attack pattern, which is a type of Denial of Service (DoS) attack. The model's confidence is 1.00, indicating a high level of certainty in its prediction.
+
+**Caveat**: The model's evidence is based on statistical fingerprints of the flow features, which can be indicative of a flooding attack but do not provide conclusive proof. The model's explanation is sound, but it is essential to consider the context and other factors to determine the actual attack class.

@@ -1,0 +1,12 @@
+**Compliance Assessment**  
+The incident involves an intrusion alert targeting RTU-4 (a BES Cyber Asset under NERC CIP, controlling breakers at Bus 9). The destination IP:port (10.0.0.6:2404) corresponds to an IEC-104 endpoint, a protocol used for control traffic in BES systems. While the IDS prediction is "normal" (confidence 0.14), the SHAP features (e.g., anomalous packet sizes, inter-arrival times) plausibly indicate an attempted compromise of a BES Cyber System, meeting NERC CIP-008-6’s "attempted compromise" threshold.  
+
+**Reportable?** Yes. Per NERC CIP-008-6 R4, an attempted compromise of a BES Cyber System triggers reporting.  
+
+**Timeline:** Notification must occur **by the end of the next calendar day** (for attempted incidents).  
+
+**Recipients:** E-ISAC and NCCIC/CISA (under US jurisdiction).  
+
+**Framework Function:** This response falls under the **Detect** function of the NIST CSF, as the IDS identifies anomalous traffic requiring further analysis.  
+
+**Note:** This assessment applies NERC CIP-008-6 illustratively to a synthetic grid; jurisdictional applicability is not determined here.

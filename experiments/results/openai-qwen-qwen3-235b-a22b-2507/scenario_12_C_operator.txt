@@ -1,0 +1,15 @@
+**Briefing:**
+
+Affected device: RTU-3 (10.0.0.5), controlling breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13 at Bus 6, ZONE-S.
+
+What is happening: Network traffic to RTU-3 shows near-zero minimum backward inter-arrival time (Bwd IAT Min = 0) and minimal packet lengths (Packet Length Min = 0, Max = 0), with very short flow inter-arrival times (Flow IAT Min = 258 μs). This indicates a high-rate, machine-timed stream of small or empty packets targeting port 2404 (IEC-104). The pattern matches a flooding or SYN flood-style denial-of-service attack, causing potential CPU or communication starvation.
+
+Physical risk: RTU-3 may lose responsiveness, leading to loss of breaker control and telemetry at Bus 6. Uncontrolled conditions could propagate if faults occur and breakers cannot be operated.
+
+Next actions:  
+1. Immediately switch control of BR-5-6, BR-6-11, BR-6-12, BR-6-13 to manual/local mode at the substation.  
+2. Confirm RTU-3 status via local HMI or physical inspection.  
+3. Isolate RTU-3 network if possible without disrupting adjacent devices.  
+4. Maintain manual oversight of Bus 6; prepare for manual fault response.  
+
+Prioritize grid stability and physical safety. Investigation deferred.

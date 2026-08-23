@@ -1,0 +1,25 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, 10.0.0.3, Zone C, Bus 4
+**Physical Risk:** Potential loss of control and view of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9
+
+**Incident Analysis:**
+
+The intrusion alert indicates a potential attack on RTU-2. The observed pattern shows small packets with headers dominating the traffic (small_packets), indicating a flood/scanning attack. The destination port 2404 is indicative of an IEC-104 endpoint.
+
+**Immediate Action:**
+
+1. Switch to manual control for RTU-2 to prevent further potential damage.
+2. Check breaker status and ensure they are not affected by the potential loss of control.
+3. Verify that all other breakers in Zone C are functioning correctly.
+4. Investigate the cause of the attack, but prioritize safety and continuity of the physical process over investigation.
+
+**Next Steps:**
+
+1. Check RTU-2's breaker status and ensure they are not affected by the potential loss of control.
+2. Verify that all other breakers in Zone C are functioning correctly.
+3. Investigate the cause of the attack, but prioritize safety and continuity of the physical process over investigation.
+
+**Manual Control:**
+
+Switch to manual control for RTU-2 to prevent further potential damage. This will allow us to maintain control and view of the breakers while we investigate the cause of the attack.

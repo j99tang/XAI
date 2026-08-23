@@ -137,12 +137,18 @@ runs/
 wandb/
 mlruns/
 
-# --- ccir project: ignore large inputs + generated outputs, keep their READMEs ---
+# --- ccir project: ignore large inputs + regenerable outputs ---
 data/raw/
 data/processed/
-rag_storage/
-experiments/results/*
-!experiments/results/README.md
+rag_storage/          # rebuildable from knowledge_base/ via ingest.py
+
+# experiments/results/ IS committed. The judge scores cost ~$113 of API spend and the
+# narratives cost hours of generation; neither is cheaply reproducible, and open-weights
+# rows are not bit-reproducible at all (OpenRouter routes across providers). Only the
+# regenerable noise is excluded:
+experiments/results/*.log
+experiments/results/max_chars_sweep.json
+experiments/results/.human_score_keymap.json
 
 # Downloaded reference PDFs (paraphrase-from sources; keep local, not committed)
 references/source_library/

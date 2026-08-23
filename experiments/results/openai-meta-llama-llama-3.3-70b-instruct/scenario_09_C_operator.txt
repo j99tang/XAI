@@ -1,0 +1,15 @@
+**Incident Briefing**
+
+Device affected: RTU-1 (10.0.0.1) at Bus 2, zone ZONE-N, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Observed pattern: Unusual network flow statistics indicate potential attack, with low inter-arrival times and small packet sizes.
+
+Immediate physical risk: Loss of visibility and control of breakers supervised by RTU-1, potentially leading to uncontrolled grid operation at that substation.
+
+Next actions:
+
+1. Check breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 for any unusual behavior.
+2. Verify RTU-1 status and attempt to establish manual control if necessary.
+3. Monitor SCADA-1 for loss of communication with RTU-1.
+
+Priority is to ensure grid safety and continuity. Further investigation into the attack will follow.

@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-3, located at Bus 6, controlling breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13.
+
+**Physical Risk:** The observed pattern of many small packets (headers dominate) indicates a potential flood/scan attack. This could lead to RTU-3 becoming overwhelmed, causing instability in the grid and potentially leading to equipment damage or even a blackout.
+
+**Next Actions:**
+
+1. Immediately switch control of RTU-3 to manual mode to prevent further potential damage.
+2. Check breaker BR-5-6 for any signs of malfunction or unusual activity.
+3. Verify that breakers BR-6-11, BR-6-12, and BR-6-13 are functioning correctly and not affected by the potential attack.
+
+**Priority:** Safety and continuity of the physical process take precedence over investigation. We must act quickly to prevent further damage and ensure the stability of the grid.

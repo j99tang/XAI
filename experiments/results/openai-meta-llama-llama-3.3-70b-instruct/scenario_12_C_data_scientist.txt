@@ -1,0 +1,11 @@
+**Incident Analysis**
+
+The intrusion-detection model flagged a flow to RTU-3 (10.0.0.5) with high confidence (1.00) as an attack. The top contributing features are:
+
+* Bwd IAT Min: 0 (SHAP: +0.060)
+* Flow IAT Min: 258 (SHAP: +0.052)
+* Packet Length Min: 0 (SHAP: +0.042)
+* Packet Length Max: 0 (SHAP: +0.036)
+* Bwd Packet Length Min: 0 (SHAP: +0.035)
+
+These features suggest a flow with minimal packet lengths and inter-arrival times, indicative of a flooding-family attack (e.g., DoS/flood/starvation). The model's confidence is high, but it does not identify the specific attack class. The features can prove unusual network activity, but cannot prove specific protocol actions or physical consequences. The evidence is limited to statistical fingerprints and does not account for IEC-104 protocol semantics. Further analysis is needed to determine the potential impact on the grid.

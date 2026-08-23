@@ -1,0 +1,13 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2, located at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+**Physical Risk:** The observed pattern of small packets with headers dominating the traffic may indicate a flood/scanning attack. If this is indeed an attack, it could lead to packet starvation or loss of view and control of RTU-2's breakers, compromising grid safety and operation.
+
+**Next Actions:**
+
+1. Immediately switch to manual control for RTU-2.
+2. Check the status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. Verify that all other RTUs and breakers in the grid are functioning normally.
+
+**Note:** This is a precautionary measure to ensure grid safety and continuity of operation. Further investigation will be conducted once the immediate risk has been mitigated.

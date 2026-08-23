@@ -1,0 +1,19 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N
+
+**Physical Risk:** Potential loss of control of breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5, which could lead to grid instability or even a blackout.
+
+**Immediate Action:**
+
+1. **Switch to manual control**: Immediately switch the affected breakers to manual control to prevent any potential loss of control.
+2. **Check breaker status**: Verify the status of breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are not in an unstable or tripped state.
+3. **RTU-1 inspection**: Inspect RTU-1 for any signs of malfunction or unusual behavior.
+4. **Network traffic monitoring**: Continuously monitor network traffic to identify any further anomalies or suspicious activity.
+
+**Next Steps:**
+
+1. **Investigate the cause**: Once the immediate risk is mitigated, investigate the cause of the incident to determine the root cause and prevent similar incidents in the future.
+2. **Restore to normal operation**: Once the cause is identified and mitigated, restore the breakers to automatic control and verify normal operation.
+
+**Safety First**: The safety of the grid and personnel is the top priority. If there is any doubt about the stability of the grid, take additional precautions to ensure safe operation.

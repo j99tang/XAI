@@ -1,0 +1,4 @@
+**Compliance Assessment**  
+The incident involves a cyber attack on **RTU-2** (a BES Cyber Asset under NERC CIP), targeting its IEC-104-controlled station (port 2404). The intrusion alert (confidence: 1.00) plausibly meets the **Reportable Cyber Security Incident** threshold under **NERC CIP-008-6**, as it constitutes an *attempted compromise* of a BES Cyber System. Per CIP-008-6 R4, notification is required to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) **by the end of the next calendar day**. Required attributes (functional impact, attack vector) must be included. This response falls under the **Detect** function of the NIST CSF.  
+
+**Note**: The synthetic grid context (non-North American topology) means this assessment is illustrative of CIP-008-6 application, not a jurisdictional determination. No attack class (e.g., MITRE ATT&CK T0840) is asserted, as the detector observes only network flow statistics.

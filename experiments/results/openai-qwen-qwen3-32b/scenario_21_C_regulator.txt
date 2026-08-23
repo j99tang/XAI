@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+A cyber security incident plausibly meets the NERC CIP-008-6 threshold for a *Reportable Cyber Security Incident* as it targeted RTU-2 (a BES Cyber Asset under NERC CIP), which controls critical breakers in the Bulk Electric System. The intrusion alert (destination: 10.0.0.3:2404, IEC-104 protocol) indicates an *attempted compromise* of a BES Cyber System, triggering reporting obligations under R4.  
+
+**Reporting timeline**: Notification to E-ISAC and NCCIC/CISA (under US jurisdiction) is required *by the end of the next calendar day* (per CIP-008-6 R4 for attempted compromises). Required attributes (functional impact, attack vector, intrusion level) must be included, even if incomplete.  
+
+**Framework function**: This response falls under the NIST CSF **Detect** function, as the IDS identified anomalous network flow statistics (e.g., zero-byte packets, low inter-arrival times) consistent with an attack.  
+
+**Note**: This assessment is illustrative; the synthetic grid context does not confirm jurisdictional applicability.

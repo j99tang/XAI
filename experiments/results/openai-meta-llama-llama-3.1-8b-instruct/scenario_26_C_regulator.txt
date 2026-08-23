@@ -1,0 +1,17 @@
+**Compliance Assessment**
+
+This incident involves a prediction of an attack on the engineering workstation (ENG-WS-1) in zone ZONE-CC, which is a part of the EACMS/PACS system. The affected asset is a BES Cyber System, as it is a critical system to the reliable operation of the Bulk Electric System.
+
+The attack prediction has a confidence level of 0.59, which is above the threshold for a reportable cyber security incident under NERC CIP-008-6. The affected device is a BES Cyber System, and the attack is predicted to be a sustained attack flow, which is a type of attack that can compromise or disrupt the system.
+
+**Reporting Timeline**
+
+The reporting timeline for this incident is the NERC CIP-008-6 timeline, which requires notification to NCCIC/CISA within one hour or by the end of the next calendar day for attempted compromises.
+
+**Notification**
+
+Notification of this incident is due to NCCIC/CISA, as the affected asset is a BES Cyber System and the attack is predicted to be a sustained attack flow. The notification should include required attributes, as specified in the NERC CIP-008-6 standard.
+
+**Framework Function**
+
+This response sits under the CSF 2.0 functions, specifically the "Detect & Analyze" function, which involves confirming the anomaly is real and identifying the affected device/bus.

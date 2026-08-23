@@ -1,0 +1,7 @@
+**Incident Analysis**
+
+The intrusion detection model has flagged a flow to RTU-4 (10.0.0.6:2404) with a low confidence of 0.15, predicting it as normal. The top SHAP features driving this prediction are Flow IAT Max, Flow Bytes/s, Fwd Packet Length Max, and Total Fwd Packet. 
+
+The negative SHAP values for Flow IAT Max and Flow Bytes/s suggest that the model is weighing against an attack pattern characterized by high inter-arrival times and byte rates, potentially indicative of a flooding or starvation attack. However, the feature values do not strongly support this pattern. The positive SHAP value for Total Fwd Packet suggests a small number of packets, which could be consistent with a probe or scan, but the evidence is not conclusive.
+
+The model's low confidence and the feature attributions do not provide strong evidence for a specific attack class. The features can indicate unusual traffic patterns but cannot prove specific protocol actions or intentions. Further analysis and monitoring are recommended to determine the significance of this flow.

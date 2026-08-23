@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-2 (10.0.0.3) in Zone C, controlling breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+**Physical Risk:** Potential loss of control and visibility over the substation due to RTU malfunction or compromise.
+
+**Immediate Action:**
+
+1. Switch to manual control for RTU-2 by disconnecting it from the IEC-104 network.
+2. Check breaker status on Bus 4 using other available RTUs (e.g., RTU-3).
+3. Verify that no other devices in Zone C are affected.
+4. Initiate a manual switch to isolate the substation if necessary.
+
+**Next Steps:**
+
+1. Investigate the cause of the anomaly and potential attack vectors.
+2. Review security logs for any suspicious activity.
+3. Consult with cybersecurity experts to determine the extent of the incident.
+
+**Priority:** Ensure the safety and continuity of the physical process, while investigating the incident.

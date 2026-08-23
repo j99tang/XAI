@@ -1,0 +1,10 @@
+The model flagged this flow to 10.0.0.3:2404 (an IEC-104 RTU) as attack with **confidence 1.00**, driven by:  
+1. **Bwd IAT Min/Max = 0** (zero backward inter-arrival time), indicating rapid, back-to-back reverse-direction packets—a statistical fingerprint of **packet starvation** or **SYN flood** attacks.  
+2. **Packet Length Max = 8** and **Bwd Packet Length Min = 0**, suggesting small, header-dominated packets (e.g., SYN probes or malformed frames), consistent with **port scanning** or **low-rate flooding**.  
+3. **Fwd PSH Flags = 0**, implying no payload delivery in forward direction—typical of connection-establishment probes (e.g., SYN scans) rather than legitimate IEC-104 control traffic.  
+
+These features align with **flooding-family attacks** (e.g., SYN flood, port scanning) targeting the RTU’s availability, potentially causing loss of telemetry or control (per `attack_taxonomy/attacks.md`). However, the model’s evidence is limited to **statistical fingerprints**:  
+- Zero IATs and small packets suggest rapid probing or flood, but cannot confirm protocol-specific actions (e.g., IEC-104 command injection).  
+- Destination port 2404 (IEC-104) provides context but is not definitive (per Dst_Port note: "mild signal, not a leak").  
+
+Caveat: The model cannot distinguish between benign high-throughput IEC-104 traffic and malicious floods without protocol-level analysis. Attack class (e.g., SYN flood vs. packet flood) remains unresolved by this binary detector.

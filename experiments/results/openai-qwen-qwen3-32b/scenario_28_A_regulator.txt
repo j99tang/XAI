@@ -1,0 +1,4 @@
+INTRUSION ALERT
+prediction: normal
+confidence: 0.15
+destination: 10.0.0.6:2404

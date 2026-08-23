@@ -1,0 +1,8 @@
+**Regulatory Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-2, IEC-104 controlled station, GridCom GC-4000) in **ZONE-C** at **Bus 4**, controlling multiple breakers. The intrusion alert (confidence 1.00) targets the IEC-104 endpoint (port 2404), a critical component of the BES Cyber System. Under **NERC CIP-008-6**, a reportable cyber security incident includes an *attempted* compromise of a BES Cyber System or its associated EACMS/PACS. The alert’s high confidence and targeting of a BES Cyber Asset meet this threshold, as the system’s disruption or compromise could impact the Bulk Electric System.  
+
+**Reporting timeline**: Notification to **E-ISAC** and **NCCIC/CISA** (under US jurisdiction) is required **by the end of the next calendar day** for attempted compromises.  
+
+**Framework function**: This response falls under the **Detect** function of the NIST CSF 2.0, as the IDS identified the anomaly.  
+
+**Note**: This assessment is illustrative, as the context specifies a synthetic grid (not a jurisdictional determination). No protocol contents are analyzed—reportability is based solely on asset classification and intrusion detection.

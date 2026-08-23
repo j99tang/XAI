@@ -1,0 +1,15 @@
+Based on the provided context, I analyzed the intrusion alert and identified the flow features that drove the prediction:
+
+* The model flagged a potential attack with a confidence of 1.00.
+* The top SHAP features contributing to the "attack" prediction are:
+	+ Bwd IAT Min: value=0, SHAP=+0.063
+	+ Flow IAT Min: value=295, SHAP=+0.053
+	+ Packet Length Min: value=0, SHAP=+0.043
+	+ Packet Length Max: value=0, SHAP=+0.036
+	+ Bwd Packet Length Min: value=0, SHAP=+0.035
+
+These features indicate that the flow has a low minimum inter-arrival time (IAT) between packets in both the backward and forward directions, as well as minimal packet lengths. This statistical fingerprint is characteristic of a flood/scan attack family.
+
+However, it's essential to note that these features do not prove a specific attack class or protocol action. The model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. Therefore, the evidence boundary is limited to the observed flow behavior, and further investigation is required to determine the actual attack type.
+
+The destination IP address (10.0.0.3) corresponds to RTU-2, an IEC-104 controlled station in zone ZONE-C. This information may be relevant for further analysis but does not directly contribute to the model's prediction.

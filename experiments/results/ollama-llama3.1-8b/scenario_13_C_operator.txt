@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+Device Affected: RTU-4, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Physical Risk: The observed pattern of small packets with headers dominating the traffic indicates a potential flood/scanning attack. This could lead to delayed or dropped telemetry, forcing operators to fly blind on that zone and potentially causing unplanned switching or loss of control at its bus.
+
+Immediate Action:
+
+1. Switch RTU-4 to manual control mode.
+2. Check breaker BR-9-10 for any unusual activity.
+3. Verify the status of breakers BR-4-9, BR-7-9, BR-9-14.
+4. Monitor network traffic for any signs of continued attack.
+
+Next Steps:
+
+1. Investigate and isolate RTU-4 to prevent further potential damage.
+2. Review system logs for any suspicious activity leading up to the incident.
+3. Consult with security team to determine the root cause and implement countermeasures.
+
+**Safety First**: Ensure that all actions taken do not compromise the stability of the grid or put operators at risk.

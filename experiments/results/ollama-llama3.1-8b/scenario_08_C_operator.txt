@@ -1,0 +1,19 @@
+**Incident Briefing**
+
+**Affected Device:** RTU-4, located at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**Physical Risk:** The observed pattern of small packets with zero bytes and high flow rates indicates a potential flooding attack. If this continues, it may cause RTU CPU/link exhaustion, leading to delayed or dropped telemetry, and potentially forcing the RTU offline.
+
+**Immediate Action:**
+
+1. Switch to manual control for RTU-4 to prevent further potential damage.
+2. Check breaker BR-9-10 status; if it's not already tripped, trip it manually as a precautionary measure.
+3. Verify the status of breakers BR-4-9, BR-7-9, and BR-9-14.
+
+**Next Steps:**
+
+1. Investigate the source of the attack traffic to prevent further incidents.
+2. Review RTU-4's configuration and ensure it is up-to-date with the latest security patches.
+3. Coordinate with the grid operator to assess the impact on the overall grid stability and take necessary measures to mitigate any potential consequences.
+
+**Safety First:** Prioritize the safety of the grid and its operators; if necessary, consider temporarily isolating RTU-4 from the rest of the grid to prevent further damage.

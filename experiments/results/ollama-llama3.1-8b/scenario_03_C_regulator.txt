@@ -1,0 +1,9 @@
+**Regulatory Assessment**
+
+This incident involves a potential cyber security threat to a BES Cyber Asset, specifically RTU-3 at Bus 6, which controls critical breakers BR-5-6, BR-6-11, BR-6-12, and BR-6-13. The detector has predicted an attack with high confidence (1.00) on the IEC-104 endpoint at port 2404 of RTU-3.
+
+Based on NERC CIP-008-6, this incident plausibly meets the threshold for a Reportable Cyber Security Incident as it involves a potential compromise or disruption of a BES Cyber System. The reporting timeline applies within one hour of determining the incident, which is not explicitly stated in the context but can be inferred.
+
+Notification is due to both the E-ISAC and NCCIC/CISA under US jurisdiction. As this assessment is illustrative (the grid is a synthetic IEEE 14-bus overlay), it is essential to note that CIP obligations are applied here for demonstration purposes only, not as a jurisdictional determination.
+
+This incident response sits under the **Detect** capability of the CSF functions, which involves identifying and analyzing potential security threats. The required attributes for reporting include functional impact, attack vector, and level of intrusion, even if some are unknown at first notification (updates will follow).

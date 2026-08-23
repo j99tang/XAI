@@ -1,0 +1,59 @@
+{
+  "scenario_id": "scenario_23",
+  "kind": "tp_cyber",
+  "anomaly_event": {
+    "flow_id": "tp_cyber-iec104starvationattack-RTU-4-22",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.6",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
+    "top_features": [
+      {
+        "name": "Flow IAT Min",
+        "value": 4.0,
+        "shap": 0.11447602873573359
+      },
+      {
+        "name": "Packet Length Max",
+        "value": 42.0,
+        "shap": 0.08192768040648363
+      },
+      {
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.08163751511304955
+      },
+      {
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.0795833905323235
+      },
+      {
+        "name": "Fwd PSH Flags",
+        "value": 0.0,
+        "shap": 0.054307895098766545
+      }
+    ]
+  },
+  "gold_facts": {
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.6 = RTU-4, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-S, at Bus 9, controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14, BES Cyber Asset under NERC CIP (authored overlay).",
+    "attack_class": "iec104starvationattack",
+    "top_features": [
+      "Flow IAT Min",
+      "Packet Length Max",
+      "Bwd Packet Length Min",
+      "Packet Length Min",
+      "Fwd PSH Flags"
+    ],
+    "physical_consequence": "no physical violation \u2014 consequence is loss of visibility/control only (the grid absorbs the outage; remaining branches stay within thermal rating and all bus voltages stay in band)",
+    "is_physical": false,
+    "reportable": "Reportable as an ATTEMPT to compromise a BES Cyber System \u2014 CIP-008-6 R4: notify E-ISAC/NCCIC by the end of the next calendar day. The evidence available (an IDS flow classification) does NOT establish compromise or disruption, so the 1-hour clock does not apply on these facts; it would apply only if a compromise or disruption were subsequently determined."
+  },
+  "scenario_kind": "tp_cyber",
+  "consequence_class": "ABSORBED",
+  "opened_breakers": [
+    "BR-4-9"
+  ],
+  "load_scale": 1.0
+}

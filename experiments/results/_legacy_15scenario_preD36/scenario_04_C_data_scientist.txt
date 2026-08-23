@@ -1,0 +1,11 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Flow Duration**: 0.35 SHAP contribution, indicating a relatively short-lived flow.
+* **Fwd Act Data Pkts**: 0.25 SHAP contribution, suggesting client packets carrying payload were involved in this flow.
+* **Subflow Fwd/Bwd Packets/Bytes**: 0.20 SHAP contribution, implying per-subflow volume was moderate.
+
+These features correspond to a **flood/scanning attack** behavior family (large_packets → sustained_attack_flow relationship). The model's confidence is moderate (SHAP contributions sum up to approximately 0.8).
+
+However, I must note that the presence of an IEC-104 endpoint (Dst Port = 2404) in this flow does not necessarily imply a leak or malicious activity, as it carries only a mild signal according to the knowledge base.
+
+The evidence provided by these features cannot prove the specific attack class, but rather suggests a potential anomaly. Further investigation is required to determine the actual nature of this incident.

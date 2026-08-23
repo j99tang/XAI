@@ -1,8 +1,8 @@
 {
   "scenario_id": "scenario_06",
-  "kind": "tp_cyber",
+  "kind": "tp_physical",
   "anomaly_event": {
-    "flow_id": "tp_cyber-portscanattack-RTU-2",
+    "flow_id": "tp_physical-dosattack-RTU-2-5",
     "src_ip": "121.142.26.78",
     "dst_ip": "10.0.0.3",
     "dst_port": 2404,
@@ -12,43 +12,48 @@
       {
         "name": "Bwd IAT Min",
         "value": 0.0,
-        "shap": 0.05433351887466074
-      },
-      {
-        "name": "Flow IAT Min",
-        "value": 553.0,
-        "shap": 0.04434893491939106
+        "shap": 0.07450341538755688
       },
       {
         "name": "Packet Length Min",
         "value": 0.0,
-        "shap": 0.03770999501662813
+        "shap": 0.046050958294585824
       },
       {
         "name": "Bwd Packet Length Min",
         "value": 0.0,
-        "shap": 0.034011583288633025
+        "shap": 0.039749112529727244
       },
       {
         "name": "Packet Length Max",
         "value": 0.0,
-        "shap": 0.033626270419152046
+        "shap": 0.03564469824503037
+      },
+      {
+        "name": "Fwd PSH Flags",
+        "value": 0.0,
+        "shap": 0.0308964189600579
       }
     ]
   },
   "gold_facts": {
-    "device": "DEVICE (authoritative, from IP map): 10.0.0.3 = RTU-2, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-C, at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.",
-    "attack_class": "portscanattack",
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.3 = RTU-2, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-C, at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, BES Cyber Asset under NERC CIP (authored overlay).",
+    "attack_class": "dosattack",
     "top_features": [
       "Bwd IAT Min",
-      "Flow IAT Min",
       "Packet Length Min",
       "Bwd Packet Length Min",
-      "Packet Length Max"
+      "Packet Length Max",
+      "Fwd PSH Flags"
     ],
-    "physical_consequence": "no physical violation \u2014 consequence is loss of visibility/control only (grid absorbs the outage via redistribution; base-case headroom is large)",
-    "is_physical": false,
-    "reportable": "Reportable Cyber Security Incident (BES Cyber Asset) \u2014 CIP-008-6: notify E-ISAC/NCCIC within 1 hour"
+    "physical_consequence": "physical: overloads: line 2 @ 112.0%, line 3 @ 115.0%, line 9 @ 106.1%",
+    "is_physical": true,
+    "reportable": "Reportable as an ATTEMPT to compromise a BES Cyber System \u2014 CIP-008-6 R4: notify E-ISAC/NCCIC by the end of the next calendar day. The evidence available (an IDS flow classification) does NOT establish compromise or disruption, so the 1-hour clock does not apply on these facts; it would apply only if a compromise or disruption were subsequently determined."
   },
-  "scenario_kind": "tp_cyber"
+  "scenario_kind": "tp_physical",
+  "consequence_class": "OVERLOAD",
+  "opened_breakers": [
+    "BR-4-5"
+  ],
+  "load_scale": 1.5
 }

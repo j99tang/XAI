@@ -1,0 +1,6 @@
+**Regulatory Assessment**  
+The intrusion alert targets RTU-2 (BES Cyber Asset under NERC CIP), a critical IEC-104 endpoint controlling breakers in the Bulk Electric System (BES). The high-confidence detection (1.00) of anomalous traffic (e.g., zero-byte packets, low inter-arrival times) on port 2404 suggests a potential compromise or disruption of a BES Cyber System, as defined under **NERC CIP-008-6**. This plausibly meets the threshold for a **Reportable Cyber Security Incident** due to the asset’s criticality and the observed attack signal.  
+
+Under **NERC CIP-008-6**, entities must notify **NCCIC/CISA** within **one hour** for confirmed compromises or by the **end of the next calendar day** for attempted compromises. The incident falls under the **Detect** function of the NIST CSF, as per NIST SP 800-61r3.  
+
+*Note: This assessment is illustrative; the synthetic grid context does not establish jurisdictional obligations.*

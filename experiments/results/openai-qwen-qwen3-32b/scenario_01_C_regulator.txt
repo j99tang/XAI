@@ -1,0 +1,8 @@
+**Compliance Assessment**  
+The incident involves a **BES Cyber Asset** (RTU-1, IEC-104 controlled station) in **ZONE-N**, controlling critical breakers (BR-1-2, BR-2-3, BR-2-4, BR-2-5). An intrusion alert with high confidence (1.00) was triggered, targeting port 2404 (IEC-104 endpoint), indicating potential reconnaissance or disruption. Per **NERC CIP-008-6**, a reportable cyber security incident involves a *compromise or disruption* of a BES Cyber System. While the alert does not confirm a successful breach, the affected asset’s criticality and the intrusion’s targeting of a BES Cyber System plausibly meet the threshold for a *reportable attempted compromise*.  
+
+**Reporting timeline**: Notification to **NCCIC/CISA** (under US jurisdiction) is required *within one hour* of discovery for attempted compromises. **E-ISAC** notification is also required per NERC CIP-008-6, though jurisdictional applicability is illustrative (context notes a synthetic grid).  
+
+**Framework function**: This response falls under the **Detect** function of the NIST CSF, as the IDS identified anomalous traffic (per NIST SP 800-61r3).  
+
+*Note: This assessment is illustrative; jurisdictional applicability is not confirmed.*

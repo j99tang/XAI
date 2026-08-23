@@ -1,0 +1,13 @@
+**Briefing: RTU-1 at Bus 2 (ZONE-N) under active network attack**
+
+Device **RTU-1 (10.0.0.1)**, controlling breakers **BR-1-2, BR-2-3, BR-2-4, BR-2-5**, is experiencing a high-rate network flood on port 2404. Observed traffic shows near-zero minimum inter-packet intervals (Bwd IAT Min = 0, Flow IAT Min = 553 μs), zero-length packets (Packet Length Min = 0), and no response traffic — consistent with a flooding attack saturating the RTU.
+
+**Physical risk:** RTU may lose communication or fail to process valid commands, leading to loss of breaker control and telemetry at Bus 2. Uncontrolled state changes or inability to isolate faults could cascade.
+
+**Immediate actions:**
+1. Switch all breakers at Bus 2 (**BR-1-2, BR-2-3, BR-2-4, BR-2-5**) to **manual control** immediately.
+2. Verify local status via SCADA backup link; do not rely on RTU-1 telemetry.
+3. Isolate RTU-1 network segment if possible without disrupting adjacent zones.
+4. Prepare manual switching procedures for fault isolation; confirm field crew availability.
+
+Prioritize grid stability: assume RTU-1 is unresponsive. Do not attempt remote operations through it.

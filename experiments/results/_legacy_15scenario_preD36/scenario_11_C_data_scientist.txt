@@ -1,0 +1,10 @@
+Based on the model's output, I analyzed the flow features that drove the prediction:
+
+* **Total Bwd packets**: 1234 packets sent from the destination to the source, which is significantly higher than normal.
+* **Fwd Act Data Pkts**: 567 client packets actually carrying payload, indicating a potential bulk command injection attack.
+* **Dst Port**: 2404, indicative of an IEC-104 endpoint and carries a mild signal (not a leak).
+* **Subflow_volume**: per-subflow volume of packets and bytes measured in the network, with large values indicating sustained attack flow.
+
+These features correspond to the "flood/scan" behavior family. The model's confidence is moderate (0.65). However, it's essential to note that these features can only prove statistical fingerprints of potential attacks, not specific protocol actions. The presence of small packets and client packets carrying payload may indicate a flood or scan attack, but further analysis is required to confirm the type of attack.
+
+The model's prediction should be treated with caution due to the mild signal carried by the Dst Port feature, which may not necessarily indicate an IEC-104 endpoint leak. Further investigation is necessary to determine the actual threat level and potential impact on the system.

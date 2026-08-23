@@ -1,0 +1,13 @@
+**Affected Device:** RTU-2 (10.0.0.3) at Bus 4, ZONE-C — controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+**What’s Happening:** Network flow data shows near-zero minimum packet lengths and abnormally low backward inter-arrival times (Bwd IAT Min = 0), with zero PSH flags in forward direction. This pattern indicates a high-rate flood of small packets targeting port 2404, consistent with a denial-of-service condition on the IEC-104 link.
+
+**Physical Risk:** RTU-2 may lose communication or become unresponsive due to processing overload. If sustained, this causes **loss of view and control** over all breakers it manages — risk of uncontrolled islanding or failure to respond during faults at Bus 4.
+
+**Next Actions:**  
+1. Immediately switch supervisory control of ZONE-C to manual at SCADA-1.  
+2. Check status of breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 via local HMI or backup comms for physical position confirmation.  
+3. Isolate RTU-2 network segment if possible without disrupting adjacent zones.  
+4. Do not attempt remote commands to RTU-2 until traffic normalizes.  
+
+Prioritize breaker state verification and manual oversight. Restore automated control only after network stabilization.

@@ -1,0 +1,11 @@
+**Model Analysis**
+
+The model's prediction of an attack is driven by the following features:
+
+* Flow IAT Min (value=5, SHAP=+0.116): This feature indicates that the flow has a minimum inter-arrival time of 5, which is a relatively short interval. This could be indicative of a flood or scan attack, where the attacker is sending packets at a high rate.
+* Bwd Packet Length Min (value=0, SHAP=+0.091): This feature indicates that the minimum packet length in the backward direction is 0, which could be indicative of a flood or scan attack, where the attacker is sending small packets.
+* Packet Length Min (value=0, SHAP=+0.084): This feature is similar to the previous one, indicating that the minimum packet length is 0, which could be indicative of a flood or scan attack.
+* Packet Length Max (value=90, SHAP=+0.058): This feature indicates that the maximum packet length is 90, which is a relatively small value. This could be indicative of a flood or scan attack, where the attacker is sending small packets.
+* Fwd PSH Flags (value=0, SHAP=+0.054): This feature indicates that the PSH (Push) flag is not set in the forward direction, which could be indicative of a flood or scan attack, where the attacker is not sending large packets.
+
+These features collectively suggest that the flow is likely a flood or scan attack, where the attacker is sending packets at a high rate and using small packet lengths. However, it's worth noting that the model's confidence is 1.00, which is a strong indication of an attack, but the specific attack pattern is not clear from these features alone.

@@ -1,54 +1,61 @@
 {
   "scenario_id": "scenario_15",
-  "kind": "fp_noise",
+  "kind": "tp_physical",
   "anomaly_event": {
-    "flow_id": "fp_noise-5",
-    "src_ip": "10.0.0.2",
-    "dst_ip": "10.0.0.4",
-    "dst_port": 123,
-    "prediction": "normal",
-    "confidence": 0.14328982725615727,
+    "flow_id": "tp_physical-fuzzyattack-RTU-2-14",
+    "src_ip": "121.142.26.78",
+    "dst_ip": "10.0.0.3",
+    "dst_port": 2404,
+    "prediction": "attack",
+    "confidence": 1.0,
     "top_features": [
       {
-        "name": "Total Fwd Packet",
-        "value": 26.0,
-        "shap": -0.1009241050259012
+        "name": "Flow IAT Min",
+        "value": 57.0,
+        "shap": 0.0752387610316144
       },
       {
-        "name": "Active Std",
-        "value": 14619050.449553449,
-        "shap": -0.07714338102259899
+        "name": "Bwd IAT Min",
+        "value": 209.0,
+        "shap": 0.07145531903692982
       },
       {
-        "name": "Fwd Packet Length Max",
-        "value": 120.0,
-        "shap": -0.06504637743403291
+        "name": "Packet Length Max",
+        "value": 24.0,
+        "shap": 0.06326127946387687
       },
       {
-        "name": "Active Mean",
-        "value": 9074363.375,
-        "shap": -0.06362780169787757
+        "name": "Packet Length Min",
+        "value": 0.0,
+        "shap": 0.057830167573610584
       },
       {
-        "name": "Active Min",
-        "value": 1585.0,
-        "shap": -0.051716217148179436
+        "name": "Bwd Packet Length Min",
+        "value": 0.0,
+        "shap": 0.05296809619842911
       }
     ]
   },
   "gold_facts": {
-    "device": "DEVICE (authoritative, from IP map): 10.0.0.4 = ENG-WS-1, engineering workstation, zone ZONE-CC.",
-    "attack_class": "attackfree",
+    "device": "DEVICE (authoritative, from IP map): 10.0.0.3 = RTU-2, RTU (IEC-104 controlled station, GridCom GC-4000), zone ZONE-C, at Bus 4, controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9, BES Cyber Asset under NERC CIP (authored overlay).",
+    "attack_class": "fuzzyattack",
     "top_features": [
-      "Total Fwd Packet",
-      "Active Std",
-      "Fwd Packet Length Max",
-      "Active Mean",
-      "Active Min"
+      "Flow IAT Min",
+      "Bwd IAT Min",
+      "Packet Length Max",
+      "Packet Length Min",
+      "Bwd Packet Length Min"
     ],
-    "physical_consequence": "not simulated",
-    "is_physical": false,
-    "reportable": "likely NOT reportable \u2014 benign/borderline traffic; verify before escalating"
+    "physical_consequence": "physical: overloads: line 2 @ 122.9%, line 4 @ 145.3%, line 7 @ 421.4%, line 8 @ 108.3%, line 9 @ 257.7%, line 10 @ 255.3%, line 11 @ 171.6%, line 12 @ 367.2%, line 13 @ 102.8%, line 14 @ 400.6%; voltage: bus 4 @ 0.881pu, bus 5 @ 0.885pu, bus 7 @ 0.925pu, bus 9 @ 0.84pu, bus 10 @ 0.837pu, bus 11 @ 0.914pu, bus 14 @ 0.84pu",
+    "is_physical": true,
+    "reportable": "Reportable as an ATTEMPT to compromise a BES Cyber System \u2014 CIP-008-6 R4: notify E-ISAC/NCCIC by the end of the next calendar day. The evidence available (an IDS flow classification) does NOT establish compromise or disruption, so the 1-hour clock does not apply on these facts; it would apply only if a compromise or disruption were subsequently determined."
   },
-  "scenario_kind": "fp_noise"
+  "scenario_kind": "tp_physical",
+  "consequence_class": "OVER+VOLT",
+  "opened_breakers": [
+    "BR-2-4",
+    "BR-3-4",
+    "BR-4-5"
+  ],
+  "load_scale": 1.5
 }

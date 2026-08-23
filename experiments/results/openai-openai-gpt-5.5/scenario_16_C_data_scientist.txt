@@ -1,0 +1,7 @@
+Prediction is **attack** with **confidence 1.00**, targeting **10.0.0.1:2404**, which the IP map identifies as **RTU-1** on an IEC-104 endpoint.
+
+The decision was driven by timing and packet-size flow statistics: **Flow IAT Min=11 (+0.097)** and **Bwd IAT Min=506 (+0.081)** indicate very small minimum inter-arrival gaps in the overall and backward directions. Size features also pushed strongly toward attack: **Packet Length Min=0 (+0.069)**, **Packet Length Max=24 (+0.069)**, and **Bwd Packet Length Min=0 (+0.066)**. This is a small/zero-length packet fingerprint: packets are tiny, with headers likely dominating rather than payload volume.
+
+In the provided feature documentation, **many small packets** are associated with **flood/scan** behavior, and zero-payload signalling is consistent with probe/control-style traffic. Therefore, this flow’s statistical signature fits a **flooding/scanning-family fingerprint** rather than normal balanced IEC-104 polling.
+
+Caveat: this detector is **binary** and does not identify the attack class. The model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. These features support an anomalous traffic-pattern inference; they do **not** prove a SYN scan, DoS mechanism, IEC-104 command, breaker action, or physical grid impact.

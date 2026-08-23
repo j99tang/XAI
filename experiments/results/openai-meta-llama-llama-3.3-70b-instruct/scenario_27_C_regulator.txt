@@ -1,0 +1,5 @@
+**Compliance Assessment**
+
+This incident involves a potential cyber security incident affecting RTU-4, a BES Cyber Asset under NERC CIP, located at Bus 9. The asset controls breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14. Given the destination IP and port (10.0.0.6:2404), indicative of an IEC-104 endpoint, it plausibly meets the threshold for a Reportable Cyber Security Incident under NERC CIP-008-6, as it may have compromised or disrupted, or attempted to compromise or disrupt, a BES Cyber System.
+
+The reporting timeline for an attempted compromise applies, requiring notification by the end of the next calendar day. Notification is due to the E-ISAC and, under US jurisdiction, the NCCIC/CISA. This response sits under the **Detect** and **Respond** functions of the NIST CSF 2.0 framework. Note that this assessment is illustrative, as our grid is a synthetic IEEE 14-bus overlay, and not a jurisdictional determination. Required attributes, including functional impact, attack vector, and level of intrusion, must be provided in the notification, even if some are unknown at the time of initial reporting.

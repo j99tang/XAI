@@ -1,0 +1,7 @@
+The model predicted **attack** with **confidence 1.00** for traffic to **10.0.0.3:2404**.
+
+The attack score was driven by CICFlowMeter flow-statistics: **Flow IAT Min=298, SHAP +0.156** and **Flow IAT Mean=1381.82, SHAP +0.037**, indicating timing/inter-arrival behavior the model associates with attack traffic; **Packet Length Max=48, SHAP +0.114**, a small maximum packet size consistent with “many small packets / headers dominate”; **Fwd PSH Flags=0, SHAP +0.056**; and **ACK Flag Count=0, SHAP +0.030**, which aligns with low/absent ACK behavior noted in DoS-style fingerprints.
+
+As a statistical signature, this looks most like a **flooding / scanning / starvation-family fingerprint**: small packets plus attack-associated inter-arrival timing and absent ACKs. It also partially overlaps the documented SYN DoS fingerprint through low `ACK Flag Count`, but the provided top features do **not** include `SYN Flag Count`, `Fwd Packets/s`, or `Bwd Packets/s`, so the specific attack class is **not proven**.
+
+Caveat: the detector is **binary attack vs normal** and sees only flow statistics, not IEC-104 protocol semantics. These features do **not** prove a specific IEC-104 command, breaker action, or physical impact.

@@ -1,0 +1,20 @@
+**Incident Briefing**
+
+**Device Affected:** RTU-1 (10.0.0.1) at Bus 2, Zone ZONE-N
+
+**Physical Risk:** The RTU-1 is experiencing a potential attack, which may lead to a loss of visibility and control of its breakers (BR-1-2, BR-2-3, BR-2-4, BR-2-5). This could result in a loss of control over the grid, potentially causing a power outage or other safety issues.
+
+**Immediate Action:**
+
+1. **Switch to Manual Control:** Immediately switch RTU-1 to manual control to prevent any potential malicious commands from being executed.
+2. **Check Breaker Status:** Verify the status of breakers BR-1-2, BR-2-3, BR-2-4, and BR-2-5 to ensure they are in a safe state.
+3. **Verify RTU-1 Communication:** Check the communication link between RTU-1 and SCADA-1 to ensure it is stable and not affected by the potential attack.
+4. **Investigate Further:** Investigate the cause of the attack and take necessary measures to prevent similar incidents in the future.
+
+**Next Steps:**
+
+* Check the breaker status and RTU-1 communication link every 5 minutes.
+* Run a diagnostic test on RTU-1 to ensure it is functioning correctly.
+* Review the incident report and update the knowledge base with any new information.
+
+**Safety First:** The safety of the grid and personnel is the top priority. If there are any concerns or uncertainties, do not hesitate to escalate the issue to the next level of management.

@@ -1,0 +1,9 @@
+**Compliance Assessment**
+
+This incident involves a potential cyber security incident targeting RTU-1, a BES Cyber Asset, at Bus 2. The intrusion alert indicates a high confidence level of an attack. Given that RTU-1 is a critical asset under NERC CIP, this incident plausibly meets the threshold for a Reportable Cyber Security Incident.
+
+As this is a synthetic grid, the assessment is illustrative and not a jurisdictional determination. Assuming US jurisdiction, notification is due to the E-ISAC and NCCIC/CISA. The reporting timeline for an attempted compromise is by the end of the next calendar day.
+
+This response sits under the **Detect** and **Respond** functions of the NIST CSF 2.0 framework. Required attributes for reporting include functional impact, attack vector, and level of intrusion, which may be updated as more information becomes available. 
+
+Notification should be made to the E-ISAC and NCCIC/CISA, including the required attributes, by the end of the next calendar day, as this incident is considered an attempted compromise of a BES Cyber System.
