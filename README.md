@@ -41,6 +41,17 @@ pip install -e .          # makes `import caie` work everywhere (needs pyproject
 - [ ] LightRAG contextualizer + personas (Phase 3)
 - [ ] CPAS evaluation (Phase 4)
 
+## Demo
+
+```bash
+conda run -n xai streamlit run app.py
+```
+
+Live pipeline: pick an incident (or paste a tier-A alert), and watch the same event
+rendered at three levels of grounding — IDS alone, + SHAP, + retrieved context per
+persona. Synthesizer switchable across the six models from the capability sweep;
+`llama3.1:8b` runs fully offline.
+
 See `docs/IMPLEMENTATION_PLAN.md` for the full phased plan,
 `docs/model_map.md` for which model runs at which stage (and which stages use
 no model at all), and `docs/decision_log.md` for why things are the way they are.
