@@ -77,5 +77,50 @@ fig.suptitle("Tier ablation by persona: context helps every role, once the model
              fontsize=11)
 fig.tight_layout(); fig.savefig(FIG / "fig3_tier_ablation.png", dpi=180); plt.close(fig)
 
+# fig 4 — the regulator story: context works, then H erases it (at 8B only)
+fig, ax = plt.subplots(figsize=(8, 4.4))
+labs, x = ["operator", "data scientist", "regulator"], range(3)
+for off, (lbl, key) in zip((-.2, .2), [("llama3.1:8b", "llama3.1:8b\n(local)"),
+                                       ("gpt-5.5", "gpt-5.5\n(ceiling)")]):
+    rawv = []
+    for p_ in PERS:
+        rows = json.load(open(ROOT / f"experiments/results/"
+                              f"{dict(ORDER)[key]}/cpas_scores.json"))["rows"]
+        C = [r for r in rows if r["tier"] == "C" and r["persona"] == p_]
+        rawv.append((st.mean(r["cpas"] + 2 * r["H"] for r in C),
+                     st.mean(r["cpas"] for r in C),
+                     sum(r["H"] for r in C) / len(C) * 100))
+    ax.bar([i + off for i in x], [v[0] for v in rawv], .38, alpha=.35,
+           color="tab:blue" if off < 0 else "tab:green",
+           label=f"{lbl} — raw (before −λH)")
+    ax.bar([i + off for i in x], [v[1] for v in rawv], .38,
+           color="tab:blue" if off < 0 else "tab:green", label=f"{lbl} — CPAS")
+    for i, v in enumerate(rawv):
+        if v[0] - v[1] > .3:
+            ax.annotate(f"H={v[2]:.0f}%", (i + off, v[0]), ha="center", va="bottom",
+                        fontsize=8, color="firebrick")
+ax.set_xticks(list(x)); ax.set_xticklabels(labs); ax.set_ylabel("CPAS"); ax.set_ylim(0, 5)
+ax.set_title("The regulator benefits most from context — and loses most to unreliability\n"
+             "(faded = raw score, solid = after the hallucination penalty)", fontsize=10)
+ax.legend(fontsize=7, ncol=2); ax.grid(alpha=.3, axis="y")
+fig.tight_layout(); fig.savefig(FIG / "fig4_regulator_penalty.png", dpi=180); plt.close(fig)
+
+# fig 5 — lambda sensitivity: the conclusion does not depend on lambda=2
+fig, ax = plt.subplots(figsize=(7.5, 4.2))
+W = {"D": .30, "C": .25, "A": .25, "R": .20}
+lams = [0, 1, 2, 3]
+for lbl, tag in ORDER:
+    rows = json.load(open(ROOT / f"experiments/results/{tag}/cpas_scores.json"))["rows"]
+    C = [r for r in rows if r["tier"] == "C"]
+    ax.plot(lams, [st.mean(sum(W[d] * r[d] for d in W) - L * r["H"] for r in C) for L in lams],
+            "o-", ms=5, label=lbl.replace("\n", " "))
+ax.axvline(2, color="grey", ls=":", lw=1)
+ax.annotate("pre-registered λ=2", (2, .3), fontsize=8, color="grey", ha="center")
+ax.set_xlabel("λ  (hallucination penalty)"); ax.set_ylabel("tier-C CPAS")
+ax.set_xticks(lams); ax.set_ylim(0, 5)
+ax.set_title("Model ordering is unchanged across every λ tested", fontsize=10)
+ax.legend(fontsize=7); ax.grid(alpha=.3)
+fig.tight_layout(); fig.savefig(FIG / "fig5_lambda_sensitivity.png", dpi=180); plt.close(fig)
+
 for f in sorted(FIG.glob("*.png")):
     print(f"  {f.relative_to(ROOT)}  ({f.stat().st_size//1024} KB)")
