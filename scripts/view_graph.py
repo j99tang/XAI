@@ -9,6 +9,7 @@ Run: conda run -n xai python scripts/view_graph.py            # build/open the H
 """
 from __future__ import annotations
 
+import re
 import sys
 from pathlib import Path
 
@@ -17,7 +18,8 @@ from pyvis.network import Network
 
 ROOT = Path(__file__).resolve().parents[1]
 GRAPHML = ROOT / "rag_storage" / "graph_chunk_entity_relation.graphml"
-OUT = ROOT / "rag_storage" / "graph.html"
+OUT = ROOT / "docs" / "figures" / "graph.html"      # committed: a thesis artefact
+PNG = ROOT / "docs" / "figures" / "graph.png"       # static, for slides/print
 
 # canonical grid entities get bright colors; LLM-extracted concepts are muted grey
 COLORS = {"DEVICE": "#e6550d", "IP_ADDRESS": "#fd8d3c", "BUS": "#3182bd",
@@ -56,11 +58,62 @@ def main() -> None:
         kw, desc = d.get("keywords", ""), d.get("description", "")
         net.add_edge(a, b, title=f"[{kw}] {desc}"[:200], label=kw or None)
     net.force_atlas_2based()
+    OUT.parent.mkdir(parents=True, exist_ok=True)
     net.write_html(str(OUT), notebook=False)
-    print(f"wrote {OUT}  ({g.number_of_nodes()} nodes, {g.number_of_edges()} edges)")
+
+    # pyvis's cdn_resources="in_line" inlines vis-network but still LINKS Bootstrap from
+    # jsdelivr, so the file is not actually self-contained: it degrades without internet
+    # (bad for an air-gapped demo) and rots when the CDN URL stops resolving (bad for a
+    # thesis artefact meant to open in five years). Bootstrap is only used for cosmetic
+    # chrome here, so strip the links rather than vendoring 200 KB of CSS.
+    html = OUT.read_text()
+    before = len(re.findall(r'(?:src|href)="https?://', html))
+    html = re.sub(r'\s*<(?:link|script)[^>]*(?:href|src)="https?://[^"]*"[^>]*>'
+                  r'(?:</script>)?', "", html)
+    after = len(re.findall(r'(?:src|href)="https?://', html))
+    OUT.write_text(html)
+
+    print(f"wrote {OUT}  ({g.number_of_nodes()} nodes, {g.number_of_edges()} edges, "
+          f"{len(html)//1024} KB)")
+    print(f"  external refs stripped: {before} -> {after}  "
+          f"({'fully self-contained' if after == 0 else 'STILL HAS EXTERNAL REFS'})")
+    _write_png(g)
     print("open it: file://" + str(OUT))
     print("legend: orange=DEVICE, light-orange=IP, blue=BUS, green=BREAKER, "
           "purple=ZONE, grey=LLM-extracted concept")
+
+
+def _write_png(g) -> None:
+    """Static render for slides and print, where nobody can hover a tooltip."""
+    import matplotlib
+    matplotlib.use("Agg")
+    import matplotlib.pyplot as plt
+    from matplotlib.lines import Line2D
+
+    fig, ax = plt.subplots(figsize=(13, 9))
+    pos = nx.spring_layout(g, k=.55, iterations=180, seed=7)
+    types = [d.get("entity_type", "?") for _, d in g.nodes(data=True)]
+    nx.draw_networkx_edges(g, pos, ax=ax, edge_color="#d9d9d9", width=.7)
+    nx.draw_networkx_nodes(g, pos, ax=ax, node_size=[260 if t in COLORS else 60 for t in types],
+                           node_color=[COLORS.get(t, DEFAULT) for t in types],
+                           linewidths=.4, edgecolors="#555")
+    # label only the canonical grid entities: labelling 153 nodes is unreadable, and the
+    # grey LLM-extracted concepts are context, not the point of the figure
+    nx.draw_networkx_labels(g, pos, ax=ax, font_size=7,
+                            labels={n: n for n, d in g.nodes(data=True)
+                                    if d.get("entity_type") in COLORS})
+    ax.legend(handles=[Line2D([], [], marker="o", ls="", color=c, label=t)
+                       for t, c in COLORS.items()]
+                      + [Line2D([], [], marker="o", ls="", color=DEFAULT,
+                                label="LLM-extracted concept")],
+              loc="upper left", fontsize=8, frameon=False)
+    ax.set_title(f"CAIE knowledge graph — {g.number_of_nodes()} entities, "
+                 f"{g.number_of_edges()} relations\n"
+                 f"coloured entities are seeded from entities.yaml; grey are LLM-extracted",
+                 fontsize=11)
+    ax.axis("off")
+    fig.tight_layout(); fig.savefig(PNG, dpi=170); plt.close(fig)
+    print(f"wrote {PNG}  ({PNG.stat().st_size//1024} KB)")
 
 
 if __name__ == "__main__":
