@@ -11,6 +11,29 @@ Regenerate all five: `conda run -n xai python scripts/make_figures.py`
 | `fig4_regulator_penalty.png` | Why the regulator is flat: raw 2.96 with H=73%, so λ·H erases the entire gain. The persona that gains most from context is the one most exposed to unreliability. | T3 |
 | `fig5_lambda_sensitivity.png` | Model ordering is unchanged at λ = 0,1,2,3 — the conclusion does not depend on the pre-registered λ=2. | T6 |
 
+## Knowledge graph
+
+| file | what it is |
+|---|---|
+| `graph.html` | interactive: 153 entities, 134 relations; zoom/drag/hover for entity and relation descriptions. **Fully self-contained** — zero external requests, opens offline in any browser. |
+| `graph.png` | static render for slides and print, where nobody can hover. Coloured = seeded from `entities.yaml`; grey = LLM-extracted. |
+
+Regenerate: `conda run -n xai python scripts/view_graph.py`
+Inspect one node's edges: `… scripts/view_graph.py RTU-3`
+
+**Read the PNG as evidence, not decoration.** It shows two weakly-joined worlds: a
+dense cluster of 46 seeded grid entities (56 internal edges) and 107 LLM-extracted
+concepts (68 internal edges), joined by only **10 bridging edges** — and 9 of those
+touch just SCADA-1 or RTU-3. The graph has **34 connected components and 18 isolated
+nodes**. That is the 8B extractor's relation-building weakness made visible, and it is
+why `seed_graph.py` exists (D-series remediation): without the injected entities there
+would be no reliable device→bus→breaker chain at all.
+
+It also bounds the "graph beats flat vector RAG" claim: multi-hop traversal from a
+device into KB prose has very few paths available. Retrieval works (the §11.1 check
+found the CIP rule in 30/30 regulator blocks) largely because entity *descriptions*
+carry the facts, not because long relation chains are traversed.
+
 ## Suggested slide order
 
 1. **fig1** — the headline. Two flat lines and one rising one.
