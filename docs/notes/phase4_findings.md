@@ -108,6 +108,11 @@ in every row. λ=2 is pre-registered but admittedly "tunable", so the conclusion
 as robust to it rather than dependent on it. λ-sensitivity is itself a reliability
 measure: the ceiling moves 4.18→4.08 across λ (H≈0) while the 8B moves 2.96→0.76.
 
+**Weight sensitivity** (`scripts/weight_sweep.py`, no API cost). Model ordering and tier
+ordering are invariant across six weightings including deliberately extreme ones
+(0.55 on a single dimension); absolute CPAS moves ±0.3. The weights were pre-registered,
+so this is stated as robustness rather than justification. Table T6b.
+
 **Judge sensitivity** (`scripts/judge_sensitivity.py`, n=20 blind sample, ~$0.50).
 `gemini-3.1-pro-preview` vs `claude-opus-5`: Spearman ρ = D .888, C .796, A .891, R .987;
 **H agreement 100%**; tier ordering survives (A 1.50 < B 1.59 < C 2.84). D shows 20%

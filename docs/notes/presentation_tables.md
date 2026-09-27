@@ -85,6 +85,30 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | qwen3-235b | 3.62 | 3.45 | 3.29 | 3.12 |
 | gpt-5.5 (ceiling) | 4.04 | 4.00 | 3.95 | 3.91 |
 
+## T6b — Weight sensitivity (tier-C CPAS, λ=2 throughout)
+
+The weights were **pre-registered before any run**, so they cannot be tuned after the
+fact. The defensible claim is therefore not that 0.30/0.25/0.25/0.20 is optimal, but
+that the conclusions do not depend on it — tested including deliberately extreme
+weightings nobody would choose.
+
+| weighting | llama-3.1-8b (API) | llama3.1:8b (LOCAL) | qwen3-32b | llama-3.3-70b | qwen3-235b | gpt-5.5 (ceiling) | model order | A<C & B<C |
+|---|---|---|---|---|---|---|---|---|
+| **pre-registered** .30/.25/.25/.20 | 2.27 | 2.48 | 2.86 | 3.15 | 3.29 | 3.95 | unchanged | all 6 rows |
+| uniform .25/.25/.25/.25 | 2.31 | 2.51 | 2.91 | 3.18 | 3.32 | 3.97 | unchanged | all 6 rows |
+| D-heavy .55/.15/.15/.15 | 2.31 | 2.54 | 2.83 | 3.23 | 3.31 | 4.12 | unchanged | all 6 rows |
+| C-heavy .15/.55/.15/.15 | 1.93 | 2.14 | 2.51 | 2.80 | 2.96 | 3.52 | unchanged | all 6 rows |
+| A-heavy .15/.15/.55/.15 | 2.36 | 2.54 | 3.08 | 3.24 | 3.43 | 3.97 | unchanged | all 6 rows |
+| R-heavy .15/.15/.15/.55 | 2.62 | 2.82 | 3.23 | 3.45 | 3.57 | 4.26 | unchanged | all 6 rows |
+
+Spread is ±0.3 in absolute CPAS; **model ordering and tier ordering are invariant under
+every weighting tested.** Note the weights are near-uniform, so they do little
+discriminative work — a plain mean would rank the narratives almost identically. Do not
+claim the weighting encodes a strong theoretical stance; claim the result is robust to it.
+
+**λ, not w, is the consequential parameter.** λ=2 moves regulator CPAS from 2.96 raw to
+1.49 — far more than any weight does. See T6 and `fig5_lambda_sensitivity.png`.
+
 ## T7 — Scenario set composition (n=30)
 
 **attack class**
