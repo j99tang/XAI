@@ -11,6 +11,26 @@ Regenerate all five: `conda run -n xai python scripts/make_figures.py`
 | `fig4_regulator_penalty.png` | Why the regulator is flat: raw 2.96 with H=73%, so λ·H erases the entire gain. The persona that gains most from context is the one most exposed to unreliability. | T3 |
 | `fig5_lambda_sensitivity.png` | Model ordering is unchanged at λ = 0,1,2,3 — the conclusion does not depend on the pre-registered λ=2. | T6 |
 
+## Architecture
+
+| file | what it is |
+|---|---|
+| `fig0_architecture.png` | Five-stage pipeline in the style of LightRAG's Figure 1, but with **real content**: the RTU-3 trace from `docs/notes/worked_example.md`. Source passage → indexing → graph → persona-conditioned retrieval → role-specific narratives. |
+| `trace_rtu3.png` | RTU-3's full one-hop neighbourhood (11 neighbours), edge labels are relation types. The detail view behind stage 3. |
+
+Regenerate: `scripts/make_architecture_figure.py`, `scripts/trace_example.py [ENTITY]`
+
+**The figure argues two departures from stock LightRAG**, stated in its own footer:
+a deterministic path running alongside LLM extraction (because the 8B under-extracted
+IPs/buses/breakers and the synthesizer then invented device names), and
+persona-conditioned retrieval rather than one shared query (because one ranking put the
+CIP rule in 0/30 context blocks).
+
+**The red callout is the slide's point.** "Loss of communication with an RTU means loss
+of visibility and control of its breakers" is carried on the RTU-3→SCADA-1 *edge*, not
+on any node — and it surfaces in the operator narrative as "main risk is loss of
+view/control at Bus 6". That phrase is in no source table row and no node description.
+
 ## Knowledge graph
 
 | file | what it is |
