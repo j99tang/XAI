@@ -20,6 +20,16 @@ Regenerate all five: `conda run -n xai python scripts/make_figures.py`
 
 Regenerate: `scripts/make_architecture_figure.py`, `scripts/trace_example.py [ENTITY]`
 
+**House style** lives in `scripts/figstyle.py` — semantic `PALETTE` (blue = proposed
+method, neutral = stock components, green = outcomes, gold = one callout per figure),
+the rcParams preset (Arial/Helvetica stack, spines off, `svg.fonttype='none'` and
+`pdf.fonttype=42` so vector text stays editable), and `finalize_figure()` which writes
+PNG + PDF at dpi 300. `fig0` uses it; `fig1`–`fig5` and `graph.png` predate it and are
+still styled ad hoc — worth unifying before the thesis.
+
+Use the **PDF** in the written thesis (vector, live text, no resampling at print size)
+and the PNG for slides.
+
 **The figure argues two departures from stock LightRAG**, stated in its own footer:
 a deterministic path running alongside LLM extraction (because the 8B under-extracted
 IPs/buses/breakers and the synthesizer then invented device names), and
