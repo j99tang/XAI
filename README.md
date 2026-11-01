@@ -31,7 +31,8 @@ grounded in a power-grid knowledge graph. M.Eng project, ECE2500Y (Prof. Kundur'
 ```bash
 conda env create -f environment.yml
 conda activate xai
-pip install -e .          # makes `import caie` work everywhere (needs pyproject.toml)
+# environment.yml already runs `pip install -e .[demo,dev]` (installs deps + makes `import caie` work).
+# Without conda: pip install -e ".[demo,dev]"
 ```
 
 ## Status

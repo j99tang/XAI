@@ -7,6 +7,28 @@ name = "caie"
 version = "0.0.1"
 description = "Context-Aware Intrusion Explanation (CAIE): multi-persona XAI contextualizer for IEC-104 smart grids."
 requires-python = ">=3.11"
+dependencies = [
+    "numpy>=2.4.3",
+    "pandas>=3.0.1",
+    "scipy>=1.17.1",
+    "scikit-learn>=1.8.0",
+    "joblib>=1.5.3",
+    "shap>=0.51.0",
+    "matplotlib",
+    "networkx",
+    "pandapower",
+    "pyyaml",
+    "python-dotenv>=1.1.0",
+    "lightrag-hku",  # imported as `lightrag`
+    "openai",
+    "anthropic",
+    "ollama",
+    "PyMuPDF",  # imported as `fitz` (scripts/kb_extract.py)
+]
+
+[project.optional-dependencies]
+demo = ["streamlit", "pyvis"]
+dev = ["pytest"]
 
 # Package lives under src/  ->  `pip install -e .` then `import caie`
 [tool.setuptools.packages.find]
