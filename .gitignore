@@ -140,7 +140,8 @@ mlruns/
 # --- ccir project: ignore large inputs + regenerable outputs ---
 data/raw/
 data/processed/
-rag_storage/          # rebuildable from knowledge_base/ via ingest.py
+# rebuildable from knowledge_base/ via ingest.py
+rag_storage/
 
 # experiments/results/ IS committed. The judge scores cost ~$113 of API spend and the
 # narratives cost hours of generation; neither is cheaply reproducible, and open-weights
