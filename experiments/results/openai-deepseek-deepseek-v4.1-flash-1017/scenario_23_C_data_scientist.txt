@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.6:2404 (RTU-4, IEC-104 controlled station)**
+
+The detector scored this flow `attack` at confidence 1.00. Attribution is distributed across five flow statistics rather than one dominant feature: Flow IAT Min = 4 (SHAP +0.114), Packet Length Max = 42 (+0.082), Bwd Packet Length Min = 0 (+0.082), Packet Length Min = 0 (+0.080), Fwd PSH Flags = 0 (+0.054).
+
+As a statistical fingerprint: a 4 ms minimum inter-arrival combined with a 42-byte maximum packet means tightly spaced, uniformly tiny frames — headers dominating. Zero minimum packet lengths in both directions plus Fwd PSH Flags = 0 indicate no payload push from the client. The feature dictionary maps "many small packets (headers dominate)" to flood/scan, and payload-free signalling is consistent with SYN-scan-style traffic. This is a flooding-family signature (DoS/flood/starvation), not a named class — the detector is binary.
+
+Caveats: the model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics, so no specific ASDU or function-code action is proven. Dst port 2404 carries mild signal only, not a leak. Per the taxonomy's testbed note, the network fingerprint is real data; physical consequence is not observed. Confidence 1.00 is not corroborated by any single large SHAP value.

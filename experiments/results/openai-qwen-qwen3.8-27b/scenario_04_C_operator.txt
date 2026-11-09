@@ -1,0 +1,12 @@
+OPERATOR BRIEFING  
+Affected: RTU-4 (10.0.0.6, GridCom GC-4000, IEC-104), ZONE-S, Bus 9. It controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+
+Alert evidence: flow statistics to 10.0.0.6:2404 show very small packets (max length 6, min 0), backward min length 0, no PSH flags, and minimum inter-arrival time 16. This is a small-packet pattern toward the IEC-104 endpoint; it does not confirm a specific command or attack class.  
+
+Physical risk: if RTU-4 is degraded, we lose timely view/control of Bus 9 breakers. The grid may continue running, but breaker state and remote commands cannot be confirmed.  
+
+Actions:  
+1) Verify RTU-4 comms/status with SCADA-1.  
+2) Check breaker status/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14.  
+3) If telemetry is stale or commands are unconfirmed, switch RTU-4 to manual control and hold remote breaker operations.  
+4) Do not issue remote switching until RTU-4 response is verified.

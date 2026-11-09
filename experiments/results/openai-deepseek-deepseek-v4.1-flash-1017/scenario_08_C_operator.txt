@@ -1,0 +1,5 @@
+Affected: RTU-4 (10.0.0.6), GridCom GC-4000 IEC-104 controlled station, ZONE-S, Bus 9; controls BR-4-9, BR-7-9, BR-9-10, BR-9-14. Substation name is not in context. Alert: attack prediction confidence 1.00 to 10.0.0.6:2404. Detector evidence is flow statistics only: Bwd IAT Min=0, Flow IAT Min=52, Packet Length Min=0, Bwd Packet Length Min=0, Packet Length Max=0. No protocol contents, source IP, or specific attack class are in context.
+
+Operational meaning: RTU-4’s supervisory link is showing an abnormal traffic pattern. Immediate physical risk is loss of view/control at Bus 9—delayed or dropped telemetry/commands, so its breakers may not respond as intended. Do not rely on remote indications alone.
+
+Actions: verify actual status of BR-4-9, BR-7-9, BR-9-10, BR-9-14 locally at the breaker panels. Check RTU-4 and its communications path; confirm whether SCADA-1 still has reach. If remote control is degraded or indications are stale, switch Bus 9 breakers to manual/local control and hold current configuration. Keep the physical grid safe and continuous; investigate after stability is confirmed.

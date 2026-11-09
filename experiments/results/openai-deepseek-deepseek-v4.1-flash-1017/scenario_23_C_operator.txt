@@ -1,0 +1,7 @@
+**Operator action briefing — RTU-4 / Bus 9**
+
+Affected: RTU-4 (10.0.0.6), GridCom GC-4000 IEC-104 controlled station, ZONE-S, Bus 9; controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. Alert: attack prediction confidence 1.00 to 10.0.0.6:2404. Detector evidence is flow statistics only: very short minimum inter-arrival time, small max/min packet lengths, zero backward min length, no forward PSH flags. This is an abnormal small-packet traffic pattern toward the RTU. Protocol contents and source are not in context; the specific attack class is not established.
+
+Immediate risk: degraded or lost supervisory view/control of RTU-4 and its Bus 9 breakers. If RTU-4 is unavailable or mis-operates, breaker status may be unobservable and remote switching unreliable; unplanned breaker operation is possible but not observed.
+
+Actions: 1) Confirm RTU-4 status and actual local positions of BR-4-9, BR-7-9, BR-9-10, BR-9-14. 2) Check RTU-4 communications/link health and SCADA-1 reach. 3) If supervisory control is degraded, switch those breakers to manual/local control and hold current configuration. 4) Treat remote commands to RTU-4 as suspect until the link is stable. 5) Report per NERC CIP-008-6.

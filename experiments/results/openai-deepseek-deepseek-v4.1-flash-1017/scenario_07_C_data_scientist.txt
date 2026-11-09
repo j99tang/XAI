@@ -1,0 +1,9 @@
+**Model analysis — flow 10.0.0.5:2404 (RTU-3)**
+
+Prediction: attack, confidence 1.00. All top SHAP contributions push toward attack: `Flow IAT Min`=239 (+0.086), `Packet Length Min`=0 (+0.061), `Bwd Packet Length Min`=0 (+0.059), `Packet Length Max`=0 (+0.054), `Fwd PSH Flags`=0 (+0.045).
+
+**What drove it:** three of five drivers are zero-length packet statistics — empty/minimal payload frames in both directions — which matches the documented fingerprint "many small packets (headers dominate) ⇒ flood/scan." `Flow IAT Min` is a timing feature (shortest inter-arrival gap); its value is reported, but no normal-traffic baseline is in context, so its magnitude cannot be judged anomalous here.
+
+**Behavior family:** flooding-family (DoS/flood/starvation). The detector is binary and does not name a class; the context's `dos` and `flood` classes both map to T0814.
+
+**Caveats:** the documented flood fingerprint also requires high `Flow Packets/s`, `Flow Bytes/s`, high `Total Fwd Packet`, and low `Flow IAT Std/Mean` — none appear in the top-5, so this is partial evidence. `Dst_Port` 2404 is explicitly *not* a leak (mild signal, outside top-10 importances). These are CICFlowMeter statistics only: they cannot prove IEC-104 protocol actions or breaker effects; per the testbed note, the network fingerprint is real data, physical consequence is not observed.

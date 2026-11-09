@@ -1,0 +1,13 @@
+**OPERATOR BRIEFING — RTU-4, Bus 9**
+
+**Affected device:** RTU-4 (10.0.0.6:2404), GridCom GC-4000, ZONE-S, Bus 9. It controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**What we see:** The detector scored this flow NORMAL, confidence 0.15. Only flow statistics were observed — no protocol contents. The record is one short flow: 6 forward packets, max packet 16 bytes, longest gap ~24.8 s, ~28 kB/s. That does not match the known overload pattern (many concurrent long-lived sessions to 2404, growing inter-arrival times, backward-packet spike then stall), and we have no SYN/RST or multi-port sweep data, so it cannot be called a scan either. Source address: not in context.
+
+**Physical risk:** If RTU-4 stops answering SCADA-1, we lose visibility and remote control of those four Bus 9 breakers. The grid keeps running, unseen. No loss of comms is indicated yet.
+
+**Next actions:**
+1. Confirm SCADA-1 telemetry from RTU-4 is live and Bus 9 breaker positions are updating.
+2. Check RTU-4 session/connection count for buildup.
+3. Do not switch to manual control; do not block port 2404 — no loss of control evidence.
+4. If telemetry goes stale, escalate at once and prepare local manual switching at Bus 9.

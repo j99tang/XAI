@@ -1,0 +1,14 @@
+**INCIDENT BRIEF — ENG-WS-1, 10.0.0.4, ZONE-CC (EACMS)**
+
+**Affected:** engineering workstation ENG-WS-1, 10.0.0.4, ZONE-CC, NERC CIP EACMS. Alert: traffic to port 123, confidence 0.59.
+
+**Observed (flow statistics only):** 4 forward packets, max packet length 120 bytes, one packet in the subflow, and one very long gap between packets (6.37e6, units not in context). Sparse, low-volume. This does not match the high-rate, many-short-flow patterns in our reference material. No protocol contents were inspected. Attack class: not in context. Source address: not in context.
+
+**Physical risk:** ENG-WS-1 is a workstation, not a breaker controller. Which RTUs or breakers it can reach is not in context. No evidence of switching commands. Direct plant risk is unconfirmed.
+
+**Actions:**
+1. Confirm no engineer is logged in and no switching or download is running; stop it if so.
+2. Check SCADA-1 (10.0.0.2) and the RTUs for loss of view or stale telemetry.
+3. Verify breaker positions at the RTU/local panel before any operation; hold switching on manual/local control until cleared.
+4. Do not reboot or isolate ENG-WS-1 until switching status is confirmed.
+5. Report under NERC CIP-008-6.

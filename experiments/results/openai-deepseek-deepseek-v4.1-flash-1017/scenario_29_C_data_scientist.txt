@@ -1,0 +1,7 @@
+The model predicts this flow is **normal** with very low confidence (0.14).
+
+The prediction is driven by several features contributing toward an 'attack' classification, including high `Flow Bytes/s` (24321.1), small `Fwd Packet Length Max` (16), and high `Fwd IAT Max` (8303).
+
+These features suggest a behavioral fingerprint consistent with a flood or scanning attack (small packets, high rate) or potentially a starvation attack (high inter-arrival time). Specifically, the combination of high byte rate and minimal packet size is indicative of a flood/scanning behavior. Furthermore, the zero value for `Subflow Fwd Packets` suggests the traffic may be pure signaling or control traffic.
+
+**Caveat:** The model operates solely on CICFlowMeter flow statistics. While these features provide a statistical fingerprint, they cannot prove the underlying IEC-104 protocol semantics or the intent of the traffic. The evidence is purely behavioral, not semantic.

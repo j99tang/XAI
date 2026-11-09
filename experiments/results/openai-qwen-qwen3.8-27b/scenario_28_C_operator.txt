@@ -1,0 +1,9 @@
+RTU-4 (10.0.0.6, IEC-104 port 2404, Bus 9, ZONE-S) is affected. The alert is low-confidence (0.15, predicted normal). Observed evidence is only flow statistics: a short flow to RTU-4 with 6 forward packets, max packet length 16, and long gaps between packets (Flow IAT Max 24843, Fwd IAT Max 6444). No protocol contents were seen; this does not confirm an attack.
+
+Physical risk: if RTU-4 stops responding, SCADA-1 loses visibility and control of BR-4-9, BR-7-9, BR-9-10, and BR-9-14. The grid keeps operating, but Bus 9 cannot be seen or switched remotely.
+
+Actions:
+1. Check RTU-4/SCADA-1 communication and RTU-4 status.
+2. Verify live status/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+3. If RTU-4 is unresponsive, stop remote switching of those breakers.
+4. Manual control: not in context; do not assume remote control is available.

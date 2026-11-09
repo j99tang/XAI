@@ -1,0 +1,11 @@
+**Model analysis — flow to 10.0.0.3:2404 (RTU-2, IEC-104 controlled station)**
+
+Prediction: **attack**, confidence **1.00**. The top-5 SHAP attributions are all small and all point the same direction — a one-way, no-response, small-packet flow:
+
+- **Bwd IAT Min = 0** (+0.088) and **Bwd IAT Max = 0** (+0.030): every backward inter-arrival time is zero — no reply traffic, or the whole flow arrives in a single burst.
+- **Bwd Packet Length Min = 0** (+0.045) and **Packet Length Max = 8** (+0.047): the largest packet is a tiny, header-only frame.
+- **Fwd PSH Flags = 0** (+0.032): no payload push on the forward direction.
+
+This is a **flooding-family signature** (small/header-dominated packets, zero backward latency, no payload) — consistent with DoS/flood/scanning against the RTU. The detector is binary, so it cannot name a specific class.
+
+**Caveats:** the SHAP values are small (max 0.088) and spread across the top-5, so attribution is thin. The model sees only CICFlowMeter statistics — not IEC-104 payloads — so it cannot prove SYN-flag usage, protocol semantics, or command execution. This is a statistical fingerprint, not proof of protocol action.

@@ -1,0 +1,14 @@
+**BRIEFING — RTU-2 (10.0.0.3), ZONE-C, Bus 4**
+
+**Affected:** RTU-2, IEC-104 controlled station (GridCom GC-4000) at Bus 4; controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. BES Cyber Asset.
+
+**Observed:** Detector flags traffic to port 2404 as an attack, confidence 1.00. Flow statistics only — no protocol contents were inspected. Pattern: small packets (max length 48 bytes), zero ACK flags, short one-way flows (inter-arrival min 298 ms, mean ~1382 ms). Source address: **not in context**. This resembles flood-family traffic against the IEC-104 endpoint; the specific attack class is not confirmed.
+
+**Physical risk:** RTU-2 saturated or unreachable → loss of view and remote control of five Bus 4 breakers. The grid keeps running; that node becomes unobservable and unswitchable remotely.
+
+**Actions — do these before any investigation:**
+1. Switch RTU-2 breaker control to local/manual; confirm with field crew at Bus 4.
+2. Verify and hold BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 locally — no remote switching until comms are verified.
+3. Check RTU-2 health and its link to SCADA-1; check upstream network gear serving ZONE-C.
+4. Watch other RTUs (RTU-3, 10.0.0.5, ZONE-S) for the same pattern.
+5. Log times; report per NERC CIP-008-6.

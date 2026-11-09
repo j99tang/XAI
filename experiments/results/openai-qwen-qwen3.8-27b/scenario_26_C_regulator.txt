@@ -1,0 +1,5 @@
+Assessment is illustrative; the context identifies a testbed/attack-simulation setting and does not make a jurisdictional determination. An intrusion alert predicted “attack” (confidence 0.59) for flow to 10.0.0.4:123, mapped to ENG-WS-1, an engineering workstation in ZONE-CC and an EACMS under NERC CIP. The detector observed flow statistics only and did not identify an attack class; no compromise or disruption is confirmed in the context.
+
+Reportability: NERC CIP-008-6 defines a Reportable Cyber Security Incident as compromise or disruption of a BES Cyber System or an EACMS/PACS associated with a BES Cyber System. Because ENG-WS-1 is an EACMS under NERC CIP, the incident plausibly meets the threshold if compromise/disruption is confirmed and the EACMS is associated with a BES Cyber System; that association is not in context.
+
+If reportable as an attempted compromise and US jurisdiction applies, notification is due to NCCIC/CISA within one hour or by the end of the next calendar day, with required attributes when notifying E-ISAC or NCCIC/CISA. This response sits under the CSF function Detect & Analyze, before Report.

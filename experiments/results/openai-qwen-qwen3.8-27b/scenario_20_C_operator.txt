@@ -1,0 +1,7 @@
+Affected: RTU-1 (GridCom GC-4000, IEC-104) at Bus 2, ZONE-N. Substation name: not in context. It controls BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+What is happening: The detector flagged attack to 10.0.0.1:2404, the IEC-104 endpoint. Evidence is network timing/size data only—zero-length packet extremes, zero minimum backward inter-arrival time, and minimum flow inter-arrival 553. No protocol contents were seen, so do not assume specific commands or a named attack class.
+
+Physical risk: If RTU-1 is degraded or unreachable, we lose reliable view/control of Bus 2 breakers. The physical grid may continue, but telemetry/commands for BR-1-2, BR-2-3, BR-2-4, BR-2-5 could be delayed or unavailable.
+
+Next actions: Check RTU-1 status and its IEC-104 endpoint. Check breaker status for BR-1-2, BR-2-3, BR-2-4, BR-2-5. If RTU-1 cannot be confirmed, switch to manual control of those breakers if available; manual control is not in context. Do not change breaker state until RTU-1 is verified.

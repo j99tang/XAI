@@ -1,0 +1,7 @@
+Affected: RTU-3 (10.0.0.5), GridCom GC-4000 IEC-104 controlled station, ZONE-S, Bus 6; controls BR-5-6, BR-6-11, BR-6-12, BR-6-13. Substation name is not in context.
+
+Alert: attack prediction confidence 1.00 to 10.0.0.5:2404. Detector evidence is flow statistics only: Bwd IAT Min=0, Flow IAT Min=315, Packet Length Min=0, Bwd Packet Length Min=0, Packet Length Max=0. This is abnormal traffic toward the RTU; source and protocol contents are not in context. Do not assume a specific attack class.
+
+Immediate risk: RTU-3 supervisory reach may be degraded or lost, causing loss of view/control of the Bus 6 breakers; delayed/dropped telemetry or unexpected switching cannot be excluded.
+
+Actions: verify RTU-3 health/comms and local indication at Bus 6. Check BR-5-6, BR-6-11, BR-6-12, BR-6-13 status locally. If SCADA control/telemetry is degraded, switch those breakers to manual/local control and hold current configuration. Check RTU-3 network link/port and upstream SCADA path. Secure physical continuity first; investigate after.

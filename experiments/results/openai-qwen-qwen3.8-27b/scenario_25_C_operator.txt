@@ -1,0 +1,7 @@
+Alert: attack prediction (confidence 1.00) to 10.0.0.3:2404. Affected: RTU-2 (GridCom GC-4000), ZONE-C, Bus 4, IEC-104 endpoint. It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. Source IP: not in context.
+
+Observed evidence is flow statistics only: zero-length packets (Packet Length Min/Max 0, Bwd Packet Length Min 0), Bwd IAT Min 0, Flow IAT Min 295. This is a zero-byte signalling pattern; no protocol contents or specific attack class are confirmed.
+
+Physical risk: if RTU-2 is degraded, we lose reliable view/control of Bus 4 breakers. No breaker trip or physical event is in context.
+
+Actions: 1) Check RTU-2 status and IEC-104 endpoint 2404. 2) Check breaker status/telemetry for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. 3) Do not issue breaker commands through RTU-2 until verified. 4) If RTU-2 telemetry/control is unreliable, switch Bus 4 breaker control to manual control. 5) Monitor for loss of telemetry; report per NERC CIP if required.

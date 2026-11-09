@@ -1,0 +1,11 @@
+Affected: ENG-WS-1 (10.0.0.4), engineering workstation in ZONE-CC/EACMS under NERC CIP. Substation: not in context.
+
+What is happening: Low-confidence (0.59) alert for traffic to ENG-WS-1 port 123. Observed network timing/size data only: 4 forward packets, max length 120, one forward packet in the observed flow, long packet gap (6.37e6), active min 1598. Pattern is small and irregular; no message contents or high-rate pattern.
+
+Immediate physical risk: Not in context. Breaker/RTU/substation process impact: not in context. Keep normal control; do not assume loss of view/control of breakers.
+
+Next actions:
+1. Verify ENG-WS-1 is responsive; check EACMS status if available.
+2. If unresponsive or abnormal, isolate ENG-WS-1 from the network and use local EACMS path if available (not in context).
+3. Check ZONE-CC devices for similar alerts. Breakers/RTUs to check: not in context.
+4. Do not switch to manual control based on this alert alone; no RTU/breaker impact is shown.

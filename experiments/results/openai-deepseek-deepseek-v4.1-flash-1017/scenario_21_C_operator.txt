@@ -1,0 +1,7 @@
+Affected: RTU-2 (10.0.0.3), GridCom GC-4000 IEC-104 controlled station, ZONE-C, Bus 4 (substation name not in context); BES Cyber Asset. It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Alert: attack prediction confidence 1.00 to 10.0.0.3:2404. Detector saw only flow statistics: zero/min packet lengths and zero minimum backward inter-arrival. No protocol contents were observed; do not treat as a confirmed attack class.
+
+Physical risk: if RTU-2 communications/CPU are disrupted, we lose supervisory view/control of Bus 4 and those breakers; remote breaker state may be unknown. This is a risk, not observed.
+
+Next actions: check RTU-2 link/status and SCADA-1 (10.0.0.2) reachability. Verify actual positions of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 locally/at panel. If telemetry/control is degraded, switch those breakers to manual/local control and hold current configuration. Do not issue remote switching through RTU-2 until communications are verified. Report per NERC CIP-008-6 after safety actions.

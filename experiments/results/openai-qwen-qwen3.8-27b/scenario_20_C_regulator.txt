@@ -1,0 +1,5 @@
+Assessment (illustrative; synthetic grid, not a jurisdictional determination): An IDS alert classified as an attack (confidence 1.00) to 10.0.0.1:2404, the IEC-104 endpoint of RTU-1, a BES Cyber Asset under NERC CIP (ZONE-N, Bus 2). No protocol contents are asserted; no specific attack class is named, and no compromise or disruption is established.
+
+Because the target is a BES Cyber Asset under NERC CIP and the alert indicates an attack, this plausibly meets the NERC CIP-008-6 threshold as an attempted compromise of an in-scope BES Cyber System. If determined to be an attempt, initial notification is due by the end of the next calendar day; if later determined to be a compromise or disruption, the one-hour clock applies. Notification is due to E-ISAC and, under US jurisdiction, NCCIC/CISA. Required attributes include functional impact, attack vector, and level of intrusion, even if initially unknown.
+
+Framework: the alert is a Detect capability; the notification action is Respond.

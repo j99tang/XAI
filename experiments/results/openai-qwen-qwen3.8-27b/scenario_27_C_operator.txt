@@ -1,0 +1,11 @@
+Affected device: RTU-4 (10.0.0.6), IEC-104 endpoint port 2404, ZONE-S, Bus 9. It controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Incident evidence: low-confidence alert to 10.0.0.6:2404. Detector saw flow statistics only: one forward packet, one FIN, 14,733.6 bytes/s, Flow IAT Max 17,505, down/up ratio 2. This is a short, low-packet flow; it does not confirm a flood, starvation, or protocol-content attack.
+
+Immediate physical risk: none confirmed. If RTU-4 stops responding, we lose visibility/control of the four Bus 9 breakers.
+
+Next actions:
+1. Check RTU-4 IEC-104 status and whether it is still responding to control.
+2. Verify breaker status for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+3. If RTU-4 control/status is lost, treat as loss of control for those breakers.
+Manual-control switch: not in context; do not switch now.

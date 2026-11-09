@@ -1,0 +1,7 @@
+Affected: RTU-2 (10.0.0.3), IEC-104 port 2404, ZONE-C, Bus 4. Substation name: not in context. It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+What is happening: High-confidence detector alert to RTU-2’s IEC-104 port. Evidence is flow statistics only: zero-length packets, back-to-back timing, and no forward push activity. Source IP: not in context. This does not prove a specific attack class; it shows a disruptive pattern toward the RTU communication channel.
+
+Physical risk: No physical impact is in context. If RTU-2 is degraded or loses communication, we can lose timely telemetry/control of Bus 4 breakers, creating unobservable or uncontrolled switching risk.
+
+Actions: 1) Verify RTU-2 status and SCADA-1 polling to 10.0.0.3. 2) Check breaker states/telemetry for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. 3) If RTU-2 is unresponsive or telemetry is stale, switch RTU-2 to manual control and confirm breaker positions locally. 4) Hold automatic switching on Bus 4 until RTU-2 is verified.

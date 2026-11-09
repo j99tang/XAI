@@ -1,0 +1,12 @@
+**Model analysis — flow 10.0.0.1:2404 (RTU-1)**
+
+Prediction: attack, confidence 1.00. The top SHAP contributions are small and distributed (max +0.116), so the flag is a composite fingerprint, not one decisive feature.
+
+- **Flow IAT Min = 5 (+0.116)** — largest driver: a 5 ms minimum inter-arrival time indicates a tight, machine-regular packet cadence.
+- **Bwd Packet Length Min = 0 (+0.091)** and **Packet Length Min = 0 (+0.084)** — zero-length packets are present, consistent with the "small packets, headers dominate ⇒ flood/scan" signature.
+- **Packet Length Max = 90 (+0.058)** — bounded packet size, i.e., low packet-length variance.
+- **Fwd PSH Flags = 0 (+0.054)** — small positive contribution.
+
+**Behavior family:** flooding/DoS (T0814) — the detector is binary and cannot identify the class, so it's SYN-flood vs packet-flood indistinguishable.
+
+**Caveat:** the model sees only CICFlowMeter flow statistics. No IEC-104 protocol semantics, no payload inspection, no SYN/ACK or command semantics. These are statistical fingerprints, not proof of protocol actions. The lab testbed (SANDI-2024) bounds any physical consequence. Port 2404 carries mild signal only.

@@ -1,0 +1,7 @@
+AFFECTED: RTU-3 (10.0.0.5), IEC-104 port 2404, ZONE-S, Bus 6. Controls BR-5-6, BR-6-11, BR-6-12, BR-6-13.
+
+WHAT: Alert flags destination 10.0.0.5:2404. Observed flow pattern: very small/zero-length packet sizes, short minimum arrival gaps, minimal backward packet size. This is network-flow evidence, not a confirmed command or protocol message.
+
+RISK: If RTU-3 cannot respond, we lose reliable view/control of Bus 6 breakers. Physical effect not yet observed; risk is unobserved/uncontrolled switching at Bus 6.
+
+ACTIONS: 1) Verify RTU-3 alive and IEC-104 endpoint responsive. 2) Check breaker status/telemetry for BR-5-6, BR-6-11, BR-6-12, BR-6-13. 3) Hold remote switching on those breakers until RTU-3 and SCADA-1 path are confirmed. 4) If RTU-3 cannot be confirmed, treat remote control unavailable; local/manual control procedure not in context.

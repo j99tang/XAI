@@ -1,0 +1,5 @@
+Detector flags RTU-3 (10.0.0.5, IEC-104 port 2404, ZONE-S, Bus 6) as attack, confidence 1.00. Evidence is flow statistics only: zero-length packets (Packet Length Min/Max 0) and minimum inter-arrival times (Bwd IAT Min 0, Flow IAT Min 258) toward the IEC-104 endpoint. No protocol contents are known; no specific attack class is confirmed.
+
+Physical risk: RTU-3 controls BR-5-6, BR-6-11, BR-6-12, BR-6-13. If its IEC-104 service degrades, we can lose view and control of Bus 6 breakers. No breaker trip is in context.
+
+Actions: 1) Check RTU-3 status and the SCADA-1 to RTU-3 IEC-104 session. 2) Check status of BR-5-6, BR-6-11, BR-6-12, BR-6-13. 3) Manual control: not in context; do not assume it. If RTU-3 telemetry/control is unreliable, hold remote breaker commands and use local/manual control only if confirmed available. 4) Keep Bus 6 breaker status visible; do not change breaker state unless RTU-3 status confirms a required breaker state change.

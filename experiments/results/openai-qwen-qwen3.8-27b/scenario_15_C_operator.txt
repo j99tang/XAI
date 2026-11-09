@@ -1,0 +1,11 @@
+INCIDENT EVIDENCE: Alert confidence 1.00 to 10.0.0.3:2404. Flow stats only: minimum forward IAT 57, minimum backward IAT 209, packet length max 24/min 0, backward min 0. Pattern: short/zero-length packets with low minimum inter-arrival times. No protocol contents seen.
+
+AFFECTED DEVICE: RTU-2, IEC-104 controlled station, ZONE-C, Bus 4; controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+PHYSICAL RISK: If RTU-2 communication is degraded, remote view/control of Bus 4 breakers may be lost; grid can continue but that substation becomes unobservable/unswitchable remotely.
+
+ACTIONS:
+1. Check RTU-2 and SCADA-1 IEC-104 link to 10.0.0.3:2404.
+2. Check breaker states for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. If RTU-2 cannot be trusted, stop relying on remote switching; use local/manual control only if local control capability is confirmed. Manual control capability: not in context.
+4. Monitor Bus 4.

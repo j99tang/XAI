@@ -1,0 +1,7 @@
+**Compliance Assessment — NERC CIP-008-6 (illustrative)**
+
+The IDS produced an “attack” prediction at confidence 1.00 to 10.0.0.6:2404. IP map identifies this as RTU-4, an IEC-104 controlled station (GridCom GC-4000) in ZONE-S at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14, and a BES Cyber Asset under NERC CIP. The detector observes network-flow statistics only; it is binary and does not identify the attack class. Whether compromise or disruption occurred is not in context.
+
+This plausibly meets the **Reportable Cyber Security Incident** threshold because CIP-008-6 covers an *attempted* compromise of a BES Cyber System, even if unsuccessful. Because the context supports an attempt rather than confirmed compromise, the applicable initial notification timeline is **by the end of the next calendar day**; the one-hour clock applies to a determined Reportable Cyber Security Incident. Notify the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**, providing required attributes (functional impact, attack vector, level of intrusion), even if unknown.
+
+This sits under **NIST CSF 2.0 Detect** for the IDS alert and **Respond** for reporting; NIST SP 800-61r3 supplies the lifecycle. Jurisdiction is uncertain: this synthetic grid assessment is illustrative, not a jurisdictional determination.

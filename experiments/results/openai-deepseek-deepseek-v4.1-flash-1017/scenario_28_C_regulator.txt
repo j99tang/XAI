@@ -1,0 +1,7 @@
+**Compliance Assessment — NERC CIP-008-6**
+
+A network flow to **10.0.0.6:2404** was observed. The authoritative IP map identifies this as **RTU-4**, an IEC-104 controlled station in **ZONE-S** at **Bus 9**, controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14, and a **BES Cyber Asset** under NERC CIP. The detector classified the flow as **normal** (confidence 0.15). It observes network-flow statistics only, not protocol contents, and does not identify a specific attack class; none is named in context. No compromise or disruption is established.
+
+Because RTU-4 is a BES Cyber Asset, a compromise, disruption, or **attempted compromise** would plausibly be a **Reportable Cyber Security Incident** under **NERC CIP-008-6**. Current facts do not establish an attempt, so reportability is not yet determined. If determined an attempt, notify **E-ISAC** and, under US jurisdiction, **NCCIC/CISA** by the end of the next calendar day. If compromise/disruption, notify within one hour. Required attributes include functional impact, attack vector, and level of intrusion, even if unknown.
+
+This sits under CSF **Respond**, informed by **Detect**. Assessment is illustrative only; the synthetic grid is not a jurisdictional determination.

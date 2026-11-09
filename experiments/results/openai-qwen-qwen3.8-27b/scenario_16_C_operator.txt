@@ -1,0 +1,5 @@
+Affected: RTU-1 (10.0.0.1, IEC-104 port 2404), ZONE-N, Bus 2; substation name not in context. Alert predicts attack (confidence 1.00) toward RTU-1 using flow statistics only: Flow IAT Min=11, Bwd IAT Min=506, Packet Length Min=0/Max=24, Bwd Packet Length Min=0. This is a short-interval, tiny-packet pattern at the IEC-104 endpoint; no protocol contents were seen.
+
+Risk: If RTU-1 communication is lost, SCADA-1 loses visibility and remote switching of BR-1-2, BR-2-3, BR-2-4, BR-2-5. The grid keeps operating, but Bus 2/ZONE-N becomes blind and remotely unswitchable.
+
+Actions: Check RTU-1 status and SCADA-1↔RTU-1 communication. Check status/telemetry for BR-1-2, BR-2-3, BR-2-4, BR-2-5. If RTU-1 communication is lost, stop remote switching attempts; remote switching is unavailable. Manual/local control: availability not in context; if available, use it for those breakers. Do not rely on RTU-1 remote commands. Source IP not in context.

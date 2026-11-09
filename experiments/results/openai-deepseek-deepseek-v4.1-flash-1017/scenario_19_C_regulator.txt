@@ -1,0 +1,5 @@
+An IDS alert (confidence 1.00) flagged an attack flow to `10.0.0.6:2404`, RTU-4, an IEC-104 controlled station in ZONE-S at Bus 9 controlling breakers BR-4-9, BR-7-9, BR-9-10, and BR-9-14; it is a BES Cyber Asset under NERC CIP. The detector observes only flow statistics and cannot identify the specific attack class; reportability is not based on that class.
+
+This plausibly meets the NERC CIP-008-6 Reportable Cyber Security Incident threshold as an attempted compromise of an in-scope BES Cyber System. Under CIP-008-6 R4, notify the E-ISAC and, under US jurisdiction, NCCIC/CISA: within one hour of determining a Reportable Cyber Security Incident, or by the end of the next calendar day for an attempt. Required attributes include functional impact, attack vector, and level of intrusion; “unknown” may be stated initially.
+
+This is illustrative: jurisdiction is not in context, and the grid is synthetic. The IDS/contextualizer is a Detect capability; the reporting/reaction action sits under Respond under NIST CSF 2.0.

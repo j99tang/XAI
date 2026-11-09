@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.5:2404 (RTU-3)**
+
+The detector returned attack at confidence 1.00, but the attribution is thin and spread: the top five SHAP contributions are all small (+0.033 to +0.054). The drivers are extremum/minimum statistics, not volume — Bwd IAT Min = 0 (+0.054), Flow IAT Min = 217 (+0.048), Packet Length Min = 0 (+0.038), Bwd Packet Length Min = 0 (+0.034), Packet Length Max = 0 (+0.033). Zero backward inter-arrival plus zero-length packets in both directions means the flow carries no payload-bearing frames and no meaningful server-side response: a header-only, pure-signalling statistical fingerprint.
+
+The feature dictionary maps "many small packets (headers dominate) ⇒ flood/scan" and "pure signalling (SYN scan carries none)," with control traffic "usually ~0" bytes. That places this in the flooding/denial family (DoS/flood/starvation), not bulk transfer or command injection. The detector is binary and does not name the class.
+
+Caveats: these are CICFlowMeter flow statistics only — no IEC-104 semantics, so no specific protocol action is proven. Dst_Port 2404 is mild signal, not a leak. The small SHAP magnitudes make this a weak-but-consistent fingerprint; 1.00 is the model's confidence, not calibrated proof. Testbed origin (SANDI-2024, simulated RTU) bounds any physical-consequence claim.

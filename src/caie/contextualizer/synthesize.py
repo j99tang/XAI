@@ -71,9 +71,20 @@ class TruncatedNarrative(RuntimeError):
 # Not tight: on OpenRouter, `max_tokens` also sets the credit RESERVATION (worst-case
 # cost), so leaving it unset reserved 65,536 tokens x $30/1M ~ $1.97 against a call that
 # actually costs ~$0.023 — an 85x over-reservation that 402s on a low balance. Pinning it
-# LOW would be worse: it would truncate reasoning models mid-answer. 4,000 cuts the
+# LOW would be worse: it would truncate reasoning models mid-answer. 4,000 cut the
 # reservation to ~$0.12 while leaving ample room.
-MAX_OUTPUT_TOKENS = int(os.environ.get("CAIE_SYNTH_MAX_TOKENS", "4000"))
+#
+# D49: raised 4,000 -> 16,000. qwen3.8-27b is a reasoning model that spent all 4,000
+# tokens on its reasoning trace and returned EMPTY content (reasoning_tokens=4000,
+# finish_reason="length") on even a trivial prompt. This ceiling is a guard rail, not an
+# experimental treatment: holding it at 4,000 does not treat all models alike, it gives
+# non-reasoning models a full answer budget and reasoning models zero. Raising it
+# GLOBALLY preserves the §7.7 invariant (only the model differs between rows) because the
+# old ceiling was verified non-binding for every prior run -- the longest narrative across
+# all 8 runs is 283 words (~377 tok), 9% of 4,000 -- so no prior row needs regenerating or
+# re-judging. Only a reasoning model consumes the headroom, which is model behaviour and
+# therefore part of what the sweep measures.
+MAX_OUTPUT_TOKENS = int(os.environ.get("CAIE_SYNTH_MAX_TOKENS", "16000"))
 
 
 def _complete(system: str, user: str) -> str:

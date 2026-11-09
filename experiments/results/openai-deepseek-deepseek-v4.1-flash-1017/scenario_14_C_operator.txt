@@ -1,0 +1,13 @@
+**Affected device:** RTU-1 (10.0.0.1), IEC-104 controlled station at Bus 2, ZONE-N; controls BR-1-2, BR-2-3, BR-2-4, BR-2-5. Substation name: not in context.
+
+**What is happening:** Alert flags traffic to RTU-1 port 2404 as attack, confidence 1.00. Detector saw only flow statistics: minimum backward inter-arrival 0, minimum flow inter-arrival 89, and zero/minimum packet lengths. That is a flood-like traffic pattern; no protocol contents were observed, and no specific attack class is confirmed in context.
+
+**Immediate physical risk:** RTU-1 may be saturated or unresponsive, causing loss of view/control at Bus 2. Telemetry may be delayed or dropped, and remote switching commands may not reach the breakers.
+
+**Next actions:**
+1. Check RTU-1 communications/health and local indication at Bus 2.
+2. Verify actual positions/status of BR-1-2, BR-2-3, BR-2-4, BR-2-5 locally.
+3. If remote control is unreliable, switch those breakers to manual/local control and hold remote switching through RTU-1.
+4. Check RTU-1 link/interface and upstream network path.
+
+Prioritize physical safety and continuity; investigate after control is stable.

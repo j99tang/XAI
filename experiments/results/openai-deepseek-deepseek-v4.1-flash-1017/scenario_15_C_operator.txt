@@ -1,0 +1,14 @@
+**INCIDENT BRIEFING — RTU-2, Bus 4 (ZONE-C)**
+
+**Affected:** 10.0.0.3, RTU-2 (GridCom GC-4000, IEC-104 controlled station), Bus 4, ZONE-C. It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+**What is happening:** detector flagged traffic to 10.0.0.3:2404 as an attack, confidence 1.00. Evidence is flow statistics only: very short inter-packet gaps (Flow IAT Min 57, Bwd IAT Min 209), max packet length 24 bytes, min length 0, zero-length backward packets. High-rate small-packet pattern at the RTU's IEC-104 port. Protocol contents were not inspected; source address is not in context. Flood and denial-of-service traffic look alike in these statistics, so no attack class is asserted.
+
+**Physical risk:** RTU-2 stops answering; SCADA-1 loses view and control of the five Bus 4 breakers. The grid keeps running; Bus 4 becomes unobservable and not remotely switchable.
+
+**Actions:**
+1. Verify RTU-2 poll response; check its switch port and link.
+2. Send an operator to Bus 4 to read and log actual breaker positions locally.
+3. Place BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 under local/manual control; hold present lineup, no remote switching.
+4. Do not reboot RTU-2 until positions are confirmed.
+5. Report per NERC CIP-008-6.

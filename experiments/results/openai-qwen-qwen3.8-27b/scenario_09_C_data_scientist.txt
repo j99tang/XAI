@@ -1,0 +1,5 @@
+The binary detector returned **attack** with confidence **1.00** for a flow to **RTU-1** (`10.0.0.1:2404`), an IEC-104 endpoint. The positive SHAP drivers were **Flow IAT Min** (58, +0.075), **Bwd IAT Min** (243, +0.071), **Packet Length Max** (24, +0.064), **Packet Length Min** (0, +0.058), and **Bwd Packet Length Min** (0, +0.053).
+
+These are statistical fingerprints: shortest inter-packet gaps and small/zero-length packets, with the largest packet only 24 bytes. In the provided context, small/zero-byte packets are associated with **flood/scan-family** behavior or zero-byte control traffic, not a specific named attack. The model does not identify the attack class; it only separates attack from normal.
+
+Because it sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics, this evidence cannot prove SYN flood, command injection, breaker manipulation, or physical impact. It supports an anomalous small-packet flow fingerprint toward the RTU.

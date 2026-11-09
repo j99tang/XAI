@@ -1,0 +1,10 @@
+Affected: RTU-4 (GridCom GC-4000), Bus 9, ZONE-S. Substation name: not in context.
+
+Alert: detector classified traffic to RTU-4 IEC-104 port 2404 as attack (confidence 1.00). Evidence is flow statistics only: Bwd IAT Min 0, Flow IAT Min 52, Packet Length Min/Max 0, Bwd Packet Length Min 0. This is a zero-length/zero-minimum inter-arrival pattern; do not treat it as proof of a specific IEC-104 command.
+
+Physical risk: RTU-4 could lose telemetry/control reach to BR-4-9, BR-7-9, BR-9-10, BR-9-14, leaving Bus 9 unobservable or unable to switch safely.
+
+Actions:
+1) Check RTU-4 status and SCADA-1 (10.0.0.2) to RTU-4 link.
+2) Verify breaker status/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+3) If RTU-4 is unresponsive or data is stale, hold remote switching; use manual/local control only if confirmed available (manual-control capability not in context). Other RTUs: not in context.

@@ -1,0 +1,9 @@
+Operator briefing:
+
+Affected: RTU-1 (10.0.0.1), IEC-104 endpoint port 2404, ZONE-N, Bus 2; substation name not in context. It supervises BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Incident evidence: detector flagged attack (confidence 1.00) to 10.0.0.1:2404. Only flow statistics were seen: small packets (max length 8), backward packet length min 0, no PSH, low inter-arrival values. This is a flooding-family behavior pattern; no protocol contents were seen, so no specific attack class is confirmed.
+
+Physical risk: If RTU-1 communication is degraded or lost, we lose visibility and remote control of its four breakers at Bus 2. The grid can keep operating, but that substation is unobservable and unswitchable remotely.
+
+Actions: 1) Check SCADA-1 to RTU-1 communication and breaker status BR-1-2, BR-2-3, BR-2-4, BR-2-5. 2) If RTU-1 is unreachable, stop relying on remote switching; use manual/local control if available (availability not in context). 3) Do not make remote breaker changes through RTU-1 until communication is verified.

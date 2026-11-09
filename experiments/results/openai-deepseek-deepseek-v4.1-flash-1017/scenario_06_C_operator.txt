@@ -1,0 +1,13 @@
+**OPERATOR BRIEFING — RTU-2 / Bus 4 (ZONE-C)**
+
+**Affected:** RTU-2, 10.0.0.3 — GridCom GC-4000, IEC-104 controlled station at Bus 4. Controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. BES Cyber Asset.
+
+**What is happening:** High-confidence (1.00) intrusion alert against port 2404. The detector saw flow statistics only — no protocol contents. Observed: minimum backward inter-arrival and minimum packet lengths at zero, zero max packet length, forward PSH flags set. Plainly: a fast burst of very small, near-empty packets at RTU-2's IEC-104 port. Source address is not in context. The specific attack class is not established by this evidence.
+
+**Physical risk:** RTU-2 CPU/link saturation. SCADA-1 loses view and control of Bus 4 and its five breakers — unobservable, remotely uncontrollable, RTU may drop offline. (Consequence is model-based; the trace itself came from a lab testbed.)
+
+**Actions, in this order:**
+1. Test SCADA-1 telemetry and control path to RTU-2; assume lost if polling is late.
+2. Switch BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 to manual/local control; verify actual positions at Bus 4.
+3. Check RTU-2 power and its switch port; hold all switching until link status is known.
+4. Report per NERC CIP-008-6 after the bus is stable.

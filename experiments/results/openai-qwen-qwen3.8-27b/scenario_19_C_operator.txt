@@ -1,0 +1,9 @@
+ALERT: RTU-4 (10.0.0.6, GridCom GC-4000, IEC-104 port 2404) is affected. Substation name: not in context; affected node is Bus 9, ZONE-S. Detector prediction: attack, confidence 1.00. Observed flow evidence only: packet-length min and max are zero, forward PSH flag count is zero, backward inter-arrival min is zero. No protocol contents were seen.
+
+Physical risk: RTU-4 controls BR-4-9, BR-7-9, BR-9-10, and BR-9-14. If RTU-4 telemetry or control degrades, we can lose view/control of Bus 9 breakers; telemetry/commands may be delayed or dropped. Breaker trip status: not in context.
+
+Actions:
+1. Verify RTU-4 online status and communication to its IEC-104 endpoint.
+2. Check breaker status/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+3. If RTU-4 telemetry/control is degraded, take manual/local control of those breakers if available; manual-control availability is not in context.
+4. Do not rely on RTU-4 until verified.

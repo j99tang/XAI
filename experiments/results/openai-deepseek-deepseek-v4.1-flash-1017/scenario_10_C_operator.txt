@@ -1,0 +1,14 @@
+**INCIDENT BRIEFING — RTU-1, Bus 2 (ZONE-N)**
+
+**Affected device:** RTU-1 (10.0.0.1:2404), GridCom GC-4000 IEC-104 controlled station at Bus 2, ZONE-N; BES Cyber Asset. It controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+**What is happening:** the detector (confidence 1.00) flags traffic to RTU-1 port 2404. Evidence is flow statistics only — no protocol contents were inspected. Observed pattern: minimum inter-arrival 5 (very tight timing), minimum packet length 0 in both directions, maximum packet length 90 (small frames), no forward PSH flags. That is a small-packet, machine-regular pattern. Flooding-family behaviours look alike in these statistics; the specific class is not in context.
+
+**Physical risk:** RTU-1 link/CPU saturation would delay or drop telemetry and commands — loss of view and control of BR-1-2, BR-2-3, BR-2-4, BR-2-5. This consequence is reasoned, not observed.
+
+**Next actions:**
+1. Confirm RTU-1 is still polling; check its link and CPU.
+2. Verify actual breaker positions for BR-1-2/2-3/2-4/2-5 locally at Bus 2 — do not rely on SCADA-1 (10.0.0.2) indications.
+3. Switch RTU-1 to manual/local control until traffic normalises.
+4. Hold all remote switching on those breakers.
+5. Report under NERC CIP-008-6.

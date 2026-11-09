@@ -1,0 +1,12 @@
+**Affected:** RTU-4 (10.0.0.6), GridCom GC-4000 IEC-104 controlled station, Bus 9, ZONE-S. Substation name: not in context. Alert confidence 1.00 for traffic to port 2404.
+
+**What is happening:** The detector saw only network flow statistics — zero/minimum packet lengths, minimum backward inter-arrival 0, minimum flow inter-arrival 250. No protocol contents were observed, and no specific attack class is named in context. The pattern indicates abnormal traffic loading toward RTU-4.
+
+**Physical risk:** RTU-4 controls BR-4-9, BR-7-9, BR-9-10, BR-9-14. If RTU-4 is saturated or its link fails, SCADA may lose view/control at Bus 9. This is a risk, not yet observed.
+
+**Next actions:**
+1. Check RTU-4 health/telemetry and SCADA-1 (10.0.0.2) link to RTU-4.
+2. Verify local status of BR-4-9, BR-7-9, BR-9-10, BR-9-14; do not trust remote indication if degraded.
+3. If telemetry/control is impaired, switch those breakers to manual/local control and hold current lineup.
+
+Prioritize safety and continuity; investigate afterward.

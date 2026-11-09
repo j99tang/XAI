@@ -1,0 +1,13 @@
+**OPERATOR BRIEFING — RTU-1, Bus 2 (ZONE-N)**
+
+**Affected device:** RTU-1, 10.0.0.1:2404 — IEC-104 controlled station (GridCom GC-4000) at Bus 2, ZONE-N. BES Cyber Asset. It controls breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+**What is happening:** The intrusion detector reports an attack against RTU-1 with confidence 1.00. Evidence is flow statistics only: minimum inter-arrival times of 11 (forward) and 506 (backward), minimum packet lengths of 0, and a maximum packet length of 24 — i.e. a burst of very small, tightly timed packets at the RTU. Protocol contents were not inspected; the source address and specific attack class are not in context. Flooding-family behaviour cannot be distinguished from other floods on these features alone.
+
+**Immediate physical risk:** RTU-1 becoming saturated or unreachable, so SCADA loses view and remote control of Bus 2. The grid keeps running; the four breakers hold their last commanded state and we would no longer see them.
+
+**Next actions:**
+1. Confirm whether RTU-1 still answers polls; treat silence as loss of control, not a comms glitch.
+2. Switch Bus 2 to manual/local control now; do not issue remote switching through RTU-1.
+3. Verify actual position of BR-1-2, BR-2-3, BR-2-4, BR-2-5 locally/with field crew before any switching.
+4. Report under NERC CIP-008-6.

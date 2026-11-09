@@ -1,0 +1,5 @@
+ALERT: RTU-3 (10.0.0.5, IEC-104 port 2404) at Bus 6, ZONE-S, GridCom GC-4000. Detector flagged attack (confidence 1.00) using flow statistics only: zero-byte packets, zero backward inter-arrival minimum, minimum flow inter-arrival 217. No protocol content is known.
+
+Physical risk: RTU-3 may lose reliable view/control of Bus 6 breakers BR-5-6, BR-6-11, BR-6-12, BR-6-13. If telemetry or commands are delayed/dropped, Bus 6 may become unobservable/uncontrollable while the grid continues.
+
+Actions: 1) Verify RTU-3 health and IEC-104 link. 2) Check status of BR-5-6, BR-6-11, BR-6-12, BR-6-13; independent status source not in context. 3) If RTU-3 data is stale or unconfirmed, prepare to take local/manual control of those breakers; manual control availability not in context, so confirm before switching. 4) Do not change breaker state until status is confirmed.

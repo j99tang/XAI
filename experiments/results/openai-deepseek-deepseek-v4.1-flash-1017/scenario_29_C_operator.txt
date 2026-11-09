@@ -1,0 +1,14 @@
+**OPERATOR BRIEFING — RTU-4 / Bus 9 (ZONE-S)**
+
+**Device affected:** 10.0.0.6 = RTU-4, GridCom GC-4000 IEC-104 controlled station, Bus 9, ZONE-S. Controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14. BES Cyber Asset (NERC CIP).
+
+**What we're seeing:** IDS flagged traffic to 10.0.0.6:2404. Detector scored it **normal, confidence 0.14** — i.e. low-confidence, unresolved. Only flow statistics were seen, not message contents. Observed pattern: many small forward packets (max packet length 16 bytes), zero forward data packets, one gap of ~8.3 s between packets, modest byte rate (~24 kB/s). No protocol payload inspection. Source address: not in context. Attack class: not established.
+
+**Physical risk:** if RTU-4's connection handling degrades, it stops answering SCADA and we lose visibility and control of BR-4-9, BR-7-9, BR-9-10, BR-9-14. Protection may mis-operate during a real fault with the RTU unresponsive. That is the risk to hold, not to prove.
+
+**Actions now (safety first):**
+1. Poll RTU-4 from SCADA-1; confirm it answers and reports breaker positions.
+2. Confirm actual positions of BR-4-9, BR-7-9, BR-9-10, BR-9-14 at the substation — local indication over remote.
+3. If RTU-4 is unresponsive or slow: switch those breakers to local/manual control at Bus 9, keep the bus in its current healthy configuration, and do not attempt remote switching until comms are verified.
+4. Check RTU-4 link/port health and connection count; check whether RTU-3 (10.0.0.5, Bus 6) shows the same traffic — comparison only, not implicated in context.
+5. Do not restart RTU-4 without confirming breaker state locally first.

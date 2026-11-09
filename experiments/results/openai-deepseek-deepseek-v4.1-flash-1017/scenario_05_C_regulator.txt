@@ -1,0 +1,11 @@
+**Compliance Assessment — Incident 10.0.0.1:2404**
+
+This assessment is illustrative only: the context describes a synthetic grid, not a jurisdictional determination.
+
+**What occurred:** The IDS raised a binary "attack" prediction (confidence 1.00) directed to 10.0.0.1:2404. Per the authoritative IP map, 10.0.0.1 is RTU-1, an IEC-104 controlled station (GridCom GC-4000) in ZONE-N at Bus 2, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5 — an authored BES Cyber Asset under NERC CIP. The detector observes network flow statistics only; it does not report protocol contents and does not identify an attack class, so no attack type is asserted. No compromise or disruption is confirmed in context; breaker state, telemetry loss, and containment status are not in context.
+
+**Reportability:** Because the target is a BES Cyber Asset, this plausibly meets the NERC CIP-008-6 threshold for a Reportable Cyber Security Incident — compromise or disruption of a BES Cyber System. Reportability rests on the affected asset, not the attack type. Treat as a reportable candidate pending confirmation.
+
+**Timeline/notifications:** E-ISAC within one hour, or by the end of the next calendar day for attempted compromises; NCCIC/CISA likewise under US jurisdiction. Required attributes must accompany notification. Jurisdiction is not in context.
+
+**CSF function:** Detect (Detect & Analyze).

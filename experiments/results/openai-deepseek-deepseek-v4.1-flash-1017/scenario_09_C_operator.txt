@@ -1,0 +1,7 @@
+Affected: RTU-1 (10.0.0.1), IEC-104 controlled station at Bus 2, ZONE-N; controls BR-1-2, BR-2-3, BR-2-4, BR-2-5. Substation name not in context.
+
+Alert: detector reports attack to 10.0.0.1:2404, confidence 1.00. Only flow statistics were seen: very small packets (max 24, min 0), zero-length backward packets, short inter-arrival minima. This is a traffic-saturation pattern; exact attack class and protocol contents are not in context.
+
+Physical risk: RTU-1 may become overloaded or unreachable, causing loss of view and remote control of its four breakers at Bus 2. No breaker operation is evidenced in context.
+
+Actions: 1) Check RTU-1 communications/health from SCADA-1 and the RTU link. 2) Verify local/panel status of BR-1-2, BR-2-3, BR-2-4, BR-2-5. 3) If telemetry is delayed/dropped, switch those breakers to manual/local control and hold current configuration unless physical conditions require switching. 4) Do not rely on remote switching through the suspect path. 5) Report incident per NERC CIP-008-6; source/attack class not in context.

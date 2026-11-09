@@ -1,0 +1,14 @@
+**Operator Briefing — RTU-4, Bus 9 (ZONE-S)**
+
+**Affected device:** RTU-4, 10.0.0.6, GridCom GC-4000 IEC-104 controlled station, Bus 9, ZONE-S. It controls breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**What we see:** one short flow to port 2404 — a single forward packet, one FIN flag, ~14.7 kB/s, max inter-arrival ~17.5 s, down/up ratio 2. The detector scored this "normal" at 0.19 confidence. Only flow timing, size and TCP-flag statistics were observed; packet contents were not inspected, so no protocol message can be described. This is not the many-concurrent-long-flows pattern of a connection-exhaustion event, and it is not a multi-port sweep. No evidence in context of RTU overload; source identity not in context.
+
+**Physical risk:** if RTU-4 stops answering SCADA-1, we lose visibility and control of all four Bus 9 breakers. Not observed.
+
+**Actions:**
+1. Poll RTU-4 from SCADA-1; confirm telemetry and breaker positions for BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+2. Check RTU-4 comms health and its upstream link.
+3. Keep RTU-4 in remote — do not go manual while telemetry is live.
+4. If RTU-4 goes silent: freeze breaker states, dispatch local manual operation, restart RTU-4 per playbook.
+5. Log and hand to security.

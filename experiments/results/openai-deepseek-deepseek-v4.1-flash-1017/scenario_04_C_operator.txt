@@ -1,0 +1,14 @@
+**OPERATOR BRIEFING — RTU-4, Bus 9**
+
+**Affected:** RTU-4 (GridCom GC-4000, IEC-104 controlled station), 10.0.0.6:2404, ZONE-S, Bus 9 — BES Cyber Asset. It controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+**What is happening:** the detector flagged this flow as an attack, confidence 1.00. Evidence is flow statistics only — no protocol contents were inspected. Observed pattern: very small packets (max length 6, min 0 in both directions) with a minimum inter-arrival of 16, i.e. a burst of tiny, closely spaced frames at the RTU's IEC-104 port. That is a rate/volume pattern; it does not by itself name the attack type.
+
+**Physical risk:** RTU-4 link or CPU saturation → delayed or dropped telemetry, and loss of supervisory view and control of the four Bus 9 breakers. The grid stays up; Bus 9 becomes unobservable and uncommanded.
+
+**Next actions:**
+1. Confirm RTU-4 still responds; check its link/CPU status.
+2. Read BR-4-9, BR-7-9, BR-9-10, BR-9-14 positions locally at Bus 9 — not from SCADA.
+3. Switch ZONE-S to manual/local control until RTU-4 traffic normalizes.
+4. Verify SCADA-1 (10.0.0.2) polling to RTU-4 is healthy.
+5. Source address of this flow: not in context. Report under NERC CIP-008-6.

@@ -1,0 +1,9 @@
+**Model analysis — flow 10.0.0.5:2404 (RTU-3)**
+
+The detector flagged this flow as **attack**, confidence **1.00**. Attribution is spread over five flow statistics with individually modest SHAP values (+0.053 to +0.075); no single feature dominates.
+
+`Packet Length Max` = 24 B, `Packet Length Min` = 0 and `Bwd Packet Length Min` = 0 indicate tiny, header-dominated frames with a zero-payload reverse direction — the small-packet signature the feature dictionary ties to flood/scanning and to pure signalling/control traffic, not bulk transfer. `Flow IAT Min` (53) and `Bwd IAT Min` (408) show very short minimum inter-arrival gaps, i.e. bursty low-end timing.
+
+That combination is a small-packet, low-payload, bursty-timing fingerprint consistent with a **flooding-family (DoS/flood/starvation)** behavior. It does not establish that class: the detector is binary and emits no attack class, and the taxonomy's flood markers (`Flow Packets/s`, `Flow Bytes/s`, `Flow IAT Std`) are absent from the top SHAP list.
+
+**Boundary:** the model sees only CICFlowMeter statistics, not IEC-104 semantics, so it cannot prove malformed commands, half-open SYNs, or any specific protocol action. Port 2404 is mild signal, not a leak. Confidence 1.00 is model-reported, not calibrated; traces come from a lab testbed against a simulated RTU.

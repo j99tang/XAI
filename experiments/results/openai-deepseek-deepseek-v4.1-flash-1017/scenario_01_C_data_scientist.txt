@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.1:2404 (RTU-1, IEC-104 controlled station)**
+
+All five top attributions are zero-valued: `Bwd IAT Min`=0 (+0.068), `Packet Length Min`=0 (+0.046), `Bwd Packet Length Min`=0 (+0.039), `Packet Length Max`=0 (+0.034), `Fwd PSH Flags`=0 (+0.030). `Packet Length Min` and `Max` both being 0 means the flow's frames carry no payload at all; `Bwd IAT Min`=0 means no measurable gap between backward packets; no PSH push. Per the feature dictionary, headers-dominant small/zero-length packets are the flood/scan fingerprint, and ~0-byte flows are characteristic of control/signalling traffic. The signature therefore falls in the **flooding family (DoS/flood/starvation)**; the detector is binary and does not name a class, so no specific attack is asserted.
+
+Confidence is 1.00, but the listed contributions are individually small (≤0.068) and do not by themselves explain a saturated score — treat the confidence as model-internal, not corroborated by these five features.
+
+**Evidence boundary:** CICFlowMeter statistics only. These cannot prove IEC-104 protocol actions, command content, or intent; zero-length minima are equally consistent with a SYN-style probe, a flood, or benign signalling. Physical consequence: not in context.

@@ -1,0 +1,9 @@
+**Model Analysis — RTU-4 (10.0.0.6:2404), binary classifier: attack, confidence 1.00**
+
+**Driving features (SHAP, toward attack):** Bwd IAT Min = 0 (+0.068), Packet Length Min = 0 (+0.046), Bwd Packet Length Min = 0 (+0.039), Packet Length Max = 0 (+0.034), Fwd PSH Flags = 0 (+0.031). Every top contributor reports a zero-valued extreme: minimal inter-arrival spacing and zero-length/header-only packets.
+
+**Behavioral family:** This is a degenerate timing/size fingerprint consistent with flood/scanning-family traffic — the KB notes "many small packets (headers dominate) ⇒ flood/scan." It is *not* the baseline balanced request/response polling pattern. The detector is binary, so it does not assign an attack class; DoS, flood, or scan cannot be distinguished from these attributions alone. Notably absent from the top SHAP list: SYN/ACK flag counts and Flow Packets/s, the features the KB ties to specific SYN-DoS vs. flood classes.
+
+**Confidence:** 1.00 — the model is fully saturated.
+
+**Evidence boundary:** The model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. These zeros are a statistical fingerprint, not proof of a specific protocol action against the RTU. Dst_Port 2404 is explicitly a low-signal, non-leak feature here.

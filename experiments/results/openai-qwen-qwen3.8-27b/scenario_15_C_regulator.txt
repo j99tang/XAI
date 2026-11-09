@@ -1,0 +1,5 @@
+An intrusion alert classified a flow to 10.0.0.3:2404 as attack (confidence 1.00). The destination is RTU-2, an IEC-104 controlled station in ZONE-C at Bus 4, a BES Cyber Asset under NERC CIP. Successful compromise or disruption is not in context; the detector observes flow statistics only and does not identify a specific attack class.
+
+Because the alert targets an in-scope BES Cyber Asset, it plausibly meets the NERC CIP-008-6 threshold for a Reportable Cyber Security Incident as an attempted compromise. Since successful compromise/disruption is not established, the applicable initial-notification clock is by the end of the next calendar day; if compromise/disruption is later determined, the within-one-hour clock applies.
+
+Notification is due to E-ISAC and, under US jurisdiction, NCCIC/CISA. This assessment is illustrative for a synthetic grid, not a jurisdictional determination. Framework function: Detect for the alert; this regulatory assessment/notification is Respond.

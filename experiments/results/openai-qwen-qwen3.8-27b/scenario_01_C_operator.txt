@@ -1,0 +1,12 @@
+Affected: RTU-1 (GridCom GC-4000), IEC-104 port 2404, Bus 2, ZONE-N. It controls BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+What is happening: Detector flagged attack traffic toward 10.0.0.1:2404. Source: not in context. It saw only flow statistics—zero packet-length min/max, zero backward inter-arrival minimum, and no forward PSH flags—not command contents. Treat this as a flooding-family pattern, not a confirmed specific attack.
+
+Physical risk (synthetic consequence): RTU-1 may lose supervisory view/control of its Bus 2 breakers. The grid may keep running, but breaker state and control at that node could become unknown.
+
+Actions:
+1. Check RTU-1 status and IEC-104 link.
+2. Verify breaker status/telemetry for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+3. If RTU-1 is unresponsive or telemetry is stale, stop using RTU-1 for switching.
+4. Switch to manual control only if RTU-1 is unresponsive and manual control is available; availability not in context.
+5. Maintain current breaker positions until verified.

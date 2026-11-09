@@ -1,0 +1,9 @@
+**Model analysis — 10.0.0.3:2404 (RTU-2)**
+
+Prediction: attack, confidence 1.00. Top SHAP attributions: Flow IAT Min (57, +0.075), Bwd IAT Min (209, +0.071), Packet Length Max (24, +0.063), Packet Length Min (0, +0.058), Bwd Packet Length Min (0, +0.053) — all small in absolute magnitude.
+
+The signature is small-packet, low-payload: a 24-byte maximum means headers dominate, and zero minimum lengths in both directions indicate payload-free frames. Tight minimum inter-arrival times indicate machine-regular, closely spaced traffic rather than normal polling cadence. The feature dictionary maps "many small packets (headers dominate)" to flood/scan, and zero-payload traffic to pure signalling.
+
+This is a flooding/scanning-family fingerprint (DoS, flood, starvation, or probe) — not a named class. The detector is binary, and the taxonomy's DoS markers (SYN Flag Count, Fwd Packets/s, Down/Up Ratio) are absent from the top attributions, so DoS specifically is unsupported.
+
+Caveat: CICFlowMeter statistics only. They cannot prove IEC-104 protocol semantics, command content, or intent; traces are lab-generated against a simulated RTU. Confidence 1.00 is not corroborated by large SHAP margins.

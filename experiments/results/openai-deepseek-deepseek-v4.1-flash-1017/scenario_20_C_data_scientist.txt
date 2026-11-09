@@ -1,0 +1,10 @@
+**Model analysis — flow 10.0.0.1:2404**
+
+The detector scored this flow as **attack at confidence 1.00**. The five contributing features are all *minimum/extreme-value* statistics, not volume statistics:
+
+- **Bwd IAT Min = 0** (SHAP +0.054) and **Flow IAT Min = 553** (+0.044): back-to-back arrivals with no measurable minimum gap on the reverse direction.
+- **Packet Length Min = 0** (+0.038), **Bwd Packet Length Min = 0** (+0.034), **Packet Length Max** (+0.034): frames at the zero-length floor coexisting with larger packets — i.e. header-dominated, payload-free traffic.
+
+Per the feature dictionary, many small packets with headers dominating is the flood/scan fingerprint; the dos section further describes near-zero backward traffic with short flows. So the signature is a **flooding-family (DoS/flood/starvation) statistical fingerprint**: machine-regular, minimal-gap, minimal-payload bursts toward the RTU.
+
+**Caveats.** The model is binary and does not name the attack class; the KB's flood and dos classes share this small-packet, low-IAT region. These are CICFlowMeter flow statistics only — no IEC-104 protocol semantics (ASDU type, cause of transmission) are visible, so this is a statistical fingerprint, not proof of a specific protocol action. Notably, the SHAP magnitudes are small (0.034–0.054) against confidence 1.00 — a calibration point worth checking. Whether the source falls in 121.142.26.0/24 is **not in context**.

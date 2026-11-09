@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.3:2404 (RTU-2)**
+
+The detector returned attack at confidence 1.00, but the evidence is a narrow statistical fingerprint. All five top SHAP contributors are extreme-value statistics: `Bwd IAT Min` = 0 (+0.054) and `Flow IAT Min` = 92 (+0.048) show the tightest inter-packet gaps are very small — bursty, machine-paced arrivals with no backward spacing; `Packet Length Min` = 0 (+0.038), `Bwd Packet Length Min` = 0 (+0.034) and `Packet Length Max` = 0 (+0.033) show empty/header-only frames in both directions. Per the feature dictionary, "many small packets (headers dominate) ⇒ flood/scan," and near-zero-byte traffic matches pure signalling rather than bulk transfer.
+
+That signature places the flow in the flooding/denial-of-service family (flood, SYN-DoS, starvation) or a scan-like probe. The detector is binary and does not name a class, so no specific attack is asserted.
+
+Caveats: the model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics — it cannot prove which commands were sent, whether the RTU acted on them, or any physical consequence (traces are lab-generated against a simulated RTU). `Dst Port` 2404 is not a top contributor. SHAP magnitudes are small (≤0.054) despite confidence 1.00.

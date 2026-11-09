@@ -1,0 +1,5 @@
+The model’s attack call is driven mainly by flow-statistics: **Flow IAT Min=298 (SHAP +0.156)** and **Flow IAT Mean=1381.82 (+0.037)** — inter-arrival timing; **Packet Length Max=48 (+0.114)** — small packets; **Fwd PSH Flags=0 (+0.056)**; and **ACK Flag Count=0 (+0.030)** — ACK-less traffic. Destination is **10.0.0.3:2404**, RTU-2’s IEC-104 endpoint, but port is not among the top SHAP drivers.
+
+This is a **small-packet, ACK-less statistical fingerprint**. In the provided taxonomy, small packets indicate flood/scanning, and low ACK with many short flows aligns with the DoS-family fingerprint. So the behavior family is **flooding/DoS/scanning-like**, not a specific named attack class. Confidence is **1.00**.
+
+Caveat: the detector is binary and sees only CICFlowMeter statistics, not IEC-104 protocol semantics. These features cannot prove a SYN DoS, a flood, scanning, or any specific IEC-104 action; they are statistical fingerprints only.

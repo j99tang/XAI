@@ -1,0 +1,9 @@
+**Model analysis — flow 10.0.0.6:2404 (RTU-4, ZONE-S)**
+
+The detector fired on flow-statistics shape, not on protocol content. The top attributions are all *minimum*-side and zero-inflated: `Bwd IAT Min`=0 (+0.061), `Flow IAT Min`=250 (+0.050), `Packet Length Min`=0 (+0.040), `Bwd Packet Length Min`=0 (+0.036), `Packet Length Max`=0 (+0.035). Read together, this is a statistical fingerprint of back-to-back packets with zero-length payloads — headers dominating, no bulk data, no large frames. Per the feature dictionary, "many small packets (headers dominate) ⇒ flood/scan," and zero-byte traffic is characteristic of control/signalling rather than bulk transfer.
+
+**Behavior family:** flooding-family (DoS/flood/starvation) or no-payload signalling. The detector is binary and does not name an attack class; the context does not identify which of these this flow is.
+
+**Confidence:** 1.00 — but the largest single SHAP contribution is only +0.061, so no one feature carries the decision; the score is distributed across correlated minimum/zero-length statistics.
+
+**Evidence boundary:** the model sees only CICFlowMeter flow statistics, not IEC-104 semantics. These features cannot prove which protocol actions occurred, nor that RTU-4's breakers were affected — the taxonomy's physical consequences are reasoned, not observed (lab testbed against a simulated RTU).

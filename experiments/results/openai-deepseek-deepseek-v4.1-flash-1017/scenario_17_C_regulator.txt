@@ -1,0 +1,5 @@
+**Compliance assessment:** The alert flags an attack flow to `10.0.0.3:2404`, **RTU-2**, a **BES Cyber Asset** in ZONE-C at Bus 4 (IEC-104 controlled station; controls breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9). The detector observes network flow statistics only and is binary; it does not identify the specific attack class, so protocol content/attack type is **not in context**.
+
+Under **NERC CIP-008-6**, an attempted compromise of a BES Cyber System is reportable even if unsuccessful; this plausibly meets the **Reportable Cyber Security Incident** threshold. Initial notification is due to the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**; R4 requires **within one hour** of determination, or **by the end of the next calendar day** for an attempt. Required attributes include functional impact, attack vector, and level of intrusion, even if unknown.
+
+The alerting is a **NIST CSF 2.0 Detect** capability; the reporting/report step sits under **Respond**. This is illustrative only—synthetic grid, not a jurisdictional determination.

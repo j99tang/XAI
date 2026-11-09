@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.4:123 (ENG-WS-1, ZONE-CC)**
+
+Prediction: **normal**, confidence 0.14. All five top SHAP contributions are **negative** — Total Fwd Packet (26, −0.101), Active Std (1.46e7, −0.077), Fwd Packet Length Max (120 B, −0.065), Active Mean (9.07e6, −0.064), Active Min (1585, −0.052). Despite the "toward attack" heading, these values push the flow *away* from the attack class; they are the evidence for normal.
+
+Statistically the fingerprint is a low-volume, sparse flow: only 26 forward packets, a 120-byte maximum segment, and large, high-variance active-time statistics (bursty, mostly idle). That does not match the flooding-family fingerprint in the feature dictionary (many small packets, high volume) nor the portscan profile (1–2 packets, `Fwd Act Data Pkts` ≈ 0, tiny flow duration). It is consistent with intermittent control/keep-alive-style traffic.
+
+Caveats: the detector is binary and names no attack class. SHAP values are statistical attributions over CICFlowMeter flow statistics, not IEC-104 protocol semantics — they cannot prove or exclude specific protocol actions. The destination port is 123, not the 2404 IEC-104 port named in context. Active Mean/Std/Min definitions are not in context, and the context does not state which class the 0.14 confidence scores.

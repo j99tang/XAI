@@ -1,0 +1,5 @@
+The model predicted normal with confidence 0.14. The listed attack-direction SHAP contributions are negative, reducing the attack score: Flow Bytes/s (24321.1, -0.083), Fwd Packet Length Max (16, -0.076), Fwd IAT Max (8303, -0.068), Subflow Fwd Packets (0, -0.052), FWD Init Win Bytes (259, -0.049). Flow Bytes/s is the largest driver, but its negative contribution supports normal.
+
+The values form a small-packet, zero-forward-packet statistical fingerprint: Fwd Packet Length Max is 16, Fwd IAT Max is a maximum inter-arrival-time value, Subflow Fwd Packets is zero (short-probe/signalling-like), and FWD Init Win Bytes is the initial TCP receive-window value, a fingerprintable stack feature. In the context, small packets are associated with flood/scanning-family behavior, and zero forward data packets resembles pure signalling/scan probes.
+
+Destination 10.0.0.6:2404 is RTU-4’s IEC-104 endpoint, but that is target context, not proof. These CICFlowMeter statistics cannot prove portscan, starvation, DoS, or any IEC-104 protocol action.

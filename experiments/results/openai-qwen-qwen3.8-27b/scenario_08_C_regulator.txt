@@ -1,0 +1,7 @@
+Compliance assessment (illustrative; synthetic grid, not a jurisdictional determination):
+
+An IDS alert classified as an attack (confidence 1.00) was observed toward 10.0.0.6:2404. The authoritative IP map identifies 10.0.0.6 as RTU-4, an IEC-104 controlled station in ZONE-S, Bus 9, controlling BR-4-9, BR-7-9, BR-9-10, and BR-9-14, and a BES Cyber Asset under NERC CIP. The detector observed network flow statistics only; protocol contents are not in context, and no specific attack class is asserted.
+
+Because RTU-4 is an in-scope BES Cyber Asset and the alert is an attack directed at its IEC-104 endpoint, this plausibly meets the NERC CIP-008-6 Reportable Cyber Security Incident threshold as an attempted compromise of an in-scope system. Compromise or disruption is not in context.
+
+If determined an attempt, initial notification is due by the end of the next calendar day to E-ISAC and, under US jurisdiction, NCCIC/CISA. If later determined as compromise or disruption, the one-hour timeline applies. The IDS alert is a CSF Detect capability; this reporting action sits under CSF Respond.

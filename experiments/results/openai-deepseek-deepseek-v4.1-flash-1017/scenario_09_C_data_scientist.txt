@@ -1,0 +1,9 @@
+**Model analysis — flow 10.0.0.1:2404 (RTU-1, IEC-104 controlled station)**
+
+Prediction: attack, confidence 1.00.
+
+All five top SHAP contributors push toward attack: Flow IAT Min=58 (+0.075), Bwd IAT Min=243 (+0.071), Packet Length Max=24 (+0.064), Packet Length Min=0 (+0.058), Bwd Packet Length Min=0 (+0.053). The signature is tight inter-arrival minima combined with uniformly tiny frames — a 24-byte maximum and zero-length minimums in both directions. Per the feature dictionary, headers dominating with many small packets is the flood/scan fingerprint; zero-length backward packets mean no payload returned toward the source.
+
+Behavior family: flooding/denial-of-service-family (the taxonomy maps both `dos` and `flood` to T0814). The detector is binary, so it does not name a class — SYN DoS, packet flood, and fuzzing share small-packet, low-IAT fingerprints and are not separable here.
+
+Caveats: SHAP magnitudes are small (≤0.075) while confidence is 1.00; confidence is a model score, not calibrated proof. Features are CICFlowMeter statistics only — they cannot reveal IEC-104 function codes, whether the RTU dropped telemetry, or any physical consequence. Testbed note: fingerprints are real data; consequences are reasoned. Port 2404 carries mild signal only, not a leak.

@@ -1,0 +1,7 @@
+DEVICE (background): RTU-2 (10.0.0.3), IEC-104 port 2404, ZONE-C, Bus 4; controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+INCIDENT EVIDENCE: Alert flags attack (confidence 1.00) on flows to RTU-2:2404. Observed only flow statistics: max packet length 48 bytes, zero PSH and zero ACK flags, minimum inter-arrival 298 ms, mean 1382 ms. This is a small-packet, low-flag pattern toward the RTU; no protocol contents were seen. No specific attack class is asserted.
+
+RISK: If RTU-2 communication is lost, loss of remote visibility/control of Bus 4 breakers. Grid may keep operating, but Bus 4 is unobservable and cannot be switched remotely.
+
+ACTIONS: 1) Confirm RTU-2 status and port 2404 reachability. 2) Check breaker status/alarms for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. 3) If RTU-2 is unreachable, do not rely on remote control; verify breaker positions locally. 4) Hold remote switching until RTU-2 is confirmed healthy. Manual-control procedure: not in context.

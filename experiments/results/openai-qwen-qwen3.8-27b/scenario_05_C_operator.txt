@@ -1,0 +1,12 @@
+OPERATOR BRIEFING
+
+Affected: RTU-1 (10.0.0.1, GridCom GC-4000), IEC-104 endpoint port 2404, Zone ZONE-N, Bus 2. It supervises BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Incident evidence: attack alert confidence 1.00 to 10.0.0.1:2404. Detector saw only flow statistics: short packets (max length 48), no forward PSH flags, packet gaps (Flow IAT min 310 ms, mean 1115.84 ms; Bwd IAT min 640 ms). No protocol contents are known; attack class is not confirmed.
+
+Physical risk: if RTU-1 communication is lost, we lose remote visibility/control of those Bus 2 breakers. The grid keeps operating, but that substation becomes unobservable and not remotely switchable.
+
+Actions:  
+1) Verify SCADA-1 to RTU-1 communication.  
+2) Check breaker indications/status for BR-1-2, BR-2-3, BR-2-4, BR-2-5.  
+3) If RTU-1 comm fails, treat as loss of remote control. Whether to switch to manual control: not in context.

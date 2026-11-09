@@ -1,0 +1,7 @@
+Assessment (illustrative; synthetic grid, not a jurisdictional determination): An intrusion alert classified traffic to 10.0.0.1:2404 as an attack (confidence 1.00). The destination is RTU-1, an IEC-104 controlled station, GridCom GC-4000, in ZONE-N at Bus 2, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5, and a BES Cyber Asset under NERC CIP.
+
+No confirmed compromise or disruption is in context. Because the alert is an attack on an in-scope RTU/BES Cyber Asset, it plausibly meets the NERC CIP-008-6 threshold as an attempted compromise of a BES Cyber System. If later determined to be a compromise or disruption, the one-hour clock applies. On current facts, the applicable initial-notification timeline is by the end of the next calendar day for an attempted compromise.
+
+Notification is due to E-ISAC and, under US jurisdiction, NCCIC/CISA. Required attributes—functional impact, attack vector, and level of intrusion—must be provided, even if initially unknown.
+
+Framework: detection is a Detect capability; this regulatory notification sits under Respond.

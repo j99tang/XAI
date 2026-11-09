@@ -1,0 +1,7 @@
+**Model analysis — flow to 10.0.0.6:2404 (RTU-4)**
+
+The detector did **not** flag this flow: prediction **normal**, confidence **0.15** — a weak, near-boundary call. Attribution is dominated by negative (toward-normal) SHAP values: `Flow IAT Max` = 24,843 ms (SHAP −0.084) and `Flow Bytes/s` = 28,248.2 (−0.084) describe a sparse, low-rate flow with long idle gaps; `Fwd Packet Length Max` = 16 bytes (−0.074) and `Fwd IAT Max` = 6,444 ms (−0.058) describe tiny, widely spaced client packets. Only `Total Fwd Packet` = 6 (+0.059) pushed toward attack.
+
+Behaviorally this is a short, small-packet, low-volume exchange — a statistical fingerprint consistent with sparse polling/keep-alive or a brief probe, **not** the flooding family (flood/DoS/starvation), which the feature dictionary associates with many small packets at volume, or many concurrent long-lived flows with rising IATs. The detector is binary and names no class.
+
+**Caveats:** these are CICFlowMeter flow statistics only — no IEC-104 function codes, payloads, or session semantics, so specific protocol actions cannot be proven. `Dst Port` 2404 is mild signal, not a leak. With SHAP magnitudes ≤0.084 and confidence 0.15, the evidence is weak; "normal" does not establish benignity for this BES Cyber Asset.

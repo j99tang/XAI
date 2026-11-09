@@ -1,0 +1,11 @@
+**Model analysis — flow 10.0.0.3:2404 (RTU-2)**
+
+The detector scored this flow **attack at confidence 1.00**. Attribution is dominated by timing and packet-size minima, not by volume:
+
+- **Bwd IAT Min = 0** (SHAP +0.063) — the shortest server→client gap is zero, i.e. near-simultaneous back-to-back packets.
+- **Flow IAT Min = 295** (SHAP +0.053) — a very tight minimum inter-packet gap.
+- **Packet Length Min = 0** (+0.043), **Packet Length Max = 0** (+0.036), **Bwd Packet Length Min = 0** (+0.035) — zero-length packets in both directions.
+
+Read together, this is a **statistical fingerprint of a burst of zero-payload, machine-regular packets with minimal backward response** — the small-packet/header-dominated signature the feature dictionary associates with the **flooding family (DoS/flood/starvation)**, not a bulk-transfer or command-injection pattern.
+
+**Evidence boundary:** the model sees only CICFlowMeter flow statistics, not IEC-104 protocol semantics. It cannot prove SYN half-open behavior, a specific attack class, or any RTU/breaker effect — the detector is binary and names no class. Port 2404 is a mild signal only, not a leak. The 1.00 confidence rests on individually small SHAP contributions (≤0.063) and is not calibrated proof. Per the taxonomy, the network fingerprint is real data; physical consequence is not observed.

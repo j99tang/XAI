@@ -1,0 +1,9 @@
+ALERT: Attack prediction 1.00 toward RTU-1 (10.0.0.1, GridCom GC-4000, ZONE-N, Bus 2) on IEC-104 port 2404. Alert is based on network timing/size data only: packet length max 24/min 0, backward packet length min 0, short packet timing values (58, 243). No protocol contents seen. Source IP not in context.
+
+Physical risk: If RTU-1 communication is lost, we lose remote view and switching of Bus 2 breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5. The grid may keep running, but that substation becomes unobservable and cannot be remotely switched.
+
+Actions now:
+1. Verify RTU-1 communication status from SCADA-1; confirm breaker status for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+2. If RTU-1 is unresponsive, not updating, or control commands fail, take RTU-1 out of remote control and switch Bus 2 breaker operations to manual/local control.
+3. Do not open Bus 2 breakers based on the network alert alone; act only on confirmed breaker status.
+4. Start NERC CIP incident process. Do not block a source; source IP not in context.

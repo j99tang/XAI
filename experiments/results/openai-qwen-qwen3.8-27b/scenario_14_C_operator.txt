@@ -1,0 +1,9 @@
+Alert: attack pattern to RTU-1 (10.0.0.1, IEC-104 port 2404), ZONE-N, Bus 2. Detector saw flow statistics only: zero packet-length min/max, zero backward IAT min, zero backward packet-length min, flow IAT min 89. This is an abnormal flow pattern; protocol contents are not in context.
+
+Physical risk: RTU-1 may lose reliable view/control of Bus 2 breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5. The grid may continue, but that node becomes unobservable/uncommandable; do not rely on RTU-1 telemetry for switching.
+
+Actions:
+1. Verify RTU-1 status and breaker positions for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+2. If RTU-1 telemetry or command path is degraded, switch Bus 2 breaker control to manual and hold non-essential switching.
+3. Check RTU-1 IEC-104 endpoint and SCADA-1 link for continued abnormal flow.
+4. Start NERC CIP incident response.

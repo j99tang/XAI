@@ -20,6 +20,8 @@ ORDER = [("llama-3.1-8b\n(API)", "openai-meta-llama-llama-3.1-8b-instruct"),
          ("qwen3-32b", "openai-qwen-qwen3-32b"),
          ("llama-3.3-70b", "openai-meta-llama-llama-3.3-70b-instruct"),
          ("qwen3-235b", "openai-qwen-qwen3-235b-a22b-2507"),
+         ("deepseek\nv4.1-flash", "openai-deepseek-deepseek-v4.1-flash-1017"),
+         ("qwen3.8-27b", "openai-qwen-qwen3.8-27b"),
          ("gpt-5.5\n(ceiling)", "openai-openai-gpt-5.5")]
 PERS = ["operator", "data_scientist", "regulator"]
 
@@ -49,14 +51,19 @@ ax.legend(fontsize=9); ax.grid(alpha=.3); ax.tick_params(labelsize=8)
 fig.tight_layout(); fig.savefig(FIG / "fig1_capability_gradient.png", dpi=180); plt.close(fig)
 
 # fig 2 — raw vs penalised: reliability is the separator
-fig, (a1, a2) = plt.subplots(1, 2, figsize=(11, 4.2))
+fig, (a1, a2) = plt.subplots(1, 2, figsize=(12.5, 4.8))
 x = range(len(labels))
+# 8 models no longer fit horizontally in a half-width panel -> rotate, and flatten the
+# two-line names (a rotated multi-line tick label is unreadable).
+flat = [l.replace("\n", " ") for l in labels]
 a1.bar([i - .2 for i in x], [D[l]["raw"] for l in labels], .4, label="raw D/C/A/R")
 a1.bar([i + .2 for i in x], [D[l]["cpas"]["C"] for l in labels], .4, label="CPAS (after −λH)")
-a1.set_xticks(list(x)); a1.set_xticklabels(labels, fontsize=7); a1.set_ylabel("score")
+a1.set_xticks(list(x))
+a1.set_xticklabels(flat, fontsize=8, rotation=30, ha="right"); a1.set_ylabel("score")
 a1.set_title("Substance is similar; the penalty separates them", fontsize=10)
 a1.legend(fontsize=8); a1.grid(alpha=.3, axis="y")
-a2.plot(labels, [D[l]["H"] for l in labels], "o-", color="firebrick", lw=2, ms=7)
+a2.plot(list(x), [D[l]["H"] for l in labels], "o-", color="firebrick", lw=2, ms=7)
+a2.set_xticks(list(x)); a2.set_xticklabels(flat, fontsize=8, rotation=30, ha="right")
 a2.set_ylabel("hallucination rate, tier C (%)"); a2.set_ylim(0, 45)
 a2.set_title("Reliability, not capability, is the deployment constraint", fontsize=10)
 a2.grid(alpha=.3); a2.tick_params(labelsize=7)

@@ -1,0 +1,11 @@
+Affected: RTU-4 (10.0.0.6), IEC-104 port 2404, Bus 9, ZONE-S. Substation name not in context. No other RTUs are in context.
+
+Incident evidence: alert to RTU-4 with zero-length packet sizes (packet length min/max 0, backward packet length min 0) and timing stats (backward inter-arrival min 0, flow inter-arrival min 250). Detector saw network timing/size data only, not protocol contents.
+
+Physical risk: not yet observed. If RTU-4 is degraded/offline, loss of view/control of BR-4-9, BR-7-9, BR-9-10, BR-9-14 at Bus 9. Grid continues, but Bus 9 becomes unobservable and commands may not reach breakers.
+
+Actions:
+1. Check RTU-4 health and IEC-104 link.
+2. Verify breaker status/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14; confirm no unexpected trip.
+3. If RTU-4 control is confirmed lost, switch to manual control of those breakers if manual control is available; availability not in context.
+4. Hold switching commands until breaker state is confirmed.

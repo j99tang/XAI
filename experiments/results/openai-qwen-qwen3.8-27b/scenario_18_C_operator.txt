@@ -1,0 +1,7 @@
+Affected: RTU-3 (10.0.0.5), IEC-104 station at Bus 6, ZONE-S. Substation name not in context. It controls BR-5-6, BR-6-11, BR-6-12, BR-6-13.
+
+What is happening: Alert to 10.0.0.5:2404, confidence 1.00. Flow stats only: packet length min and max are 0; backward packet length min is 0; backward inter-arrival min is 0; flow inter-arrival min is 315. This is a repeated zero-length flow pattern toward the IEC-104 endpoint; no protocol contents are known.
+
+Physical risk: If RTU-3 telemetry/control is degraded, we lose view and control of Bus 6 breakers. Bus 6 could run uncoordinated and response to a real electrical event could be delayed. No breaker trip is observed in context.
+
+Actions: 1) Verify RTU-3 status and IEC-104 link. 2) Check breaker status/telemetry for BR-5-6, BR-6-11, BR-6-12, BR-6-13. 3) If RTU-3 cannot be verified, switch those breakers to manual/local control if available (availability not in context) and hold non-essential switching. 4) Maintain Bus 6 operation; do not rely on unverified RTU data.

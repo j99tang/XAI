@@ -1,0 +1,9 @@
+Substation name not in context; affected location is Bus 4, ZONE-C. RTU-2 (10.0.0.3, IEC-104 port 2404) is affected. The alert is based only on network timing/size data: zero-length packets, zero minimum gap in return packets, and a 468 minimum gap between packets in the flow. This does not prove a specific attack class; treat it as possible interference or saturation of the RTU communication path.
+
+Physical risk: No physical impact is confirmed yet. RTU-2 may lose reliable view/control of Bus 4 breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. If telemetry or commands are delayed/dropped, the grid may run but be unobservable or uncontrolled at Bus 4.
+
+Actions:
+1. Verify RTU-2 status and its communication path to SCADA-1.
+2. Check current breaker status/telemetry for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. If RTU-2 data is stale, inconsistent, or command confirmation fails, switch Bus 4 breaker operations to manual control and hold automatic switching.
+4. Do not initiate Bus 4 switching until RTU-2 is verified.

@@ -1,0 +1,15 @@
+**OPERATOR BRIEFING — CONTROL ROOM**
+
+**Affected device:** RTU-2, 10.0.0.3:2404 (GridCom GC-4000, IEC-104 controlled station), ZONE-C, Bus 4. It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. BES Cyber Asset (NERC CIP).
+
+**What we see:** Intrusion detector fired at confidence 1.00 on traffic to RTU-2's port 2404. Detector saw network flow statistics only — not message contents. Observed pattern: near-zero minimum inter-arrival times (forward and backward), minimum/maximum packet lengths of 0, and a 295 flow IAT minimum — i.e. a burst of very small/empty frames arriving back-to-back at the RTU. That is a flood-family shape; the specific class is not in context.
+
+**Physical risk:** RTU-2 CPU/link saturation → delayed or dropped telemetry → loss of view and control of the Bus 4 breakers. Note: the physical consequence is reasoned from the synthetic IEEE 14-bus overlay, not observed.
+
+**Actions:**
+1. Confirm SCADA-1 reach to RTU-2; check RTU-2 link/CPU and port 2404.
+2. Verify actual breaker positions for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 — locally/field, not via RTU-2.
+3. Take Bus 4 breakers to local/manual control; hold present lineup; no remote switching until indications are verified.
+4. Report per NERC CIP-008-6.
+
+Not in context: attack class, source IP, whether commands reached breakers.

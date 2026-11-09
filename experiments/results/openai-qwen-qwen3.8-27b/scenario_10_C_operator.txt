@@ -1,0 +1,12 @@
+Alert: attack prediction 1.00 to 10.0.0.1:2404. Affected: RTU-1 (GridCom GC-4000), ZONE-N, Bus 2; controls BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+
+Observed flow stats only: Flow IAT Min = 5; Packet Length Min = 0; Bwd Packet Length Min = 0; Packet Length Max = 90; Fwd PSH Flags = 0. Pattern: small-packet pattern toward the IEC-104 port; exact class not confirmed.
+
+Risk: RTU-1 may lose supervisory view/control of Bus 2 breakers, causing delayed/lost telemetry or inability to command BR-1-2, BR-2-3, BR-2-4, BR-2-5. No breaker trip or physical fault is in context.
+
+Actions:
+1) Verify RTU-1 status and SCADA-1 to RTU-1 comms.
+2) Check breaker status/telemetry for BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+3) Manual control availability: not in context. If RTU-1 control cannot be confirmed and manual control is available, switch RTU-1 to manual and hold breaker positions; do not remote-switch until restored.
+
+Source IP not in context.

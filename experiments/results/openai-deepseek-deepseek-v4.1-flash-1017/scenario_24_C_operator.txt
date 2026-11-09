@@ -1,0 +1,6 @@
+**Operator briefing — RTU-1, Bus 2, ZONE-N (10.0.0.1:2404).**  
+Alert: attack prediction, confidence 1.00. Detector evidence is flow statistics only: zero/minimum backward inter-arrival, zero-length backward packets, max packet length 8, minimum flow inter-arrival 641, no forward PSH. This is a very short-packet, back-to-back traffic pattern toward the IEC-104 endpoint. Protocol contents and source are **not in context**; the specific attack class is not established.
+
+**Immediate physical risk:** RTU-1 may lose supervisory reach, causing loss of view/control of breakers **BR-1-2, BR-2-3, BR-2-4, BR-2-5** at Bus 2. The grid keeps running, but that node may be unobservable and unswitchable remotely.
+
+**Next actions:** Verify RTU-1 health and SCADA-1 communications. Locally confirm status of all four breakers. If remote indication/control is degraded, place those breakers under **local/manual control** and avoid remote switching until RTU-1 is stable. Prioritize safety and continuity; investigate after.

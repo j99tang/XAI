@@ -1,0 +1,7 @@
+Affected: RTU-4 (10.0.0.6), IEC-104 station at Bus 9, ZONE-S; BES Cyber Asset under NERC CIP. Substation name not in context. It controls BR-4-9, BR-7-9, BR-9-10, BR-9-14.
+
+Observed: alert to 10.0.0.6:2404. Detector says normal, confidence 0.14. Only flow statistics are available: 24,321 bytes/s, max forward packet 16 bytes, max forward inter-arrival 8,303, 0 forward subflow packets, initial window 259 bytes. No protocol contents are known.
+
+Risk: If RTU-4 stops answering SCADA-1, we lose visibility/control of those four Bus 9 breakers until RTU-4 is restarted; protection may mis-operate during a real fault.
+
+Actions: 1) Verify RTU-4 is still answering SCADA-1. 2) Check breaker status for BR-4-9, BR-7-9, BR-9-10, BR-9-14. 3) RTU-3 is not indicated by this alert. 4) Manual control: not in context; no context fact requires switching now. If RTU-4 stops answering SCADA-1, prepare to restart RTU-4.

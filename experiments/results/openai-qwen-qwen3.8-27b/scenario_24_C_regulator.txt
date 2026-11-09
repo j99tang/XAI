@@ -1,0 +1,7 @@
+Assessment (illustrative; jurisdiction not established in context): The IDS generated a binary attack alert (confidence 1.00) to 10.0.0.1:2404. IP map identifies 10.0.0.1 as RTU-1, an IEC-104 controlled station in ZONE-N at Bus 2, controlling breakers BR-1-2, BR-2-3, BR-2-4, BR-2-5, and a BES Cyber Asset under NERC CIP. Port 2404 is indicative of an IEC-104 endpoint. The detector output does not identify an attack class; no compromise or disruption is confirmed in context.
+
+Reportability: Plausible under NERC CIP-008-6 if the event is confirmed as a compromise or disruption of this BES Cyber System. Reportability rests on the affected asset, not the attack type.
+
+Timeline/notification: If US jurisdiction applies, notification is due to NCCIC/CISA within one hour or by the end of the next calendar day for attempted compromises. E-ISAC notification may require required attributes, but its timeline is not in context.
+
+Framework function: Detect & Analyze, with potential transition to Report.

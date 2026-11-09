@@ -1,0 +1,48 @@
+{
+  "run_tag": "openai-qwen-qwen3.8-27b",
+  "synth_backend": "openai",
+  "synth_model": "qwen/qwen3.8-27b",
+  "personas": [
+    "operator",
+    "data_scientist",
+    "regulator"
+  ],
+  "tiers": [
+    "A",
+    "B",
+    "C"
+  ],
+  "generated_utc": "2026-11-09T00:20:38+00:00",
+  "scenarios": {
+    "scenario_01": "19658a1aeb20b20b",
+    "scenario_02": "f70aef81cdfdbf6a",
+    "scenario_03": "c427c0d9a9021857",
+    "scenario_04": "1be5a7091f2e887c",
+    "scenario_05": "96cb732273eaf62a",
+    "scenario_06": "383467a5a605e8dc",
+    "scenario_07": "d297550e19860ade",
+    "scenario_08": "71857556dc11c002",
+    "scenario_09": "8766459522f5a64f",
+    "scenario_10": "ae57ecb6d7a9f19f",
+    "scenario_11": "7990172d3e740b79",
+    "scenario_12": "bf747acc8a80140e",
+    "scenario_13": "83badd3ef305216e",
+    "scenario_14": "e7cbe5f63bdbb5b6",
+    "scenario_15": "93ea07fe57f3794d",
+    "scenario_16": "4f19bcb38a7cdfca",
+    "scenario_17": "27e035c4296598e2",
+    "scenario_18": "afe8068229e05889",
+    "scenario_19": "12a9b18209e21386",
+    "scenario_20": "5dd7d9e2742222a6",
+    "scenario_21": "b23c7be615b8480e",
+    "scenario_22": "3011244caf74aee3",
+    "scenario_23": "7790dfce99fadcee",
+    "scenario_24": "22a08d1865ad7cdb",
+    "scenario_25": "20f7fe7890897087",
+    "scenario_26": "6bce76b4afd9e0e6",
+    "scenario_27": "1bb35a04d44d7a19",
+    "scenario_28": "0f0cb5265d2b2bb8",
+    "scenario_29": "10ef7394ed94f335",
+    "scenario_30": "33c5ceccaab4d481"
+  }
+}

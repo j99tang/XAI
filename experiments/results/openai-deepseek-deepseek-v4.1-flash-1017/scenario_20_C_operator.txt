@@ -1,0 +1,12 @@
+**Operator briefing — RTU-1, Bus 2, ZONE-N.** Substation name: not in context.
+
+Alert: attack confidence 1.00 to 10.0.0.1:2404 — RTU-1, GridCom GC-4000 IEC-104 controlled station. Detector evidence is flow statistics only: Bwd IAT Min=0, Flow IAT Min=553, Packet Length Min=0, Bwd Packet Length Min=0, Packet Length Max=0. That is a tight-timing, zero/minimum-length packet pattern; no protocol contents were inspected, so do not assume a specific attack class.
+
+Physical risk: RTU-1 controls BR-1-2, BR-2-3, BR-2-4, BR-2-5. If its link/CPU is affected, Bus 2 loses supervisory view/control and remote switching may be delayed or dropped.
+
+Immediate actions:
+1. Confirm RTU-1 health and SCADA-1 reachability.
+2. Check local and SCADA status of BR-1-2, BR-2-3, BR-2-4, BR-2-5.
+3. Hold current breaker state; do not issue remote switching through RTU-1 until verified.
+4. Switch those breakers to manual/local control if telemetry or control is degraded.
+5. Notify shift supervisor and cyber incident response.

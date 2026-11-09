@@ -17,7 +17,7 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | retrieval | per-persona, `top_k=8`, `max_chars=9000` | frozen |
 | judge | `claude-opus-5` × 3 repeats | frozen |
 | formula | w = D .30 / C .25 / A .25 / R .20, λ = 2.0 | frozen |
-| **synthesizer** | **6 models** | **the only variable** |
+| **synthesizer** | **8 models** | **the only variable** |
 
 ---
 
@@ -30,6 +30,8 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | qwen3-32b | 1.50 | 1.60 | **2.86** | 3.40 | 27% | 71% | +1.37 | <.0001 |
 | llama-3.3-70b | 1.50 | 1.60 | **3.15** | 3.46 | 16% | 77% | +1.65 | <.0001 |
 | qwen3-235b | 1.48 | 1.62 | **3.29** | 3.62 | 17% | 86% | +1.81 | <.0001 |
+| deepseek-v4.1-flash | 1.49 | 1.60 | **3.72** | 3.94 | 11% | 99% | +2.23 | <.0001 |
+| qwen3.8-27b | 1.54 | 1.64 | **3.76** | 3.98 | 11% | 97% | +2.22 | <.0001 |
 | gpt-5.5 (ceiling) | 1.52 | 1.58 | **3.95** | 4.04 | 4% | 100% | +2.43 | <.0001 |
 
 ## T2 — Per-dimension, tier C only
@@ -41,11 +43,13 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | qwen3-32b | 3.2 | 2.4 | 3.9 | 4.2 | 27% |
 | llama-3.3-70b | 3.6 | 2.5 | 3.6 | 4.2 | 16% |
 | qwen3-235b | 3.6 | 2.8 | 3.9 | 4.3 | 17% |
+| deepseek-v4.1-flash | 4.4 | 2.8 | 4.1 | 4.5 | 11% |
+| qwen3.8-27b | 4.3 | 3.0 | 4.1 | 4.6 | 11% |
 | gpt-5.5 (ceiling) | 4.4 | 2.9 | 4.1 | 4.8 | 4% |
 
 ## T3 — Per persona: floor vs ceiling (tier C)
 
-| persona | | D | C | A | R | H% | raw | CPAS |
+| persona |  | D | C | A | R | H% | raw | CPAS |
 |---|---|---|---|---|---|---|---|---|
 | operator | 8B | 3.5 | 2.6 | 4.3 | 4.2 | 27% | 3.62 | **3.08** |
 |  | gpt-5.5 | 4.8 | 3.1 | 4.8 | 4.6 | 10% | 4.33 | **4.13** |
@@ -67,12 +71,12 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 
 ## T5 — CPAS by consequence class (tier C)
 
-| consequence class | llama-3.1-8b (API) | llama3.1:8b (LOCAL) | qwen3-32b | llama-3.3-70b | qwen3-235b | gpt-5.5 (ceiling) |
-|---|---|---|---|---|---|---|
-| ABSORBED | 2.94 | 3.16 | 3.68 | 3.48 | 3.84 | 4.51 |
-| ISLAND | 2.06 | 2.52 | 2.89 | 3.38 | 3.37 | 3.88 |
-| OVER+VOLT | 2.21 | 2.59 | 2.77 | 3.17 | 3.31 | 3.27 |
-| OVERLOAD | 2.25 | 2.35 | 3.07 | 3.18 | 3.23 | 3.68 |
+| consequence class | llama-3.1-8b (API) | llama3.1:8b (LOCAL) | qwen3-32b | llama-3.3-70b | qwen3-235b | deepseek-v4.1-flash | qwen3.8-27b | gpt-5.5 (ceiling) |
+|---|---|---|---|---|---|---|---|---|
+| ABSORBED | 2.94 | 3.16 | 3.68 | 3.48 | 3.84 | 4.34 | 4.44 | 4.51 |
+| ISLAND | 2.06 | 2.52 | 2.89 | 3.38 | 3.37 | 3.42 | 3.62 | 3.88 |
+| OVER+VOLT | 2.21 | 2.59 | 2.77 | 3.17 | 3.31 | 3.32 | 3.38 | 3.27 |
+| OVERLOAD | 2.25 | 2.35 | 3.07 | 3.18 | 3.23 | 3.36 | 3.16 | 3.68 |
 
 ## T6 — λ sensitivity (tier C mean CPAS)
 
@@ -83,8 +87,9 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | qwen3-32b | 3.40 | 3.13 | 2.86 | 2.60 |
 | llama-3.3-70b | 3.46 | 3.31 | 3.15 | 2.99 |
 | qwen3-235b | 3.62 | 3.45 | 3.29 | 3.12 |
+| deepseek-v4.1-flash | 3.94 | 3.83 | 3.72 | 3.61 |
+| qwen3.8-27b | 3.98 | 3.87 | 3.76 | 3.65 |
 | gpt-5.5 (ceiling) | 4.04 | 4.00 | 3.95 | 3.91 |
-
 ## T6b — Weight sensitivity (tier-C CPAS, λ=2 throughout)
 
 The weights were **pre-registered before any run**, so they cannot be tuned after the
@@ -208,11 +213,19 @@ a frontier model as *worse* at regulatory reasoning than an 8B.
 
 | | calls | cost |
 |---|---|---|
-| Judging — 6 rows, Batch API (50% off) | 4,860 | **$113.06** |
-| Generation — 6 rows via OpenRouter | 540 | **$7.41** |
-| **Total** | | **$120.47** |
+| Judging — rows 1-6, Batch API (50% off) | 4,860 | **$113.06** |
+| Judging — rows 7-8 (D50), Batch API (50% off) | 1,620 | **$38.66** |
+| Generation — rows 1-6 via OpenRouter | 540 | **$7.41** |
+| Generation — rows 7-8 via OpenRouter | 540 | *not metered (small)* |
+| **Total judging, 8 rows** | 6,480 | **$151.72** |
 
-Per row: $18.28–$19.49. At list price, judging alone ≈ $226.
+Per row, judging: $18.28–$19.50. At list price, judging alone ≈ $303.
+
+Rows 7-8 judging is computed from measured batch usage (5,064,579 input +
+2,079,530 output tokens) at the published `claude-opus-5` rate of $5/$25 per MTok
+with the 50% Batch discount — not an estimate. Generation for rows 7-8 was not
+captured per call; it is a few dollars at OpenRouter rates, dominated by
+qwen3.8-27b's reasoning tokens.
 
 ---
 
@@ -225,7 +238,8 @@ Per row: $18.28–$19.49. At list price, judging alone ≈ $226.
 | 3 | H not comparable across personas | data-scientist H=0% in every row; regulator up to 73% |
 | 4 | FP stratum is 1 FP + 4 true negatives | constrained model makes no confident FP on this testbed |
 | 5 | CIP asset classes authored, not cited | declared as synthetic overlay in `ip_device_map.md` |
-| 6 | Open-weights rows not bit-reproducible | OpenRouter routes across providers; only local row is deterministic |
+| 6 | Open-weights rows not bit-reproducible | OpenRouter routes across providers; only local row is deterministic. Measured: identical prompt to qwen3.8-27b used 4,000 vs 1,192 reasoning tokens on two calls |
 | 7 | Ceiling is a lower bound | all rows share the 8B-built graph |
 | 8 | Effect size judge-dependent | +1.30 vs +0.95 (T8b) |
-| 9 | **No human-agreement check** | the one unmet exit criterion in the plan |
+| 9 | Output ceiling raised mid-sweep | `MAX_OUTPUT_TOKENS` 4,000→16,000 (D49); verified non-binding for rows 1-6 (peak 9% of old ceiling), so no row was re-judged |
+| 10 | **No human-agreement check** | the one unmet exit criterion in the plan |

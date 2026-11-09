@@ -1,0 +1,9 @@
+**Operator action briefing**
+
+Affected: RTU-4 (10.0.0.6), IEC-104 controlled station, GridCom GC-4000, ZONE-S, Bus 9; controls BR-4-9, BR-7-9, BR-9-10, BR-9-14. Substation name and source IP are not in context.
+
+What is happening: flow-statistics detector flags traffic to 10.0.0.6:2404 as attack, confidence 1.00. Observed only: zero minimum backward inter-arrival, zero minimum packet/backward packet lengths, Packet Length Max reported 0, Fwd PSH Flags 0. No protocol contents were inspected; attack class is not established.
+
+Physical risk: loss of supervisory view/control at Bus 9. If RTU-4 is saturated or offline, SCADA cannot command those breakers and indications may be stale; physical process may continue unobservable at that node.
+
+Next actions: verify RTU-4 health/link and actual breaker positions for BR-4-9, BR-7-9, BR-9-10, BR-9-14 locally/independently. If telemetry or control is degraded, switch those breakers to local/manual control and hold remote switching until verified. Check RTU-4 and its SCADA communications path. Preserve logs; notify operations; start CIP-008-6 reporting after stabilizing.

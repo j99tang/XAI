@@ -1,0 +1,14 @@
+**OPERATOR BRIEFING — RTU-3, Bus 6 (ZONE-S)**
+
+**Affected:** RTU-3 (GridCom GC-4000, IEC-104 controlled station), 10.0.0.5:2404, Bus 6, ZONE-S; BES Cyber Asset. It controls BR-5-6, BR-6-11, BR-6-12, BR-6-13.
+
+**What is happening:** the detector (confidence 1.00) flags traffic to RTU-3. Evidence is flow statistics only — no protocol contents were inspected. Observed pattern: minimum inter-arrival 239, zero-length packets in both directions (packet length min/max = 0, backward length min = 0), no forward PSH flags — abnormal low-payload traffic toward the RTU. Source address and attack class are **not in context**; flood-family behaviours look alike in these statistics.
+
+**Physical risk:** degraded or lost supervisory view and control of RTU-3, so we may not see or operate the four Bus 6 breakers. This is reasoned from the grid model, not observed.
+
+**Actions:**
+1. Confirm RTU-3 link status and whether SCADA-1 polling still completes.
+2. Read actual breaker positions for BR-5-6, BR-6-11, BR-6-12, BR-6-13 locally at Bus 6.
+3. Take those breakers to manual/local control until RTU-3 is confirmed healthy.
+4. Check RTU-3's switch port and upstream link for saturation.
+5. Hold further Bus 6 switching; report under NERC CIP-008-6.

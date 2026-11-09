@@ -1,0 +1,7 @@
+**Compliance Assessment — Illustrative Only**
+
+An intrusion alert classified destination **10.0.0.6:2404** as an attack (confidence 1.00). The authoritative IP map identifies 10.0.0.6 as **RTU-4**, an IEC-104 controlled station (GridCom GC-4000) in ZONE-S at Bus 9, controlling breakers BR-4-9, BR-7-9, BR-9-10, BR-9-14, and a **BES Cyber Asset** under NERC CIP. The detector observes network-flow statistics only and does not identify the attack class; no protocol contents are asserted.
+
+Under **NERC CIP-008-6**, a **Reportable Cyber Security Incident** includes an attempted compromise or disruption of a BES Cyber System or associated EACMS/PACS. Because RTU-4 is a BES Cyber Asset, this plausibly meets the reportable threshold as an attempted compromise; actual compromise or disruption is **not in context**.
+
+On current facts, the **attempt** timeline applies: initial notification **by the end of the next calendar day**. If compromise/disruption is determined, the **one-hour** timeline applies. Notify the **E-ISAC** and, under US jurisdiction, **NCCIC/CISA**, with required attributes. This sits under **Detect**, with reporting under **Respond**. Jurisdiction is illustrative: synthetic grid, not a jurisdictional determination.

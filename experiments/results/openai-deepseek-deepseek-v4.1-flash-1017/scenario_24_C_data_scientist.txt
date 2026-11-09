@@ -1,0 +1,9 @@
+## Model Analysis — Flow 10.0.0.1:2404
+
+**Driving features (SHAP, toward attack):** `Bwd IAT Min`=0 (+0.081) and `Bwd Packet Length Min`=0 (+0.037) indicate back-to-back reverse-direction packets carrying no payload; `Packet Length Max`=8 (+0.047) means every frame in the flow is tiny and header-dominated; `Flow IAT Min`=641 (+0.044) shows a sub-second minimum gap; `Fwd PSH Flags`=0 (+0.032) means the client never pushed payload.
+
+**Fingerprint family:** This is a small-packet, low-payload, machine-regular signature. Per the feature dictionary, "many small packets (headers dominate) ⇒ flood/scan," and low packet-length variance with repeated identical frames is the flood fingerprint. The zero-byte reverse direction and absent PSH are consistent with pure signalling rather than command exchange. I characterize this as **flooding-family (DoS/flood/starvation)** — the detector is binary and does not name a class, and `SYN Flag Count`/`ACK Flag Count` are not among the top features, so the half-open SYN-DoS fingerprint is not evidenced here.
+
+**Confidence:** 1.00 — high model certainty, not ground truth.
+
+**Caveat:** These are CICFlowMeter statistics only; they cannot prove IEC-104 protocol semantics, intent, or physical consequence. The traces are lab-generated (SANDI-2024), and port 2404 carries only mild signal.

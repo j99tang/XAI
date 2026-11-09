@@ -1,0 +1,9 @@
+**Model analysis — flow to 10.0.0.6:2404 (RTU-4)**
+
+Prediction: **normal**, confidence **0.19** — i.e., weak, near-uncertain evidence for normal, not a strong clearance.
+
+Attribution: only one top feature pushes toward *attack* — `Total Fwd Packet = 1` (SHAP +0.115). The other four push toward normal: `Flow Bytes/s = 14733.6` (−0.081), `FIN Flag Count = 1` (−0.078), `Flow IAT Max = 17505` (−0.073), `Down/Up Ratio = 2` (−0.068). All magnitudes are small, consistent with the low confidence.
+
+Signature reading: a single forward packet, a clean FIN teardown, a modest byte rate, a bounded inter-arrival maximum, and a 2:1 backward/forward packet ratio. This is a short, cleanly closed exchange — not the flooding-family fingerprint (no high packet/connection counts, no SYN/RST sweep, no rising `Flow IAT Max`/`Bwd IAT Max` stall as in starvation). It is equally consistent with a benign short IEC-104 exchange or a single probe; the binary detector does not name a class.
+
+Evidence boundary: these are CICFlowMeter statistics only. They cannot prove IEC-104 protocol semantics, payload content, or intent. `Dst Port` 2404 is a mild signal, not a leak. One packet is not proof of reconnaissance.

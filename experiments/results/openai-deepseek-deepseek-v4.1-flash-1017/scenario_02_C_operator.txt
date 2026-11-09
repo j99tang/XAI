@@ -1,0 +1,7 @@
+Affected: RTU-2 (10.0.0.3), IEC-104 controlled station at Bus 4 substation, ZONE-C (substation name not in context). It controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+
+Alert: prediction “attack,” confidence 1.00, destination 10.0.0.3:2404. Detector evidence is flow statistics only: zero minimum packet lengths, Bwd IAT Min 0, Flow IAT Min 92. No protocol contents were inspected; do not treat this as confirmed malformed commands. The pattern resembles flooding-family behavior, but the attack class is not established in context.
+
+Physical risk: if RTU-2 is saturated or its link drops, supervisory view/control of those Bus 4 breakers is lost; remote switching may be delayed or unobservable. No breaker operation is in context.
+
+Actions: verify RTU-2 health and fresh telemetry; locally confirm status of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. Check RTU-2 port 2404 link and SCADA-1 path for saturation. If telemetry is stale or control is delayed, place affected breakers under manual/local control and hold current configuration; do not issue remote switching until RTU-2 is verified. Report per NERC CIP-008-6.

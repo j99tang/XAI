@@ -1,0 +1,5 @@
+OPERATOR BRIEFING  
+Affected: RTU-2 (10.0.0.3), IEC-104 port 2404, GridCom GC-4000, ZONE-C, Bus 4. Substation name not in context.  
+Observed: alert toward RTU-2. Detector saw flow statistics only: max packet length 8 bytes, no forward PSH, backward IAT min/max 0, backward packet length min 0. This is a small-packet pattern; no specific attack class is asserted.  
+Physical risk: RTU-2 controls BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9. If RTU-2 is degraded or offline, we lose view/control of those breakers at Bus 4; telemetry may be delayed or dropped, and breaker status may be unobservable.  
+Actions: 1) Verify RTU-2 health and IEC-104 reachability now. 2) Check status of BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 and Bus 4. 3) Do not assume manual control; availability not in context. If RTU-2 cannot be confirmed, do not issue breaker commands until status is verified. 4) Hold investigation until physical process is stable.

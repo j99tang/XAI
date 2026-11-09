@@ -1,0 +1,7 @@
+Alert: 10.0.0.6:2404 is RTU-4 (IEC-104, GridCom GC-4000), ZONE-S, Bus 9; it controls BR-4-9, BR-7-9, BR-9-10, BR-9-14. Substation name: not in context.
+
+Detector saw only flow statistics: Flow IAT Min = 4, Packet Length Max = 42, Packet Length Min = 0, Bwd Packet Length Min = 0, Fwd PSH Flags = 0. This is a short-interval, small-packet, no-PSH pattern toward the IEC-104 endpoint; no protocol contents or specific attack class are known.
+
+Physical risk: RTU-4 telemetry/control may be degraded or lost, leaving Bus 9 breakers unobservable/uncontrolled in ZONE-S.
+
+Next: immediately verify RTU-4 status and IEC-104 link; check breaker states/telemetry for BR-4-9, BR-7-9, BR-9-10, BR-9-14; confirm no unexpected breaker changes. Manual control: not in context; do not switch unless local control is confirmed.

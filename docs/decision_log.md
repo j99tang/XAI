@@ -1039,6 +1039,99 @@ Format per entry: **Problem → Decision → Why**. Newest phases at the bottom.
   now paces requests and backs off on 429 — a partial sample is worse than a slow one,
   because agreement on 10 arbitrary items is not agreement.
 
+### D49. `MAX_OUTPUT_TOKENS` 4,000 -> 16,000: a guard rail is not a treatment
+- **Trigger (2026-11-08).** Extending the §7.7 sweep with two newer open-weight models,
+  `qwen/qwen3.8-27b` raised `TruncatedNarrative` on its first tier-C call. Diagnosis was
+  not narrative length: a trivial 150-word prompt returned `finish_reason="length"`,
+  `reasoning_tokens=4000`, and **`content` of length zero**. The model is a reasoning model
+  that spent the entire budget on its reasoning trace and never emitted an answer.
+- **The invariant question.** §7.7 fixes "only the model differs between rows", and
+  `MAX_OUTPUT_TOKENS` is a setting. Raising it for one row only would breach that.
+- **Resolution: raise it GLOBALLY, which preserves the invariant rather than breaking it.**
+  The ceiling is a guard rail against runaway generation, not an experimental treatment.
+  Holding it at 4,000 does *not* treat all models alike -- it gives a non-reasoning model a
+  full answer budget and a reasoning model zero. Every row now shares one identical value;
+  only a reasoning model consumes the headroom, and that is model behaviour, i.e. part of
+  what the sweep measures.
+- **No prior row needs regenerating or re-judging, and this was verified, not assumed.**
+  The old ceiling was non-binding everywhere. Longest narrative per run, in words
+  (~tokens at 1.33, as % of 4,000):
+
+  | run | max words | ~tok | % of 4,000 |
+  |---|---|---|---|
+  | ollama-llama3.1-8b | 208 | 277 | 7% |
+  | openai-meta-llama-llama-3.1-8b-instruct | 283 | 377 | 9% |
+  | openai-meta-llama-llama-3.3-70b-instruct | 181 | 241 | 6% |
+  | openai-openai-gpt-5.5 | 191 | 254 | 6% |
+  | openai-qwen-qwen3-32b | 246 | 328 | 8% |
+  | openai-qwen-qwen3-235b-a22b-2507 | 213 | 284 | 7% |
+  | openai-deepseek-deepseek-v4.1-flash-1017 | 243 | 324 | 8% |
+
+  Peak usage is 9% of the old ceiling, so raising it cannot change any prior row's output
+  distribution. 16,000 chosen against observed reasoning usage of 1,192-2,218 tokens
+  (~7-13x headroom); at 4,000 the same prompt consumed all 4,000.
+- **Rejected alternative: `reasoning: {enabled: false}`.** It produces a clean answer inside
+  the original 4,000, but it tests a *configuration* of the model rather than the model as
+  shipped, and it would make this row non-comparable to the two existing Qwen rows in a way
+  the token ceiling does not. Prefer giving a model room over changing what it is.
+- **Reverses the reasoning in the original comment, not its intent.** The 4,000 value came
+  from a 402-on-low-balance incident (65,536 reserved against a ~$0.023 call). That comment
+  already warned "pinning it LOW would be worse: it would truncate reasoning models
+  mid-answer" -- which is exactly what happened. Reservation rises ~4x; acceptable on
+  OpenRouter pricing, and worth watching if the balance runs low again.
+- **Generation cost of reasoning is wall-clock, not dollars:** qwen3.8-27b took 52 min for
+  270 narratives vs 12 min for deepseek-v4.1-flash.
+- **Reproducibility caveat surfaced while diagnosing.** The identical prompt to
+  `qwen/qwen3.8-27b` used 4,000 reasoning tokens on one call and 1,192 on another.
+  OpenRouter routes this model across ~23 providers which do not appear to configure
+  reasoning identically, so part of that spread is provider routing, not the model. All
+  OpenRouter rows share this exposure -- "we called model X" is really "we called whichever
+  provider OpenRouter picked for X". Belongs in the limitations section.
+
+### D50. Sweep extended to two 2026 open-weight models: the open/ceiling gap is no longer resolvable
+- **Rows added (2026-11-08),** judge frozen at `claude-opus-5`, synthesizer the only change
+  (see [[D49]] for the one settings change and why it preserves the §7.7 invariant):
+  `deepseek/deepseek-v4.1-flash-1017` (MIT, verified at `deepseek-ai/DeepSeek-V4.1-Flash-1017`)
+  and `qwen/qwen3.8-27b` (Apache-2.0, verified at `Qwen/Qwen3.8-27B`). Licences checked at
+  the vendor's own HF namespace, not inferred from the OpenRouter id prefix -- an earlier
+  catalogue filter had wrongly treated every `qwen/*` as open-weight, which is false for the
+  proprietary `qwen3.8-max-*` line.
+- **Tier-C results** (A<B<C significant at p<0.0001 in both rows; 810 judge calls each, zero errors):
+
+  | run | CPAS_C | raw D/C/A/R | H rate | op | ds | reg |
+  |---|---|---|---|---|---|---|
+  | qwen3-32b | 2.86 | 3.40 | 27% | 2.60 | 3.51 | 2.48 |
+  | llama-3.3-70b | 3.15 | 3.46 | 16% | 3.74 | 3.32 | 2.39 |
+  | qwen3-235b-a22b | 3.29 | 3.62 | 17% | 3.42 | 3.33 | 3.11 |
+  | **deepseek-v4.1-flash-1017** | **3.72** | 3.94 | 11% | 3.79 | 3.45 | 3.93 |
+  | **qwen3.8-27b** | **3.76** | 3.98 | 11% | 3.77 | 3.63 | 3.87 |
+  | gpt-5.5 (ceiling) | 3.95 | 4.04 | 4% | 4.13 | 3.61 | 4.11 |
+
+- **Paired Wilcoxon, unit = scenario, personas averaged (n=30):**
+  - generational, same vendor/size class (qwen3-32b -> qwen3.8-27b): **d=+0.894, p<0.0001 \*\*\***
+  - 27B vs 235B, same vendor: **d=+0.471, p=0.020 \***  -- ~9x fewer params, significantly better
+  - best open vs closed ceiling: **d=+0.194, p=0.063 n.s.**
+  - the two new rows against each other: d=+0.036, p=0.360 n.s.
+- **Claim discipline on the headline.** p=0.063 is *failure to reject* at alpha=0.05 on n=30, NOT
+  demonstrated parity. [[D48]] put ~+/-25% grader-dependent uncertainty on effect magnitudes,
+  which exceeds the 0.19 gap itself. Defensible wording: *"the remaining gap between the best
+  open-weight model and the closed ceiling is smaller than this study can resolve."* Prior to
+  these rows the gap was 0.66 and significant, so the movement is the result, not the parity.
+- **Convergent evidence.** Two unrelated vendors land 0.04 apart (p=0.36). Harder to explain as
+  one vendor's benchmark-chasing than either row alone would be.
+- **The remaining gap is mostly hallucination, not explanation quality.** deepseek raw 3.94 vs
+  ceiling 4.04 (0.10 apart) but H 11% vs 4%, which at lambda=2.0 costs 0.14. The models have
+  learned to explain about as well; factual discipline is what still separates them -- exactly
+  the failure mode lambda was pre-registered to price.
+- **H rate is monotone with CPAS across all 7 rows** (38% -> 4%). The lambda term tracks the single
+  dimension that most orders model capability on this task; a defence of a pre-registered choice.
+- **CORRECTS the earlier "regulator stays flat" explanation, which blamed retrieval.** Capability
+  range across models: regulator 0.99->4.11 (range **3.12**), operator 2.60->4.13 (1.53), data
+  scientist 2.80->3.63 (0.83). Regulator is by far the most capability-sensitive persona -- it was
+  flat because the models then under test could not do it, not because retrieval failed it. Given
+  a capable model it is the STRONGEST persona. CIP-008-6 reportability reasoning over retrieved
+  rules is the hardest task in the pipeline and therefore the best capability discriminator.
+
 ## Cross-cutting conventions established
 - Raw data immutable; inputs (`data/`, `knowledge_base/`) vs regenerable outputs
   (`models/`, `rag_storage/`, `experiments/results/`) never mixed.

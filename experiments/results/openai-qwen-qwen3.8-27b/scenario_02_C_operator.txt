@@ -1,0 +1,11 @@
+Affected: RTU-2 (10.0.0.3, GridCom GC-4000), IEC-104 port 2404, Bus 4, ZONE-C; BES Cyber Asset under NERC CIP. Substation name not in context.
+
+What is happening: Detector flagged the flow to RTU-2’s IEC-104 endpoint as attack, confidence 1.00. Observed network timing/size indicators only: packet length min and max are 0, backward inter-arrival min is 0, flow inter-arrival min is 92 ms. This is not the normal balanced IEC-104 polling pattern. No protocol contents were seen.
+
+Physical risk: RTU-2 may lose reliable supervisory reach, leaving Bus 4 breakers BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9 unobservable or uncontrollable.
+
+Next actions:
+1. Check RTU-2 health and SCADA-1 to RTU-2 communication.
+2. Verify breaker status/telemetry for BR-2-4, BR-3-4, BR-4-5, BR-4-7, BR-4-9.
+3. Manual control: not in context; verify local/manual control availability before switching.
+4. Do not change breaker state based on this alert alone.
