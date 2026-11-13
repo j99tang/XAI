@@ -34,6 +34,33 @@ scenario and a context block, so 90 rows are not 90 independent observations).
 | qwen3.8-27b | 1.54 | 1.64 | **3.76** | 3.98 | 11% | 97% | +2.22 | <.0001 |
 | gpt-5.5 (ceiling) | 1.52 | 1.58 | **3.95** | 4.04 | 4% | 100% | +2.43 | <.0001 |
 
+## T1b — Capability progression: weight-release date vs CPAS
+
+| synthesizer | weights | released | run date | tier C | raw C | H rate | pass |
+|---|---|---|---|---|---|---|---|
+| llama-3.1-8b (API) | open | 2024-07-23 | 2026-08-23 | **2.27** | 3.02 | 38% | 49% |
+| llama3.1:8b (LOCAL) | open | 2024-07-23 | 2026-08-23 | **2.48** | 3.14 | 33% | 54% |
+| llama-3.3-70b | open | 2024-12-06 | 2026-08-23 | **3.15** | 3.46 | 16% | 77% |
+| qwen3-32b | open | 2025-04-28 | 2026-08-23 | **2.86** | 3.40 | 27% | 71% |
+| qwen3-235b | open | 2025-07-21 | 2026-08-23 | **3.29** | 3.62 | 17% | 86% |
+| gpt-5.5 (ceiling) | closed | 2026-04-24 | 2026-08-23 | **3.95** | 4.04 | 4% | 100% |
+| qwen3.8-27b | open · Apache-2.0 | 2026-08-14 | 2026-11-09 | **3.76** | 3.98 | 11% | 97% |
+| deepseek-v4.1-flash | open · MIT | 2026-10-17 | 2026-11-09 | **3.72** | 3.94 | 11% | 99% |
+
+Spearman release date vs tier-C CPAS: **ρ = 0.821, p = 0.0234** (n = 7 releases); open-weight releases only **ρ = 0.886, p = 0.0188** (n = 6). Counting the two llama-3.1-8b serving paths as separate points instead gives ρ = 0.874, p = 0.0045 (n = 8) — the same conclusion, but one release would be voting twice, so the de-duplicated value is the one quoted. Plotted as `docs/figures/fig6_release_vs_cpas.png`.
+
+The relation is strong but **not monotone**: `llama-3.3-70b` (Dec 2024) outscores
+`qwen3-32b` (Apr 2025) at roughly twice the parameter count, and the closed
+`gpt-5.5` (Apr 2026) still leads both later-released open models. Release date
+predicts capability on this task; it does not determine it.
+
+**The run date is provenance, not progression.** It takes two values — six rows
+judged 23 Aug 2026, two on 9 Nov 2026 (D50) — and records when the job ran, not
+when capability moved. The D49 token-ceiling change falls between the two batches;
+it was verified non-binding for the first six (peak 9% of the old ceiling), so the
+split does not confound the comparison. Any progression claim rests on the
+release-date column.
+
 ## T2 — Per-dimension, tier C only
 
 | synthesizer | D | C | A | R | H% |

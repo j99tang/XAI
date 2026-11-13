@@ -9,7 +9,7 @@ Run: conda run -n xai python scripts/make_presentation_tables.py
 from __future__ import annotations
 import json, statistics as st, collections, glob
 from pathlib import Path
-from scipy.stats import wilcoxon
+from scipy.stats import wilcoxon, spearmanr
 
 ROOT = Path(__file__).resolve().parents[1]
 R = ROOT / "experiments" / "results"
@@ -23,6 +23,22 @@ ROWS = [("llama-3.1-8b (API)", "openai-meta-llama-llama-3.1-8b-instruct"),
         ("qwen3.8-27b", "openai-qwen-qwen3.8-27b"),
         ("gpt-5.5 (ceiling)", "openai-openai-gpt-5.5")]
 P = ["operator", "data_scientist", "regulator"]
+# Weight-release dates from the OpenRouter model catalogue `created` field (verified
+# 2026-11-09); the two llama-3.1-8b rows share a date because they are the same weights
+# served two ways. Licence/openness checked at each vendor's HuggingFace namespace.
+# These are external facts with no machine-readable source in the repo, so they are
+# recorded here rather than silently typed into the markdown.
+MODEL_META = {
+    "openai-meta-llama-llama-3.1-8b-instruct": ("2024-07-23", "open"),
+    "ollama-llama3.1-8b":                      ("2024-07-23", "open"),
+    "openai-meta-llama-llama-3.3-70b-instruct": ("2024-12-06", "open"),
+    "openai-qwen-qwen3-32b":                   ("2025-04-28", "open"),
+    "openai-qwen-qwen3-235b-a22b-2507":        ("2025-07-21", "open"),
+    "openai-openai-gpt-5.5":                   ("2026-04-24", "closed"),
+    "openai-qwen-qwen3.8-27b":                 ("2026-08-14", "open · Apache-2.0"),
+    "openai-deepseek-deepseek-v4.1-flash-1017": ("2026-10-17", "open · MIT"),
+}
+rundate = lambda t: json.load(open(R / t / "manifest.json"))["generated_utc"][:10]
 W = {"D": .30, "C": .25, "A": .25, "R": .20}
 load = lambda t: json.load(open(R / t / "cpas_scores.json"))["rows"]
 raw = lambda rs: st.mean(r["cpas"] + 2 * r["H"] for r in rs)
@@ -71,6 +87,55 @@ def main() -> None:
         print(f'  {lbl:22} tierC={means["C"]:.2f} raw={raw(C):.2f} '
               f'H={sum(r["H"] for r in C)/len(C):.0%}')
     out += tbl(["synthesizer", "A", "B", "C", "raw C", "H rate", "pass", "C−A Δ", "p"], rows) + [""]
+
+    # ---- T1b capability vs weight-release date
+    out += ["## T1b — Capability progression: weight-release date vs CPAS", ""]
+    order = sorted(ROWS, key=lambda lt: MODEL_META[lt[1]][0])
+    rows, rel, cp = [], [], []
+    for lbl, tag in order:
+        C = tierC(data[lbl]); r0, w = MODEL_META[tag]
+        c = st.mean(x["cpas"] for x in C)
+        rel.append(r0); cp.append(c)
+        rows.append("| " + " | ".join([
+            lbl, w, r0, rundate(tag), f"**{c:.2f}**", f"{raw(C):.2f}",
+            f'{sum(x["H"] for x in C)/len(C):.0%}',
+            f"{sum(rawrow(x) >= 3.0 for x in C)/len(C):.0%}"]) + " |")
+    out += tbl(["synthesizer", "weights", "released", "run date", "tier C",
+                "raw C", "H rate", "pass"], rows)
+    # Rank statistic over RELEASES, not rows: the API and local llama-3.1-8b rows are the
+    # same weights served two ways, so counting both gives one release two votes. The
+    # all-rows value is reported alongside so the choice is visible, not hidden.
+    num = lambda d: int(d.replace("-", ""))  # YYYYMMDD sorts as an integer
+    seen, ui = set(), []
+    for i, (l, t) in enumerate(order):
+        if rel[i] not in seen:
+            seen.add(rel[i]); ui.append(i)
+    rho, pv = spearmanr([num(rel[i]) for i in ui], [cp[i] for i in ui])
+    arho, apv = spearmanr([num(d) for d in rel], cp)
+    oi = [i for i in ui if MODEL_META[order[i][1]][1] != "closed"]
+    orho, opv = spearmanr([num(rel[i]) for i in oi], [cp[i] for i in oi])
+    out += ["",
+            f"Spearman release date vs tier-C CPAS: **ρ = {rho:.3f}, p = {pv:.4f}** "
+            f"(n = {len(ui)} releases); open-weight releases only "
+            f"**ρ = {orho:.3f}, p = {opv:.4f}** (n = {len(oi)}). Counting the two "
+            f"llama-3.1-8b serving paths as separate points instead gives "
+            f"ρ = {arho:.3f}, p = {apv:.4f} (n = {len(cp)}) — the same conclusion, "
+            "but one release would be voting twice, so the de-duplicated value is the one "
+            "quoted. Plotted as `docs/figures/fig6_release_vs_cpas.png`.",
+            "",
+            "The relation is strong but **not monotone**: `llama-3.3-70b` (Dec 2024) outscores",
+            "`qwen3-32b` (Apr 2025) at roughly twice the parameter count, and the closed",
+            "`gpt-5.5` (Apr 2026) still leads both later-released open models. Release date",
+            "predicts capability on this task; it does not determine it.",
+            "",
+            "**The run date is provenance, not progression.** It takes two values — six rows",
+            "judged 23 Aug 2026, two on 9 Nov 2026 (D50) — and records when the job ran, not",
+            "when capability moved. The D49 token-ceiling change falls between the two batches;",
+            "it was verified non-binding for the first six (peak 9% of the old ceiling), so the",
+            "split does not confound the comparison. Any progression claim rests on the",
+            "release-date column.", ""]
+    print(f"  release-date vs CPAS: rho={rho:.3f} p={pv:.4f} n={len(ui)} releases; "
+          f"open-only rho={orho:.3f} p={opv:.4f} n={len(oi)}; all-rows rho={arho:.3f}")
 
     # ---- T2 per-dimension
     out += ["## T2 — Per-dimension, tier C only", ""]
