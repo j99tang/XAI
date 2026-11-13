@@ -11,4 +11,5 @@ Each subfolder = one document type from Phase 2 of the implementation plan.
 | `attack_taxonomy/` | Per-attack signature + physical consequence | D, C |
 | `feature_dictionary/` | Flow feature → meaning → attack signature (the semantic bridge) | D |
 | `playbooks/` | Role-specific operator response steps | A |
-| `incident_reports/` | Synthetic past incidents | D, C |
+| `regulatory_compliance/` | NERC CIP-008-6 reporting obligations + NIST CSF functions (regulator persona corpus) | R, A, D |
+| `incident_reports/` | Synthetic past incidents — **planned, not authored**: the folder is empty and nothing from it is ingested | D, C |
